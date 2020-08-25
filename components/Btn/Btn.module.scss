@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+
+.btn {
+  height: 40px;
+  width: 220px;
+  border-radius: $br-btn-inputs;
+  font-size: $fs-btn;
+  &focus {
+    background-color: $bg-btn-primary !important;
+    border: 1px solid $bg-btn-primary;
+  }
+}
+
+.btn_primary {
+  background-color: $bg-btn-adoption;
+}
