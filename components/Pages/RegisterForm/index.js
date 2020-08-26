@@ -1,37 +1,38 @@
-import React, { useState } from 'react';
-import { Form, Button, Row, Col } from 'antd';
-import CustomInput from '../../components/Input';
+import React, { useState } from 'react'
+import { Form, Button, Row, Col } from 'antd'
+import CustomInput from '../../components/Input'
 // CSS
-import styles from './LogIn.module.css';
+import styles from './RegisterForm.module.scss'
 
-function LogIn() {
+function RegisterForm() {
   // States
+  const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  //Default form functions
+  // Default form functions
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo)
-  };
+  }
   const onFinish = (values) => {
     console.log('Received values of form: ', values)
-    // fetch(`${URL_BASE}.json`, {
-    //   method: 'POST',
-    //   mode: 'cors',
-    //   body: JSON.stringify(values)
-    // }).then((response) => console.log(response.json))
-  };
+    // acá el fetch
+  }
+  const handleInputUsername = (name, value) => {
+    setUsername(value)
+    console.log(value)
+  }
 
   // Handlers
   const handleInputEmail = (name, value) => {
     setEmail(value)
     console.log(value)
-  };
+  }
 
   const handleInputPassword = (name, value) => {
     setPassword(value)
     console.log(value)
-  };
+  }
 
   return (
     <Row>
@@ -42,6 +43,18 @@ function LogIn() {
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
         >
+          <Form.Item label='username'>
+            <CustomInput
+              className={styles.item}
+              placeholder='username'
+              name='username'
+              value={username}
+              type='text'
+              error='Debe ingresar un nombre de usuario'
+              callback={handleInputUsername}
+            />
+          </Form.Item>
+
           <Form.Item label='email'>
             <CustomInput
               className={styles.item}
@@ -80,4 +93,4 @@ function LogIn() {
   )
 }
 
-export default LogIn
+export default RegisterForm
