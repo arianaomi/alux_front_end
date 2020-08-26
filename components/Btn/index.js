@@ -2,7 +2,7 @@
 import styles from './Btn.module.scss'
 import cx from 'classnames'
 
-function Btn({ content, color }) {
+function Btn ({ content, color }) {
   return (
     <>
       <h1>Button</h1>
