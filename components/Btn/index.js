@@ -1,6 +1,5 @@
 // SCSS
 import styles from './Btn.module.scss'
-import cx from 'classnames'
 
 function Btn ({ content, typeBtn = 'btn_primary' }) {
   return (
