@@ -1,0 +1,56 @@
+.containerFooter {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.FooterScss {
+  align-self: flex-end;
+  background-color: #3587a0;
+  line-height: 3;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+.imageFooter {
+  width: 80px;
+  height: 80px;
+  padding-top: 10px;
+}
+.textFooter {
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  font-weight: 700;
+  font-family: poppins;
+  padding-top: 25px;
+}
+
+@media only screen and (min-width: 728px) {
+  .textFooter {
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    padding-left: 40px;
+  }
+  .imageFooter {
+    width: 90px;
+    height: 90px;
+    padding-top: 10px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .textFooter {
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .imageFooter {
+    width: 90px;
+    height: 90px;
+    padding-top: 10px;
+  }
+}

@@ -1,0 +1,84 @@
+.containerPrin {
+  width: 90%;
+  border-radius: 5px;
+  box-shadow: 6px 8px 7px #c7c7c7;
+  width: 378px;
+  margin: 5px;
+}
+
+.containerCardG {
+  display: flex;
+  height: 70px;
+  padding-left: 10px;
+}
+
+.imageCarg {
+  width: 100%;
+  object-fit: cover;
+}
+.iconCard {
+  display: flex;
+}
+.textCard {
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-left: 5px;
+  color: #646464;
+}
+
+.iconCardUD {
+  padding-top: 40px;
+  padding-left: 7px;
+  padding-right: 15px;
+}
+
+.textcontainer {
+  padding-left: 10px;
+}
+
+.TextTitle {
+  font-size: 22px;
+  color: rgb(36, 36, 36);
+  margin-bottom: 0;
+}
+
+.TextName {
+  font-size: 20px;
+  color: rgb(95, 95, 95);
+}
+.patitasC {
+  width: 25px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .containerPrin {
+    width: 90%;
+    border-radius: 5px;
+    box-shadow: 6px 8px 7px #c7c7c7;
+    width: 600px;
+    margin: 5px;
+  }
+  .textCard {
+    display: flex;
+    width: 100%;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-left: 5px;
+    color: #646464;
+  }
+  .iconCardUD {
+    padding-top: 20px;
+    padding-left: 7px;
+    padding-right: 25px;
+  }
+  .patitasC {
+    width: 35px;
+  }
+  .heartC {
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 25px;
+  }
+}
