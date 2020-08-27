@@ -4,7 +4,7 @@ import logo from '../../public/img/LogoAluxBco.svg'
 import curva from '../../public/img/curva.svg'
 import curvaD from '../../public/img/curvaWeb.svg'
 
-function CurHeader({ title }) {
+function CurHeader ({ title }) {
   const showLogo = title ? (
     <img src={logo} className={`${styles.logo} ${styles.show}`} />
   ) : (
