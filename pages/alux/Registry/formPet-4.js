@@ -1,7 +1,7 @@
 export default function FormPet4 () {
   return (
     <div>
-      <h1>perfil de una mascota</h1>
+      <h1>Registro de mascota 4</h1>
     </div>
   )
 }
