@@ -4,7 +4,7 @@ import styles from './HeaderRectan.module.scss'
 import { Avatar } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
 
-function HeaderRectan({ title, image }) {
+function HeaderRectan ({ title, image }) {
   //* rendering conditional
 
   const avatar = image ? (

@@ -1,5 +1,5 @@
 .containerPrin {
-  width: 90%;
+  width: 100%;
   border-radius: 5px;
   box-shadow: 6px 8px 7px #c7c7c7;
   width: 378px;
@@ -54,11 +54,7 @@
 
 @media only screen and (min-width: 1200px) {
   .containerPrin {
-    width: 90%;
-    border-radius: 5px;
-    box-shadow: 6px 8px 7px #c7c7c7;
     width: 600px;
-    margin: 5px;
   }
   .textCard {
     display: flex;

@@ -1,29 +1,32 @@
-.imageCarL {
-  width: 384px;
-  height: 206px;
-  object-fit: cover;
+.wrapper_lost {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 .capa {
   margin-top: 136px;
-  width: 384px;
+  width: 100%;
   height: 70px;
   background: #ff4a4a;
   opacity: 0.6;
   position: absolute;
   z-index: 1;
 }
+.imageCarL {
+  height: 206px;
+  width: 100%;
+  object-fit: cover;
+}
+
 .containerDataLost {
   position: absolute;
-  z-index: 1;
-  width: 384px;
+  width: 100%;
   height: 150px;
-  position: absolute;
-  z-index: 2;
   left: 0px;
-  top: 3em;
-  position: absolute;
   z-index: 3;
-  top: 135px;
+  top: 138px;
+  display: block;
 }
 .textT {
   margin-bottom: 5px;
@@ -31,7 +34,6 @@
 .containerDosTL {
   display: flex;
   justify-content: space-around;
-  padding-bottom: 100px;
 }
 .containerUnoTL {
   margin-bottom: 0;
@@ -79,23 +81,15 @@
     width: auto;
   }
   .imageCarL {
-    width: 1098px;
     height: 475px;
     object-fit: cover;
   }
   .capa {
     margin-top: 325px;
-    width: 1098px;
     height: 150px;
-    background: #ff4a4a;
-    opacity: 0.6;
-    position: absolute;
-    z-index: 1;
   }
   .containerDataLost {
     position: absolute;
-    z-index: 1;
-    width: 1098px;
     height: 550px;
     z-index: 2;
     left: 0px;
@@ -137,24 +131,14 @@
     width: auto;
   }
   .imageCarL {
-    width: 1098px;
     height: 475px;
     object-fit: cover;
   }
   .capa {
     margin-top: 325px;
-    width: 1098px;
     height: 150px;
-    background: #ff4a4a;
-    opacity: 0.6;
-    position: absolute;
-    z-index: 1;
   }
   .containerDataLost {
-    position: absolute;
-    z-index: 1;
-    width: 1098px;
-    height: 550px;
     z-index: 2;
     left: 0px;
     top: 318px;
