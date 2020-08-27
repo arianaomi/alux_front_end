@@ -1,10 +1,7 @@
 import React from "react";
 import styles from "./cardGralxl.module.scss";
 import { Avatar, Row, Col } from "antd";
-import imgeCardG from "../../public/imagenes_svg_mobil/ChiPark.jpg";
 import { UserOutlined } from "@ant-design/icons";
-import Patitas from "../../public/imagenes_svg_mobil/patitasCard.svg";
-import Heart from "../../public/imagenes_svg_mobil/Heart.svg";
 
 export default function CardGralxl() {
   return (
@@ -19,7 +16,7 @@ export default function CardGralxl() {
             </div>
           </div>
           <div>
-            <img className={styles.imageCarg} src={imgeCardG} />
+            <img className={styles.imageCarg} src="/ChiPark.jpg" />
           </div>
           <div className={styles.textCard}>
             <p>
@@ -28,10 +25,10 @@ export default function CardGralxl() {
             </p>
             <div className={styles.iconCard}>
               <div className={styles.iconCardUD}>
-                <img className={styles.heartC} src={Heart} />
+                <img className={styles.heartC} src="/Heart.svg" />
               </div>
               <div className={styles.iconCardUD}>
-                <img className={styles.patitasC} src={Patitas} />
+                <img className={styles.patitasC} src="/patitasCard.svg" />
               </div>
             </div>
           </div>
