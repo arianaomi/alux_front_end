@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
-import { Form, Button, Row, Col } from 'antd';
-import CustomInput from '../../components/Input';
+import React, { useState } from 'react'
+import { Form, Row, Col } from 'antd'
+import CustomInput from '../../Input'
+import Btn from '../../Btn'
 // CSS
-import styles from './LogIn.module.css';
+import styles from './LogInForm.module.scss'
 
-function LogIn() {
+function LogInForm() {
   // States
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  //Default form functions
+  // Default form functions
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo)
-  };
+  }
   const onFinish = (values) => {
     console.log('Received values of form: ', values)
     // fetch(`${URL_BASE}.json`, {
@@ -20,33 +21,34 @@ function LogIn() {
     //   mode: 'cors',
     //   body: JSON.stringify(values)
     // }).then((response) => console.log(response.json))
-  };
+  }
 
   // Handlers
   const handleInputEmail = (name, value) => {
     setEmail(value)
     console.log(value)
-  };
+  }
 
   const handleInputPassword = (name, value) => {
     setPassword(value)
     console.log(value)
-  };
+  }
 
   return (
     <Row>
-      <Col xs={24} sm={24} md={24} lg={12}>
+      <Col xs={2} sm={2} md={2} lg={2} />
+      <Col xs={20} sm={20} md={20} lg={20}>
         <Form
           name='basic'
           initialValues={{ remember: true }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
         >
-          <Form.Item label='email'>
+          <Form.Item>
             <CustomInput
               className={styles.item}
-              placeholder='email'
               name='email'
+              placeholder='Correo'
               value={email}
               type='email'
               error='Debe ingresar un email válido'
@@ -54,10 +56,10 @@ function LogIn() {
             />
           </Form.Item>
 
-          <Form.Item label='password'>
+          <Form.Item>
             <CustomInput
               className={styles.item}
-              placeholder='password'
+              placeholder='Contraseña'
               name='password'
               value={password}
               error='Debe ingresar su password'
@@ -67,17 +69,15 @@ function LogIn() {
           <Row xs={24} sm={24} md={24} lg={24}>
             <Col className='bottonR' span={12} push={11}>
               <Form.Item>
-                <Button type='primary' htmlType='submit'>
-                  Ingresar
-                </Button>
+                <Btn content='Iniciar sesión' classProp='btn_primary' htmlType='submit' />
               </Form.Item>
             </Col>
           </Row>
         </Form>
       </Col>
-      <Col span={14} push={3} xs={0} sm={0} md={0} lg={12} />
+      <Col xs={2} sm={2} md={2} lg={2} />
     </Row>
   )
 }
 
-export default LogIn
+export default LogInForm

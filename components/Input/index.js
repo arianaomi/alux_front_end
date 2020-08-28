@@ -1,15 +1,15 @@
-import React from 'react';
+import React from 'react'
 
 // Ant Design
-import { Form, Input } from 'antd';
-import { FormOutlined } from '@ant-design/icons';
+import { Form, Input } from 'antd'
+import styles from './Input.module.scss'
 
 const CustomInput = (props) => {
   const { type, name, value, placeholder, error, callback } = props
 
   const handlerInput = ({ target: { value, name } }) => {
     callback(name, value)
-  };
+  }
 
   return (
     <Form.Item
@@ -18,8 +18,7 @@ const CustomInput = (props) => {
       rules={[{ required: true, message: error }]}
     >
       <Input
-        style={{ width: 300 }}
-        prefix={<FormOutlined />}
+        className={styles.item}
         placeholder={placeholder}
         type={type || 'text'}
         name={name}
@@ -28,6 +27,6 @@ const CustomInput = (props) => {
       />
     </Form.Item>
   )
-};
+}
 
 export default CustomInput

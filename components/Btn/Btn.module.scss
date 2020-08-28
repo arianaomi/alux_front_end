@@ -1,0 +1,68 @@
+@import '../../styles/variables';
+
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: $br-btn-inputs;
+  color: $color-btn-primary;
+  font-size: $fs-btn;
+  font-weight: 600;
+  height: 40px;
+  width: 220px;
+}
+
+.btn_primary {
+  background-color: $bg-btn-primary;
+  &:active {
+    background-color: $bg-btn-secondary;
+    color: $color-btn-secondary;
+    border: 1px solid $color-btn-secondary;
+  }
+}
+.btn_secondary {
+  background-color: $bg-btn-secondary;
+  border: 1px solid $color-btn-secondary;
+  color: $color-btn-secondary;
+  &:active {
+    background-color: $bg-btn-primary;
+    color: $color-btn-primary;
+    border: none;
+  }
+}
+.btn_alert {
+  background-color: $bg-btn-alert;
+  &:active {
+    background-color: $bg-btn-secondary;
+    color: $bg-btn-alert;
+    border: 1px solid $bg-btn-alert;
+  }
+}
+.btn_alert_secondary {
+  background-color: transparent;
+  border: 1px solid $bg-btn-alert;
+  color: $bg-btn-alert;
+  &:active {
+    background-color: $bg-btn-alert;
+    color: $color-btn-primary;
+    border: none;
+  }
+}
+.btn_adoption {
+  background-color: $bg-btn-adoption;
+  &:active {
+    background-color: $bg-btn-secondary;
+    color: $bg-btn-adoption;
+    border: 1px solid $bg-btn-adoption;
+  }
+}
+
+.btn_adoption_secondary {
+  background-color: transparent;
+  border: 1px solid $bg-btn-adoption;
+  color: $bg-btn-adoption;
+  &:active {
+    background-color: $bg-btn-adoption;
+    color: $color-btn-primary;
+    border: none;
+  }
+}

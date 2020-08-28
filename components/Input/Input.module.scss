@@ -1,0 +1,8 @@
+@import "../../styles/variables"; 
+
+.item{
+    width: 100%;
+    border: 1px solid $input-font-color;
+    height: 40px;
+    display: block;
+}

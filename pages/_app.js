@@ -1,7 +1,8 @@
 import '../styles/_globals.scss'
 import 'antd/dist/antd.css'
 
-function MyApp({ Component, pageProps }) {
+function MyApp ({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
+
 export default MyApp

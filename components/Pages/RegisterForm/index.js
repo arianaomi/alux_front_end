@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { Form, Button, Row, Col } from 'antd'
-import CustomInput from '../../components/Input'
-// CSS
-import styles from './RegisterForm.module.scss'
+import { Form, Row, Col } from 'antd'
+import CustomInput from '../../Input'
+import Btn from '../../Btn'
 
 function RegisterForm() {
   // States
@@ -36,17 +35,18 @@ function RegisterForm() {
 
   return (
     <Row>
-      <Col xs={24} sm={24} md={24} lg={12}>
+      <Col xs={2} sm={2} md={2} lg={2} />
+      <Col xs={20} sm={20} md={20} lg={20}>
         <Form
           name='basic'
           initialValues={{ remember: true }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
         >
-          <Form.Item label='username'>
+          <Form.Item>
             <CustomInput
               className={styles.item}
-              placeholder='username'
+              placeholder='Nombre'
               name='username'
               value={username}
               type='text'
@@ -55,40 +55,38 @@ function RegisterForm() {
             />
           </Form.Item>
 
-          <Form.Item label='email'>
+          <Form.Item>
             <CustomInput
               className={styles.item}
-              placeholder='email'
+              placeholder='Correo'
               name='email'
               value={email}
               type='email'
-              error='Debe ingresar un email válido'
+              error='Debe ingresar un correo electrónico válido'
               callback={handleInputEmail}
             />
           </Form.Item>
 
-          <Form.Item label='password'>
+          <Form.Item>
             <CustomInput
               className={styles.item}
-              placeholder='password'
+              placeholder='Contraseña'
               name='password'
               value={password}
-              error='Debe ingresar su password'
+              error='Debe ingresar su contraseña'
               callback={handleInputPassword}
             />
           </Form.Item>
           <Row xs={24} sm={24} md={24} lg={24}>
             <Col className='bottonR' span={12} push={11}>
               <Form.Item>
-                <Button type='primary' htmlType='submit'>
-                  Ingresar
-                </Button>
+                <Btn content='Crear cuenta' classProp='btn_primary' htmlType='submit' />
               </Form.Item>
             </Col>
           </Row>
         </Form>
       </Col>
-      <Col span={14} push={3} xs={0} sm={0} md={0} lg={12} />
+      <Col xs={2} sm={2} md={2} lg={2} />
     </Row>
   )
 }
