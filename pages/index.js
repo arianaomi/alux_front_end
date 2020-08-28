@@ -9,7 +9,7 @@ import styles from '../styles/_index.module.scss'
 // antd
 import { Row, Col } from 'antd'
 
-export default function WelcomePage () {
+export default function WelcomePage() {
   return (
     <LayoutCurve>
       <Row>
@@ -20,7 +20,7 @@ export default function WelcomePage () {
         </Col>
         <Col xs={24} md={12}>
           <div className={styles.btn}>
-            <Button content='Comenzar' />
+            <Button content='Comenzar' link='/log-in' />
           </div>
           <div className={styles.container}>
             <img src='/people-icon.svg' />

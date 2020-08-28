@@ -1,10 +1,16 @@
+//
+import Link from 'next/link'
 // SCSS
 import styles from './Btn.module.scss'
 
-function Btn({ content, typeBtn = 'btn_primary' }) {
+function Btn ({ content, typeBtn = 'btn_primary', link }) {
   return (
     <>
-      <button className={`${styles.btn} ${styles[typeBtn]}`}>{content}</button>
+      <Link href={link}>
+        <button className={`${styles.btn} ${styles[typeBtn]}`}>
+          {content}
+        </button>
+      </Link>
     </>
   )
 }

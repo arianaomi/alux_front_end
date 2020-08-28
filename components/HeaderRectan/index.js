@@ -1,3 +1,5 @@
+//
+import Link from 'next/link'
 // SCSS
 import styles from './HeaderRectan.module.scss'
 // antd
@@ -16,7 +18,9 @@ function HeaderRectan ({ title, image }) {
   return (
     <>
       <div className={styles.header}>
-        <img src='/logoAluxBco.svg' className={styles.logo} />
+        <Link href='/'>
+          <img src='/logoAluxBco.svg' className={styles.logo} />
+        </Link>
         <h1 className={styles.title}> {title}</h1>
         <div className={styles.wrapper}>
           {avatar}
