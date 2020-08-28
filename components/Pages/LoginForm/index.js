@@ -11,10 +11,10 @@ function LogInForm () {
   const [password, setPassword] = useState('')
 
   // Default form functions
-  const onFinishFailed = (errorInfo) => {
+  const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo)
   }
-  const onFinish = (values) => {
+  const onFinish = values => {
     console.log('Received values of form: ', values)
     // fetch(`${URL_BASE}.json`, {
     //   method: 'POST',
@@ -36,8 +36,8 @@ function LogInForm () {
 
   return (
     <Row>
-      <Col xs={2} sm={2} md={2} lg={2} />
-      <Col xs={20} sm={20} md={20} lg={20}>
+      <Col>
+        <h1>Hola desde form</h1>
         <Form
           name='basic'
           initialValues={{ remember: true }}
@@ -55,7 +55,6 @@ function LogInForm () {
               callback={handleInputEmail}
             />
           </Form.Item>
-
           <Form.Item>
             <CustomInput
               className={styles.item}
@@ -66,13 +65,9 @@ function LogInForm () {
               callback={handleInputPassword}
             />
           </Form.Item>
-
-          <Form.Item>
-            <Btn content='Iniciar sesión' typeBtn='btn_primary' />
-          </Form.Item>
+          <Btn content='click' link='/' />
         </Form>
       </Col>
-      <Col xs={2} sm={2} md={2} lg={2} />
     </Row>
   )
 }

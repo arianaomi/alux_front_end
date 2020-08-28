@@ -9,7 +9,7 @@ import styles from './PetForm.module.scss'
 
 const { Option } = Select
 
-function PetForm1() {
+function PetForm1 () {
   const objectBreedOptions = {
     Dog: ['Mestizo/ Sin raza', 'Beagle', 'Boxer', 'Bulldog', 'Chihuahua', 'Husky Siberiano', 'Jack Russell Terrier', 'Pastor alemán', 'Poodle', 'Pug', 'Shnauzer', 'Yorkie', 'Xoloescuincle', 'Otro'],
     Cat: ['Mestizo/ Sin raza', 'Maltés', 'Siamés', 'Angora', 'Egipcio', 'Persa', 'Siberiano', 'Otra/ No disponible'],
@@ -41,7 +41,6 @@ function PetForm1() {
   const onChangeSpecies = (value) => {
     console.log(value)
     setSpecies(value)
-    const selected = species
   }
 
   // handleSelectChange(event) {
@@ -102,7 +101,7 @@ function PetForm1() {
             name='breed'
             label='Raza o Variedad'
             rules={[{ required: true }]}
-          >
+                      >
             <Select
               className={styles.itemSelector}
               placeholder='Por favor seleccione la especie a la que pertenece su mascota'
@@ -115,7 +114,7 @@ function PetForm1() {
                 })
               }
             </Select>
-          </Form.Item>) : null}
+                      </Form.Item>) : null}
 
           <Row xs={24} sm={24} md={24} lg={24}>
             <Col className='bottonR' span={12} push={11}>

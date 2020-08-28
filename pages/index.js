@@ -20,7 +20,7 @@ export default function WelcomePage () {
         </Col>
         <Col xs={24} md={12}>
           <div className={styles.btn}>
-            <Button content='Comenzar' link='/log-in' />
+            <Button content='Comenzar' link='/logIn' />
           </div>
           <div className={styles.container}>
             <img src='/people-icon.svg' />
