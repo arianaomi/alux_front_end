@@ -1,13 +1,11 @@
 import CardGralxl from '../components/cardGeneralXL'
 import CompFooter from '../components/componetFooter'
-import CardAdoption from '../components/cardAdoption'
-import CardLost from '../components/cardLost'
 
 // components
 import Layout from '../components/Layout'
 import { Row, Col } from 'antd'
 
-export default function WelcomePage () {
+export default function WelcomePage() {
   return (
     <Layout title='Welcome Page'>
       <Row>
