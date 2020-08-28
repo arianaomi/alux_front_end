@@ -1,11 +1,11 @@
-import React from 'react'
-import styles from './cardGralxl.module.scss'
-import { Avatar } from 'antd'
-import { UserOutlined } from '@ant-design/icons'
+import React from 'react';
+import styles from './cardGralxl.module.scss';
+import { Avatar } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
 
 export default function CardGralxl ({ title, image, namePet, text }) {
   const avatar = image ? (
-    <Avatar src={image} />
+    <Avatar size={55} src={image} />
   ) : (
     <Avatar icon={<UserOutlined />} />
   )

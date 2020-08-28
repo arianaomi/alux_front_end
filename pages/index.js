@@ -1,46 +1,37 @@
-import CardGralxl from '../components/cardGeneralXL'
-import CompFooter from '../components/componetFooter'
-import CardAdoption from '../components/cardAdoption'
-import CardLost from '../components/cardLost'
+import CardGralxl from "../components/cardGeneralXL";
+import CompFooter from "../components/componetFooter";
+import Post from "../components/postPag";
 
 // components
-import Layout from '../components/Layout'
-import { Row, Col } from 'antd'
+import Layout from "../components/Layout";
+import { Row, Col } from "antd";
 
-export default function WelcomePage() {
+export default function PostP() {
   return (
-    <Layout title='Welcome Page'>
+    <Layout title="Welcome Page">
       <Row>
-        <Col xs={24}>
-          ;<h1>Contenido</h1>
-          <CardLost
-            image='https://www.elcomercio.com/files/article_main/uploads/2019/11/19/5dd46f53c97eb.jpeg'
-            namePet='Peluso'
-            date='27.08.2020'
-            place='CDMX'
+        <Col>
+          <Post
+            title="Conquistando la cima"
+            namePet="Cheef"
+            image="https://images.pexels.com/photos/1452717/pexels-photo-1452717.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            Text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur"
           />
-        </Col>
-        <Col xs={12} md={6} lg={6}>
-          <CardAdoption
-            image='https://es.calcuworld.com/wp-content/uploads/sites/2/2019/01/cual-es-esperanza-vida-patos.jpg'
-            namePet='Lucas'
-            info='cariñoso-jugueton'
-            place='CDMX'
-          />
-        </Col>
-        <Col xs={24} sm={24} md={24} lg={24}>
-          <CardGralxl
-            title='Un día en el espacio'
-            namePet='Luno'
-            image='https://image.freepik.com/vector-gratis/super-heroe-astronauta-gato-linda-cara-fondo-espacio_7130-1255.jpg'
-            text='Lorem ipsum dolor sit amet, sed eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.'
-          />
-        </Col>
-        <Col xs={24}>
-          <CompFooter />
+          <Col xs={24}>
+            <CompFooter />
+          </Col>
         </Col>
       </Row>
     </Layout>
-  )
+  );
 }
