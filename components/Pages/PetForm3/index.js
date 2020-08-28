@@ -68,7 +68,7 @@ function PetForm3() {
           <Row xs={24} sm={24} md={24} lg={24}>
             <Col className='bottonR' span={12} push={11}>
               <Form.Item>
-                <Btn content='Siguiente' classProp='btn_primary' htmlType='submit' />
+                <Btn content='Siguiente' typeBtn='btn_primary' />
               </Form.Item>
             </Col>
           </Row>

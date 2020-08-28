@@ -3,7 +3,7 @@ import Link from 'next/link'
 // SCSS
 import styles from './Btn.module.scss'
 
-function Btn({ content, typeBtn = 'btn_primary', link }) {
+function Btn ({ content, typeBtn = 'btn_primary', link }) {
   return (
     <>
       <Link href={link}>

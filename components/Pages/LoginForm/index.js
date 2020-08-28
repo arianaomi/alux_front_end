@@ -5,7 +5,7 @@ import Btn from '../../Btn'
 // CSS
 import styles from './LogInForm.module.scss'
 
-function LogInForm() {
+function LogInForm () {
   // States
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -68,7 +68,7 @@ function LogInForm() {
           </Form.Item>
 
           <Form.Item>
-            <Btn content='Iniciar sesión' classProp='btn_primary' htmlType='submit' />
+            <Btn content='Iniciar sesión' typeBtn='btn_primary' />
           </Form.Item>
         </Form>
       </Col>

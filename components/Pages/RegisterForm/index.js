@@ -5,7 +5,7 @@ import Btn from '../../Btn'
 // SCSS
 import styles from './RegisterForm.module.scss'
 
-function RegisterForm () {
+function RegisterForm() {
   // States
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
@@ -82,7 +82,7 @@ function RegisterForm () {
           <Row xs={24} sm={24} md={24} lg={24}>
             <Col className='bottonR' span={12} push={11}>
               <Form.Item>
-                <Btn content='Crear cuenta' classProp='btn_primary' htmlType='submit' />
+                <Btn content='Crear cuenta' typeBtn='btn_primary' />
               </Form.Item>
             </Col>
           </Row>
