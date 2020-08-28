@@ -1,11 +1,16 @@
 @import '../../styles/variables';
+.header {
+  position: relative;
+}
 
 .curveDesktop {
   display: none;
+  z-index: -2;
 }
 .curveMobile {
   display: block;
   width: 100%;
+  z-index: -2;
 }
 .logo {
   left: 15px;

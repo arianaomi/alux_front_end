@@ -9,15 +9,12 @@ function Header({ title }) {
   )
 
   return (
-    <>
-      {/* <div className={styles.imgCurve}>
-        <img src={logo} />
-      </div> */}
+    <div className={styles.header}>
       <img src='/curveMobile.svg' className={styles.curveMobile} />
       <img src='/curveDesktop.svg' className={styles.curveDesktop} />
       {showLogo}
       <h1 className={styles.title}> {title}</h1>
-    </>
+    </div>
   )
 }
 
