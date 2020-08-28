@@ -1,9 +1,10 @@
 import LoginForm from '../components/Pages/LoginForm'
+import CurvyHeader from '../components/CurvyHeader'
 
-export default function Login() {
+export default function Login () {
   return (
     <>
-      <Header />
+      <CurvyHeader />
       <LoginForm />
     </>
   )

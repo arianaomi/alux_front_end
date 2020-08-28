@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import { Form, Row, Col } from 'antd'
 import CustomInput from '../../Input'
 import Btn from '../../Btn'
+// SCSS
+import styles from './RegisterForm.module.scss'
 
-function RegisterForm() {
+function RegisterForm () {
   // States
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')

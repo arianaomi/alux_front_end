@@ -66,13 +66,10 @@ function LogInForm() {
               callback={handleInputPassword}
             />
           </Form.Item>
-          <Row xs={24} sm={24} md={24} lg={24}>
-            <Col className='bottonR' span={12} push={11}>
-              <Form.Item>
-                <Btn content='Iniciar sesión' classProp='btn_primary' htmlType='submit' />
-              </Form.Item>
-            </Col>
-          </Row>
+
+          <Form.Item>
+            <Btn content='Iniciar sesión' classProp='btn_primary' htmlType='submit' />
+          </Form.Item>
         </Form>
       </Col>
       <Col xs={2} sm={2} md={2} lg={2} />
