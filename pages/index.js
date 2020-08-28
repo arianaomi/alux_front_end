@@ -9,7 +9,7 @@ import styles from '../styles/_index.module.scss'
 // antd
 import { Row, Col } from 'antd'
 
-export default function WelcomePage() {
+export default function WelcomePage () {
   return (
     <LayoutCurve>
       <Row>
