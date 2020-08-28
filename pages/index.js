@@ -9,7 +9,7 @@ import styles from '../styles/_index.module.scss'
 // antd
 import { Row, Col } from 'antd'
 
-export default function WelcomePage() {
+export default function WelcomePage () {
   return (
     <LayoutCurve>
       <Row>
@@ -81,7 +81,7 @@ export default function WelcomePage() {
         <Col xs={24}>
           <CardsWelcome
             image1='/espinas.svg'
-            image2='/perritonegro.svg'
+            image2='/perritoNegro.svg'
             text='Blogs  para los
             pequeñitos del hogar'
           />
