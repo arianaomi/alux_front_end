@@ -1,10 +1,10 @@
 // SCSS
 import styles from './Btn.module.scss'
 
-function Btn ({ content, classProp = 'btn_primary' }) {
+function Btn ({ content, typeBtn = 'btn_primary' }) {
   return (
     <>
-      <button className={`${styles.btn} ${styles[classProp]}`}>{content}</button>
+      <button className={`${styles.btn} ${styles[typeBtn]}`}>{content}</button>
     </>
   )
 }

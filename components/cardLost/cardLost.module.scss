@@ -1,0 +1,163 @@
+.wrapper_lost {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.capa {
+  margin-top: 136px;
+  width: 100%;
+  height: 70px;
+  background: #ff4a4a;
+  opacity: 0.6;
+  position: absolute;
+  z-index: 1;
+}
+.imageCarL {
+  height: 206px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.containerDataLost {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  left: 0px;
+  z-index: 3;
+  top: 138px;
+  display: block;
+}
+.textT {
+  margin-bottom: 5px;
+}
+.containerDosTL {
+  display: flex;
+  justify-content: space-around;
+}
+.containerUnoTL {
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+}
+.textD {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 0;
+  padding-left: 10px;
+}
+.InfoI {
+  width: 23px;
+  margin-left: 70px;
+  padding-bottom: 0px;
+}
+.contInf {
+  display: flex;
+  width: 42px;
+}
+.InfoD {
+  width: 42px;
+}
+.IconU {
+  margin-left: 55px;
+}
+@media only screen and (min-width: 1173px) {
+  .textT {
+    margin-bottom: 20px;
+  }
+  .IconC {
+    width: 35px;
+  }
+  .IconU {
+    margin-left: 55px;
+    width: 27px;
+  }
+  .InfoI {
+    width: 43px;
+  }
+  .contInf {
+    width: auto;
+  }
+  .imageCarL {
+    height: 475px;
+    object-fit: cover;
+  }
+  .capa {
+    margin-top: 325px;
+    height: 150px;
+  }
+  .containerDataLost {
+    position: absolute;
+    height: 550px;
+    z-index: 2;
+    left: 0px;
+    top: 318px;
+    padding: 0;
+    display: block;
+  }
+
+  .containerDosTL {
+    display: flex;
+    justify-content: space-around;
+  }
+  .containerUnoTL {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 42px;
+  }
+  .textD {
+    color: white;
+    font-size: 34px;
+  }
+}
+@media only screen and (min-width: 728px) {
+  .textT {
+    margin-bottom: 20px;
+  }
+  .IconC {
+    width: 35px;
+  }
+  .IconU {
+    margin-left: 55px;
+    width: 27px;
+  }
+  .InfoI {
+    width: 43px;
+  }
+  .contInf {
+    width: auto;
+  }
+  .imageCarL {
+    height: 475px;
+    object-fit: cover;
+  }
+  .capa {
+    margin-top: 325px;
+    height: 150px;
+  }
+  .containerDataLost {
+    z-index: 2;
+    left: 0px;
+    top: 318px;
+    padding: 0;
+    display: block;
+  }
+
+  .containerDosTL {
+    display: flex;
+    justify-content: space-around;
+  }
+  .containerUnoTL {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 42px;
+  }
+  .textD {
+    color: white;
+    font-size: 34px;
+  }
+}

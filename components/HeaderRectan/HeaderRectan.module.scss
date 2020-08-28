@@ -1,0 +1,44 @@
+@import '../../styles/variables';
+
+.header {
+  background: linear-gradient(#5ec9d4, #dafcff);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15vw;
+  padding: 0px 5%;
+}
+// .logo {
+//   left: 15px;
+//   position: absolute;
+//   top: 15px;
+//   width: 10%;
+// }
+.title {
+  color: $color-titles;
+  font-size: 6.5vw;
+  margin: 0;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+}
+@media only screen and (min-width: 1024px) {
+  .header {
+    height: 6vw;
+  }
+  // .logo {
+  //   width: 5%;
+  // }
+  .title {
+    font-size: 2vw;
+    //   left: 35%;
+    //   margin: 0;
+    //   position: absolute;
+    //   top: 0px;
+  }
+  .wrapper {
+    width: 8%;
+  }
+}
