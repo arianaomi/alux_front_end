@@ -5,17 +5,17 @@ import Btn from '../../Btn'
 // SCSS
 import styles from './RegisterForm.module.scss'
 
-function RegisterForm () {
+function RegisterForm() {
   // States
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   // Default form functions
-  const onFinishFailed = (errorInfo) => {
+  const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo)
   }
-  const onFinish = (values) => {
+  const onFinish = values => {
     console.log('Received values of form: ', values)
     // acá el fetch
   }
@@ -82,7 +82,11 @@ function RegisterForm () {
           <Row xs={24} sm={24} md={24} lg={24}>
             <Col className='bottonR' span={12} push={11}>
               <Form.Item>
-                <Btn content='Crear cuenta' classProp='btn_primary' htmlType='submit' />
+                <Btn
+                  content='Crear cuenta'
+                  typeBtn='btn_primary'
+                  htmlType='submit'
+                />
               </Form.Item>
             </Col>
           </Row>
