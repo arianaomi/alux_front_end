@@ -7,11 +7,11 @@ import CardLost from '../components/cardLost'
 import Layout from '../components/Layout'
 import { Row, Col } from 'antd'
 
-export default function WelcomePage() {
+export default function WelcomePage () {
   return (
     <Layout title='Welcome Page'>
       <Row>
-        <Col xs={24}>
+        <Col offset={1} xs={22}>
           ;<h1>Contenido</h1>
           <CardLost
             image='https://www.elcomercio.com/files/article_main/uploads/2019/11/19/5dd46f53c97eb.jpeg'
@@ -20,7 +20,7 @@ export default function WelcomePage() {
             place='CDMX'
           />
         </Col>
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} md={6} lg={5}>
           <CardAdoption
             image='https://es.calcuworld.com/wp-content/uploads/sites/2/2019/01/cual-es-esperanza-vida-patos.jpg'
             namePet='Lucas'

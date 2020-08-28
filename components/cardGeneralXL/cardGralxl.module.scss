@@ -1,20 +1,20 @@
 .containerPrin {
-  width: 100%;
   border-radius: 5px;
   box-shadow: 6px 8px 7px #c7c7c7;
-  width: 378px;
   margin: 5px;
+  width: 100%;
 }
 
 .containerCardG {
   display: flex;
   height: 70px;
   padding-left: 10px;
+  width: 100%;
 }
 
 .imageCarg {
-  width: 100%;
   object-fit: cover;
+  width: 100%;
 }
 .iconCard {
   display: flex;
@@ -58,11 +58,11 @@
   }
   .textCard {
     display: flex;
-    width: 100%;
     font-size: 16px;
     padding-top: 10px;
     padding-left: 5px;
     color: #646464;
+    width: 100%;
   }
   .iconCardUD {
     padding-top: 20px;
