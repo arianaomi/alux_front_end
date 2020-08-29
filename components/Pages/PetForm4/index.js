@@ -27,38 +27,30 @@ function PetForm4 () {
   }
 
   return (
-    <Row>
-      <Col xs={2} sm={2} md={2} lg={2} />
-      <Col xs={20} sm={20} md={20} lg={20}>
-        <Form
-          name='basic'
-          initialValues={{ remember: true }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-        >
 
-          <Form.Item
-            label='Dirección'
-            name='address'
-            value={address}
-            type='text'
-            error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
-            callback={handleInputAddress}
-          >
-            <CustomInput />
-          </Form.Item>
+    <Form
+      name='basic'
+      initialValues={{ remember: true }}
+      onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
+    >
 
-          <Row xs={24} sm={24} md={24} lg={24}>
-            <Col className='bottonR' span={8} push={8}>
-              <Form.Item>
-                <Btn content='Siguiente' typeBtn='btn_primary' />
-              </Form.Item>
-            </Col>
-          </Row>
-        </Form>
-      </Col>
-      <Col xs={2} sm={2} md={2} lg={2} />
-    </Row>
+      <Form.Item
+        label='Dirección'
+        name='address'
+        value={address}
+        type='text'
+        error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
+        callback={handleInputAddress}
+      >
+        <CustomInput />
+      </Form.Item>
+
+      <Form.Item>
+        <Btn content='Siguiente' typeBtn='btn_primary' />
+      </Form.Item>
+    </Form>
+
   )
 }
 
