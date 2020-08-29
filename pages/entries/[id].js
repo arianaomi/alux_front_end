@@ -1,4 +1,4 @@
-import CompFooter from '../../components/componetFooter'
+import Footer from '../../components/Footer'
 import Post from '../../components/postPag'
 
 // components
@@ -28,7 +28,7 @@ Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, ad
           />
         </Col>
         <Col xs={24}>
-          <CompFooter />
+          <Footer />
         </Col>
       </Row>
     </Layout>

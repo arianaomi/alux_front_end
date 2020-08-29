@@ -3,7 +3,6 @@ import LayoutCurve from '../components/LayoutCurve'
 import Button from '../components/Btn'
 import CardsWelcome from '../components/Pages/WelcomePage/CardsWelcome'
 import Footer from '../components/Footer'
-
 // scss
 import styles from '../styles/_index.module.scss'
 // antd

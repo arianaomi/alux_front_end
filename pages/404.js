@@ -1,6 +1,6 @@
 // pages/404.js
-
 import Layout from '../components/Layout'
+
 export default function Custom404() {
   return (
     <Layout>
