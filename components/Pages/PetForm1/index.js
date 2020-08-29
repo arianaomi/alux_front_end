@@ -1,22 +1,86 @@
 import React, { useState } from 'react'
-import { Form, Row, Select, Col } from 'antd'
+import { Form, Select } from 'antd'
 import CustomInput from '../../Input'
 import Btn from '../../Btn'
 import CustomUpload from '../../CustomUpload'
 
-// CSS
+// SCSS
 import styles from './PetForm.module.scss'
 
 const { Option } = Select
 
 function PetForm1 () {
   const objectBreedOptions = {
-    Dog: ['Mestizo/ Sin raza', 'Beagle', 'Boxer', 'Bulldog', 'Chihuahua', 'Husky Siberiano', 'Jack Russell Terrier', 'Pastor alemán', 'Poodle', 'Pug', 'Shnauzer', 'Yorkie', 'Xoloescuincle', 'Otro'],
-    Cat: ['Mestizo/ Sin raza', 'Maltés', 'Siamés', 'Angora', 'Egipcio', 'Persa', 'Siberiano', 'Otra/ No disponible'],
-    Mouse: ['Conejo', 'Cuyo', 'Hurón', 'Hamster', 'Ratón', 'Gerbo', 'Rata', 'Otro/ No disponible'],
-    Bird: ['Canario', 'Jilguero', 'Loro', 'Periquito', 'Guacamayo', 'Paloma', 'Cotorro', 'Ruiseñor', 'Paloma', 'Cotorro', 'Ruiseñor', 'Pollo', 'Otra/ No disponible'],
-    Other: ['Aracnido', 'Iguana', 'Tortuga', 'Otro reptil', 'Rana', 'Erizo', 'Otro/ No disponible'],
-    Farm: ['Burro', 'Caballo/Yegua', 'Mula', 'Pato', 'Borrego', 'Cabra/Chivo', 'Cerdo', 'Otro/ No disponible']
+    Dog: [
+      'Mestizo/ Sin raza',
+      'Beagle',
+      'Boxer',
+      'Bulldog',
+      'Chihuahua',
+      'Husky Siberiano',
+      'Jack Russell Terrier',
+      'Pastor alemán',
+      'Poodle',
+      'Pug',
+      'Shnauzer',
+      'Yorkie',
+      'Xoloescuincle',
+      'Otro'
+    ],
+    Cat: [
+      'Mestizo/ Sin raza',
+      'Maltés',
+      'Siamés',
+      'Angora',
+      'Egipcio',
+      'Persa',
+      'Siberiano',
+      'Otra/ No disponible'
+    ],
+    Mouse: [
+      'Conejo',
+      'Cuyo',
+      'Hurón',
+      'Hamster',
+      'Ratón',
+      'Gerbo',
+      'Rata',
+      'Otro/ No disponible'
+    ],
+    Bird: [
+      'Canario',
+      'Jilguero',
+      'Loro',
+      'Periquito',
+      'Guacamayo',
+      'Paloma',
+      'Cotorro',
+      'Ruiseñor',
+      'Paloma',
+      'Cotorro',
+      'Ruiseñor',
+      'Pollo',
+      'Otra/ No disponible'
+    ],
+    Other: [
+      'Aracnido',
+      'Iguana',
+      'Tortuga',
+      'Otro reptil',
+      'Rana',
+      'Erizo',
+      'Otro/ No disponible'
+    ],
+    Farm: [
+      'Burro',
+      'Caballo/Yegua',
+      'Mula',
+      'Pato',
+      'Borrego',
+      'Cabra/Chivo',
+      'Cerdo',
+      'Otro/ No disponible'
+    ]
   }
 
   // States
@@ -25,10 +89,10 @@ function PetForm1 () {
   const [breed, setBreed] = useState(objectBreedOptions)
 
   // Default form functions
-  const onFinishFailed = (errorInfo) => {
+  const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo)
   }
-  const onFinish = (values) => {
+  const onFinish = values => {
     console.log('Received values of form: ', values)
     // acá ir al siguiente componente
   }
@@ -38,7 +102,7 @@ function PetForm1 () {
   }
 
   // Handlers
-  const onChangeSpecies = (value) => {
+  const onChangeSpecies = value => {
     console.log(value)
     setSpecies(value)
   }
@@ -55,18 +119,19 @@ function PetForm1 () {
   }
 
   return (
-    <Row>
-      <Col xs={2} sm={2} md={2} lg={2} />
-      <Col xs={20} sm={20} md={20} lg={20}>
-        <Form
-          name='basic'
-          initialValues={{ remember: true }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-        >
-
-          <CustomUpload />
-
+    <Form
+      name='basic'
+      initialValues={{ remember: true }}
+      onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
+    >
+      <div className={styles.wrapperForm}>
+        <div className={styles.upload}>
+          <div className='upload'>
+            <CustomUpload />
+          </div>
+        </div>
+        <div className={styles.selector}>
           <Form.Item label='Nombre'>
             <CustomInput
               className={styles.item}
@@ -78,10 +143,7 @@ function PetForm1 () {
             />
           </Form.Item>
 
-          <Form.Item
-            name='species'
-            label='Especie'
-          >
+          <Form.Item name='species' label='Especie'>
             <Select
               className={styles.itemSelector}
               placeholder='Por favor seleccione la especie a la que pertenece su mascota'
@@ -97,36 +159,33 @@ function PetForm1 () {
             </Select>
           </Form.Item>
 
-          {species ? (<Form.Item
-            name='breed'
-            label='Raza o Variedad'
-            rules={[{ required: true }]}
-                      >
-            <Select
-              className={styles.itemSelector}
-              placeholder='Por favor seleccione la especie a la que pertenece su mascota'
-              onChange={onChangeBreed}
-              allowClear
-            >
-              {
-                breed[species].map(option => {
-                  return <Option value='{option}'> {option} </Option>
-                })
-              }
-            </Select>
-                      </Form.Item>) : null}
+          {species ? (
+            <Form.Item name='breed' label='Raza' rules={[{ required: true }]}>
+              <Select
+                className={styles.itemSelector}
+                placeholder='Por favor seleccione la especie a la que pertenece su mascota'
+                onChange={onChangeBreed}
+                allowClear
+              >
+                {breed[species].map((option, index) => {
+                  return (
+                    <Option key={index} value={option}>
+                      {option}
+                    </Option>
+                  )
+                })}
+              </Select>
+            </Form.Item>
+          ) : null}
+        </div>
+      </div>
 
-          <Row xs={24} sm={24} md={24} lg={24}>
-            <Col className='bottonR' span={12} push={11}>
-              <Form.Item>
-                <Btn content='Siguiente' typeBtn='btn_primary' />
-              </Form.Item>
-            </Col>
-          </Row>
-        </Form>
-      </Col>
-      <Col xs={2} sm={2} md={2} lg={2} />
-    </Row>
+      <div className={styles.btn_wrapper}>
+        <Form.Item>
+          <Btn content='Siguiente' typeBtn='btn_primary' link='/' />
+        </Form.Item>
+      </div>
+    </Form>
   )
 }
 

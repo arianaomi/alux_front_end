@@ -5,7 +5,7 @@ import Btn from '../../Btn'
 // SCSS
 import styles from './RegisterForm.module.scss'
 
-function RegisterForm() {
+function RegisterForm () {
   // States
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
@@ -36,7 +36,6 @@ function RegisterForm() {
   }
 
   return (
-
     <Form
       name='basic'
       initialValues={{ remember: true }}
@@ -77,16 +76,16 @@ function RegisterForm() {
           callback={handleInputPassword}
         />
       </Form.Item>
-
-      <Form.Item>
-        <Btn
-          content='Crear cuenta'
-          typeBtn='btn_primary'
-          link='/'
-        />
-      </Form.Item>
+      <div className={styles.btn_wrapper}>
+        <Form.Item>
+          <Btn
+            content='Crear cuenta'
+            typeBtn='btn_primary'
+            link='/alux/Registry/formPet-1'
+          />
+        </Form.Item>
+      </div>
     </Form>
-
   )
 }
 

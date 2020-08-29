@@ -3,8 +3,6 @@ import LayoutCurve from "../components/LayoutCurve";
 import Button from "../components/Btn";
 import CardsWelcome from "../components/Pages/WelcomePage/CardsWelcome";
 import Footer from "../components/Footer";
-import AfichePet from "../components/afiche";
-
 // scss
 import styles from "../styles/_index.module.scss";
 // antd
