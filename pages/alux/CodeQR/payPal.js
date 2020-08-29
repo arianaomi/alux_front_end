@@ -5,7 +5,7 @@ import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
 import { PayPalButton } from 'react-paypal-button-v2'
 
-export default function PayPal () {
+export default function PayPal() {
   return (
     <>
       <Header title='Dirección de entrega' />
@@ -13,10 +13,7 @@ export default function PayPal () {
         <Col offset={2} xs={20} sm={20} md={10} lg={10}>
           <AddressForm />
         </Col>
-        <Col offset={4} xs={20} sm={20} md={10} lg={10}>
-          <Btn content='Pagar' typeBtn='btn_secondary' />
-        </Col>
-        <Col>
+        <Col offset={2} pull={2} xs={20} sm={20} md={10} lg={10}>
           <PayPalButton
             amount='0.01'
             // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
@@ -32,6 +29,9 @@ export default function PayPal () {
               })
             }}
           />
+        </Col>
+        <Col offset={4} xs={20} sm={20} md={10} lg={10}>
+          <Btn content='Pagar' typeBtn='btn_primary' />
         </Col>
       </Row>
       <Footer />

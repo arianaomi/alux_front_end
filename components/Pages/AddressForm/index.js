@@ -97,7 +97,7 @@ function AddressForm () {
       </Form.Item>
 
       <Form.Item>
-        <Btn content='Generar código QR' typeBtn='btn_primary' />
+        <Btn content='Guardar' typeBtn='btn_primary' />
       </Form.Item>
     </Form>
   )

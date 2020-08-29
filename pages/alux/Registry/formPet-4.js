@@ -4,7 +4,7 @@ import { Row, Col } from 'antd'
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
 
-export default function FormPet4 () {
+export default function FormPet4() {
   return (
 
     <>
