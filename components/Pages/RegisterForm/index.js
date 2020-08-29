@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
-import { Form } from 'antd'
+import { Form, Row, Col } from 'antd'
 import CustomInput from '../../Input'
 import Btn from '../../Btn'
-// CSS
-import styles from './LogInForm.module.scss'
+// SCSS
+import styles from './RegisterForm.module.scss'
 
-function LogInForm () {
+function RegisterForm() {
   // States
+  const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -16,11 +17,11 @@ function LogInForm () {
   }
   const onFinish = values => {
     console.log('Received values of form: ', values)
-    // fetch(`${URL_BASE}.json`, {
-    //   method: 'POST',
-    //   mode: 'cors',
-    //   body: JSON.stringify(values)
-    // }).then((response) => console.log(response.json))
+    // acá el fetch
+  }
+  const handleInputUsername = (name, value) => {
+    setUsername(value)
+    console.log(value)
   }
 
   // Handlers
@@ -35,6 +36,7 @@ function LogInForm () {
   }
 
   return (
+
     <Form
       name='basic'
       initialValues={{ remember: true }}
@@ -44,32 +46,48 @@ function LogInForm () {
       <Form.Item>
         <CustomInput
           className={styles.item}
-          name='email'
+          placeholder='Nombre'
+          name='username'
+          value={username}
+          type='text'
+          error='Debe ingresar un nombre de usuario'
+          callback={handleInputUsername}
+        />
+      </Form.Item>
+
+      <Form.Item>
+        <CustomInput
+          className={styles.item}
           placeholder='Correo'
+          name='email'
           value={email}
           type='email'
-          error='Debe ingresar un email válido'
+          error='Debe ingresar un correo electrónico válido'
           callback={handleInputEmail}
         />
       </Form.Item>
+
       <Form.Item>
         <CustomInput
           className={styles.item}
           placeholder='Contraseña'
           name='password'
           value={password}
-          error='Debe ingresar su password'
+          error='Debe ingresar su contraseña'
           callback={handleInputPassword}
         />
       </Form.Item>
-      <div className={styles.btn_wrapper}>
-        <Form.Item>
-          <Btn content='Ingresar' typeBtn='btn_primary' link='/' />
-        </Form.Item>
-      </div>
+
+      <Form.Item>
+        <Btn
+          content='Crear cuenta'
+          typeBtn='btn_primary'
+          link='/'
+        />
+      </Form.Item>
     </Form>
 
   )
 }
 
-export default LogInForm
+export default RegisterForm

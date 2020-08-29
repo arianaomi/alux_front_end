@@ -1,0 +1,55 @@
+@import '../../styles/variables';
+
+.curveDesktop {
+  display: none;
+}
+.curveMobile {
+  display: block;
+  width: 100%;
+}
+.logoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo {
+  position: absolute;
+  top: 50px;
+  width: 40%;
+}
+
+.title {
+  color: $color-titles;
+  font-size: 4.5vw;
+  left: 35%;
+  margin: 0;
+  position: absolute;
+  top: 0px;
+}
+.show {
+  display: block;
+}
+
+@media only screen and (min-width: 1024px) {
+  .imgCurve {
+    height: 6vw;
+  }
+  .curveDesktop {
+    display: block;
+    width: 100%;
+  }
+  .curveMobile {
+    display: none;
+  }
+  .logo {
+    top: 50px;
+    left: 50px;
+    width: 7%;
+  }
+  .title {
+    position: absolute;
+    top: 25px;
+    left: 40%;
+    font-size: 3vw;
+  }
+}

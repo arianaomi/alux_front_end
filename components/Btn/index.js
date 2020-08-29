@@ -1,16 +1,18 @@
 //
-import Link from 'next/link'
+import { useRouter } from 'next/router'
 // SCSS
 import styles from './Btn.module.scss'
 
 function Btn ({ content, typeBtn = 'btn_primary', link }) {
+  const router = useRouter()
   return (
     <>
-      <Link href={link}>
-        <button className={`${styles.btn} ${styles[typeBtn]}`}>
-          {content}
-        </button>
-      </Link>
+      <button
+        className={`${styles.btn} ${styles[typeBtn]}`}
+        onClick={() => router.push(link)}
+      >
+        {content}
+      </button>
     </>
   )
 }

@@ -9,9 +9,11 @@
   },
   "dependencies": {
     "antd": "^4.6.1",
+    "moment": "^2.27.0",
     "next": "9.5.2",
     "next-compose-plugins": "^2.2.0",
     "next-images": "^1.4.1",
+    "qrcode.react": "^1.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "sass": "^1.26.10"
