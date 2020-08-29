@@ -1,13 +1,12 @@
 // ant -design
-import { Row, Col } from 'antd'
+import { Row, Col, Radio } from 'antd'
 // components
 import RegisterForm from '../components/Pages/RegisterForm'
 import LayoutCurve from '../components/LayoutCurve'
-import Btn from '../components/Btn'
 import Footer from '../components/Footer'
 // scss
 import styles from '../styles/_signUp.module.scss'
-export default function signUp() {
+export default function signUp () {
   return (
     <>
       <LayoutCurve>
@@ -30,6 +29,7 @@ export default function signUp() {
           </Col>
           <Col xs={22} md={13} lg={8} className={styles.wrapperForm}>
             <RegisterForm />
+            <Radio>Aceptar terminos y condiciones</Radio>
           </Col>
         </Row>
         <Row>
