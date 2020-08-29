@@ -1,18 +1,29 @@
-import PetForm4 from '../../../components/Pages/PetForm4'
+import AddressForm from '../../../components/Pages/AddressForm'
 import Btn from '../../../components/Btn'
 import { Row, Col } from 'antd'
-import CurvyHeader from '../../../components/CurvyHeader'
+import Header from '../../../components/Header'
+import Footer from '../../../components/Footer'
 
 export default function FormPet4 () {
   return (
+
     <>
-      <CurvyHeader />
-      <PetForm4 />
-      <Row xs={24} sm={24} md={24} lg={24}>
-        <Col className='bottonR' span={8} push={8}>
+      <Header title='Tu mascota' />
+      <Row>
+        <Col offset={4} xs={20} sm={20} md={10} lg={10}>
+          <div>
+            <img src='/pajaritoForPetDos.svg' />
+          </div>
+        </Col>
+
+        <Col offset={2} xs={20} sm={20} md={10} lg={10}>
+          <AddressForm />
+        </Col>
+        <Col offset={4} xs={20} sm={20} md={10} lg={10}>
           <Btn content='regresar' typeBtn='btn_secondary' />
         </Col>
       </Row>
+      <Footer />
     </>
   )
 }

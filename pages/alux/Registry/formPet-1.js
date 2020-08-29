@@ -4,7 +4,7 @@ import { Row, Col } from 'antd'
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
 
-export default function FormPet1() {
+export default function FormPet1 () {
   return (
     <>
       <Header title='Tu mascota' />
