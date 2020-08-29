@@ -16,6 +16,7 @@ export default function logIn() {
       <Row className={styles.wrapper}>
         <Col xs={20} sm={20} md={10} lg={10}>
           <LoginForm />
+          <Btn content='¿Olvidaste tu contraseña?' link='/' typeBtn='btn_secondary' />
           <Btn content='Crear nueva cuenta' link='/' typeBtn='btn_secondary' />
         </Col>
         <Col xs={20} sm={20} md={10} lg={10}>
