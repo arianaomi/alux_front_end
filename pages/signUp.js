@@ -1,41 +1,45 @@
+// ant -design
+import { Row, Col, Radio } from 'antd'
+// components
 import RegisterForm from '../components/Pages/RegisterForm'
-import CurvyHeader from '../components/CurvyHeader'
-import Btn from '../components/Btn'
-import { Row, Col } from 'antd'
-import styles from '../styles/signUp.module.scss'
+import LayoutCurve from '../components/LayoutCurve'
 import Footer from '../components/Footer'
-
+// scss
+import styles from '../styles/_signUp.module.scss'
 export default function signUp () {
   return (
     <>
-      <Row>
-        <Col>
-          <CurvyHeader />
-        </Col>
-      </Row>
-      <Row className={styles.wrapper}>
-        <Col xs={20} sm={20} md={10} lg={10}>
-          <RegisterForm />
-          <div className={styles.btn_wrapper}>
-            <Btn
-              content='¿Olvidaste tu contraseña?'
-              link='/'
-              typeBtn='btn_secondary'
-            />
-            <Btn
-              content='Crear nueva cuenta'
-              link='/'
-              typeBtn='btn_secondary'
-            />
-          </div>
-        </Col>
-        <Col xs={20} sm={20} md={10} lg={10}>
-          <div className={styles.img_container}>
-            <img width='300px' src='/ErizoAni.png' />
-          </div>
-        </Col>
-      </Row>
-      <Footer />
+      <LayoutCurve>
+        <Row>
+          <Col xs={24} md={0}>
+            <div className={styles.container_logo}>
+              <img src='/logoBlue.svg' className={styles.logo} />
+            </div>
+          </Col>
+        </Row>
+
+        <Row justify='center'>
+          <Col xs={0} md={10} lg={10}>
+            <div className={styles.wrapperImg}>
+              <img src='/ErizoAni.svg' />
+              <div className={styles.text}>
+                <p>Nuestra misión es ayudar a las mascotas a volver a casa</p>
+              </div>
+            </div>
+          </Col>
+          <Col xs={22} md={13} lg={8} className={styles.wrapperForm}>
+            <RegisterForm />
+            <Radio>Aceptar terminos y condiciones</Radio>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={24}>
+            <div className={styles.footer}>
+              <Footer />
+            </div>
+          </Col>
+        </Row>
+      </LayoutCurve>
     </>
   )
 }

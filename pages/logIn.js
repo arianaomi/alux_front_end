@@ -11,7 +11,7 @@ import styles from '../styles/_logIn.module.scss'
 export default function logIn () {
   return (
     <>
-      <LayoutCurve>
+      <LayoutCurve tittle='Iniciar sesión'>
         <Row>
           <Col xs={24} md={0}>
             <div className={styles.container_logo}>

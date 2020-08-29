@@ -5,7 +5,7 @@ import Btn from '../../Btn'
 // CSS
 import styles from './LogInForm.module.scss'
 
-function LogInForm () {
+function LogInForm() {
   // States
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -64,11 +64,10 @@ function LogInForm () {
       </Form.Item>
       <div className={styles.btn_wrapper}>
         <Form.Item>
-          <Btn content='Ingresar' typeBtn='btn_primary' link='/' />
+          <Btn content='Ingresar' typeBtn='btn_primary' link='/alux/home' />
         </Form.Item>
       </div>
     </Form>
-
   )
 }
 
