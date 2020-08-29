@@ -3,11 +3,11 @@ import { Form } from 'antd'
 import CustomInput from '../../Input'
 import Btn from '../../Btn'
 // CSS
-import styles from './LogInForm.module.scss'
+import styles from './ResetPasswordForm.module.scss'
 
-function LogInForm() {
+function ResetPasswordForm () {
   // States
-  const [email, setEmail] = useState('')
+
   const [password, setPassword] = useState('')
 
   // Default form functions
@@ -24,10 +24,6 @@ function LogInForm() {
   }
 
   // Handlers
-  const handleInputEmail = (name, value) => {
-    setEmail(value)
-    console.log(value)
-  }
 
   const handleInputPassword = (name, value) => {
     setPassword(value)
@@ -44,17 +40,6 @@ function LogInForm() {
       <Form.Item>
         <CustomInput
           className={styles.item}
-          name='email'
-          placeholder='Correo'
-          value={email}
-          type='email'
-          error='Debe ingresar un email válido'
-          callback={handleInputEmail}
-        />
-      </Form.Item>
-      <Form.Item>
-        <CustomInput
-          className={styles.item}
           placeholder='Contraseña'
           name='password'
           value={password}
@@ -64,11 +49,12 @@ function LogInForm() {
       </Form.Item>
       <div className={styles.btn_wrapper}>
         <Form.Item>
-          <Btn content='Ingresar' typeBtn='btn_primary' link='/alux/home' />
+          <Btn content='Restablecer contraseña' typeBtn='btn_primary' link='/' />
         </Form.Item>
       </div>
     </Form>
+
   )
 }
 
-export default LogInForm
+export default ResetPasswordForm

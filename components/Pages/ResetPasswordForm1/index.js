@@ -3,12 +3,12 @@ import { Form } from 'antd'
 import CustomInput from '../../Input'
 import Btn from '../../Btn'
 // CSS
-import styles from './LogInForm.module.scss'
+import styles from './ResetPasswordForm1.module.scss'
 
-function LogInForm() {
+function ResetPasswordForm1 () {
   // States
+
   const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
 
   // Default form functions
   const onFinishFailed = errorInfo => {
@@ -24,13 +24,9 @@ function LogInForm() {
   }
 
   // Handlers
+
   const handleInputEmail = (name, value) => {
     setEmail(value)
-    console.log(value)
-  }
-
-  const handleInputPassword = (name, value) => {
-    setPassword(value)
     console.log(value)
   }
 
@@ -52,23 +48,14 @@ function LogInForm() {
           callback={handleInputEmail}
         />
       </Form.Item>
-      <Form.Item>
-        <CustomInput
-          className={styles.item}
-          placeholder='Contraseña'
-          name='password'
-          value={password}
-          error='Debe ingresar su password'
-          callback={handleInputPassword}
-        />
-      </Form.Item>
       <div className={styles.btn_wrapper}>
         <Form.Item>
-          <Btn content='Ingresar' typeBtn='btn_primary' link='/alux/home' />
+          <Btn content='Enviar' typeBtn='btn_primary' link='/' />
         </Form.Item>
       </div>
     </Form>
+
   )
 }
 
-export default LogInForm
+export default ResetPasswordForm1
