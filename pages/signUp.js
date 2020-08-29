@@ -5,7 +5,7 @@ import { Row, Col } from 'antd'
 import styles from '../styles/signUp.module.scss'
 import Footer from '../components/Footer'
 
-export default function signUp() {
+export default function signUp () {
   return (
     <>
       <Row>
