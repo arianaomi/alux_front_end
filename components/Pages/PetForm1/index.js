@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Row, Select, Col } from 'antd'
+import { Form, Select } from 'antd'
 import CustomInput from '../../Input'
 import Btn from '../../Btn'
 import CustomUpload from '../../CustomUpload'
@@ -9,7 +9,7 @@ import styles from './PetForm.module.scss'
 
 const { Option } = Select
 
-function PetForm1 () {
+function PetForm1() {
   const objectBreedOptions = {
     Dog: ['Mestizo/ Sin raza', 'Beagle', 'Boxer', 'Bulldog', 'Chihuahua', 'Husky Siberiano', 'Jack Russell Terrier', 'Pastor alemán', 'Poodle', 'Pug', 'Shnauzer', 'Yorkie', 'Xoloescuincle', 'Otro'],
     Cat: ['Mestizo/ Sin raza', 'Maltés', 'Siamés', 'Angora', 'Egipcio', 'Persa', 'Siberiano', 'Otra/ No disponible'],
@@ -55,79 +55,69 @@ function PetForm1 () {
   }
 
   return (
-    <Row>
-      <Col xs={2} sm={2} md={2} lg={2} />
-      <Col xs={20} sm={20} md={20} lg={20}>
-        <Form
-          name='basic'
-          initialValues={{ remember: true }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
+
+    <Form
+      name='basic'
+      initialValues={{ remember: true }}
+      onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
+    >
+
+      <CustomUpload />
+
+      <Form.Item label='Nombre'>
+        <CustomInput
+          className={styles.item}
+          name='name'
+          value={name}
+          type='text'
+          error='Debe ingresar un nombre'
+          callback={handleInputName}
+        />
+      </Form.Item>
+
+      <Form.Item
+        name='species'
+        label='Especie'
+      >
+        <Select
+          className={styles.itemSelector}
+          placeholder='Por favor seleccione la especie a la que pertenece su mascota'
+          onChange={onChangeSpecies}
+          allowClear
         >
+          <Option value='Dog'>Perro</Option>
+          <Option value='Cat'>Gato</Option>
+          <Option value='Mouse'>Roedor</Option>
+          <Option value='Bird'>Ave</Option>
+          <Option value='Farm'>Animal de granja</Option>
+          <Option value='Other'>Otro</Option>
+        </Select>
+      </Form.Item>
 
-          <CustomUpload />
+      {species ? (<Form.Item
+        name='breed'
+        label='Raza o Variedad'
+        rules={[{ required: true }]}
+      >
+        <Select
+          className={styles.itemSelector}
+          placeholder='Por favor seleccione la especie a la que pertenece su mascota'
+          onChange={onChangeBreed}
+          allowClear
+        >
+          {
+            breed[species].map(option => {
+              return <Option value='{option}'> {option} </Option>
+            })
+          }
+        </Select>
+      </Form.Item>) : null}
 
-          <Form.Item label='Nombre'>
-            <CustomInput
-              className={styles.item}
-              name='name'
-              value={name}
-              type='text'
-              error='Debe ingresar un nombre'
-              callback={handleInputName}
-            />
-          </Form.Item>
-
-          <Form.Item
-            name='species'
-            label='Especie'
-          >
-            <Select
-              className={styles.itemSelector}
-              placeholder='Por favor seleccione la especie a la que pertenece su mascota'
-              onChange={onChangeSpecies}
-              allowClear
-            >
-              <Option value='Dog'>Perro</Option>
-              <Option value='Cat'>Gato</Option>
-              <Option value='Mouse'>Roedor</Option>
-              <Option value='Bird'>Ave</Option>
-              <Option value='Farm'>Animal de granja</Option>
-              <Option value='Other'>Otro</Option>
-            </Select>
-          </Form.Item>
-
-          {species ? (<Form.Item
-            name='breed'
-            label='Raza o Variedad'
-            rules={[{ required: true }]}
-                      >
-            <Select
-              className={styles.itemSelector}
-              placeholder='Por favor seleccione la especie a la que pertenece su mascota'
-              onChange={onChangeBreed}
-              allowClear
-            >
-              {
-                breed[species].map(option => {
-                  return <Option value='{option}'> {option} </Option>
-                })
-              }
-            </Select>
-                      </Form.Item>) : null}
-
-          <Row xs={24} sm={24} md={24} lg={24}>
-            <Col className='bottonR' span={12} push={11}>
-              <Form.Item>
-                <Btn content='Siguiente' typeBtn='btn_primary' />
-              </Form.Item>
-            </Col>
-          </Row>
-        </Form>
-      </Col>
-      <Col xs={2} sm={2} md={2} lg={2} />
-    </Row>
-  )
+      <Form.Item>
+        <Btn content='Siguiente' typeBtn='btn_primary' link='/' />
+      </Form.Item>
+    </Form>)
 }
 
 export default PetForm1

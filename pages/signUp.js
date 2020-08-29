@@ -5,7 +5,7 @@ import { Row, Col } from 'antd'
 import styles from './signUp.module.scss'
 import Footer from '../components/Footer'
 
-export default function signUp() {
+export default function signUp () {
   return (
     <>
       <Row>
@@ -23,7 +23,7 @@ export default function signUp() {
         </Col>
         <Col xs={20} sm={20} md={10} lg={10}>
           <div className={styles.img_container}>
-            <img width="300px" src='/ErizoAni.png' />
+            <img width='300px' src='/ErizoAni.png' />
           </div>
         </Col>
       </Row>
