@@ -2,12 +2,12 @@ import React from 'react';
 import styles from './postP.module.scss';
 import { Avatar, Row, Col } from 'antd';
 
-export default function PostP ({ image, namePet, title, Text }) {
+export default function PostP({ image, namePet, title, Text }) {
   const avatar = image ? (
     <Avatar size={94} src={image} />
   ) : (
-    <Avatar icon={<UserOutlined />} />
-  )
+      <Avatar icon={<UserOutlined />} />
+    )
 
   return (
     <div className={styles.containerPostg}>
