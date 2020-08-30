@@ -1,28 +1,38 @@
+import React from 'react'
+import dynamic from 'next/dynamic'
 // components
 import { useEffect, useState } from 'react'
 import absoluteUrl from 'next-absolute-url'
 import LayoutCurve from '../../../components/LayoutCurve'
 import Btn from '../../../components/Btn'
+//import DownloadCode from '../../../components/DownloadCode'
+// import Code from '../../../components/Code'
+
 // sass
 import styles from '../../../styles/alux/codeQR/_generateQR.module.scss'
+
 // ant-design
 import { Row, Col } from 'antd'
 import { getPet } from '../../../services'
-import QRCode from '../../../components/QRCode'
+// import QRCode from '../../../components/QRCode'
 import { useRouter } from 'next/router'
 
-function GenerateQR({ origin }) {
+const DownloadCode = dynamic(
+  () => import('../../../components/DownloadCode'),
+  { ssr: false }
+)
+
+
+export default function GenerateQR({ origin }) {
   const router = useRouter()
   const petUrl = `${origin}/pets/readQR?token=`
-
   const [pet, setPet] = useState(null)
-
   console.log(petUrl)
 
   useEffect(() => {
     console.log(router.query.id)
     if (router.query.id) {
-      ;(async () => {
+      ; (async () => {
         try {
           const { data } = await getPet(router.query.id)
           console.log(data)
@@ -33,7 +43,6 @@ function GenerateQR({ origin }) {
       })()
     }
   }, [router.query.id])
-
   //console.log(pet)
 
   return (
@@ -43,8 +52,7 @@ function GenerateQR({ origin }) {
           <div className={styles.dog_QR}>
             <img src='/dogQR.svg' />
             <div className={styles.codeQR}>
-              <h1>QR</h1>
-              {Boolean(pet) && <QRCode value={`${petUrl}${pet.token}`} />}
+              {Boolean(pet) && <DownloadCode value={`${petUrl}${pet.token}`} />}
             </div>
           </div>
         </Col>
@@ -72,11 +80,10 @@ function GenerateQR({ origin }) {
   )
 }
 
+
 GenerateQR.getInitialProps = ({ req }) => {
   let { origin } = absoluteUrl(req, 'localhost:3000')
   //ToDo: no es necesario cuando cuando ya tiene https: CHECAR
   origin = origin.includes(':3000') ? origin.replace('https', 'http') : origin
   return { origin }
 }
-
-export default GenerateQR

@@ -4,7 +4,7 @@ import { Row, Col } from 'antd'
 import HeaderRectan from '../../../components/HeaderRectan'
 import Footer from '../../../components/Footer'
 
-export default function createPost() {
+export default function createPost () {
   return (
     <>
       <HeaderRectan title='Nuevo Post' />
