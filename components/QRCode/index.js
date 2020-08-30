@@ -1,8 +1,8 @@
-import React from 'react';
-import QRCode from 'qrcode.react';
+import React from 'react'
+import QRCodeReact from 'qrcode.react'
 
-function QRCode({ value }) {
-  return <QRCode value={value} includeMargin='true' size='512' />
+function QRCode ({ value }) {
+  return <QRCodeReact value={value} includeMargin='true' size='128' />
 }
 
 export default QRCode
