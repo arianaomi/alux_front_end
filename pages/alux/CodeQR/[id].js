@@ -1,12 +1,41 @@
 // components
+import { useEffect, useState } from 'react'
+import absoluteUrl from 'next-absolute-url'
 import LayoutCurve from '../../../components/LayoutCurve'
 import Btn from '../../../components/Btn'
 // sass
 import styles from '../../../styles/alux/codeQR/_generateQR.module.scss'
 // ant-design
 import { Row, Col } from 'antd'
+import { getPet } from '../../../services'
+import QRCode from '../../../components/QRCode'
+import { useRouter } from 'next/router'
 
-function GenerateQR() {
+function GenerateQR({ origin }) {
+  const router = useRouter()
+  const petUrl = `${origin}/pets/readQR?token=`
+
+  const [pet, setPet] = useState(null)
+
+  console.log(petUrl)
+
+  useEffect(() => {
+    console.log(router.query.id)
+    if (router.query.id) {
+      ;(async () => {
+        try {
+          const { data } = await getPet(router.query.id)
+          console.log(data)
+          setPet(data)
+        } catch {
+          // TODO: handle 404
+        }
+      })()
+    }
+  }, [router.query.id])
+
+  //console.log(pet)
+
   return (
     <LayoutCurve title='QR personalizado'>
       <Row>
@@ -15,6 +44,7 @@ function GenerateQR() {
             <img src='/dogQR.svg' />
             <div className={styles.codeQR}>
               <h1>QR</h1>
+              {Boolean(pet) && <QRCode value={`${petUrl}${pet.token}`} />}
             </div>
           </div>
         </Col>
@@ -41,4 +71,12 @@ function GenerateQR() {
     </LayoutCurve>
   )
 }
+
+GenerateQR.getInitialProps = ({ req }) => {
+  let { origin } = absoluteUrl(req, 'localhost:3000')
+  //ToDo: no es necesario cuando cuando ya tiene https: CHECAR
+  origin = origin.includes(':3000') ? origin.replace('https', 'http') : origin
+  return { origin }
+}
+
 export default GenerateQR
