@@ -74,6 +74,7 @@ function GenerateQR({ origin }) {
 
 GenerateQR.getInitialProps = ({ req }) => {
   let { origin } = absoluteUrl(req, 'localhost:3000')
+  //ToDo: no es necesario cuando cuando ya tiene https: CHECAR
   origin = origin.includes(':3000') ? origin.replace('https', 'http') : origin
   return { origin }
 }

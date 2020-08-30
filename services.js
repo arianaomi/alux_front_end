@@ -1,3 +1,4 @@
+//! url API
 // const URL_BASE = 'https://6e3cccb45d82.ngrok.io/'
 const URL_BASE = 'http://localhost:8080/'
 const sessionToken =
@@ -32,8 +33,8 @@ const getPet = async key => {
     const token = localStorage.authToken
     const response = await fetch(`${URL_BASE}pets/${key}`, {
       headers: {
-        authorization: token
-      }
+        authorization: token,
+      },
     })
     const data = await response.json()
     return data
@@ -44,9 +45,9 @@ const readQR = async (token, coords) => {
   const response = await fetch(`${URL_BASE}pets/readQR?token=${token}`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ coords })
+    body: JSON.stringify({ coords }),
   })
   const data = await response.json()
   return data
