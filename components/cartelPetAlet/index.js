@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './afichePetAlert.scss';
+import styles from './cartelPetAlert.module.scss';
 import { Avatar, Row, Col } from 'antd';
 
-export default function cartelAlert ({
+export default function CartelPetAlert ({
   image,
   namePet,
   alertAdop,

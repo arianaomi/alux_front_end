@@ -1,12 +1,12 @@
 // components
-import LayoutCurve from '../../../components/LayoutCurve'
-import Btn from '../../../components/Btn'
+import LayoutCurve from '../../../components/LayoutCurve';
+import Btn from '../../../components/Btn';
 // sass
-import styles from '../../../styles/alux/codeQR/_generateQR.module.scss'
+import styles from '../../../styles/alux/codeQR/_generateQR.module.scss';
 // ant-design
-import { Row, Col } from 'antd'
+import { Row, Col } from 'antd';
 
-function GenerateQR() {
+function generateQR () {
   return (
     <LayoutCurve title='QR personalizado'>
       <Row>
@@ -41,4 +41,4 @@ function GenerateQR() {
     </LayoutCurve>
   )
 }
-export default GenerateQR
+export default generateQR
