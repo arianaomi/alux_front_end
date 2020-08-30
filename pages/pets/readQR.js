@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Layout from '../../components/Layout'
 import { readQR } from '../../services'
 import { useRouter } from 'next/router'
+import { Spin } from 'antd'
 
 export default function ReadQR() {
   const router = useRouter()
@@ -28,6 +29,7 @@ export default function ReadQR() {
         try {
           const { data } = await readQR(token, coords)
           setPet(data)
+          console.log(data)
         } catch (e) {
           // TODO: Handle error or 404
           console.log(e)
@@ -40,7 +42,7 @@ export default function ReadQR() {
 
   return (
     <Layout title='hola'>
-      {!wasSent && <h1>Cargando...</h1>}
+      {!wasSent && <Spin size='large' />}
       {wasSent && pet && <h1>Mostrar perrito {pet.name}</h1>}
       {wasSent && !pet && <h1>Token invalido</h1>}
     </Layout>

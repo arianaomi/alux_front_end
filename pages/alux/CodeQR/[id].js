@@ -43,7 +43,6 @@ function GenerateQR({ origin }) {
           <div className={styles.dog_QR}>
             <img src='/dogQR.svg' />
             <div className={styles.codeQR}>
-              <h1>QR</h1>
               {Boolean(pet) && <QRCode value={`${petUrl}${pet.token}`} />}
             </div>
           </div>
