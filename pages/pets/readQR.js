@@ -3,7 +3,7 @@ import Layout from '../../components/Layout'
 import { readQR } from '../../services'
 import { useRouter } from 'next/router'
 
-export default function ReadQR() {
+export default function ReadQR () {
   const router = useRouter()
   const [coords, setCoords] = useState(null)
   const [wasSent, setWasSent] = useState(false)
@@ -41,7 +41,7 @@ export default function ReadQR() {
   return (
     <Layout title='hola'>
       {!wasSent && <h1>Cargando...</h1>}
-      {wasSent && pet && <h1>Mostrar perrito {pet.name}</h1>}
+      {wasSent && pet && <h1>Mostrar perrito perdido {pet.name} </h1>}
       {wasSent && !pet && <h1>Token invalido</h1>}
     </Layout>
   )
