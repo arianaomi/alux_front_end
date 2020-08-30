@@ -9,84 +9,84 @@ import styles from './PetForm.module.scss'
 
 const { Option } = Select
 
-function PetForm1 () {
-  const objectBreedOptions = {
-    Dog: [
-      'Mestizo/ Sin raza',
-      'Beagle',
-      'Boxer',
-      'Bulldog',
-      'Chihuahua',
-      'Husky Siberiano',
-      'Jack Russell Terrier',
-      'Pastor alemán',
-      'Poodle',
-      'Pug',
-      'Shnauzer',
-      'Yorkie',
-      'Xoloescuincle',
-      'Otro'
-    ],
-    Cat: [
-      'Mestizo/ Sin raza',
-      'Maltés',
-      'Siamés',
-      'Angora',
-      'Egipcio',
-      'Persa',
-      'Siberiano',
-      'Otra/ No disponible'
-    ],
-    Mouse: [
-      'Conejo',
-      'Cuyo',
-      'Hurón',
-      'Hamster',
-      'Ratón',
-      'Gerbo',
-      'Rata',
-      'Otro/ No disponible'
-    ],
-    Bird: [
-      'Canario',
-      'Jilguero',
-      'Loro',
-      'Periquito',
-      'Guacamayo',
-      'Paloma',
-      'Cotorro',
-      'Ruiseñor',
-      'Paloma',
-      'Cotorro',
-      'Ruiseñor',
-      'Pollo',
-      'Otra/ No disponible'
-    ],
-    Other: [
-      'Aracnido',
-      'Iguana',
-      'Tortuga',
-      'Otro reptil',
-      'Rana',
-      'Erizo',
-      'Otro/ No disponible'
-    ],
-    Farm: [
-      'Burro',
-      'Caballo/Yegua',
-      'Mula',
-      'Pato',
-      'Borrego',
-      'Cabra/Chivo',
-      'Cerdo',
-      'Otro/ No disponible'
-    ]
-  }
+const objectBreedOptions = {
+  Dog: [
+    'Mestizo/ Sin raza',
+    'Beagle',
+    'Boxer',
+    'Bulldog',
+    'Chihuahua',
+    'Husky Siberiano',
+    'Jack Russell Terrier',
+    'Pastor alemán',
+    'Poodle',
+    'Pug',
+    'Shnauzer',
+    'Yorkie',
+    'Xoloescuincle',
+    'Otro'
+  ],
+  Cat: [
+    'Mestizo/ Sin raza',
+    'Maltés',
+    'Siamés',
+    'Angora',
+    'Egipcio',
+    'Persa',
+    'Siberiano',
+    'Otra/ No disponible'
+  ],
+  Mouse: [
+    'Conejo',
+    'Cuyo',
+    'Hurón',
+    'Hamster',
+    'Ratón',
+    'Gerbo',
+    'Rata',
+    'Otro/ No disponible'
+  ],
+  Bird: [
+    'Canario',
+    'Jilguero',
+    'Loro',
+    'Periquito',
+    'Guacamayo',
+    'Paloma',
+    'Cotorro',
+    'Ruiseñor',
+    'Paloma',
+    'Cotorro',
+    'Ruiseñor',
+    'Pollo',
+    'Otra/ No disponible'
+  ],
+  Other: [
+    'Aracnido',
+    'Iguana',
+    'Tortuga',
+    'Otro reptil',
+    'Rana',
+    'Erizo',
+    'Otro/ No disponible'
+  ],
+  Farm: [
+    'Burro',
+    'Caballo/Yegua',
+    'Mula',
+    'Pato',
+    'Borrego',
+    'Cabra/Chivo',
+    'Cerdo',
+    'Otro/ No disponible'
+  ]
+}
 
+function PetForm1 () {
   // States
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
-  const [breed, setBreed] = useState(objectBreedOptions)
+  const [breed, setBreed] = useState('')
 
   // Default form functions
   const onFinishFailed = errorInfo => {
@@ -158,7 +158,7 @@ function PetForm1 () {
               <Option value='Other'>Otro</Option>
             </Select>
           </Form.Item>
-
+          {console.log(species, breed)}
           {species ? (
             <Form.Item name='breed' label='Raza' rules={[{ required: true }]}>
               <Select
@@ -167,7 +167,7 @@ function PetForm1 () {
                 onChange={onChangeBreed}
                 allowClear
               >
-                {breed[species].map((option, index) => {
+                {objectBreedOptions[species].map((option, index) => {
                   return (
                     <Option key={index} value={option}>
                       {option}

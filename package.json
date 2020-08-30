@@ -12,6 +12,7 @@
     "global": "^4.4.0",
     "moment": "^2.27.0",
     "next": "9.5.2",
+    "next-absolute-url": "^1.2.2",
     "next-compose-plugins": "^2.2.0",
     "next-images": "^1.4.1",
     "qrcode.react": "^1.0.0",
