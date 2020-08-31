@@ -14,7 +14,6 @@ import { useRouter } from 'next/router'
 function GenerateQR({ origin }) {
   const router = useRouter()
   const petUrl = `${origin}/pets/readQR?token=`
-
   const [pet, setPet] = useState(null)
 
   console.log(petUrl)
