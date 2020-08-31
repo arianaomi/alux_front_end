@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { Form, Row, Col } from 'antd'
+import { Form } from 'antd'
 import CustomInput from '../../Input'
 import Btn from '../../Btn'
-import signUp from '../../../services'
 
 // SCSS
 import styles from './RegisterForm.module.scss'

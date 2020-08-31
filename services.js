@@ -1,14 +1,14 @@
 //! url API
 // const URL_BASE = 'https://6e3cccb45d82.ngrok.io/'
 
-const URL_BASE = 'http://localhost:8080/'
-// const URL_BASE = 'https://api-alux.mybluemix.net/'
+// const URL_BASE = 'http://localhost:8080/'
+const URL_BASE = 'https://api-alux.mybluemix.net/'
 
 const sessionToken =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNGFmMTQ1Mjk1MGE0MTliOGZhMDczMCIsImlhdCI6MTU5ODc0NzAxNCwiZXhwIjoxNTk4ODMzNDE0fQ.awppj7bOBgWA-oB6nffbThcYbdz1ymavu2SjHnkPnEQ'
 
 // Users
-const signUp = async (req) => {
+const signUpService = async (req) => {
   const response = await fetch(`${URL_BASE}sign-up`, {
     method: 'POST',
     headers: {
@@ -21,18 +21,9 @@ const signUp = async (req) => {
   console.log(data)
   return data
 }
-// fetch(`${URL_BASE}pets/readQR?token=${token}`, {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json'
-//   },
-//   body: JSON.stringify({ coords })
-// })
-// const data = await response.json()
-// return data
 
-const logIn = async (data) => {
-  const response = await fetch(`${URL_BASE}/log-in`, {
+const logInService = async (data) => {
+  const response = await fetch(`${URL_BASE}log-in`, {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
@@ -45,8 +36,8 @@ const logIn = async (data) => {
 }
 
 // Posts
-const addPost = async (data, sessionToken) => {
-  const response = await fetch(`${URL_BASE}/entries`, {
+const addPostService = async (data, sessionToken) => {
+  const response = await fetch(`${URL_BASE}entries`, {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
@@ -58,8 +49,8 @@ const addPost = async (data, sessionToken) => {
   return res
 }
 
-const updatePost = async (data, sessionToken, key) => {
-  const response = await fetch(`${URL_BASE}/entries/${key}`, {
+const updatePostService = async (data, sessionToken, key) => {
+  const response = await fetch(`${URL_BASE}entries/${key}`, {
     method: 'PATCH',
     body: JSON.stringify(data),
     headers: {
@@ -71,21 +62,21 @@ const updatePost = async (data, sessionToken, key) => {
   return res
 }
 
-const getPosts = async () => {
-  const response = await fetch(`${URL_BASE}/posts.json`)
+const getPostsService = async () => {
+  const response = await fetch(`${URL_BASE}posts.json`)
   const data = await response.json()
   return data
 }
 
-const getPost = async key => {
-  const response = await fetch(`${URL_BASE}/${key}.json`)
+const getPostService = async key => {
+  const response = await fetch(`${URL_BASE}posts/${key}.json`)
   const data = await response.json()
   return data
 }
 
 // Pets
-const addPet = async (data, sessionToken) => {
-  const response = await fetch(`${URL_BASE}/pets`, {
+const addPetService = async (data, sessionToken) => {
+  const response = await fetch(`${URL_BASE}pets`, {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
@@ -97,8 +88,8 @@ const addPet = async (data, sessionToken) => {
   return res
 }
 
-const updatePet = async (data, sessionToken, key) => {
-  const response = await fetch(`${URL_BASE}/pets/${key}`, {
+const updatePetService = async (data, sessionToken, key) => {
+  const response = await fetch(`${URL_BASE}pets/${key}`, {
     method: 'PATCH',
     body: JSON.stringify(data),
     headers: {
@@ -110,8 +101,8 @@ const updatePet = async (data, sessionToken, key) => {
   return res
 }
 
-const getPets = async () => {
-  const response = await fetch(`${URL_BASE}/pets.json`)
+const getPetsService = async () => {
+  const response = await fetch(`${URL_BASE}pets.json`)
   const data = await response.json()
   return data
 }
@@ -153,4 +144,4 @@ const sendNewPassword = async (email, newUrl) => {
   return data
 }
 
-export { signUp, logIn, addPost, updatePost, getPosts, getPost, addPet, updatePet, getPets, getPet, readQR, sendNewPassword }
+export { signUpService, logInService, addPostService, updatePostService, getPostsService, getPostService, addPetService, updatePetService, getPetsService, getPet, readQR, sendNewPassword }
