@@ -1,3 +1,4 @@
+import Link from 'next/link'
 // ant-design
 import { Row, Col } from 'antd'
 // Components
@@ -11,8 +12,8 @@ import Router from 'next/router'
 // scss
 import styles from '../styles/_logIn.module.scss'
 
-export default function logIn () {
-  async function handleForm ({ email, password }) {
+export default function logIn() {
+  async function handleForm({ email, password }) {
     console.log(email, password)
     const user = { email, password }
     console.log(user)
@@ -59,7 +60,10 @@ export default function logIn () {
                 />
               </div>
               <div className={styles.forgetPass}>
-                <a>¿Olvidaste tu contraseña?</a>
+                <Link href='/reset-password'>
+                  <a>¿Olvidaste tu contraseña?</a>
+                </Link>
+                <a />
               </div>
             </div>
           </Col>

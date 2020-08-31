@@ -6,7 +6,7 @@ import Btn from '../../Btn'
 // CSS
 import styles from './LogInForm.module.scss'
 
-function LogInForm({ callback }) {
+function LogInForm ({ callback }) {
   // States
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')

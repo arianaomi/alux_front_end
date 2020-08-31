@@ -1,17 +1,18 @@
 //
 import Link from 'next/link'
+// components
 import AvatarCmptn from '../AvatarCmpnt'
 // SCSS
 import styles from './HeaderRectan.module.scss'
-// antd
+// ant-d
 
-function HeaderRectan({ title, image }) {
+function HeaderRectan ({ title, image }) {
   //* rendering conditional
 
   return (
     <>
       <div className={styles.header}>
-        <Link href='/'>
+        <Link href='/alux/home'>
           <img src='/logoAluxBco.svg' className={styles.logo} />
         </Link>
         <h1 className={styles.title}> {title}</h1>
