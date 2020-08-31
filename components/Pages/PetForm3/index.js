@@ -8,11 +8,10 @@ const { TextArea } = Input
 
 const { Option } = Select
 
-function PetForm3 () {
+function PetForm3() {
   // States
   const [particularSigns, setParticularSigns] = useState('')
   const [medicalInformation, setMedicalInformation] = useState('')
-  const idPet = '5f4c1549aea180148c144429'
 
   // Default form functions
   const onFinishFailed = errorInfo => {
@@ -66,7 +65,7 @@ function PetForm3 () {
           content='Siguiente'
           typeBtn='btn_primary'
           // ToDo: pasarle el id del perro
-          link={`/alux/CodeQR/${idPet}`}
+          link='/alux/Registry/formPet-4'
         />
       </Form.Item>
     </Form>

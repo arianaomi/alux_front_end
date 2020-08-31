@@ -1,5 +1,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 // components
 import { useEffect, useState } from 'react'
 import absoluteUrl from 'next-absolute-url'
@@ -70,6 +71,9 @@ export default function GenerateQR({ origin }) {
                 link='/alux/home'
               />
             </div>
+            <Link href='/alux/Registry/formPet-4'>
+              <a>Regresar</a>
+            </Link>
           </div>
         </Col>
       </Row>
