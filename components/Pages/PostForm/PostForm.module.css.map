@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "PostForm.module.scss"
+    ],
+    "names": [],
+    "file": "PostForm.module.css"
+}

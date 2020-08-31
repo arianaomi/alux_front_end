@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Form } from 'antd'
 import CustomInput from '../../Input'
 import Btn from '../../Btn'
+import { logIn } from '../../../services'
 // CSS
 import styles from './LogInForm.module.scss'
 
@@ -14,13 +15,27 @@ function LogInForm() {
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo)
   }
-  const onFinish = values => {
-    console.log('Received values of form: ', values)
-    // fetch(`${URL_BASE}.json`, {
-    //   method: 'POST',
-    //   mode: 'cors',
-    //   body: JSON.stringify(values)
-    // }).then((response) => console.log(response.json))
+
+  // const onFinish = values => {
+  //   console.log('Received values of form: ', values)
+  //   logIn().then(console.log(res))
+  // }
+  const onFinish = async (values) => {
+    try {
+      const response = await logIn(values)
+
+      if (!response.success) {
+        alert(response.error)
+        return
+      }
+      console.log(response)
+      const accessToken = response.data.token
+      localStorage.setItem('token', accessToken)
+      form.resetFields()
+      Router.push('/')
+    } catch (error) {
+      console.log('error', error)
+    }
   }
 
   // Handlers

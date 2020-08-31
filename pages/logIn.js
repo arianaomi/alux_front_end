@@ -9,6 +9,8 @@ import Btn from '../components/Btn'
 import styles from '../styles/_logIn.module.scss'
 
 export default function logIn () {
+  // fetch
+
   return (
     <>
       <LayoutCurve tittle='Iniciar sesión'>
