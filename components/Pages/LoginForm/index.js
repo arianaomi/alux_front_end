@@ -20,7 +20,7 @@ function LogInForm() {
   //   console.log('Received values of form: ', values)
   //   logIn().then(console.log(res))
   // }
-  const onFinish = async (values) => {
+  const onFinish = async values => {
     try {
       const response = await logIn(values)
 
