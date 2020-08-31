@@ -10,7 +10,7 @@ export default function ResetPassword () {
       <Row justify='center'>
         <Col xs={24} md={24}>
           <div className={styles.container_logo}>
-            <img src='/logoBlue.svg' className={styles.logo} />
+            <img src='/LogoAluxHomeBlue.png' className={styles.logo} />
           </div>
         </Col>
         <Col xs={22} md={16} lg={14}>
