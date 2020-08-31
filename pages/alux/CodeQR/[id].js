@@ -1,42 +1,36 @@
-import React from 'react'
-import dynamic from 'next/dynamic'
+import React from "react";
+import dynamic from "next/dynamic";
 // components
-import { useEffect, useState } from 'react'
-import absoluteUrl from 'next-absolute-url'
-import LayoutCurve from '../../../components/LayoutCurve'
-import Btn from '../../../components/Btn'
+import { useEffect, useState } from "react";
+import absoluteUrl from "next-absolute-url";
+import LayoutCurve from "../../../components/LayoutCurve";
+import Btn from "../../../components/Btn";
 //import DownloadCode from '../../../components/DownloadCode'
 // import Code from '../../../components/Code'
 
 // sass
-import styles from '../../../styles/alux/codeQR/_generateQR.module.scss'
+import styles from "../../../styles/alux/codeQR/_generateQR.module.scss";
 
 // ant-design
-import { Row, Col } from 'antd'
-import { getPet } from '../../../services'
+import { Row, Col } from "antd";
+import { getPet } from "../../../services";
 // import QRCode from '../../../components/QRCode'
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
-const DownloadCode = dynamic(
-  () => import('../../../components/DownloadCode'),
-  { ssr: false }
-)
-
+const DownloadCode = dynamic(() => import("../../../components/DownloadCode"), {
+  ssr: false,
+});
 
 export default function GenerateQR({ origin }) {
-  const router = useRouter()
-  const petUrl = `${origin}/pets/readQR?token=`
-  const [pet, setPet] = useState(null)
-  console.log(petUrl)
+  const router = useRouter();
+  const petUrl = `${origin}/pets/readQR?token=`;
+  const [pet, setPet] = useState(null);
+  console.log(petUrl);
 
   useEffect(() => {
     console.log(router.query.id);
     if (router.query.id) {
-<<<<<<< HEAD
       (async () => {
-=======
-      ; (async () => {
->>>>>>> develop
         try {
           const { data } = await getPet(router.query.id);
           console.log(data);
@@ -46,12 +40,7 @@ export default function GenerateQR({ origin }) {
         }
       })();
     }
-<<<<<<< HEAD
   }, [router.query.id]);
-
-=======
-  }, [router.query.id])
->>>>>>> develop
   //console.log(pet)
 
   return (
@@ -59,8 +48,8 @@ export default function GenerateQR({ origin }) {
       <Row>
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
           <div className={styles.dog_QR}>
-            <img src="/dogQR.svg" />
-            <div className={styles.codeQR}>
+            <img src="/dogQR.png" />
+            <div className={styles.codeQRContiner}>
               {Boolean(pet) && <DownloadCode value={`${petUrl}${pet.token}`} />}
             </div>
           </div>
@@ -89,18 +78,9 @@ export default function GenerateQR({ origin }) {
   );
 }
 
-
 GenerateQR.getInitialProps = ({ req }) => {
   let { origin } = absoluteUrl(req, "localhost:3000");
   //ToDo: no es necesario cuando cuando ya tiene https: CHECAR
-<<<<<<< HEAD
   origin = origin.includes(":3000") ? origin.replace("https", "http") : origin;
   return { origin };
 };
-
-export default GenerateQR;
-=======
-  origin = origin.includes(':3000') ? origin.replace('https', 'http') : origin
-  return { origin }
-}
->>>>>>> develop
