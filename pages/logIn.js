@@ -6,11 +6,28 @@ import LayoutCurve from '../components/LayoutCurve'
 import LoginForm from '../components/Pages/LoginForm'
 import Footer from '../components/Footer'
 import Btn from '../components/Btn'
+import { logInService } from '../services'
+import Router from 'next/router'
+
 // scss
 import styles from '../styles/_logIn.module.scss'
 
-export default function logIn () {
-  // fetch
+export default function logIn() {
+  async function handleForm({ email, password }) {
+    console.log(email, password)
+    const user = { email, password }
+    console.log(user)
+    try {
+      const response = await logInService(user)
+      console.log(response)
+      const token = response.data.token
+      console.log(token)
+      localStorage.setItem('token', token)
+      Router.push('alux/home')
+    } catch (error) {
+      console.log('error', error)
+    }
+  }
 
   return (
     <>
@@ -33,7 +50,7 @@ export default function logIn () {
             </div>
           </Col>
           <Col xs={22} md={12} lg={7} className={styles.wrapperForm}>
-            <LoginForm />
+            <LoginForm callback={handleForm} />
             <div className={styles.containerBbtnA}>
               <div className={styles.btn}>
                 <Btn
