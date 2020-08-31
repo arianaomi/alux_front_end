@@ -2,6 +2,7 @@ import ResetPasswordForm from '../../components/Pages/ResetPasswordForm'
 import Layout from '../../components/LayoutCurve'
 import { Row, Col } from 'antd'
 import Footer from '../../components/Footer'
+import styles from '../../styles/reset-password/_reset-password.module.scss'
 
 export default function ResetPassword() {
   return (
