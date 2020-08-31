@@ -7,12 +7,14 @@ import Arrow from '../../../components/ArrowBack'
 import { Row, Col } from 'antd'
 // sass
 import styles from '../../../styles/alux/Scanner/_scanner.module.scss'
-export default function ScannerView() {
+export default function ScannerView () {
   return (
-    <Layout title='Scanner QR'>
+    <Layout title='Scanner QR' typeHeader='general'>
       <Row justify='center'>
+        <Col xs={22} lg={22}>
+          <Arrow typeArrow='general' link='/alux/home' />
+        </Col>
         <Col xs={22} md={11} lg={11}>
-          <Arrow />
           <div className={styles.indications}>
             <h1>¿Encontraste una mascota con QR?</h1>
             <h3>Ayudalo a volver a casa</h3>

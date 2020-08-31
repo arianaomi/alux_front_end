@@ -1,12 +1,37 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowleft } from '@fortawesome/free-solid-svg-icons'
+import { useRouter } from 'next/router'
+// SCSS
+import styles from './ArrowBack.module.scss'
 
-function Arrow({ content, typeBtn = 'btn_primary', link }) {
-  return (
-    <>
-      <i class='fas icon-kiwi-bird'></i>
-    </>
-  )
+function Arrow ({ typeArrow = 'general', link }) {
+  const router = useRouter()
+  let arrow
+  if (typeArrow === 'alert') {
+    arrow = (
+      <img
+        src='/arrowRed.png'
+        onClick={() => router.push(link)}
+        className={styles.arrow}
+      />
+    )
+  } else if (typeArrow === 'adoption') {
+    arrow = (
+      <img
+        src='/arrowPurple.png'
+        onClick={() => router.push(link)}
+        className={styles.arrow}
+      />
+    )
+  } else {
+    arrow = (
+      <img
+        src='/arrowBlue.png'
+        onClick={() => router.push(link)}
+        className={styles.arrow}
+      />
+    )
+  }
+
+  return <>{arrow}</>
 }
 
 export default Arrow
