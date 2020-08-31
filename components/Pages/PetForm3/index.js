@@ -8,16 +8,16 @@ const { TextArea } = Input
 
 const { Option } = Select
 
-function PetForm3 () {
+function PetForm3() {
   // States
   const [particularSigns, setParticularSigns] = useState('')
   const [medicalInformation, setMedicalInformation] = useState('')
 
   // Default form functions
-  const onFinishFailed = (errorInfo) => {
+  const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo)
   }
-  const onFinish = (values) => {
+  const onFinish = values => {
     console.log('Received values of form: ', values)
     // acá ir al siguiente componente
   }
@@ -39,7 +39,6 @@ function PetForm3 () {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
-
       <Form.Item
         label='Señas particulares'
         name='particularSigns'
@@ -62,7 +61,12 @@ function PetForm3 () {
         <TextArea />
       </Form.Item>
       <Form.Item>
-        <Btn content='Siguiente' typeBtn='btn_primary' />
+        <Btn
+          content='Siguiente'
+          typeBtn='btn_primary'
+          // ToDo: pasarle el id del perro
+          link='/alux/Registry/formPet-4'
+        />
       </Form.Item>
     </Form>
   )

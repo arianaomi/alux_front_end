@@ -192,7 +192,11 @@ function PetForm1 () {
         </div>
         <div className={styles.btn_ms}>
           <Form.Item>
-            <Btn content='Siguiente' typeBtn='btn_primary' link='/' />
+            <Btn
+              content='Siguiente'
+              typeBtn='btn_primary'
+              link='/alux/Registry/formPet-2'
+            />
           </Form.Item>
         </div>
       </div>
