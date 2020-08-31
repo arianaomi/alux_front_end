@@ -6,7 +6,7 @@ import Btn from '../../Btn'
 // SCSS
 import styles from './RegisterForm.module.scss'
 
-function RegisterForm ({ callback }) {
+function RegisterForm({ callback }) {
   // States
   const [userName, setUserName] = useState('')
   const [email, setEmail] = useState('')
@@ -17,7 +17,7 @@ function RegisterForm ({ callback }) {
     console.log('Failed:', errorInfo)
   }
   const onFinish = (values) => {
-    console.log(typeof (values))
+    console.log(values)
     callback(values)
   }
 

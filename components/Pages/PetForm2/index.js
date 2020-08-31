@@ -7,7 +7,7 @@ import Btn from '../../Btn'
 
 const { Option } = Select
 
-function PetForm2() {
+function PetForm2({ callback }) {
   // States
   const [color, setColor] = useState('')
   const [birthDate, setBirthDate] = useState('')
@@ -20,7 +20,7 @@ function PetForm2() {
   }
   const onFinish = values => {
     console.log('Received values of form: ', values)
-    // acá ir al siguiente componente
+    callback(values)
   }
 
   // Handlers

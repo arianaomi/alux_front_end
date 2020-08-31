@@ -5,7 +5,7 @@ import Btn from '../../Btn'
 import CustomUpload from '../../CustomUpload'
 
 // SCSS
-import styles from './PetForm.module.scss'
+import styles from './PetForm1.module.scss'
 
 const { Option } = Select
 
@@ -82,7 +82,7 @@ const objectBreedOptions = {
   ]
 }
 
-function PetForm1 () {
+function PetForm1 ({ callback }) {
   // States
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
@@ -92,10 +92,11 @@ function PetForm1 () {
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo)
   }
-  const onFinish = values => {
-    console.log('Received values of form: ', values)
-    // acá ir al siguiente componente
+  const onFinish = (values) => {
+    console.log(values)
+    callback(values)
   }
+
   const handleInputName = (name, value) => {
     setName(value)
     console.log(value)
@@ -106,12 +107,6 @@ function PetForm1 () {
     console.log(value)
     setSpecies(value)
   }
-
-  // handleSelectChange(event) {
-  //   console.log(event.target.value)
-  //   let selectedAnimal = event.target.value
-  //   this.setState({ selectedAnimal })
-  // }
 
   const onChangeBreed = (name, value) => {
     setBreed(value)
