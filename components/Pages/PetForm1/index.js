@@ -181,8 +181,16 @@ function PetForm1 () {
       </div>
 
       <div className={styles.btn_wrapper}>
+        <Btn content='regresar' typeBtn='btn_secondary' link='/signUp' />
+        <div className={styles.ratonC}>
+          <img src='/ratonCuerda.png' />
+        </div>
         <Form.Item>
-          <Btn content='Siguiente' typeBtn='btn_primary' link='/' />
+          <Btn
+            content='Siguiente'
+            typeBtn='btn_primary'
+            link='/alux/Registry/formPet-2'
+          />
         </Form.Item>
       </div>
     </Form>

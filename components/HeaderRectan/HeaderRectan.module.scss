@@ -23,14 +23,23 @@
   display: flex;
   justify-content: space-between;
   width: 20%;
+  p {
+    margin-left: 15%;
+  }
+}
+.alert {
+  background: linear-gradient(#ff4a4a, #ff9d9d);
+}
+.adoption {
+  background: linear-gradient(#bd4089, #de82b8);
 }
 @media only screen and (min-width: 1024px) {
   .header {
     height: 6vw;
   }
-  // .logo {
-  //   width: 5%;
-  // }
+  .logo {
+    width: 5%;
+  }
   .title {
     font-size: 2vw;
     //   left: 35%;
@@ -39,6 +48,10 @@
     //   top: 0px;
   }
   .wrapper {
-    width: 8%;
+    width: 15%;
+    height: 70%;
+    p {
+      margin-left: 0%;
+    }
   }
 }

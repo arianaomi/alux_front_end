@@ -9,12 +9,14 @@ function AddressForm () {
   const [number, setNumber] = useState('')
   const [block, setBlock] = useState('')
   const [zipCode, setZipCode] = useState('')
+  //! idPet harcodeado
+  const idPet = '5f4c1549aea180148c144429'
 
   // Default form functions
-  const onFinishFailed = (errorInfo) => {
+  const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo)
   }
-  const onFinish = (values) => {
+  const onFinish = values => {
     console.log('Received values of form: ', values)
     const address = values
     console.log(address)
@@ -40,14 +42,12 @@ function AddressForm () {
   }
 
   return (
-
     <Form
       name='basic'
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
-
       <Form.Item
         label='Calle'
         name='street'
@@ -57,7 +57,6 @@ function AddressForm () {
         callback={handleInputStreet}
       >
         <CustomInput />
-
       </Form.Item>
 
       <Form.Item
@@ -69,7 +68,6 @@ function AddressForm () {
         callback={handleInputNumber}
       >
         <CustomInput />
-
       </Form.Item>
 
       <Form.Item
@@ -81,7 +79,6 @@ function AddressForm () {
         callback={handleInputBlock}
       >
         <CustomInput />
-
       </Form.Item>
 
       <Form.Item
@@ -93,11 +90,14 @@ function AddressForm () {
         callback={handleInputZipCode}
       >
         <CustomInput />
-
       </Form.Item>
 
       <Form.Item>
-        <Btn content='Guardar' typeBtn='btn_primary' />
+        <Btn
+          content='Guardar'
+          typeBtn='btn_primary'
+          link={`/alux/CodeQR/${idPet}`}
+        />
       </Form.Item>
     </Form>
   )

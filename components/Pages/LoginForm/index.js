@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import { Form } from 'antd'
 import CustomInput from '../../Input'
 import Btn from '../../Btn'
+
 // CSS
 import styles from './LogInForm.module.scss'
 
-function LogInForm() {
+function LogInForm ({ callback }) {
   // States
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -14,13 +15,10 @@ function LogInForm() {
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo)
   }
+
   const onFinish = values => {
-    console.log('Received values of form: ', values)
-    // fetch(`${URL_BASE}.json`, {
-    //   method: 'POST',
-    //   mode: 'cors',
-    //   body: JSON.stringify(values)
-    // }).then((response) => console.log(response.json))
+    console.log(values)
+    callback(values)
   }
 
   // Handlers

@@ -8,7 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "antd": "^4.6.1",
+    "global": "^4.4.0",
     "moment": "^2.27.0",
     "next": "9.5.2",
     "next-absolute-url": "^1.2.2",
@@ -16,8 +20,10 @@
     "next-images": "^1.4.1",
     "qrcode.react": "^1.0.0",
     "react": "16.13.1",
+    "react-component-export-image": "^0.1.7",
     "react-dom": "16.13.1",
     "react-paypal-button-v2": "^2.6.2",
+    "react-qr-scanner": "0.0.9",
     "sass": "^1.26.10"
   },
   "devDependencies": {

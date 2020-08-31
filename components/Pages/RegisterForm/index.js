@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
-import { Form, Row, Col } from 'antd'
+import { Form } from 'antd'
 import CustomInput from '../../Input'
 import Btn from '../../Btn'
+
 // SCSS
 import styles from './RegisterForm.module.scss'
 
-function RegisterForm () {
+function RegisterForm ({ callback }) {
   // States
-  const [username, setUsername] = useState('')
+  const [userName, setUserName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -15,12 +16,13 @@ function RegisterForm () {
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo)
   }
-  const onFinish = values => {
-    console.log('Received values of form: ', values)
-    // acá el fetch
+  const onFinish = (values) => {
+    console.log(typeof (values))
+    callback(values)
   }
-  const handleInputUsername = (name, value) => {
-    setUsername(value)
+
+  const handleInputUserName = (name, value) => {
+    setUserName(value)
     console.log(value)
   }
 
@@ -46,11 +48,11 @@ function RegisterForm () {
         <CustomInput
           className={styles.item}
           placeholder='Nombre'
-          name='username'
-          value={username}
+          name='userName'
+          value={userName}
           type='text'
           error='Debe ingresar un nombre de usuario'
-          callback={handleInputUsername}
+          callback={handleInputUserName}
         />
       </Form.Item>
 

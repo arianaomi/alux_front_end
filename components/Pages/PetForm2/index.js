@@ -15,35 +15,34 @@ function PetForm2() {
   const [sex, setSex] = useState('')
 
   // Default form functions
-  const onFinishFailed = (errorInfo) => {
+  const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo)
   }
-  const onFinish = (values) => {
+  const onFinish = values => {
     console.log('Received values of form: ', values)
     // acá ir al siguiente componente
   }
 
   // Handlers
-  const onChangeColor = (value) => {
+  const onChangeColor = value => {
     setColor(value)
     console.log(value)
   }
-  const onChangeDate = (value) => {
+  const onChangeDate = value => {
     setBirthDate(value)
     console.log(value)
   }
 
-  const onChangeSize = (value) => {
+  const onChangeSize = value => {
     setSize(value)
     console.log(value)
   }
-  const onChangeSex = (value) => {
+  const onChangeSex = value => {
     setSex(value)
     console.log(value)
   }
 
   return (
-
     <Form
       name='basic'
       initialValues={{ remember: true }}
@@ -51,12 +50,7 @@ function PetForm2() {
       onFinishFailed={onFinishFailed}
       className='container'
     >
-
-      <Form.Item
-        className='item'
-        name='color'
-        label='Color'
-      >
+      <Form.Item className='item' name='color' label='Color'>
         <Select
           className='item'
           placeholder='Por favor seleccione el color de su mascota'
@@ -78,24 +72,11 @@ function PetForm2() {
         </Select>
       </Form.Item>
 
-      <Form.Item
-        label='Fecha de nacimiento'
-        className='item'
-      >
-
-        <DatePicker
-          className='item'
-          onChange={onChangeDate}
-          picker='month'
-        />
-
+      <Form.Item label='Fecha de nacimiento' className='item'>
+        <DatePicker className='item' onChange={onChangeDate} picker='month' />
       </Form.Item>
 
-      <Form.Item
-        className='item'
-        name='size'
-        label='Tamaño'
-      >
+      <Form.Item className='item' name='size' label='Tamaño'>
         <Select
           className='item'
           placeholder='Por favor seleccione el tamaño de su mascota'
@@ -110,17 +91,12 @@ function PetForm2() {
         </Select>
       </Form.Item>
 
-      <Form.Item
-        className='item'
-        name='sex'
-        label='Sexo'
-      >
+      <Form.Item className='item' name='sex' label='Sexo'>
         <Radio.Group
           onChange={onChangeSex}
           optionType='button'
           buttonStyle='solid'
           className='item'
-
         >
           <Radio.Button value='Female'>Hembra</Radio.Button>
           <Radio.Button value='Male'>Macho</Radio.Button>
@@ -129,10 +105,13 @@ function PetForm2() {
       </Form.Item>
 
       <Form.Item>
-        <Btn content='Siguiente' typeBtn='btn_primary' />
+        <Btn
+          content='Siguiente'
+          typeBtn='btn_primary'
+          link='/alux/Registry/formPet-3'
+        />
       </Form.Item>
     </Form>
-
   )
 }
 

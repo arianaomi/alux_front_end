@@ -1,21 +1,31 @@
+import React from 'react'
+import dynamic from 'next/dynamic'
+import Link from 'next/link'
 // components
 import { useEffect, useState } from 'react'
 import absoluteUrl from 'next-absolute-url'
 import LayoutCurve from '../../../components/LayoutCurve'
 import Btn from '../../../components/Btn'
+//import DownloadCode from '../../../components/DownloadCode'
+// import Code from '../../../components/Code'
+
 // sass
 import styles from '../../../styles/alux/codeQR/_generateQR.module.scss'
+
 // ant-design
 import { Row, Col } from 'antd'
 import { getPet } from '../../../services'
-import QRCode from '../../../components/QRCode'
+// import QRCode from '../../../components/QRCode'
 import { useRouter } from 'next/router'
 
-function GenerateQR({ origin }) {
+const DownloadCode = dynamic(() => import('../../../components/DownloadCode'), {
+  ssr: false,
+})
+
+export default function GenerateQR({ origin }) {
   const router = useRouter()
   const petUrl = `${origin}/pets/readQR?token=`
   const [pet, setPet] = useState(null)
-
   console.log(petUrl)
 
   useEffect(() => {
@@ -32,7 +42,6 @@ function GenerateQR({ origin }) {
       })()
     }
   }, [router.query.id])
-
   //console.log(pet)
 
   return (
@@ -40,20 +49,19 @@ function GenerateQR({ origin }) {
       <Row>
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
           <div className={styles.dog_QR}>
-            <img src='/dogQR.svg' />
-            <div className={styles.codeQR}>
-              {Boolean(pet) && <QRCode value={`${petUrl}${pet.token}`} />}
+            <img src='/dogQR.png' />
+            <div className={styles.codeQRContiner}>
+              {Boolean(pet) && <DownloadCode value={`${petUrl}${pet.token}`} />}
             </div>
           </div>
         </Col>
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
           <div className={styles.wrapperBtn}>
-            <a>Descargar código QR</a>
             <div className={styles.btn}>
               <Btn
                 content='Comprar placa'
                 typeBtn='btn_secondary'
-                link='/alux/CodeQR/generateQR'
+                link='/alux/CodeQR/badgePage'
               />
             </div>
             <div className={styles.btn}>
@@ -63,6 +71,9 @@ function GenerateQR({ origin }) {
                 link='/alux/home'
               />
             </div>
+            <Link href='/alux/Registry/formPet-4'>
+              <a>Regresar</a>
+            </Link>
           </div>
         </Col>
       </Row>
@@ -76,5 +87,3 @@ GenerateQR.getInitialProps = ({ req }) => {
   origin = origin.includes(':3000') ? origin.replace('https', 'http') : origin
   return { origin }
 }
-
-export default GenerateQR

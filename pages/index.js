@@ -1,12 +1,12 @@
 // components
-import LayoutCurve from '../components/LayoutCurve'
-import Button from '../components/Btn'
-import CardsWelcome from '../components/Pages/WelcomePage/CardsWelcome'
-import Footer from '../components/Footer'
+import LayoutCurve from '../components/LayoutCurve';
+import Button from '../components/Btn';
+import CardsWelcome from '../components/Pages/WelcomePage/CardsWelcome';
+import Footer from '../components/Footer';
 // scss
-import styles from '../styles/_index.module.scss'
+import styles from '../styles/_index.module.scss';
 // antd
-import { Row, Col } from 'antd'
+import { Row, Col } from 'antd';
 
 export default function WelcomePage () {
   return (
@@ -32,7 +32,7 @@ export default function WelcomePage () {
           </div>
         </Col>
         <Col className={styles.imageCol} xs={0} lg={24}>
-          <img src='/mascotas.svg' className={styles.image} />
+          <img src='/mascotas.png' className={styles.image} />
         </Col>
       </Row>
       <Row>
@@ -49,8 +49,8 @@ export default function WelcomePage () {
       <Row>
         <Col xs={24}>
           <CardsWelcome
-            image1='/patitadegato.svg'
-            image2='/hamster.svg'
+            image1='/patitadegato.png'
+            image2='/hamster.png'
             text='En  Alux  nos preocupamos por los    los animalitos.'
           />
         </Col>
@@ -79,22 +79,22 @@ export default function WelcomePage () {
         </Col>
         <Col xs={24}>
           <CardsWelcome
-            image1='/espinas.svg'
-            image2='/perritoNegro.svg'
+            image1='/espinas.png'
+            image2='/perritoNegro.png'
             text='Blogs  para los
             pequeñitos del hogar'
           />
         </Col>
         <Col xs={24}>
           <div className={styles.phraseDog}>
-            <img src='/citaperrito1.svg' />
-            <img src='/citaperrito2.svg' />
+            <img src='/citaperrito1.png' />
+            <img src='/citaperrito2.png' />
           </div>
         </Col>
         <Col xs={24}>
           <CardsWelcome
-            image1='/perritocalle.svg'
-            image2='/perritoparque.svg'
+            image1='/perritocalle.png'
+            image2='/perritoparque.png'
             text='Nuestro compromiso: Ayudarlos a volver a casa  o
             encontrarles un hogar '
           />
