@@ -181,13 +181,20 @@ function PetForm1 () {
       </div>
 
       <div className={styles.btn_wrapper}>
-        <Btn content='regresar' typeBtn='btn_secondary' link='/signUp' />
-        <div className={styles.ratonC}>
-          <img src='/ratonCuerda.png' />
+        <div className={styles.btn_m}>
+          <Btn content='regresar' typeBtn='btn_secondary' link='/signUp' />
         </div>
-        <Form.Item>
-          <Btn content='Siguiente' typeBtn='btn_primary' link='/' />
-        </Form.Item>
+        <div className={styles.ratonC}>
+          <img className={styles.ratonCi} src='/ratonCuerda.png' />
+        </div>
+        <div className={styles.catC}>
+          <img className={styles.catCi} src='/catWF.png' />
+        </div>
+        <div className={styles.btn_ms}>
+          <Form.Item>
+            <Btn content='Siguiente' typeBtn='btn_primary' link='/' />
+          </Form.Item>
+        </div>
       </div>
     </Form>
   )
