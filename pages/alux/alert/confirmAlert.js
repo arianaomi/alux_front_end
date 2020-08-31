@@ -9,7 +9,7 @@ export default function ConfirmAlert () {
       image='https://i.dailymail.co.uk/1s/2019/11/18/16/21162158-0-image-a-38_1574094224893.jpg'
     >
       <Row>
-        <Col xs={24} sm={24} md={24} lg={24}>
+        <Col span={1} offset={3} xs={20} sm={20} md={20} lg={20}>
           <CartelPetAlert
             namePet='Micha'
             alertAdop='Ayúdame a volver a casa'

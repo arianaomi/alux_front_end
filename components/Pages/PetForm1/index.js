@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { Form, Select } from 'antd'
-import CustomInput from '../../Input'
-import Btn from '../../Btn'
-import CustomUpload from '../../CustomUpload'
+import React, { useState } from 'react';
+import { Form, Select } from 'antd';
+import CustomInput from '../../Input';
+import Btn from '../../Btn';
+import CustomUpload from '../../CustomUpload';
 
 // SCSS
-import styles from './PetForm.module.scss'
+import styles from './PetForm.module.scss';
 
 const { Option } = Select
 
@@ -89,23 +89,23 @@ function PetForm1 () {
   const [breed, setBreed] = useState('')
 
   // Default form functions
-  const onFinishFailed = errorInfo => {
+  const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo)
-  }
-  const onFinish = values => {
+  };
+  const onFinish = (values) => {
     console.log('Received values of form: ', values)
     // acá ir al siguiente componente
-  }
+  };
   const handleInputName = (name, value) => {
     setName(value)
     console.log(value)
-  }
+  };
 
   // Handlers
-  const onChangeSpecies = value => {
+  const onChangeSpecies = (value) => {
     console.log(value)
     setSpecies(value)
-  }
+  };
 
   // handleSelectChange(event) {
   //   console.log(event.target.value)
@@ -116,7 +116,7 @@ function PetForm1 () {
   const onChangeBreed = (name, value) => {
     setBreed(value)
     console.log(value)
-  }
+  };
 
   return (
     <Form
@@ -181,17 +181,24 @@ function PetForm1 () {
       </div>
 
       <div className={styles.btn_wrapper}>
-        <Btn content='regresar' typeBtn='btn_secondary' link='/signUp' />
-        <div className={styles.ratonC}>
-          <img src='/ratonCuerda.png' />
+        <div className={styles.btn_m}>
+          <Btn content='regresar' typeBtn='btn_secondary' link='/signUp' />
         </div>
-        <Form.Item>
-          <Btn
-            content='Siguiente'
-            typeBtn='btn_primary'
-            link='/alux/Registry/formPet-2'
-          />
-        </Form.Item>
+        <div className={styles.ratonC}>
+          <img className={styles.ratonCi} src='/ratonCuerda.png' />
+        </div>
+        <div className={styles.catC}>
+          <img className={styles.catCi} src='/catWF.png' />
+        </div>
+        <div className={styles.btn_ms}>
+          <Form.Item>
+            <Btn
+              content='Siguiente'
+              typeBtn='btn_primary'
+              link='/alux/Registry/formPet-2'
+            />
+          </Form.Item>
+        </div>
       </div>
     </Form>
   )

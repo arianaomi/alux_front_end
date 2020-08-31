@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from './cardLost.module.scss'
+import React from 'react';
+import styles from './cardLost.module.scss';
 
 export default function CardLost ({ image, namePet, date, place }) {
   return (
@@ -12,14 +12,14 @@ export default function CardLost ({ image, namePet, date, place }) {
         </div>
         <div className={styles.containerDosTL}>
           <div className={styles.contInf}>
-            <img className={styles.IconC} src='/iconCalend.svg' />
+            <img className={styles.IconC} src='/iconCalend.png' />
             <p className={styles.textD}>{date}</p>
           </div>
           <div className={styles.contInf}>
-            <img className={styles.IconU} src='/iconUbica.svg' />
+            <img className={styles.IconU} src='/iconUbica.png' />
             <p className={styles.textD}>{place}</p>
           </div>
-          <img className={styles.InfoI} src='/iconInfo.svg' />
+          <img className={styles.InfoI} src='/iconInfo.png' />
         </div>
       </div>
     </div>

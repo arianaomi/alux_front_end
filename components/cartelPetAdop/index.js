@@ -37,17 +37,17 @@ export default function CartelPetAdop ({
       <div>
         <div className={styles.containerDS}>
           <div className={styles.containerdos}>
-            <img className={styles.calendarA} src='/calendar.svg' />
+            <img className={styles.calendarA} src='/calendarGrey.png' />
             <p className={styles.textCartG}>{date}</p>
           </div>
           <div className={styles.containerSMW}>
-            <img className={styles.iconM} src='/SexMale.svg' />
-            <img className={styles.iconW} src='/SexWom.svg' />
+            <img className={styles.iconM} src='/SexMale2.png' />
+            <img className={styles.iconW} src='/SexWom2.png' />
             <p className={styles.textCartG}>{sex}</p>
           </div>
         </div>
         <div className={styles.containerUT}>
-          <img className={styles.ubic} src='/IconUbgrey.svg' />
+          <img className={styles.ubic} src='/IconUbgrey.png' />
           <p className={styles.textCartL}>{lugar}</p>
         </div>
         <div className={styles.contaTE}>
@@ -87,7 +87,7 @@ export default function CartelPetAdop ({
           </div>
         </div>
         <div className={styles.containerUTtel}>
-          <img className={styles.ubicT} src='/IconTel.svg' />
+          <img className={styles.ubicT} src='/IconTel.png' />
           <p className={styles.textCartTel}>{contact}</p>
         </div>
       </div>

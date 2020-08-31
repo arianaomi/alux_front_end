@@ -14,8 +14,8 @@ export default function FormPet1() {
           <Col xs={10} md={12} lg={12}>
             <PetForm1 />
           </Col>
-          <Footer />
         </Row>
+        <Footer />
       </LayoutCurve>
     </>
   );
