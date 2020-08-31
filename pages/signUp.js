@@ -1,5 +1,5 @@
 // ant -design
-import { Row, Col, Radio } from 'antd'
+import { Row, Col, Radio } from "antd";
 // components
 import RegisterForm from '../components/Pages/RegisterForm'
 import LayoutCurve from '../components/LayoutCurve'
@@ -8,10 +8,10 @@ import Footer from '../components/Footer'
 // scss
 import styles from '../styles/_signUp.module.scss'
 const URL_BASE = 'https://api-alux.mybluemix.net/'
-export default function signUp () {
+export default function signUp() {
   const URL_BASE = 'https://api-alux.mybluemix.net/'
 
-  async function handleForm ({ userName, email, password }) {
+  async function handleForm({ userName, email, password }) {
     console.log(userName, email, password)
     const user = { userName, email, password }
     console.log(user)
@@ -46,15 +46,15 @@ export default function signUp () {
         <Row>
           <Col xs={24} md={0}>
             <div className={styles.container_logo}>
-              <img src='/logoBlue.svg' className={styles.logo} />
+              <img src="/logoBlue.svg" className={styles.logo} />
             </div>
           </Col>
         </Row>
 
-        <Row justify='center'>
+        <Row justify="center">
           <Col xs={0} md={10} lg={10}>
             <div className={styles.wrapperImg}>
-              <img src='/ErizoAni.svg' />
+              <img src="/ErizoAni.png" />
               <div className={styles.text}>
                 <p>Nuestra misión es ayudar a las mascotas a volver a casa</p>
               </div>
@@ -75,5 +75,5 @@ export default function signUp () {
         </Row>
       </LayoutCurve>
     </>
-  )
+  );
 }

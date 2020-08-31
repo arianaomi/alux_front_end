@@ -1,31 +1,35 @@
 // ant-design
-import { Row, Col } from 'antd'
+import { Row, Col } from "antd";
 // Components
-import LayoutCurve from '../components/LayoutCurve'
-import LoginForm from '../components/Pages/LoginForm'
-import Footer from '../components/Footer'
-import Btn from '../components/Btn'
+import LayoutCurve from "../components/LayoutCurve";
+import LoginForm from "../components/Pages/LoginForm";
+import Footer from "../components/Footer";
+import Btn from "../components/Btn";
 // scss
-import styles from '../styles/_logIn.module.scss'
+import styles from "../styles/_logIn.module.scss";
 
+<<<<<<< HEAD
 export default function logIn () {
   // fetch
 
+=======
+export default function logIn() {
+>>>>>>> develop
   return (
     <>
-      <LayoutCurve tittle='Iniciar sesión'>
+      <LayoutCurve tittle="Iniciar sesión">
         <Row>
           <Col xs={24} md={0}>
             <div className={styles.container_logo}>
-              <img src='/logoBlue.svg' className={styles.logo} />
+              <img src="/logoBlue.svg" className={styles.logo} />
             </div>
           </Col>
         </Row>
 
-        <Row justify='center'>
+        <Row justify="center">
           <Col xs={0} md={10} lg={10}>
             <div className={styles.wrapperImg}>
-              <img src='/PerritoLog_inMobil.svg' />
+              <img src="/PerritoLog_inMobil.png" />
               <div className={styles.text}>
                 <p> Mantenme a salvo, ayúdame a regresar a casa</p>
               </div>
@@ -36,9 +40,9 @@ export default function logIn () {
             <div className={styles.containerBbtnA}>
               <div className={styles.btn}>
                 <Btn
-                  content='Crear nueva cuenta'
-                  link='/signUp'
-                  typeBtn='btn_secondary'
+                  content="Crear nueva cuenta"
+                  link="/signUp"
+                  typeBtn="btn_secondary"
                 />
               </div>
               <div className={styles.forgetPass}>
@@ -56,5 +60,5 @@ export default function logIn () {
         </Row>
       </LayoutCurve>
     </>
-  )
+  );
 }
