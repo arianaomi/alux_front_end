@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import dynamic from 'next/dynamic'
 
-const QrReader = dynamic(() =>
-  import('react-qr-scanner'),
-{ ssr: false }
-)
+const QrReader = dynamic(() => import('react-qr-scanner'), { ssr: false })
 
 class Scanner extends Component {
   constructor (props) {
@@ -29,8 +26,8 @@ class Scanner extends Component {
 
   render () {
     const previewStyle = {
-      height: 240,
-      width: 320
+      height: 168,
+      width: 300
     }
 
     return (
