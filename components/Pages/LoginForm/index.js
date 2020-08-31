@@ -16,7 +16,7 @@ function LogInForm ({ callback }) {
     console.log('Failed:', errorInfo)
   }
 
-  const onFinish = (values) => {
+  const onFinish = values => {
     console.log(values)
     callback(values)
   }
@@ -62,7 +62,7 @@ function LogInForm ({ callback }) {
       </Form.Item>
       <div className={styles.btn_wrapper}>
         <Form.Item>
-          <Btn content='Ingresar' typeBtn='btn_primary' />
+          <Btn content='Ingresar' typeBtn='btn_primary' link='/alux/home' />
         </Form.Item>
       </div>
     </Form>

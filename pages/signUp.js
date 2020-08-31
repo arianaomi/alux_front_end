@@ -1,3 +1,5 @@
+//
+import Link from 'next/link'
 // ant -design
 import { Row, Col, Radio } from 'antd'
 // components
@@ -9,8 +11,8 @@ import { signUpService } from '../services'
 // scss
 import styles from '../styles/_signUp.module.scss'
 
-export default function signUp () {
-  async function handleForm ({ userName, email, password }) {
+export default function signUp() {
+  async function handleForm({ userName, email, password }) {
     console.log(userName, email, password)
     const user = { userName, email, password }
     console.log(user)
@@ -24,7 +26,7 @@ export default function signUp () {
 
   return (
     <>
-      <LayoutCurve>
+      <LayoutCurve title='Registro'>
         <Row>
           <Col xs={24} md={0}>
             <div className={styles.container_logo}>
@@ -43,8 +45,10 @@ export default function signUp () {
             </div>
           </Col>
           <Col xs={22} md={13} lg={8} className={styles.wrapperForm}>
-
             <RegisterForm callback={handleForm} />
+            <Link href='/logIn'>
+              <a>Ya tengo cuenta. Inicia sesión</a>
+            </Link>
             <Radio>Aceptar términos y condiciones</Radio>
           </Col>
         </Row>
