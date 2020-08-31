@@ -4,7 +4,7 @@ import { readQR } from '../../services'
 import { useRouter } from 'next/router'
 import { Spin } from 'antd'
 
-export default function ReadQR () {
+export default function ReadQR() {
   const router = useRouter()
   const [coords, setCoords] = useState(null)
   const [wasSent, setWasSent] = useState(false)
@@ -29,6 +29,7 @@ export default function ReadQR () {
         try {
           const { data } = await readQR(token, coords)
           setPet(data)
+          console.log(data)
         } catch (e) {
           // TODO: Handle error or 404
           console.log(e)

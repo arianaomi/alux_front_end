@@ -1,18 +1,24 @@
-import ResetPasswordForm from '../../components/Pages/ResetPasswordForm'
+import ResetPasswordForm from '../../components/Pages/ResetPasswordForm1'
 import Layout from '../../components/LayoutCurve'
 import { Row, Col } from 'antd'
 import Footer from '../../components/Footer'
+import styles from '../../styles/reset-password/_reset-password.module.scss'
 
 export default function ResetPassword() {
   return (
-    <Layout title='Scanner QR' typeHeader='general'>
+    <Layout title='Nueva contraseña' typeHeader='general'>
       <Row justify='center'>
-        <Col xs={22} md={11} lg={11}>
-          <h1>Ingresa la nueva contraseña</h1>
+        <Col xs={24} md={24}>
+          <div className={styles.container_logo}>
+            <img src='/LogoAluxHomeBlue.png' className={styles.logo} />
+          </div>
+        </Col>
+        <Col xs={22} md={16} lg={14}>
+          <h1 className={styles.letter}>Ingresa la nueva contraseña</h1>
           <ResetPasswordForm />
         </Col>
-        <Col xs={22} md={11} lg={11}>
-          <div>
+        <Col xs={22} md={20} lg={20}>
+          <div className={styles.imgDog}>
             <img src='/perroNewPaswMobil.png' />
           </div>
         </Col>
