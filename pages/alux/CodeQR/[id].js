@@ -56,6 +56,13 @@ export default function GenerateQR({ origin }) {
           </div>
         </Col>
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
+          <div className={styles.conttextcqr}>
+            <p className={styles.textcqr}>
+              Este es tu código personalizado, el cual te ayudará a dirigirte al
+              perfil de tu mascota, levantar una alerta o dar en adopción.
+            </p>
+            <p className={styles.textcqrt}>TU BOLETO A CASA</p>
+          </div>
           <div className={styles.wrapperBtn}>
             <div className={styles.btn}>
               <Btn
@@ -74,13 +81,6 @@ export default function GenerateQR({ origin }) {
             <Link href="/alux/Registry/formPet-4">
               <a>Regresar</a>
             </Link>
-          </div>
-          <div>
-            <p className={styles.textcqr}>
-              Este es tu código personalizado, el cual te ayudará a dirigirte al
-              perfil de tu mascota, levantar una alerta o dar en adopción.
-            </p>
-            <p className={styles.textcqrt}>TU BOLETO A CASA</p>
           </div>
         </Col>
       </Row>

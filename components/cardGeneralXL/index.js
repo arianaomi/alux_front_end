@@ -1,8 +1,8 @@
-import React from 'react'
-import styles from './cardGralxl.module.scss'
-import AvatarCmptn from '../components/AvatarCmpnt'
+import React from "react";
+import styles from "./cardGralxl.module.scss";
+import AvatarCmptn from "../components/AvatarCmpnt";
 
-export default function CardGralxl ({ title, image, namePet, text }) {
+export default function CardGralxl({ title, image, namePet, text }) {
   return (
     <div className={styles.containerPrin}>
       <div className={styles.containerCardG}>
@@ -19,13 +19,13 @@ export default function CardGralxl ({ title, image, namePet, text }) {
         <p>{text}</p>
         <div className={styles.iconCard}>
           <div className={styles.iconCardUD}>
-            <img className={styles.heartC} src='/Heart.svg' />
+            <img className={styles.heartC} src="/Heart.png" />
           </div>
           <div className={styles.iconCardUD}>
-            <img className={styles.patitasC} src='/patitasCard.svg' />
+            <img className={styles.patitasC} src="/patitasCard.png" />
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
