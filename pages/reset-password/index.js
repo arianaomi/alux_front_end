@@ -1,10 +1,13 @@
+import React, { useState } from 'react'
+
 import ResetPasswordForm1 from '../../components/Pages/ResetPasswordForm1'
 import Layout from '../../components/LayoutCurve'
 import { Row, Col } from 'antd'
 import Footer from '../../components/Footer'
 import styles from '../../styles/reset-password/_reset-password.module.scss'
 
-export default function ResetPassword () {
+export default function ResetPassword() {
+  const [email, setEmail] = useState('')
   return (
     <Layout title='Contraseña' typeHeader='general'>
       <Row justify='center'>

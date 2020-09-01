@@ -3,8 +3,7 @@
 
 const URL_BASE = 'https://api-alux.mybluemix.net/'
 
-const sessionToken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNGFmMTQ1Mjk1MGE0MTliOGZhMDczMCIsImlhdCI6MTU5ODc0NzAxNCwiZXhwIjoxNTk4ODMzNDE0fQ.awppj7bOBgWA-oB6nffbThcYbdz1ymavu2SjHnkPnEQ'
+/
 
 // Users
 const signUpService = async (req) => {
