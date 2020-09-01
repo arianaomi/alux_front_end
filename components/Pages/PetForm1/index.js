@@ -123,7 +123,7 @@ function PetForm1({ callback }) {
           </div>
         </div>
         <div className={styles.selector}>
-          <Form.Item label='Nombre'>
+          <Form.Item label='Nombre' className={styles.format}>
             <CustomInput
               className={styles.item}
               name='name'
@@ -174,12 +174,7 @@ function PetForm1({ callback }) {
         <div className={styles.btn_m}>
           <Btn content='regresar' typeBtn='btn_secondary' link='/signUp' />
         </div>
-        <div className={styles.ratonC}>
-          <img className={styles.ratonCi} src='/ratonCuerda.png' />
-        </div>
-        <div className={styles.catC}>
-          <img className={styles.catCi} src='/catWF.png' />
-        </div>
+
         <div>
           <Form.Item>
             <BtnForm content='Siguiente' typeBtn='btn_primary' />

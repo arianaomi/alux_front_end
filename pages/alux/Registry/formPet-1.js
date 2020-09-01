@@ -11,7 +11,7 @@ import LayoutCurve from '../../../components/LayoutCurve'
 import Footer from '../../../components/Footer'
 import { addPetService } from '../../../services'
 
-import styles from '../../../styles/alux/Registry/formPet-1/formPet-1.module.scss'
+import styles from '../../../styles/alux/Registry/formPet-1/_formPet-1.module.scss'
 
 export default function FormPet1 () {
   const Router = useRouter()
@@ -92,24 +92,49 @@ export default function FormPet1 () {
 
   return (
     <>
-      <LayoutCurve title='Tu mascota'>
+      <LayoutCurve title='Registro de mascota'>
         <Row justify='center' className={styles.wrapperForms}>
-          <Col xs={10} md={12} lg={12}>
+          <Col xs={22} md={22} lg={22}>
             <div className={activeForm === 0 ? styles.d_block : styles.d_none}>
-              <PetForm1 callback={handleForm1} />
+              <div className={styles.form1}>
+                <PetForm1 callback={handleForm1} />
+              </div>
+              <div className={styles.cat}>
+                <img className={styles.catCi} src='/catWF.png' />
+              </div>
             </div>
+
             <div className={activeForm === 1 ? styles.d_block : styles.d_none}>
+              <div className={styles.img}>
+                <img src='/pajaritoForPetDos.png' />
+              </div>
               <PetForm2 callback={handleForm2} />
+              <div className={styles.imgEr}>
+                <img src='/ErizoAni.png' className={styles.erizo} />
+              </div>
             </div>
+
             <div className={activeForm === 2 ? styles.d_block : styles.d_none}>
-              <PetForm3 callback={handleForm3} />
+              <div className={styles.form3}>
+                {' '}
+                <img src='/cobayo.png' className={styles.cobayo} />
+                <PetForm3 callback={handleForm3} />
+              </div>
             </div>
+
             <div className={activeForm === 3 ? styles.d_block : styles.d_none}>
-              <AddressForm callback={handleForm4} />
+              <div className={styles.form4}>
+                <div className={styles.wrapperImg}>
+                  <h2>Dirección</h2> <img src='/PezFormPetTres.png' />
+                </div>
+                <AddressForm callback={handleForm4} />
+              </div>
             </div>
           </Col>
+          <Col xs={24} md={24} lg={24} className={styles.footer}>
+            <Footer />
+          </Col>
         </Row>
-        <Footer />
       </LayoutCurve>
     </>
   )
