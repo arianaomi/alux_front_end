@@ -40,7 +40,7 @@ export default function logIn () {
         <Row>
           <Col xs={24} md={0}>
             <div className={styles.container_logo}>
-              <img src='/logoBlue.svg' className={styles.logo} />
+              <img src='/LogoAluxHomeBlue.png' className={styles.logo} />
             </div>
           </Col>
         </Row>

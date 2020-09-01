@@ -98,11 +98,6 @@ function PetForm1({ callback }) {
     callback(values)
   }
 
-  const handleInputName = (name, value) => {
-    setName(value)
-    console.log(value)
-  }
-
   // Handlers
   const onChangeSpecies = (value) => {
     console.log(value)
@@ -135,7 +130,6 @@ function PetForm1({ callback }) {
               value={name}
               type='text'
               error='Debe ingresar un nombre'
-              callback={handleInputName}
             />
           </Form.Item>
 

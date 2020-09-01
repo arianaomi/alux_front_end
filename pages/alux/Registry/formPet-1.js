@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
+import Router, { useRouter } from 'next/router'
 // ant-design
 import { Row, Col } from 'antd'
 // components
@@ -15,6 +15,7 @@ import { addPetService } from '../../../services'
 import styles from './formPet1.module.scss'
 
 export default function FormPet1 () {
+  const Router = useRouter()
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
   const [breed, setBreed] = useState('')
@@ -72,7 +73,8 @@ export default function FormPet1 () {
       console.log(response)
       const petId = response.data.newPet._id
       console.log(petId)
-      Router.push('alux/CodeQR/${petId}')
+      localStorage.setItem('petId', petId)
+      Router.push(`/alux/CodeQR/${petId}`)
     } catch (error) {
       console.log('error', error)
     }

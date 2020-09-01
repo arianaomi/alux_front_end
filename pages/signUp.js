@@ -12,8 +12,8 @@ import Router from 'next/router'
 // scss
 import styles from '../styles/_signUp.module.scss'
 
-export default function signUp() {
-  async function handleForm({ userName, email, password }) {
+export default function signUp () {
+  async function handleForm ({ userName, email, password }) {
     console.log(userName, email, password)
     const user = { userName, email, password }
     console.log(user)
@@ -33,7 +33,7 @@ export default function signUp() {
         <Row>
           <Col xs={24} md={0}>
             <div className={styles.container_logo}>
-              <img src='/logoBlue.svg' className={styles.logo} />
+              <img src='/LogoAluxHomeBlue.png' className={styles.logo} />
             </div>
           </Col>
         </Row>

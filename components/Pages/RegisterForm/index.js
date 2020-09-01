@@ -7,7 +7,7 @@ import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons'
 // SCSS
 import styles from './RegisterForm.module.scss'
 
-function RegisterForm ({ callback }) {
+function RegisterForm({ callback }) {
   // States
   const [userName, setUserName] = useState('')
   const [email, setEmail] = useState('')
@@ -22,21 +22,16 @@ function RegisterForm ({ callback }) {
     callback(values)
   }
 
-  const handleInputUserName = (name, value) => {
-    setUserName(value)
-    console.log(value)
-  }
+  // // Handlers
+  // const handleInputEmail = (name, value) => {
+  //   setEmail(value)
+  //   console.log(value)
+  // }
 
-  // Handlers
-  const handleInputEmail = (name, value) => {
-    setEmail(value)
-    console.log(value)
-  }
-
-  const handleInputPassword = (name, value) => {
-    setPassword(value)
-    console.log(value)
-  }
+  // const handleInputPassword = (name, value) => {
+  //   setPassword(value)
+  //   console.log(value)
+  // }
 
   return (
     <Form
@@ -53,7 +48,6 @@ function RegisterForm ({ callback }) {
           value={userName}
           type='text'
           error='Debe ingresar un nombre de usuario'
-          callback={handleInputUserName}
         />
       </Form.Item>
 
@@ -65,19 +59,17 @@ function RegisterForm ({ callback }) {
           value={email}
           type='email'
           error='Debe ingresar un correo electrónico válido'
-          callback={handleInputEmail}
         />
       </Form.Item>
 
       <Form.Item>
-        <Input.Password
+        <CustomInput
           className={styles.item}
           name='password'
           value={password}
+          type='password'
           error='Debe ingresar su contraseña'
-          callback={handleInputPassword}
           placeholder='Contraseña'
-          iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
         />
       </Form.Item>
       <div className={styles.btn_wrapper}>

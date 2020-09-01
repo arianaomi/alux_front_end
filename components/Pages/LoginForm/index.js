@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
-import { Form, Input } from 'antd'
+import { Form } from 'antd'
 import CustomInput from '../../Input'
 import BtnForm from '../../BtnForm'
-import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons'
 
 // CSS
 import styles from './LogInForm.module.scss'
 
-function LogInForm ({ callback }) {
+function LogInForm({ callback }) {
   // States
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -20,17 +19,6 @@ function LogInForm ({ callback }) {
   const onFinish = values => {
     console.log(values)
     callback(values)
-  }
-
-  // Handlers
-  const handleInputEmail = (name, value) => {
-    setEmail(value)
-    console.log(value)
-  }
-
-  const handleInputPassword = (name, value) => {
-    setPassword(value)
-    console.log(value)
   }
 
   return (
@@ -48,18 +36,17 @@ function LogInForm ({ callback }) {
           value={email}
           type='email'
           error='Debe ingresar un email válido'
-          callback={handleInputEmail}
         />
       </Form.Item>
       <Form.Item>
-        <Input.Password
+        <CustomInput
           className={styles.item}
           name='password'
           value={password}
-          error='Debe ingresar su password'
-          callback={handleInputPassword}
+          type='password'
+          error='Debe ingresar su contraseña'
+
           placeholder='Contraseña'
-          iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
         />
       </Form.Item>
       <div className={styles.btn_wrapper}>
