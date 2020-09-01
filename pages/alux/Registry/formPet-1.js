@@ -7,14 +7,13 @@ import PetForm1 from '../../../components/Pages/PetForm1'
 import PetForm2 from '../../../components/Pages/PetForm2'
 import PetForm3 from '../../../components/Pages/PetForm3'
 import AddressForm from '../../../components/Pages/AddressForm'
-import Btn from '../../../components/Btn'
 import LayoutCurve from '../../../components/LayoutCurve'
 import Footer from '../../../components/Footer'
 import { addPetService } from '../../../services'
 
-import styles from './formPet1.module.scss'
+import styles from '../../../styles/alux/Registry/formPet-1/formPet-1.module.scss'
 
-export default function FormPet1() {
+export default function FormPet1 () {
   const Router = useRouter()
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
@@ -41,14 +40,14 @@ export default function FormPet1() {
     setOwner(owner)
   }, [])
 
-  function handleForm1({ name, species, breed }) {
+  function handleForm1 ({ name, species, breed }) {
     setName(name)
     setSpecies(species)
     setBreed(breed)
     setActiveForm(1)
   }
 
-  function handleForm2({ color, birthDate, size, sex }) {
+  function handleForm2 ({ color, birthDate, size, sex }) {
     setColor(color)
     setBirthDate(birthDate)
     setSize(size)
@@ -56,15 +55,27 @@ export default function FormPet1() {
     setActiveForm(2)
   }
 
-  function handleForm3({ particularSigns, medicalInformation }) {
+  function handleForm3 ({ particularSigns, medicalInformation }) {
     setParticularSigns(particularSigns)
     setMedicalInformation(medicalInformation)
     setActiveForm(3)
   }
 
-  async function handleForm4({ address }) {
+  async function handleForm4 ({ address }) {
     setAddress(address)
-    const pet = { owner, name, species, breed, color, birthDate, size, sex, particularSigns, medicalInformation, address }
+    const pet = {
+      owner,
+      name,
+      species,
+      breed,
+      color,
+      birthDate,
+      size,
+      sex,
+      particularSigns,
+      medicalInformation,
+      address
+    }
     console.log(pet)
     try {
       const response = await addPetService(pet, token)
@@ -77,27 +88,23 @@ export default function FormPet1() {
       console.log('error', error)
     }
   }
-  console.warn(activeForm)
-  // const classNameShow = showFirstForm ? 'styles.d-block' : 'styles.d-none'
-  // const classNameShowSecond = showSecondForm ? 'styles.d-block' : 'styles.d-none'
-  // const classNameShowThird = showThirdForm ? 'styles.d-block' : 'styles.d-none'
-  // const classNameShowLast = showLastForm ? 'styles.d-block' : 'styles.d-none'
+  // console.warn(activeForm)
 
   return (
     <>
       <LayoutCurve title='Tu mascota'>
-        <Row justify='center'>
+        <Row justify='center' className={styles.wrapperForms}>
           <Col xs={10} md={12} lg={12}>
-            <div className={(activeForm === 0) ? styles.d_block : styles.d_none}>
+            <div className={activeForm === 0 ? styles.d_block : styles.d_none}>
               <PetForm1 callback={handleForm1} />
             </div>
-            <div className={(activeForm === 1) ? styles.d_block : styles.d_none}>
+            <div className={activeForm === 1 ? styles.d_block : styles.d_none}>
               <PetForm2 callback={handleForm2} />
             </div>
-            <div className={(activeForm === 2) ? styles.d_block : styles.d_none}>
+            <div className={activeForm === 2 ? styles.d_block : styles.d_none}>
               <PetForm3 callback={handleForm3} />
             </div>
-            <div className={(activeForm === 3) ? styles.d_block : styles.d_none}>
+            <div className={activeForm === 3 ? styles.d_block : styles.d_none}>
               <AddressForm callback={handleForm4} />
             </div>
           </Col>
