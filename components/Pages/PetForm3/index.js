@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Form, Input } from 'antd'
 import BtnForm from '../../BtnForm'
+import styles from './PetForn3.module.scss'
 
 const { TextArea } = Input
 // CSS
 
-function PetForm3 ({ callback }) {
+function PetForm3({ callback }) {
   // States
   const [particularSigns, setParticularSigns] = useState('')
   const [medicalInformation, setMedicalInformation] = useState('')
@@ -18,16 +19,16 @@ function PetForm3 ({ callback }) {
     console.log('Received values of form: ', values)
     callback(values)
   }
-  // Handlers
-  const handleInputSigns = (name, value) => {
-    setParticularSigns(value)
-    console.log(value)
-  }
+  // // Handlers
+  // const handleInputSigns = (name, value) => {
+  //   setParticularSigns(value)
+  //  // console.log(value)
+  // }
 
-  const handleInputMedical = (name, value) => {
-    setMedicalInformation(value)
-    console.log(value)
-  }
+  // const handleInputMedical = (name, value) => {
+  //   setMedicalInformation(value)
+  //   console.log(value)
+  // }
 
   return (
     <Form
@@ -35,6 +36,7 @@ function PetForm3 ({ callback }) {
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
+      className={styles.containerForm}
     >
       <Form.Item
         label='Señas particulares'
@@ -42,7 +44,7 @@ function PetForm3 ({ callback }) {
         value={particularSigns}
         type='text'
         error='Debe ingresar más información sobre su mascota que sería útil para identificarla'
-        callback={handleInputSigns}
+        // callback={handleInputSigns}
       >
         <TextArea />
       </Form.Item>
@@ -53,16 +55,15 @@ function PetForm3 ({ callback }) {
         value={medicalInformation}
         type='text'
         error='Debe ingresar información médica de su mascota que sería útil en caso de pérdida'
-        callback={handleInputMedical}
+        // callback={handleInputMedical}
       >
         <TextArea />
       </Form.Item>
-      <Form.Item>
-        <BtnForm
-          content='Siguiente'
-          typeBtn='btn_primary'
-        />
-      </Form.Item>
+      <div className={styles.btn}>
+        <Form.Item>
+          <BtnForm content='Siguiente' typeBtn='btn_primary' />
+        </Form.Item>
+      </div>
     </Form>
   )
 }

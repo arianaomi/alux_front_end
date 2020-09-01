@@ -1,8 +1,8 @@
-import React from 'react';
-import styles from './cartelPetAdop.module.scss';
-import { Avatar, Row, Col } from 'antd';
+import React from 'react'
+import styles from './cartelPetAdop.module.scss'
+import { Avatar } from 'antd'
 
-export default function CartelPetAdop ({
+export default function CartelPetAdop({
   image,
   namePet,
   alertAdop,
@@ -17,7 +17,7 @@ export default function CartelPetAdop ({
   Convive,
   color,
   raza,
-  contact
+  contact,
 }) {
   const avatar = image ? (
     <Avatar size={201} src={image} />

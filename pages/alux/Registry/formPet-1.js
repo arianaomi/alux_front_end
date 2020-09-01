@@ -7,14 +7,13 @@ import PetForm1 from '../../../components/Pages/PetForm1'
 import PetForm2 from '../../../components/Pages/PetForm2'
 import PetForm3 from '../../../components/Pages/PetForm3'
 import AddressForm from '../../../components/Pages/AddressForm'
-import Btn from '../../../components/Btn'
 import LayoutCurve from '../../../components/LayoutCurve'
 import Footer from '../../../components/Footer'
 import { addPetService } from '../../../services'
 
-import styles from './formPet1.module.scss'
+import styles from '../../../styles/alux/Registry/formPet-1/_formPet-1.module.scss'
 
-export default function FormPet1() {
+export default function FormPet1 () {
   const Router = useRouter()
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
@@ -41,14 +40,14 @@ export default function FormPet1() {
     setOwner(owner)
   }, [])
 
-  function handleForm1({ name, species, breed }) {
+  function handleForm1 ({ name, species, breed }) {
     setName(name)
     setSpecies(species)
     setBreed(breed)
     setActiveForm(1)
   }
 
-  function handleForm2({ color, birthDate, size, sex }) {
+  function handleForm2 ({ color, birthDate, size, sex }) {
     setColor(color)
     setBirthDate(birthDate)
     setSize(size)
@@ -56,15 +55,27 @@ export default function FormPet1() {
     setActiveForm(2)
   }
 
-  function handleForm3({ particularSigns, medicalInformation }) {
+  function handleForm3 ({ particularSigns, medicalInformation }) {
     setParticularSigns(particularSigns)
     setMedicalInformation(medicalInformation)
     setActiveForm(3)
   }
 
-  async function handleForm4({ address }) {
+  async function handleForm4 ({ address }) {
     setAddress(address)
-    const pet = { owner, name, species, breed, color, birthDate, size, sex, particularSigns, medicalInformation, address }
+    const pet = {
+      owner,
+      name,
+      species,
+      breed,
+      color,
+      birthDate,
+      size,
+      sex,
+      particularSigns,
+      medicalInformation,
+      address
+    }
     console.log(pet)
     try {
       const response = await addPetService(pet, token)
@@ -77,32 +88,53 @@ export default function FormPet1() {
       console.log('error', error)
     }
   }
-  console.warn(activeForm)
-  // const classNameShow = showFirstForm ? 'styles.d-block' : 'styles.d-none'
-  // const classNameShowSecond = showSecondForm ? 'styles.d-block' : 'styles.d-none'
-  // const classNameShowThird = showThirdForm ? 'styles.d-block' : 'styles.d-none'
-  // const classNameShowLast = showLastForm ? 'styles.d-block' : 'styles.d-none'
+  // console.warn(activeForm)
 
   return (
     <>
-      <LayoutCurve title='Tu mascota'>
-        <Row justify='center'>
-          <Col xs={10} md={12} lg={12}>
-            <div className={(activeForm === 0) ? styles.d_block : styles.d_none}>
-              <PetForm1 callback={handleForm1} />
+      <LayoutCurve title='Registro de mascota'>
+        <Row justify='center' className={styles.wrapperForms}>
+          <Col xs={22} md={22} lg={22}>
+            <div className={activeForm === 0 ? styles.d_block : styles.d_none}>
+              <div className={styles.form1}>
+                <PetForm1 callback={handleForm1} />
+              </div>
+              <div className={styles.cat}>
+                <img className={styles.catCi} src='/catWF.png' />
+              </div>
             </div>
-            <div className={(activeForm === 1) ? styles.d_block : styles.d_none}>
+
+            <div className={activeForm === 1 ? styles.d_block : styles.d_none}>
+              <div className={styles.img}>
+                <img src='/pajaritoForPetDos.png' />
+              </div>
               <PetForm2 callback={handleForm2} />
+              <div className={styles.imgEr}>
+                <img src='/ErizoAni.png' className={styles.erizo} />
+              </div>
             </div>
-            <div className={(activeForm === 2) ? styles.d_block : styles.d_none}>
-              <PetForm3 callback={handleForm3} />
+
+            <div className={activeForm === 2 ? styles.d_block : styles.d_none}>
+              <div className={styles.form3}>
+                {' '}
+                <img src='/cobayo.png' className={styles.cobayo} />
+                <PetForm3 callback={handleForm3} />
+              </div>
             </div>
-            <div className={(activeForm === 3) ? styles.d_block : styles.d_none}>
-              <AddressForm callback={handleForm4} />
+
+            <div className={activeForm === 3 ? styles.d_block : styles.d_none}>
+              <div className={styles.form4}>
+                <div className={styles.wrapperImg}>
+                  <h2>Dirección</h2> <img src='/PezFormPetTres.png' />
+                </div>
+                <AddressForm callback={handleForm4} />
+              </div>
             </div>
           </Col>
+          <Col xs={24} md={24} lg={24} className={styles.footer}>
+            <Footer />
+          </Col>
         </Row>
-        <Footer />
       </LayoutCurve>
     </>
   )

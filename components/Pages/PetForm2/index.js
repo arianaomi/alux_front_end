@@ -3,7 +3,7 @@ import { Form, Select, DatePicker, Radio } from 'antd'
 import BtnForm from '../../BtnForm'
 
 // CSS
-// import styles from './PetForm2.module.scss'
+import styles from './PetForm2.module.scss'
 
 const { Option } = Select
 
@@ -16,29 +16,29 @@ function PetForm2 ({ callback }) {
   const [sex, setSex] = useState('')
 
   // Default form functions
-  const onFinishFailed = (errorInfo) => {
+  const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo)
   }
-  const onFinish = (values) => {
+  const onFinish = values => {
     console.log('Received values of form: ', values)
     callback(values)
   }
 
   // Handlers
-  const onChangeColor = (value) => {
+  const onChangeColor = value => {
     setColor(value)
     console.log(value)
   }
-  const onChangeDate = (value) => {
+  const onChangeDate = value => {
     setBirthDate(value)
     console.log(value)
   }
 
-  const onChangeSize = (value) => {
+  const onChangeSize = value => {
     setSize(value)
     console.log(value)
   }
-  const onChangeSex = (value) => {
+  const onChangeSex = value => {
     setSex(value)
     console.log(value)
   }
@@ -49,11 +49,11 @@ function PetForm2 ({ callback }) {
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
-      className='container'
+      className={styles.container}
     >
       <Form.Item className='item' name='color' label='Color'>
         <Select
-          className='item'
+          className={styles.itemSelect1}
           placeholder='Por favor seleccione el color de su mascota'
           onChange={onChangeColor}
           allowClear
@@ -73,13 +73,9 @@ function PetForm2 ({ callback }) {
         </Select>
       </Form.Item>
 
-      <Form.Item label='Fecha de nacimiento' className='item'>
-        <DatePicker className='item' onChange={onChangeDate} picker='month' />
-      </Form.Item>
-
-      <Form.Item className='item' name='size' label='Tamaño'>
+      <Form.Item name='size' label='Tamaño'>
         <Select
-          className='item'
+          className={styles.itemSelect}
           placeholder='Por favor seleccione el tamaño de su mascota'
           onChange={onChangeSize}
           allowClear
@@ -91,26 +87,33 @@ function PetForm2 ({ callback }) {
           <Option value='Jumbo'>Jumbo</Option>
         </Select>
       </Form.Item>
+      <div className={styles.wrapperCal_gender}>
+        <Form.Item label='Fecha de nacimiento' className={styles.calendar}>
+          <DatePicker
+            className={styles.itemSelect3}
+            onChange={onChangeDate}
+            picker='month'
+          />
+        </Form.Item>
+        <Form.Item className='item' name='sex' label='Sexo'>
+          <Radio.Group
+            onChange={onChangeSex}
+            optionType='button'
+            buttonStyle='solid'
+            className={styles.itemSelect2}
+          >
+            <Radio.Button value='female'>Hembra</Radio.Button>
+            <Radio.Button value='male'>Macho</Radio.Button>
+            <Radio.Button value='unknown'>Desconocido</Radio.Button>
+          </Radio.Group>
+        </Form.Item>
+      </div>
 
-      <Form.Item className='item' name='sex' label='Sexo'>
-        <Radio.Group
-          onChange={onChangeSex}
-          optionType='button'
-          buttonStyle='solid'
-          className='item'
-        >
-          <Radio.Button value='female'>Hembra</Radio.Button>
-          <Radio.Button value='male'>Macho</Radio.Button>
-          <Radio.Button value='unknown'>Desconocido</Radio.Button>
-        </Radio.Group>
-      </Form.Item>
-
-      <Form.Item>
-        <BtnForm
-          content='Siguiente'
-          typeBtn='btn_primary'
-        />
-      </Form.Item>
+      <div className={styles.btn}>
+        <Form.Item>
+          <BtnForm content='Siguiente' typeBtn='btn_primary' />
+        </Form.Item>
+      </div>
     </Form>
   )
 }
