@@ -36,8 +36,8 @@ export default function GenerateQR({ origin }) {
           const { data } = await getPet(router.query.id)
           console.log(data)
           setPet(data)
-        } catch {
-          // TODO: handle 404
+        } catch (error) {
+          console.log(error)
         }
       })()
     }

@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+// ant-d
 import { Form } from 'antd'
+// components
 import CustomInput from '../../Input'
 import BtnForm from '../../BtnForm'
-
-// CSS
+// SCSS
 import styles from './LogInForm.module.scss'
 
 function LogInForm({ callback }) {
@@ -45,7 +46,6 @@ function LogInForm({ callback }) {
           value={password}
           type='password'
           error='Debe ingresar su contraseña'
-
           placeholder='Contraseña'
         />
       </Form.Item>
