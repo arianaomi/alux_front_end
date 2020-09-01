@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Row, Select, Col, DatePicker, Radio } from 'antd'
+import { Form, Select, DatePicker, Radio } from 'antd'
 import Btn from '../../Btn'
 
 // CSS
