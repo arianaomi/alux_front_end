@@ -1,28 +1,31 @@
-import ResetPasswordForm from "../../components/Pages/ResetPasswordForm";
-import CurvyHeader from "../../components/CurvyHeader";
-import { Row, Col } from "antd";
-import Footer from "../../components/Footer";
+import ResetPasswordForm from '../../components/Pages/ResetPasswordForm1'
+import Layout from '../../components/LayoutCurve'
+import { Row, Col } from 'antd'
+import Footer from '../../components/Footer'
+import styles from '../../styles/reset-password/_reset-password.module.scss'
 
 export default function ResetPassword() {
   return (
-    <>
-      <Row>
-        <Col>
-          <CurvyHeader />
-        </Col>
-      </Row>
-      <Row>
-        <Col offset={2} xs={20} sm={20} md={10} lg={10}>
-          <h1>Ingresa la nueva contraseña</h1>
-          <ResetPasswordForm />
-        </Col>
-        <Col offset={12} xs={12} sm={12} md={12} lg={12}>
-          <div>
-            <img src="/perroNewPaswMobil.png" />
+    <Layout title='Nueva contraseña' typeHeader='general'>
+      <Row justify='center'>
+        <Col xs={24} md={24}>
+          <div className={styles.container_logo}>
+            <img src='/LogoAluxHomeBlue.png' className={styles.logo} />
           </div>
         </Col>
+        <Col xs={22} md={16} lg={14}>
+          <h1 className={styles.letter}>Ingresa la nueva contraseña</h1>
+          <ResetPasswordForm />
+        </Col>
+        <Col xs={22} md={20} lg={20}>
+          <div className={styles.imgDog}>
+            <img src='/perroNewPaswMobil.png' />
+          </div>
+        </Col>
+        <Col xs={24} className={styles.footer}>
+          <Footer />
+        </Col>
       </Row>
-      <Footer />
-    </>
-  );
+    </Layout>
+  )
 }

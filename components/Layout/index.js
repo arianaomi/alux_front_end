@@ -1,8 +1,8 @@
 import Header from '../HeaderRectan'
-function Layout ({ children, title, image }) {
+function Layout ({ children, title, image, typeHeader }) {
   return (
     <>
-      <Header title={title} image={image} />
+      <Header title={title} image={image} typeHeader={typeHeader} />
       {children}
     </>
   )

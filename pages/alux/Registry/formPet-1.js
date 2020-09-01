@@ -99,8 +99,8 @@ export default function FormPet1 () {
               <AddressForm className={classNameShowLast} callback={handleForm4} />
             </div>
           </Col>
-          <Footer />
         </Row>
+        <Footer />
       </LayoutCurve>
     </>
   )

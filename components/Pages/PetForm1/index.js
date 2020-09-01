@@ -1,11 +1,15 @@
-import React, { useState } from 'react'
-import { Form, Select } from 'antd'
-import CustomInput from '../../Input'
-import Btn from '../../Btn'
-import CustomUpload from '../../CustomUpload'
+import React, { useState } from 'react';
+import { Form, Select } from 'antd';
+import CustomInput from '../../Input';
+import Btn from '../../Btn';
+import CustomUpload from '../../CustomUpload';
 
 // SCSS
+<<<<<<< HEAD
 import styles from './PetForm1.module.scss'
+=======
+import styles from './PetForm.module.scss';
+>>>>>>> develop
 
 const { Option } = Select
 
@@ -89,7 +93,7 @@ function PetForm1({ callback }) {
   const [breed, setBreed] = useState('')
 
   // Default form functions
-  const onFinishFailed = errorInfo => {
+  const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo)
   }
   const onFinish = (values) => {
@@ -100,18 +104,18 @@ function PetForm1({ callback }) {
   const handleInputName = (name, value) => {
     setName(value)
     console.log(value)
-  }
+  };
 
   // Handlers
-  const onChangeSpecies = value => {
+  const onChangeSpecies = (value) => {
     console.log(value)
     setSpecies(value)
-  }
+  };
 
   const onChangeBreed = (name, value) => {
     setBreed(value)
     console.log(value)
-  }
+  };
 
   return (
     <Form
@@ -176,9 +180,23 @@ function PetForm1({ callback }) {
       </div>
 
       <div className={styles.btn_wrapper}>
-        <Btn content='regresar' typeBtn='btn_secondary' link='/signUp' />
+        <div className={styles.btn_m}>
+          <Btn content='regresar' typeBtn='btn_secondary' link='/signUp' />
+        </div>
         <div className={styles.ratonC}>
-          <img src='/ratonCuerda.png' />
+          <img className={styles.ratonCi} src='/ratonCuerda.png' />
+        </div>
+        <div className={styles.catC}>
+          <img className={styles.catCi} src='/catWF.png' />
+        </div>
+        <div className={styles.btn_ms}>
+          <Form.Item>
+            <Btn
+              content='Siguiente'
+              typeBtn='btn_primary'
+              link='/alux/Registry/formPet-2'
+            />
+          </Form.Item>
         </div>
         <Form.Item>
           <Btn

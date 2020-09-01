@@ -12,8 +12,8 @@ import Router from 'next/router'
 // scss
 import styles from '../styles/_logIn.module.scss'
 
-export default function logIn() {
-  async function handleForm({ email, password }) {
+export default function logIn () {
+  async function handleForm ({ email, password }) {
     console.log(email, password)
     const user = { email, password }
     console.log(user)
@@ -35,7 +35,7 @@ export default function logIn() {
 
   return (
     <>
-      <LayoutCurve tittle='Iniciar sesión'>
+      <LayoutCurve title='Iniciar sesión'>
         <Row>
           <Col xs={24} md={0}>
             <div className={styles.container_logo}>

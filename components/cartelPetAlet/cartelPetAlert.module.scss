@@ -1,5 +1,13 @@
 .continerC {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 200px;
+  border-radius: 5px;
+  box-shadow: 6px 8px 7px #fe6262;
+  width: 89%;
+  margin-bottom: 30px;
 }
 
 .circle {
@@ -74,10 +82,16 @@
 }
 .containerSMW {
   display: flex;
-  justify-content: space-arocund;
+  align-items: center;
 }
 .iconM {
-  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+.iconW {
+  width: 25px;
+  height: 28px;
 }
 .contaTE {
   margin-top: 30px;
@@ -103,7 +117,7 @@
   padding-left: 10px;
 }
 .textCartTel {
-  margin-bottom: 0;
+  margin-bottom: 30px;
   font-weight: bold;
   font-size: 50px;
   font-family: "Poppins";
