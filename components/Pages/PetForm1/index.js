@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
-import { Form, Select } from 'antd';
-import CustomInput from '../../Input';
-import Btn from '../../Btn';
-import CustomUpload from '../../CustomUpload';
+import React, { useState } from 'react'
+import { Form, Select } from 'antd'
+import CustomInput from '../../Input'
+import BtnForm from '../../BtnForm'
+import Btn from '../../Btn'
+import CustomUpload from '../../CustomUpload'
 
 // SCSS
-<<<<<<< HEAD
 import styles from './PetForm1.module.scss'
-=======
-import styles from './PetForm.module.scss';
->>>>>>> develop
 
 const { Option } = Select
 
@@ -104,18 +101,18 @@ function PetForm1({ callback }) {
   const handleInputName = (name, value) => {
     setName(value)
     console.log(value)
-  };
+  }
 
   // Handlers
   const onChangeSpecies = (value) => {
     console.log(value)
     setSpecies(value)
-  };
+  }
 
   const onChangeBreed = (name, value) => {
     setBreed(value)
     console.log(value)
-  };
+  }
 
   return (
     <Form
@@ -191,19 +188,13 @@ function PetForm1({ callback }) {
         </div>
         <div className={styles.btn_ms}>
           <Form.Item>
-            <Btn
+            <BtnForm
               content='Siguiente'
               typeBtn='btn_primary'
-              link='/alux/Registry/formPet-2'
             />
           </Form.Item>
         </div>
-        <Form.Item>
-          <Btn
-            content='Siguiente'
-            typeBtn='btn_primary'
-          />
-        </Form.Item>
+
       </div>
     </Form>
   )

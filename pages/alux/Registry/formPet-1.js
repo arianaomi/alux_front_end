@@ -45,8 +45,8 @@ export default function FormPet1 () {
     setName(name)
     setSpecies(species)
     setBreed(breed)
-    setShowFirst(!showFirst)
-    setShowSecond(true)
+    setShowFirstForm(false)
+    setShowSecondForm(true)
   }
 
   function handleForm2 ({ color, birthDate, size, sex }) {
@@ -54,11 +54,15 @@ export default function FormPet1 () {
     setBirthDate(birthDate)
     setSize(size)
     setSex(sex)
+    setShowSecondForm(false)
+    setShowThirdForm(true)
   }
 
   function handleForm3 ({ particularSigns, medicalInformation }) {
     setParticularSigns(particularSigns)
     setMedicalInformation(medicalInformation)
+    setShowThirdForm(false)
+    setShowLastForm(true)
   }
   //! idPet harcodeado
   //  const idPet = '5f4c1549aea180148c144429'
@@ -78,25 +82,27 @@ export default function FormPet1 () {
     }
   }
 
-  const classNameShow = showFirstForm ? 'styles.d-block' : 'styles.d-none'
-  const classNameShowSecond = showSecondForm ? 'styles.d-block' : 'styles.d-none'
-  const classNameShowThird = showThirdForm ? 'styles.d-block' : 'styles.d-none'
-  const classNameShowLast = showLastForm ? 'styles.d-block' : 'styles.d-none'
+  // const classNameShow = showFirstForm ? 'styles.d-block' : 'styles.d-none'
+  // const classNameShowSecond = showSecondForm ? 'styles.d-block' : 'styles.d-none'
+  // const classNameShowThird = showThirdForm ? 'styles.d-block' : 'styles.d-none'
+  // const classNameShowLast = showLastForm ? 'styles.d-block' : 'styles.d-none'
 
   return (
     <>
       <LayoutCurve title='Tu mascota'>
         <Row justify='center'>
           <Col xs={10} md={12} lg={12}>
-            <PetForm1 className={classNameShow} callback={handleForm1} />
-            <div>
-              <PetForm2 className={classNameShowSecond} callback={handleForm2} />
+            <div className={styles.d_block}>
+              <PetForm1 callback={handleForm1} />
             </div>
-            <div>
-              <PetForm3 className={classNameShowThird} callback={handleForm3} />
+            <div className={styles.d_none}>
+              <PetForm2 callback={handleForm2} />
             </div>
-            <div>
-              <AddressForm className={classNameShowLast} callback={handleForm4} />
+            <div className={styles.d_none}>
+              <PetForm3 callback={handleForm3} />
+            </div>
+            <div className={styles.d_none}>
+              <AddressForm callback={handleForm4} />
             </div>
           </Col>
         </Row>

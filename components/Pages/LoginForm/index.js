@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Form } from 'antd'
+import { Form, Input } from 'antd'
 import CustomInput from '../../Input'
-import Btn from '../../Btn'
+import BtnForm from '../../BtnForm'
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons'
 
 // CSS
 import styles from './LogInForm.module.scss'
@@ -51,18 +52,19 @@ function LogInForm ({ callback }) {
         />
       </Form.Item>
       <Form.Item>
-        <CustomInput
+        <Input.Password
           className={styles.item}
-          placeholder='Contraseña'
           name='password'
           value={password}
           error='Debe ingresar su password'
           callback={handleInputPassword}
+          placeholder='Contraseña'
+          iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
         />
       </Form.Item>
       <div className={styles.btn_wrapper}>
         <Form.Item>
-          <Btn content='Ingresar' typeBtn='btn_primary' link='/alux/home' />
+          <BtnForm content='Ingresar' typeBtn='btn_primary' />
         </Form.Item>
       </div>
     </Form>

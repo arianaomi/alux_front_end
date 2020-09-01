@@ -28,6 +28,7 @@ export default function logIn () {
       console.log('user id: ', payload.id)
       const userId = payload.id
       localStorage.setItem('userId', userId)
+      Router.push('/alux/home')
     } catch (error) {
       console.log('error', error)
     }

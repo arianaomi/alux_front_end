@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Form, Input } from 'antd'
-import Btn from '../../Btn'
+import BtnForm from '../../BtnForm'
 
 const { TextArea } = Input
 // CSS
 
-function PetForm3({ callback }) {
+function PetForm3 ({ callback }) {
   // States
   const [particularSigns, setParticularSigns] = useState('')
   const [medicalInformation, setMedicalInformation] = useState('')
@@ -58,10 +58,9 @@ function PetForm3({ callback }) {
         <TextArea />
       </Form.Item>
       <Form.Item>
-        <Btn
+        <BtnForm
           content='Siguiente'
           typeBtn='btn_primary'
-        // ToDo: pasarle el id del perro
         />
       </Form.Item>
     </Form>

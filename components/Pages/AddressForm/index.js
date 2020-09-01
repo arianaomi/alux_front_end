@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Form } from 'antd'
 import CustomInput from '../../Input'
-import Btn from '../../Btn'
+import BtnForm from '../../BtnForm'
 
 export default function AddressForm({ callback }) {
   // States
@@ -85,7 +85,7 @@ export default function AddressForm({ callback }) {
       </Form.Item>
 
       <Form.Item>
-        <Btn
+        <BtnForm
           content='Guardar'
           typeBtn='btn_primary'
         />

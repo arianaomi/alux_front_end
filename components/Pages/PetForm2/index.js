@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Form, Row, Select, Col, DatePicker, Radio } from 'antd'
-import Btn from '../../Btn'
+import { Form, Select, DatePicker, Radio } from 'antd'
+import BtnForm from '../../BtnForm'
 
 // CSS
 // import styles from './PetForm2.module.scss'
@@ -105,7 +105,7 @@ function PetForm2({ callback }) {
       </Form.Item>
 
       <Form.Item>
-        <Btn
+        <BtnForm
           content='Siguiente'
           typeBtn='btn_primary'
         />

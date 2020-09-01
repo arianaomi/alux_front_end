@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
-import { Form } from 'antd'
+import { Form, Input } from 'antd'
 import CustomInput from '../../Input'
-import Btn from '../../Btn'
+import BtnForm from '../../BtnForm'
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons'
 
 // SCSS
 import styles from './RegisterForm.module.scss'
 
-function RegisterForm({ callback }) {
+function RegisterForm ({ callback }) {
   // States
   const [userName, setUserName] = useState('')
   const [email, setEmail] = useState('')
@@ -69,21 +70,21 @@ function RegisterForm({ callback }) {
       </Form.Item>
 
       <Form.Item>
-        <CustomInput
+        <Input.Password
           className={styles.item}
-          placeholder='Contraseña'
           name='password'
           value={password}
           error='Debe ingresar su contraseña'
           callback={handleInputPassword}
+          placeholder='Contraseña'
+          iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
         />
       </Form.Item>
       <div className={styles.btn_wrapper}>
         <Form.Item>
-          <Btn
+          <BtnForm
             content='Crear cuenta'
             typeBtn='btn_primary'
-            link='/alux/Registry/formPet-1'
           />
         </Form.Item>
       </div>

@@ -20,6 +20,7 @@ export default function signUp() {
     try {
       const response = await signUpService(user)
       console.log(response)
+      // Router.push('/alux/Registry/formPet-1')
       Router.push('alux/logIn')
     } catch (error) {
       console.log('error', error)
