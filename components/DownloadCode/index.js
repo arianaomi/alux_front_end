@@ -10,15 +10,29 @@ export default function DownloadCode ({ value }) {
   return (
     <>
       <Code value={value} ref={componentRef} />
-      <button className={styles.btnQrD} onClick={() => componentExportImage.exportComponentAsJPEG(componentRef)}>
-        Download As JPEG
-      </button>
-      <button className={styles.btnQrD} onClick={() => componentExportImage.exportComponentAsPDF(componentRef)}>
-        Download As PDF
-      </button>
-      <button className={styles.btnQrD} onClick={() => componentExportImage.exportComponentAsPNG(componentRef)}>
-        Download As PNG
-      </button>
+      <div className={styles.containerBtn}>
+        <button
+          className={styles.btnQrD}
+          onClick={() =>
+            componentExportImage.exportComponentAsJPEG(componentRef)}
+        >
+          Download As JPEG
+        </button>
+        <button
+          className={styles.btnQrD}
+          onClick={() =>
+            componentExportImage.exportComponentAsPDF(componentRef)}
+        >
+          Download As PDF
+        </button>
+        <button
+          className={styles.btnQrD}
+          onClick={() =>
+            componentExportImage.exportComponentAsPNG(componentRef)}
+        >
+          Download As PNG
+        </button>
+      </div>
     </>
   )
 }

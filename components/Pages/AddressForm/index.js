@@ -55,7 +55,7 @@ export default function AddressForm({ callback }) {
         />
       </Form.Item>
 
-      <Form.Item label='Número'>
+      <Form.Item label='Número' className={styles.label}>
         <CustomInput
           name='number'
           value={number}
@@ -75,7 +75,7 @@ export default function AddressForm({ callback }) {
         />
       </Form.Item>
 
-      <Form.Item label='C.P.'>
+      <Form.Item label='C.P.  '>
         <CustomInput
           name='zipCode'
           value={zipCode}

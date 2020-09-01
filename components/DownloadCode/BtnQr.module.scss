@@ -1,18 +1,22 @@
-.btnQrD{
-    color: #1cb7cc;
-    font-size: 1.2vw;
-    font-weight: 700;
-    padding-bottom: 10px;
-    text-decoration: underline;
-    border: none;
-    background: none;
-    @media only screen and (max-width: 768px) {
+.btnQrD {
+  color: #1cb7cc;
+  font-size: 1.2vw;
+  font-weight: 700;
+  padding-bottom: 10px;
+  text-decoration: underline;
+  border: none;
+  background: none;
+  @media only screen and (max-width: 768px) {
+    font-size: 3vw;
+  }
 
-font-size: 3vw;
-}
-@media only screen and (max-width: 375px) {
-
-font-size: 5vw;
-}
+  @media only screen and (max-width: 375px) {
+    font-size: 5vw;
+  }
 }
 
+.containerBtn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
