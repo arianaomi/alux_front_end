@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Form, Select } from 'antd';
-import CustomInput from '../../Input';
-import Btn from '../../Btn';
-import CustomUpload from '../../CustomUpload';
+import React, { useState } from 'react'
+import { Form, Select } from 'antd'
+import CustomInput from '../../Input'
+import Btn from '../../Btn'
+import CustomUpload from '../../CustomUpload'
 
 // SCSS
-import styles from './PetForm.module.scss';
+import styles from './PetForm.module.scss'
 
 const { Option } = Select
 
@@ -91,21 +91,21 @@ function PetForm1 () {
   // Default form functions
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo)
-  };
+  }
   const onFinish = (values) => {
     console.log('Received values of form: ', values)
     // acá ir al siguiente componente
-  };
+  }
   const handleInputName = (name, value) => {
     setName(value)
     console.log(value)
-  };
+  }
 
   // Handlers
   const onChangeSpecies = (value) => {
     console.log(value)
     setSpecies(value)
-  };
+  }
 
   // handleSelectChange(event) {
   //   console.log(event.target.value)
@@ -116,7 +116,7 @@ function PetForm1 () {
   const onChangeBreed = (name, value) => {
     setBreed(value)
     console.log(value)
-  };
+  }
 
   return (
     <Form
