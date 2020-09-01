@@ -25,10 +25,9 @@ export default function FormPet1 () {
   const [particularSigns, setParticularSigns] = useState('')
   const [medicalInformation, setMedicalInformation] = useState('')
   const [address, setAddress] = useState('')
-  const [showFirstForm, setShowFirstForm] = useState(true)
-  const [showSecondForm, setShowSecondForm] = useState(false)
-  const [showThirdForm, setShowThirdForm] = useState(false)
-  const [showLastForm, setShowLastForm] = useState(false)
+
+  const [activeForm, setActiveForm] = useState(0)
+
   const [token, setToken] = useState('')
   const [owner, setOwner] = useState('')
 
@@ -45,8 +44,7 @@ export default function FormPet1 () {
     setName(name)
     setSpecies(species)
     setBreed(breed)
-    setShowFirstForm(false)
-    setShowSecondForm(true)
+    setActiveForm(1)
   }
 
   function handleForm2 ({ color, birthDate, size, sex }) {
@@ -54,15 +52,13 @@ export default function FormPet1 () {
     setBirthDate(birthDate)
     setSize(size)
     setSex(sex)
-    setShowSecondForm(false)
-    setShowThirdForm(true)
+    setActiveForm(2)
   }
 
   function handleForm3 ({ particularSigns, medicalInformation }) {
     setParticularSigns(particularSigns)
     setMedicalInformation(medicalInformation)
-    setShowThirdForm(false)
-    setShowLastForm(true)
+    setActiveForm(3)
   }
   //! idPet harcodeado
   //  const idPet = '5f4c1549aea180148c144429'
@@ -81,7 +77,7 @@ export default function FormPet1 () {
       console.log('error', error)
     }
   }
-
+  console.warn(activeForm)
   // const classNameShow = showFirstForm ? 'styles.d-block' : 'styles.d-none'
   // const classNameShowSecond = showSecondForm ? 'styles.d-block' : 'styles.d-none'
   // const classNameShowThird = showThirdForm ? 'styles.d-block' : 'styles.d-none'
@@ -92,16 +88,16 @@ export default function FormPet1 () {
       <LayoutCurve title='Tu mascota'>
         <Row justify='center'>
           <Col xs={10} md={12} lg={12}>
-            <div className={styles.d_block}>
+            <div className={(activeForm === 0) ? styles.d_block : styles.d_none}>
               <PetForm1 callback={handleForm1} />
             </div>
-            <div className={styles.d_none}>
+            <div className={(activeForm === 1) ? styles.d_block : styles.d_none}>
               <PetForm2 callback={handleForm2} />
             </div>
-            <div className={styles.d_none}>
+            <div className={(activeForm === 2) ? styles.d_block : styles.d_none}>
               <PetForm3 callback={handleForm3} />
             </div>
-            <div className={styles.d_none}>
+            <div className={(activeForm === 3) ? styles.d_block : styles.d_none}>
               <AddressForm callback={handleForm4} />
             </div>
           </Col>
