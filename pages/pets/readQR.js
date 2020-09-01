@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Layout from '../../components/Layout'
+import CartelPetAlert from '../../components/cartelPetAlet'
 import { readQR } from '../../services'
 import { useRouter } from 'next/router'
 import { Spin } from 'antd'
@@ -52,7 +53,23 @@ export default function ReadQR() {
       )}
       {wasSent && pet && (
         <Layout title={` Cartel de ${pet.name} `} typeHeader='alert'>
-          <h1>Mostrar perrito perdido {pet.name} </h1>{' '}
+          <CartelPetAlert
+            image='/perritoNegro.png'
+            namePet={pet.name}
+            alertAdop='false'
+            title='hola'
+            date='23/09/19'
+            sex='female'
+            lugar='naucalpan'
+            zice='md'
+            especie=' perro'
+            señasParticulares='patas blancas'
+            temperamento='juguetona'
+            Convive='niños'
+            color='cafe/negro'
+            raza='sin raza'
+            contact='5540022463'
+          />
         </Layout>
       )}
       {wasSent && !pet && (
