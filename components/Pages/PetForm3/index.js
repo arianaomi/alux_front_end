@@ -5,7 +5,7 @@ import Btn from '../../Btn'
 const { TextArea } = Input
 // CSS
 
-function PetForm3 ({ callback }) {
+function PetForm3({ callback }) {
   // States
   const [particularSigns, setParticularSigns] = useState('')
   const [medicalInformation, setMedicalInformation] = useState('')
@@ -61,8 +61,7 @@ function PetForm3 ({ callback }) {
         <Btn
           content='Siguiente'
           typeBtn='btn_primary'
-          // ToDo: pasarle el id del perro
-          link='/alux/Registry/formPet-4'
+        // ToDo: pasarle el id del perro
         />
       </Form.Item>
     </Form>

@@ -98,9 +98,9 @@ function PetForm2({ callback }) {
           buttonStyle='solid'
           className='item'
         >
-          <Radio.Button value='Female'>Hembra</Radio.Button>
-          <Radio.Button value='Male'>Macho</Radio.Button>
-          <Radio.Button value='Unknown'>Desconocido</Radio.Button>
+          <Radio.Button value='female'>Hembra</Radio.Button>
+          <Radio.Button value='male'>Macho</Radio.Button>
+          <Radio.Button value='unknown'>Desconocido</Radio.Button>
         </Radio.Group>
       </Form.Item>
 
@@ -108,7 +108,6 @@ function PetForm2({ callback }) {
         <Btn
           content='Siguiente'
           typeBtn='btn_primary'
-          link='/alux/Registry/formPet-3'
         />
       </Form.Item>
     </Form>

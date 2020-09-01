@@ -82,7 +82,7 @@ const objectBreedOptions = {
   ]
 }
 
-function PetForm1 ({ callback }) {
+function PetForm1({ callback }) {
   // States
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
@@ -184,7 +184,6 @@ function PetForm1 ({ callback }) {
           <Btn
             content='Siguiente'
             typeBtn='btn_primary'
-            link='/alux/Registry/formPet-2'
           />
         </Form.Item>
       </div>

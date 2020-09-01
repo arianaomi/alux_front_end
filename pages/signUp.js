@@ -5,18 +5,20 @@ import RegisterForm from '../components/Pages/RegisterForm'
 import LayoutCurve from '../components/LayoutCurve'
 import Footer from '../components/Footer'
 import { signUpService } from '../services'
+import Router from 'next/router'
 
 // scss
 import styles from '../styles/_signUp.module.scss'
 
-export default function signUp () {
-  async function handleForm ({ userName, email, password }) {
+export default function signUp() {
+  async function handleForm({ userName, email, password }) {
     console.log(userName, email, password)
     const user = { userName, email, password }
     console.log(user)
     try {
       const response = await signUpService(user)
       console.log(response)
+      Router.push('alux/logIn')
     } catch (error) {
       console.log('error', error)
     }

@@ -7,7 +7,7 @@ import styles from './Input.module.scss'
 const CustomInput = (props) => {
   const { type, name, value, placeholder, error, callback } = props
 
-  const handlerInput = ({ target: { value, name } }) => {
+  const handlerInput = ({ value, name }) => {
     callback(name, value)
   }
 

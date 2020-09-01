@@ -1,0 +1,176 @@
+.continerC {
+  margin-bottom: 200px;
+}
+
+.circle {
+  width: 215px;
+  border-radius: 50%;
+  border: solid #ff4a4a 7px;
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.TextName {
+  font-size: 36px;
+  font-family: "Poppins";
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #414141;
+}
+
+.TextAleAdp {
+  color: #ff4a4a;
+  font-family: "Poppins";
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 33px;
+}
+
+.TextAleAdpDos {
+  font-size: 34px;
+  font-family: "Poppins";
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #414141;
+  margin-bottom: 30px;
+}
+
+.containerdos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.textCartG {
+  font-weight: bold;
+  font-size: 24px;
+  font-family: "Poppins";
+  color: #636363;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.containerDS {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.containerUT {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.containerUTtel {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.textCartL {
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: "Poppins";
+  color: #636363;
+  padding-left: 10px;
+}
+
+.containerSMW {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-arocund;
+      -ms-flex-pack: space-arocund;
+          justify-content: space-arocund;
+}
+
+.iconM {
+  margin-right: 10px;
+}
+
+.contaTE {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.contaS {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contaTC {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.texP {
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: "Poppins";
+  color: #303030;
+  padding-left: 10px;
+}
+
+.textCartTel {
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 50px;
+  font-family: "Poppins";
+  color: #3f3f3f;
+  padding-left: 10px;
+}
+
+.ubicT {
+  width: 48px;
+}
+/*# sourceMappingURL=cartelPetAlert.module.css.map */
