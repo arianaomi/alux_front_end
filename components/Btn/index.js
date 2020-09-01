@@ -1,10 +1,10 @@
 //
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 // SCSS
-import styles from './Btn.module.scss'
+import styles from "./Btn.module.scss";
 
-function Btn ({ content, typeBtn = 'btn_primary', link }) {
-  const router = useRouter()
+function Btn({ content, typeBtn = "btn_primary", link }) {
+  const router = useRouter();
   return (
     <>
       <button
@@ -14,7 +14,7 @@ function Btn ({ content, typeBtn = 'btn_primary', link }) {
         {content}
       </button>
     </>
-  )
+  );
 }
 
-export default Btn
+export default Btn;

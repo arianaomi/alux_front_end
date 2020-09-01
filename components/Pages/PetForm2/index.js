@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Select, DatePicker, Radio } from 'antd'
+import { Form, Row, Select, Col, DatePicker, Radio } from 'antd'
 import Btn from '../../Btn'
 
 // CSS
@@ -12,32 +12,33 @@ function PetForm2 () {
   const [color, setColor] = useState('')
   const [birthDate, setBirthDate] = useState('')
   const [size, setSize] = useState('')
+  /**/
   const [sex, setSex] = useState('')
 
   // Default form functions
-  const onFinishFailed = errorInfo => {
+  const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo)
   }
-  const onFinish = values => {
+  const onFinish = (values) => {
     console.log('Received values of form: ', values)
     // acá ir al siguiente componente
   }
 
   // Handlers
-  const onChangeColor = value => {
+  const onChangeColor = (value) => {
     setColor(value)
     console.log(value)
   }
-  const onChangeDate = value => {
+  const onChangeDate = (value) => {
     setBirthDate(value)
     console.log(value)
   }
 
-  const onChangeSize = value => {
+  const onChangeSize = (value) => {
     setSize(value)
     console.log(value)
   }
-  const onChangeSex = value => {
+  const onChangeSex = (value) => {
     setSex(value)
     console.log(value)
   }
