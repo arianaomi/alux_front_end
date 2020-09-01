@@ -12,8 +12,8 @@ import Router from 'next/router'
 // scss
 import styles from '../styles/_logIn.module.scss'
 
-export default function logIn () {
-  async function handleForm ({ email, password }) {
+export default function logIn() {
+  async function handleForm({ email, password }) {
     console.log(email, password)
     const user = { email, password }
     console.log(user)
@@ -23,7 +23,12 @@ export default function logIn () {
       const token = response.data.token
       console.log(token)
       localStorage.setItem('token', token)
-      Router.push('alux/home')
+      const payload = JSON.parse(atob(token.split('.')[1]))
+      console.log(payload)
+      console.log('user id: ', payload.id)
+      const userId = payload.id
+      localStorage.setItem('userId', userId)
+      Router.push('/alux/home')
     } catch (error) {
       console.log('error', error)
     }
@@ -35,7 +40,7 @@ export default function logIn () {
         <Row>
           <Col xs={24} md={0}>
             <div className={styles.container_logo}>
-              <img src='/logoBlue.svg' className={styles.logo} />
+              <img src='/LogoAluxHomeBlue.png' className={styles.logo} />
             </div>
           </Col>
         </Row>

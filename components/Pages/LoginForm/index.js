@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Form } from 'antd'
 import CustomInput from '../../Input'
-import Btn from '../../Btn'
+import BtnForm from '../../BtnForm'
 
 // CSS
 import styles from './LogInForm.module.scss'
 
-function LogInForm ({ callback }) {
+function LogInForm({ callback }) {
   // States
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -19,17 +19,6 @@ function LogInForm ({ callback }) {
   const onFinish = values => {
     console.log(values)
     callback(values)
-  }
-
-  // Handlers
-  const handleInputEmail = (name, value) => {
-    setEmail(value)
-    console.log(value)
-  }
-
-  const handleInputPassword = (name, value) => {
-    setPassword(value)
-    console.log(value)
   }
 
   return (
@@ -47,22 +36,22 @@ function LogInForm ({ callback }) {
           value={email}
           type='email'
           error='Debe ingresar un email válido'
-          callback={handleInputEmail}
         />
       </Form.Item>
       <Form.Item>
         <CustomInput
           className={styles.item}
-          placeholder='Contraseña'
           name='password'
           value={password}
-          error='Debe ingresar su password'
-          callback={handleInputPassword}
+          type='password'
+          error='Debe ingresar su contraseña'
+
+          placeholder='Contraseña'
         />
       </Form.Item>
       <div className={styles.btn_wrapper}>
         <Form.Item>
-          <Btn content='Ingresar' typeBtn='btn_primary' link='/alux/home' />
+          <BtnForm content='Ingresar' typeBtn='btn_primary' />
         </Form.Item>
       </div>
     </Form>

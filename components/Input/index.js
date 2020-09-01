@@ -5,12 +5,7 @@ import { Form, Input } from 'antd'
 import styles from './Input.module.scss'
 
 const CustomInput = (props) => {
-  const { type, name, value, placeholder, error, callback } = props
-
-  const handlerInput = ({ target: { value, name } }) => {
-    callback(name, value)
-  }
-
+  const { type, name, value, placeholder, error } = props
   return (
     <Form.Item
       className='form-item'
@@ -23,7 +18,6 @@ const CustomInput = (props) => {
         type={type || 'text'}
         name={name}
         value={value}
-        onChange={handlerInput}
       />
     </Form.Item>
   )
