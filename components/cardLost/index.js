@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from './cardLost.module.scss';
+import React from 'react'
+import styles from './cardLost.module.scss'
 
-export default function CardLost ({ image, namePet, date, place }) {
+export default function CardLost({ image, namePet, date, place }) {
   return (
     <div className={styles.wrapper_lost}>
       <div className={styles.capa} />

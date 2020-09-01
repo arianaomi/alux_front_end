@@ -1,4 +1,4 @@
-@import "./variables";
+@import './variables';
 .container_logo {
   display: flex;
   justify-content: center;
@@ -106,7 +106,9 @@
   .infoAlux {
     height: 53.2vw;
     width: 100%;
-    background-image: url("../public/bg-welcomeY.png");
+    background-image: url('../public/bg-welcomeY.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: flex-end;
     align-items: center;
