@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Form, Select } from 'antd'
 import CustomInput from '../../Input'
+import BtnForm from '../../BtnForm'
 import Btn from '../../Btn'
 import CustomUpload from '../../CustomUpload'
 
 // SCSS
-import styles from './PetForm.module.scss'
+import styles from './PetForm1.module.scss'
 
 const { Option } = Select
 
@@ -82,7 +83,7 @@ const objectBreedOptions = {
   ]
 }
 
-function PetForm1 () {
+function PetForm1 ({ callback }) {
   // States
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
@@ -93,12 +94,8 @@ function PetForm1 () {
     console.log('Failed:', errorInfo)
   }
   const onFinish = (values) => {
-    console.log('Received values of form: ', values)
-    // acá ir al siguiente componente
-  }
-  const handleInputName = (name, value) => {
-    setName(value)
-    console.log(value)
+    console.log(values)
+    callback(values)
   }
 
   // Handlers
@@ -106,12 +103,6 @@ function PetForm1 () {
     console.log(value)
     setSpecies(value)
   }
-
-  // handleSelectChange(event) {
-  //   console.log(event.target.value)
-  //   let selectedAnimal = event.target.value
-  //   this.setState({ selectedAnimal })
-  // }
 
   const onChangeBreed = (name, value) => {
     setBreed(value)
@@ -139,7 +130,6 @@ function PetForm1 () {
               value={name}
               type='text'
               error='Debe ingresar un nombre'
-              callback={handleInputName}
             />
           </Form.Item>
 
@@ -192,13 +182,13 @@ function PetForm1 () {
         </div>
         <div className={styles.btn_ms}>
           <Form.Item>
-            <Btn
+            <BtnForm
               content='Siguiente'
               typeBtn='btn_primary'
-              link='/alux/Registry/formPet-2'
             />
           </Form.Item>
         </div>
+
       </div>
     </Form>
   )

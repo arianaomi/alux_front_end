@@ -1,7 +1,6 @@
 //! url API
 // const URL_BASE = 'https://6e3cccb45d82.ngrok.io/'
 
-// const URL_BASE = 'http://localhost:8080/'
 const URL_BASE = 'https://api-alux.mybluemix.net/'
 
 const sessionToken =

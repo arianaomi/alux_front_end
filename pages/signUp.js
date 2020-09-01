@@ -7,6 +7,7 @@ import RegisterForm from '../components/Pages/RegisterForm'
 import LayoutCurve from '../components/LayoutCurve'
 import Footer from '../components/Footer'
 import { signUpService } from '../services'
+import Router from 'next/router'
 
 // scss
 import styles from '../styles/_signUp.module.scss'
@@ -19,6 +20,8 @@ export default function signUp() {
     try {
       const response = await signUpService(user)
       console.log(response)
+      // Router.push('/alux/Registry/formPet-1')
+      Router.push('alux/logIn')
     } catch (error) {
       console.log('error', error)
     }
@@ -30,7 +33,7 @@ export default function signUp() {
         <Row>
           <Col xs={24} md={0}>
             <div className={styles.container_logo}>
-              <img src='/logoBlue.svg' className={styles.logo} />
+              <img src='/LogoAluxHomeBlue.png' className={styles.logo} />
             </div>
           </Col>
         </Row>

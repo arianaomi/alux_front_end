@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import { Form, Row, Select, Col, DatePicker, Radio } from 'antd'
-import Btn from '../../Btn'
+import { Form, Select, DatePicker, Radio } from 'antd'
+import BtnForm from '../../BtnForm'
 
 // CSS
 // import styles from './PetForm2.module.scss'
 
 const { Option } = Select
 
-function PetForm2 () {
+function PetForm2 ({ callback }) {
   // States
   const [color, setColor] = useState('')
   const [birthDate, setBirthDate] = useState('')
@@ -21,7 +21,7 @@ function PetForm2 () {
   }
   const onFinish = (values) => {
     console.log('Received values of form: ', values)
-    // acá ir al siguiente componente
+    callback(values)
   }
 
   // Handlers
@@ -99,17 +99,16 @@ function PetForm2 () {
           buttonStyle='solid'
           className='item'
         >
-          <Radio.Button value='Female'>Hembra</Radio.Button>
-          <Radio.Button value='Male'>Macho</Radio.Button>
-          <Radio.Button value='Unknown'>Desconocido</Radio.Button>
+          <Radio.Button value='female'>Hembra</Radio.Button>
+          <Radio.Button value='male'>Macho</Radio.Button>
+          <Radio.Button value='unknown'>Desconocido</Radio.Button>
         </Radio.Group>
       </Form.Item>
 
       <Form.Item>
-        <Btn
+        <BtnForm
           content='Siguiente'
           typeBtn='btn_primary'
-          link='/alux/Registry/formPet-3'
         />
       </Form.Item>
     </Form>

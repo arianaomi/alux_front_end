@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
-import { Form } from 'antd'
+import { Form, Input } from 'antd'
 import CustomInput from '../../Input'
-import Btn from '../../Btn'
+import BtnForm from '../../BtnForm'
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons'
 
 // SCSS
 import styles from './RegisterForm.module.scss'
 
-function RegisterForm ({ callback }) {
+function RegisterForm({ callback }) {
   // States
   const [userName, setUserName] = useState('')
   const [email, setEmail] = useState('')
@@ -17,25 +18,20 @@ function RegisterForm ({ callback }) {
     console.log('Failed:', errorInfo)
   }
   const onFinish = (values) => {
-    console.log(typeof (values))
+    console.log(values)
     callback(values)
   }
 
-  const handleInputUserName = (name, value) => {
-    setUserName(value)
-    console.log(value)
-  }
+  // // Handlers
+  // const handleInputEmail = (name, value) => {
+  //   setEmail(value)
+  //   console.log(value)
+  // }
 
-  // Handlers
-  const handleInputEmail = (name, value) => {
-    setEmail(value)
-    console.log(value)
-  }
-
-  const handleInputPassword = (name, value) => {
-    setPassword(value)
-    console.log(value)
-  }
+  // const handleInputPassword = (name, value) => {
+  //   setPassword(value)
+  //   console.log(value)
+  // }
 
   return (
     <Form
@@ -52,7 +48,6 @@ function RegisterForm ({ callback }) {
           value={userName}
           type='text'
           error='Debe ingresar un nombre de usuario'
-          callback={handleInputUserName}
         />
       </Form.Item>
 
@@ -64,26 +59,24 @@ function RegisterForm ({ callback }) {
           value={email}
           type='email'
           error='Debe ingresar un correo electrónico válido'
-          callback={handleInputEmail}
         />
       </Form.Item>
 
       <Form.Item>
         <CustomInput
           className={styles.item}
-          placeholder='Contraseña'
           name='password'
           value={password}
+          type='password'
           error='Debe ingresar su contraseña'
-          callback={handleInputPassword}
+          placeholder='Contraseña'
         />
       </Form.Item>
       <div className={styles.btn_wrapper}>
         <Form.Item>
-          <Btn
+          <BtnForm
             content='Crear cuenta'
             typeBtn='btn_primary'
-            link='/alux/Registry/formPet-1'
           />
         </Form.Item>
       </div>
