@@ -2,7 +2,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import styles from './MenuH.module.scss'
-import UlNavMenu from '../../components/ulNavMenu'
 
 const BuMenu = () => {
   const [status, setStatus] = useState('close')
@@ -28,7 +27,7 @@ const BuMenu = () => {
           <li className={styles.iconLi}><img className={styles.iconM} src='/PerfilPet.png' /><Link href='/alux/pets/loquesea'><a>Mascota</a></Link></li>
           <li className={styles.iconLi}><img className={styles.iconM} src='/AddPet.png' /><Link href='/alux/Registry/formPet-1'><a>Agrega</a></Link></li>
         </ul>
-      </nav>
+                                                                  </nav>
         : null}
       </div>
     </nav>
