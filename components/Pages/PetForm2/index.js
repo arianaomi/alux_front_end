@@ -7,7 +7,7 @@ import Btn from '../../Btn'
 
 const { Option } = Select
 
-function PetForm2() {
+function PetForm2 () {
   // States
   const [color, setColor] = useState('')
   const [birthDate, setBirthDate] = useState('')
