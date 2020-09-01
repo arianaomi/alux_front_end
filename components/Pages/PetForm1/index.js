@@ -83,7 +83,7 @@ const objectBreedOptions = {
   ]
 }
 
-function PetForm1({ callback }) {
+function PetForm1 ({ callback }) {
   // States
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')

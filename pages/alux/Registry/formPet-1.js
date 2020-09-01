@@ -14,7 +14,7 @@ import { addPetService } from '../../../services'
 
 import styles from './formPet1.module.scss'
 
-export default function FormPet1 () {
+export default function FormPet1() {
   const Router = useRouter()
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
@@ -41,14 +41,14 @@ export default function FormPet1 () {
     setOwner(owner)
   }, [])
 
-  function handleForm1 ({ name, species, breed }) {
+  function handleForm1({ name, species, breed }) {
     setName(name)
     setSpecies(species)
     setBreed(breed)
     setActiveForm(1)
   }
 
-  function handleForm2 ({ color, birthDate, size, sex }) {
+  function handleForm2({ color, birthDate, size, sex }) {
     setColor(color)
     setBirthDate(birthDate)
     setSize(size)
@@ -56,15 +56,13 @@ export default function FormPet1 () {
     setActiveForm(2)
   }
 
-  function handleForm3 ({ particularSigns, medicalInformation }) {
+  function handleForm3({ particularSigns, medicalInformation }) {
     setParticularSigns(particularSigns)
     setMedicalInformation(medicalInformation)
     setActiveForm(3)
   }
-  //! idPet harcodeado
-  //  const idPet = '5f4c1549aea180148c144429'
 
-  async function handleForm4 ({ address }) {
+  async function handleForm4({ address }) {
     setAddress(address)
     const pet = { owner, name, species, breed, color, birthDate, size, sex, particularSigns, medicalInformation, address }
     console.log(pet)

@@ -12,8 +12,8 @@ import Router from 'next/router'
 // scss
 import styles from '../styles/_signUp.module.scss'
 
-export default function signUp () {
-  async function handleForm ({ userName, email, password }) {
+export default function signUp() {
+  async function handleForm({ userName, email, password }) {
     console.log(userName, email, password)
     const user = { userName, email, password }
     console.log(user)

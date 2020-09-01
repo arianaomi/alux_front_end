@@ -7,37 +7,38 @@ import BtnForm from '../../BtnForm'
 
 const { Option } = Select
 
-function PetForm2({ callback }) {
+function PetForm2 ({ callback }) {
   // States
   const [color, setColor] = useState('')
   const [birthDate, setBirthDate] = useState('')
   const [size, setSize] = useState('')
+  /**/
   const [sex, setSex] = useState('')
 
   // Default form functions
-  const onFinishFailed = errorInfo => {
+  const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo)
   }
-  const onFinish = values => {
+  const onFinish = (values) => {
     console.log('Received values of form: ', values)
     callback(values)
   }
 
   // Handlers
-  const onChangeColor = value => {
+  const onChangeColor = (value) => {
     setColor(value)
     console.log(value)
   }
-  const onChangeDate = value => {
+  const onChangeDate = (value) => {
     setBirthDate(value)
     console.log(value)
   }
 
-  const onChangeSize = value => {
+  const onChangeSize = (value) => {
     setSize(value)
     console.log(value)
   }
-  const onChangeSex = value => {
+  const onChangeSex = (value) => {
     setSex(value)
     console.log(value)
   }
