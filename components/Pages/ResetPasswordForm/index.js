@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { Form } from 'antd'
-import CustomInput from '../../Input'
+import { Form, Input } from 'antd'
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import Btn from '../../Btn'
 // CSS
 import styles from './ResetPasswordForm.module.scss'
 
-function ResetPasswordForm () {
+function ResetPasswordForm({ callback }) {
   // States
 
   const [password, setPassword] = useState('')
@@ -16,11 +16,7 @@ function ResetPasswordForm () {
   }
   const onFinish = values => {
     console.log('Received values of form: ', values)
-    // fetch(`${URL_BASE}.json`, {
-    //   method: 'POST',
-    //   mode: 'cors',
-    //   body: JSON.stringify(values)
-    // }).then((response) => console.log(response.json))
+    callback(values)
   }
 
   // Handlers
@@ -37,16 +33,19 @@ function ResetPasswordForm () {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
-      <Form.Item>
-        <CustomInput
+      <Form.Item
+        label='Ingrese su nueva contraseña' >
+        <Input.Password
           className={styles.item}
-          placeholder='Contraseña'
           name='password'
           value={password}
           error='Debe ingresar su password'
           callback={handleInputPassword}
+          placeholder='Contraseña'
+          iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
         />
       </Form.Item>
+
       <div className={styles.btn_wrapper}>
         <Form.Item>
           <Btn content='Restablecer contraseña' typeBtn='btn_primary' link='/' />

@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
 import { Form } from 'antd'
 import CustomInput from '../../Input'
-import Btn from '../../Btn'
+import BtnForm from '../../BtnForm'
 
-function AddressForm () {
+export default function AddressForm({ callback }) {
   // States
   const [street, setStreet] = useState('')
   const [number, setNumber] = useState('')
   const [block, setBlock] = useState('')
   const [zipCode, setZipCode] = useState('')
-  //! idPet harcodeado
-  const idPet = '5f4c1549aea180148c144429'
 
   // Default form functions
   const onFinishFailed = errorInfo => {
@@ -18,9 +16,7 @@ function AddressForm () {
   }
   const onFinish = values => {
     console.log('Received values of form: ', values)
-    const address = values
-    console.log(address)
-    // acá el fetch del objeto address a la DB
+    callback(values)
   }
   // Handlers
   const handleInputStreet = (name, value) => {
@@ -48,59 +44,52 @@ function AddressForm () {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
-      <Form.Item
-        label='Calle'
-        name='street'
-        value={street}
-        type='text'
-        error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
-        callback={handleInputStreet}
-      >
-        <CustomInput />
+      <Form.Item label='Calle'>
+        <CustomInput
+          name='street'
+          value={street}
+          type='text'
+          error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
+          callback={handleInputStreet}
+        />
       </Form.Item>
 
-      <Form.Item
-        label='Número'
-        name='number'
-        value={number}
-        type='text'
-        error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
-        callback={handleInputNumber}
-      >
-        <CustomInput />
+      <Form.Item label='Número'>
+        <CustomInput
+          name='number'
+          value={number}
+          type='text'
+          error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
+          callback={handleInputNumber}
+        />
       </Form.Item>
 
-      <Form.Item
-        label='Block'
-        name='block'
-        value={block}
-        type='text'
-        error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
-        callback={handleInputBlock}
-      >
-        <CustomInput />
+      <Form.Item label='Block'>
+        <CustomInput
+          name='block'
+          value={block}
+          type='text'
+          error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
+          callback={handleInputBlock}
+        />
       </Form.Item>
 
-      <Form.Item
-        label='C.P.'
-        name='zipCode'
-        value={zipCode}
-        type='text'
-        error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
-        callback={handleInputZipCode}
-      >
-        <CustomInput />
+      <Form.Item label='C.P.'>
+        <CustomInput
+          name='zipCode'
+          value={zipCode}
+          type='text'
+          error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
+          callback={handleInputZipCode}
+        />
       </Form.Item>
 
       <Form.Item>
-        <Btn
+        <BtnForm
           content='Guardar'
           typeBtn='btn_primary'
-          link={`/alux/CodeQR/${idPet}`}
         />
       </Form.Item>
     </Form>
   )
 }
-
-export default AddressForm

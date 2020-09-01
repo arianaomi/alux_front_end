@@ -6,7 +6,7 @@ import Btn from '../../Btn'
 
 import styles from './PostForm.module.scss'
 
-export default function PostForm() {
+export default function PostForm ({ callback }) {
   // States
   const [img, setImageUrl] = useState('')
   const [title, setTitle] = useState('')
@@ -22,7 +22,7 @@ export default function PostForm() {
     const createdAt = new Date()
     values = { ...values, createdAt }
     console.log('Received values of form with date: ', values)
-    // acá el fetch-post
+    callback(values)
   }
 
   // Handlers

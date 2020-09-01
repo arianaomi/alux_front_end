@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
-import { Form, Row, Select, Col, Input } from 'antd'
-import CustomInput from '../../Input'
-import Btn from '../../Btn'
+import { Form, Input } from 'antd'
+import BtnForm from '../../BtnForm'
 
 const { TextArea } = Input
 // CSS
 
-const { Option } = Select
-
-function PetForm3() {
+function PetForm3 ({ callback }) {
   // States
   const [particularSigns, setParticularSigns] = useState('')
   const [medicalInformation, setMedicalInformation] = useState('')
@@ -19,7 +16,7 @@ function PetForm3() {
   }
   const onFinish = values => {
     console.log('Received values of form: ', values)
-    // acá ir al siguiente componente
+    callback(values)
   }
   // Handlers
   const handleInputSigns = (name, value) => {
@@ -61,11 +58,9 @@ function PetForm3() {
         <TextArea />
       </Form.Item>
       <Form.Item>
-        <Btn
+        <BtnForm
           content='Siguiente'
           typeBtn='btn_primary'
-          // ToDo: pasarle el id del perro
-          link='/alux/Registry/formPet-4'
         />
       </Form.Item>
     </Form>

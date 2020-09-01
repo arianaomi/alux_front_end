@@ -1,0 +1,111 @@
+.containerPostg {
+  width: 100%;
+  border-radius: 5px;
+  -webkit-box-shadow: 6px 8px 7px #c7c7c7;
+          box-shadow: 6px 8px 7px #c7c7c7;
+  margin-top: 50px;
+}
+
+.imagePost {
+  width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.containerP {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.contts {
+  margin-left: 15px;
+}
+
+.containerDos {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.TextTitle {
+  font-size: 22px;
+  font-family: "Poppins", sans-serif;
+  color: #2b2b2b;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.TextName {
+  font-size: 22px;
+  font-family: "Poppins", sans-serif;
+  color: #646464;
+  font-weight: normal;
+}
+
+.textPost {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: #363636;
+  padding-bottom: 30px;
+  width: 100%;
+  padding: 15px;
+}
+
+.heartC {
+  width: 30px;
+  margin-right: 20px;
+}
+
+.patitasC {
+  width: 40px;
+}
+
+@media only screen and (min-width: 728px) {
+  .imagePost {
+    width: 100%;
+    height: 400px;
+  }
+  .containerPostg {
+    width: 100%;
+    margin-left: 15px;
+  }
+  .textPost {
+    padding: 15px;
+  }
+  .containerP {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .imagePost {
+    width: 100%;
+    height: 550px;
+  }
+  .TextTitle {
+    font-size: 32px;
+  }
+  .TextName {
+    font-size: 26px;
+  }
+  .containerPostg {
+    width: 100%;
+    margin-left: 165px;
+  }
+  .textPost {
+    padding: 30px;
+  }
+  .containerP {
+    margin-bottom: 0;
+  }
+}
+/*# sourceMappingURL=postP.module.css.map */

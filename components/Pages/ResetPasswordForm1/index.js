@@ -5,7 +5,7 @@ import Btn from '../../Btn'
 // CSS
 import styles from './ResetPasswordForm1.module.scss'
 
-function ResetPasswordForm1 () {
+function ResetPasswordForm1({ callback }) {
   // States
 
   const [email, setEmail] = useState('')
@@ -16,11 +16,7 @@ function ResetPasswordForm1 () {
   }
   const onFinish = values => {
     console.log('Received values of form: ', values)
-    // fetch(`${URL_BASE}.json`, {
-    //   method: 'POST',
-    //   mode: 'cors',
-    //   body: JSON.stringify(values)
-    // }).then((response) => console.log(response.json))
+    callback(values)
   }
 
   // Handlers
