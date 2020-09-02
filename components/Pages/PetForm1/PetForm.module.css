@@ -1,0 +1,129 @@
+.wrapperForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.catCi {
+  position: absolute;
+  left: -5em;
+  top: 25em;
+}
+
+.btn_m {
+  margin-bottom: 35px;
+}
+
+.selector {
+  width: 300px;
+}
+
+.ratonC {
+  position: absolute;
+  left: 11em;
+  top: 28.8em;
+}
+
+.btn_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.upload {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20%;
+}
+
+@media only screen and (min-width: 320px) {
+  .ratonC {
+    position: absolute;
+    left: 9.9em;
+    top: 28.8em;
+    z-index: 1;
+  }
+  .ratonCi {
+    width: 87px;
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  .ratonC {
+    position: absolute;
+    left: 11.8em;
+    top: 28.8em;
+  }
+  .ratonCi {
+    width: 100px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .ratonC {
+    display: none;
+  }
+  .btn_ms {
+    margin-bottom: 218px;
+  }
+  .btn_wrapper {
+    margin-bottom: 100px;
+  }
+  .wrapperForm {
+    margin-top: 50px;
+  }
+  .catCi {
+    position: absolute;
+    left: -5em;
+    top: 41.3em;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .catCi {
+    display: none;
+  }
+  .upload {
+    width: 100%;
+  }
+  .wrapperForm {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=PetForm.module.css.map */
