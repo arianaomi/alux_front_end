@@ -1,0 +1,120 @@
+.continerpicProfilePet{
+    justify-content: center;
+    display: flex;
+width: 100%;
+height: 400px;
+background-image: url('https://cdn.pixabay.com/photo/2018/04/24/19/07/cute-3347771_960_720.jpg');
+border-radius: 5px;
+background-size: 100%;
+background-repeat: no-repeat;
+object-fit: cover;
+}
+.picProfilePet{
+    justify-content: center;
+    align-items: flex-start;
+    height: 50%;
+width: 50%;
+}
+.NomPet{
+    font-size: 24px;
+    color: #525151;
+    font-family: "Poppins", sans-serif;
+}
+.containerAv{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.containerNom{
+    display: flex;
+    justify-content: center;
+}
+.continerTextProfilePet{
+width: 100%;
+background-color: #ffffffd2;
+border-radius: 5px;
+}
+.textDescPet{
+    font-size: 18px;
+    color: #5e5e5e;
+    font-family: "Poppins", sans-serif;
+    padding: 15px;
+}
+.galeryPic{
+    display: flex;
+    height:200px;
+}
+.picsUser{
+    width: 33.3%;
+    height: 100%;
+    object-fit: cover;
+}
+.galeryPicContainer{
+padding-top: 30px;
+padding-bottom: 30px;
+}
+.containerUnG{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    
+}
+@media only screen and (max-width: 768px) {
+    .continerpicProfilePet{
+margin-bottom: 30px;
+    }
+    .containerCard{
+        margin-top: 30px;
+    }
+.picProfilePet{
+     flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+.NomPet{
+  margin: 0;
+  font-size: 12px;
+}
+.containerUnG{
+    width: 97%;
+    height: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  flex-direction: column;
+  padding: 0;
+}
+.continerpicProfilePet{
+width: 100%;
+height: 200px;
+}
+.NomPet{
+    font-size: 22px;
+}
+.textDescPet{
+    font-size: 14px;
+    color: #5e5e5e;
+}
+.picAvatar{
+width: 11px;
+}
+.containerAv{
+    margin-left: 275px;
+    width: 20%;
+    height: 100%;
+    align-items: center;
+}
+}
+@media only screen and (max-width: 375px) {
+.galeryPicContainer{
+    display:none;
+}
+.containerAv{
+    margin-left: 150px;
+    width: 20%;
+    height: 50%;
+    align-items: center;
+}
+}

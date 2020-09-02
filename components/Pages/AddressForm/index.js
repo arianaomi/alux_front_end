@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Form } from 'antd'
 import CustomInput from '../../Input'
 import BtnForm from '../../BtnForm'
+import styles from './AdressForm.module.scss'
 
 export default function AddressForm({ callback }) {
   // States
@@ -34,7 +35,7 @@ export default function AddressForm({ callback }) {
         />
       </Form.Item>
 
-      <Form.Item label='Número'>
+      <Form.Item label='Número' className={styles.label}>
         <CustomInput
           name='number'
           value={number}
@@ -52,7 +53,7 @@ export default function AddressForm({ callback }) {
         />
       </Form.Item>
 
-      <Form.Item label='C.P.'>
+      <Form.Item label='C.P.  '>
         <CustomInput
           name='zipCode'
           value={zipCode}
@@ -61,12 +62,11 @@ export default function AddressForm({ callback }) {
         />
       </Form.Item>
 
-      <Form.Item>
-        <BtnForm
-          content='Guardar'
-          typeBtn='btn_primary'
-        />
-      </Form.Item>
+      <div className={styles.btn}>
+        <Form.Item>
+          <BtnForm content='Guardar' typeBtn='btn_primary' />
+        </Form.Item>
+      </div>
     </Form>
   )
 }

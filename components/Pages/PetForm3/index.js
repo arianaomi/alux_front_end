@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Input } from 'antd'
 import BtnForm from '../../BtnForm'
+import styles from './PetForn3.module.scss'
 
 const { TextArea } = Input
 // CSS
@@ -24,6 +25,7 @@ function PetForm3 ({ callback }) {
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
+      className={styles.containerForm}
     >
       <Form.Item
         label='Señas particulares'
@@ -44,12 +46,11 @@ function PetForm3 ({ callback }) {
       >
         <TextArea />
       </Form.Item>
-      <Form.Item>
-        <BtnForm
-          content='Siguiente'
-          typeBtn='btn_primary'
-        />
-      </Form.Item>
+      <div className={styles.btn}>
+        <Form.Item>
+          <BtnForm content='Siguiente' typeBtn='btn_primary' />
+        </Form.Item>
+      </div>
     </Form>
   )
 }

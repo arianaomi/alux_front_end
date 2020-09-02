@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,YAAY,CAAC;EACX,QAAQ,EAAE,QAAQ;CACnB",
-    "sources": [
-        "formPet-1.scss"
-    ],
-    "names": [],
-    "file": "formPet-1.css"
-}

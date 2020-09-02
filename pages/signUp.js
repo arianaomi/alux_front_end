@@ -1,19 +1,20 @@
 //
 import Link from 'next/link'
-// ant -design
-import { Row, Col, Radio } from 'antd'
+import Router from 'next/router'
 // components
 import RegisterForm from '../components/Pages/RegisterForm'
 import LayoutCurve from '../components/LayoutCurve'
 import Footer from '../components/Footer'
-import { signUpService, logInService } from '../services'
-import Router from 'next/router'
 
+// ant -design
+import { Row, Col, Radio } from 'antd'
 // scss
 import styles from '../styles/_signUp.module.scss'
+// services
+import { signUpService, logInService } from '../services'
 
-export default function signUp () {
-  async function handleForm ({ userName, email, password }) {
+export default function signUp() {
+  async function handleForm({ userName, email, password }) {
     console.log(userName, email, password)
     const user = { userName, email, password }
     console.log(user)

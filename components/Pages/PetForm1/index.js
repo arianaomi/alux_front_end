@@ -23,7 +23,7 @@ const objectBreedOptions = {
     'Shnauzer',
     'Yorkie',
     'Xoloescuincle',
-    'Otro'
+    'Otro',
   ],
   Cat: [
     'Mestizo/ Sin raza',
@@ -33,7 +33,7 @@ const objectBreedOptions = {
     'Egipcio',
     'Persa',
     'Siberiano',
-    'Otra/ No disponible'
+    'Otra/ No disponible',
   ],
   Mouse: [
     'Conejo',
@@ -43,7 +43,7 @@ const objectBreedOptions = {
     'Ratón',
     'Gerbo',
     'Rata',
-    'Otro/ No disponible'
+    'Otro/ No disponible',
   ],
   Bird: [
     'Canario',
@@ -58,7 +58,7 @@ const objectBreedOptions = {
     'Cotorro',
     'Ruiseñor',
     'Pollo',
-    'Otra/ No disponible'
+    'Otra/ No disponible',
   ],
   Other: [
     'Aracnido',
@@ -67,7 +67,7 @@ const objectBreedOptions = {
     'Otro reptil',
     'Rana',
     'Erizo',
-    'Otro/ No disponible'
+    'Otro/ No disponible',
   ],
   Farm: [
     'Burro',
@@ -77,27 +77,27 @@ const objectBreedOptions = {
     'Borrego',
     'Cabra/Chivo',
     'Cerdo',
-    'Otro/ No disponible'
-  ]
+    'Otro/ No disponible',
+  ],
 }
 
-function PetForm1 ({ callback }) {
+function PetForm1({ callback }) {
   // States
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
   const [breed, setBreed] = useState('')
 
   // Default form functions
-  const onFinishFailed = (errorInfo) => {
+  const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo)
   }
-  const onFinish = (values) => {
+  const onFinish = values => {
     console.log(values)
     callback(values)
   }
 
   // Handlers
-  const onChangeSpecies = (value) => {
+  const onChangeSpecies = value => {
     console.log(value)
     setSpecies(value)
   }
@@ -116,7 +116,7 @@ function PetForm1 ({ callback }) {
     >
       <div className={styles.wrapperForm}>
         <div className={styles.selector}>
-          <Form.Item label='Nombre'>
+          <Form.Item label='Nombre' className={styles.format}>
             <CustomInput
               className={styles.item}
               name='name'
@@ -167,21 +167,12 @@ function PetForm1 ({ callback }) {
         <div className={styles.btn_m}>
           <Btn content='regresar' typeBtn='btn_secondary' link='/signUp' />
         </div>
-        <div className={styles.ratonC}>
-          <img className={styles.ratonCi} src='/ratonCuerda.png' />
-        </div>
-        <div className={styles.catC}>
-          <img className={styles.catCi} src='/catWF.png' />
-        </div>
-        <div className={styles.btn_ms}>
+
+        <div>
           <Form.Item>
-            <BtnForm
-              content='Siguiente'
-              typeBtn='btn_primary'
-            />
+            <BtnForm content='Siguiente' typeBtn='btn_primary' />
           </Form.Item>
         </div>
-
       </div>
     </Form>
   )

@@ -1,8 +1,14 @@
 import { useEffect, useState } from 'react'
-import Layout from '../../components/Layout'
-import { readQR } from '../../services'
 import { useRouter } from 'next/router'
-import { Spin } from 'antd'
+// componets
+import Layout from '../../components/Layout'
+import CartelPetAlert from '../../components/cartelPetAlet'
+// ant-d
+import { Spin, Row, Col } from 'antd'
+// sass
+import styles from '../../styles/pets/_readQR.module.scss'
+// services
+import { readQR } from '../../services'
 
 export default function ReadQR() {
   const router = useRouter()
@@ -44,20 +50,46 @@ export default function ReadQR() {
     <>
       {!wasSent && (
         <Layout title='Mascota perdida' typeHeader='alert'>
-          <Spin
-            size='large'
-            tip='Permite acceder a tu ubicación para que el dueño tenga información sobre su mascota '
-          />{' '}
+          <Row justify='center'>
+            <Col xs={22} md={20} lg={20}>
+              <div className={styles.spin}>
+                <Spin
+                  size='large'
+                  tip='Permite acceder a tu ubicación para que el dueño tenga información sobre su mascota '
+                />
+              </div>
+            </Col>
+          </Row>
         </Layout>
       )}
       {wasSent && pet && (
         <Layout title={` Cartel de ${pet.name} `} typeHeader='alert'>
-          <h1>Mostrar perrito perdido {pet.name} </h1>{' '}
+          <Row justify='center'>
+            <Col xs={22} md={22} lg={22}>
+              <CartelPetAlert
+                image='/perritoNegro.png'
+                namePet={pet.name}
+                date='23/09/19'
+                sex={pet.sex}
+                lugar=''
+                zice={pet.size}
+                especie={pet.species}
+                señasParticulares={pet.particularSigns}
+                color={pet.color}
+                raza={pet.breed}
+                contact={pet.owner.email}
+              />
+            </Col>
+          </Row>
         </Layout>
       )}
       {wasSent && !pet && (
         <Layout title=' Mascota no registrada' typeHeader='alert'>
-          <h1>Mascota no registrada</h1>
+          <Row justify='center'>
+            <Col xs={22} md={20} lg={20}>
+              <h1>Mascota no registrada</h1>
+            </Col>
+          </Row>
         </Layout>
       )}
     </>
