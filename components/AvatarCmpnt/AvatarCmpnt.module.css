@@ -1,0 +1,15 @@
+.avatar {
+  height: 100%;
+  width: 100%;
+  font-size: 0.5vw;
+  color: black;
+}
+
+@media only screen and (min-width: 1024px) {
+  .avatar {
+    width: 40%;
+    height: 100%;
+    font-size: 2vw;
+  }
+}
+/*# sourceMappingURL=AvatarCmpnt.module.css.map */

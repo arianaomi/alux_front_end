@@ -1,0 +1,22 @@
+.btnQrD {
+  color: #1cb7cc;
+  font-size: 1.2vw;
+  font-weight: 700;
+  padding-bottom: 10px;
+  text-decoration: underline;
+  border: none;
+  background: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .btnQrD {
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .btnQrD {
+    font-size: 5vw;
+  }
+}
+/*# sourceMappingURL=BtnQr.module.css.map */

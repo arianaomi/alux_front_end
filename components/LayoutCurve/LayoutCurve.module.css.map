@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACP,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,GAAG;EACR,KAAK,EAAE,IAAI;CACZ;;AAED,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,MAAM;EACvC,AAAA,QAAQ,CAAC;IACP,QAAQ,EAAE,QAAQ;IAClB,GAAG,EAAE,GAAG;IACR,KAAK,EAAE,IAAI;GACZ",
+    "sources": [
+        "LayoutCurve.module.scss"
+    ],
+    "names": [],
+    "file": "LayoutCurve.module.css"
+}
