@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Router, { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 // ant-design
 import { Row, Col } from 'antd'
 // components
@@ -11,6 +11,7 @@ import Btn from '../../../components/Btn'
 import LayoutCurve from '../../../components/LayoutCurve'
 import Footer from '../../../components/Footer'
 import { addPetService } from '../../../services'
+import Uploader from '../../../components/Uploader'
 
 import styles from './formPet1.module.scss'
 
@@ -88,6 +89,9 @@ export default function FormPet1() {
       <LayoutCurve title='Tu mascota'>
         <Row justify='center'>
           <Col xs={10} md={12} lg={12}>
+            <div className={styles.upload}>
+              <Uploader />
+            </div>
             <div className={(activeForm === 0) ? styles.d_block : styles.d_none}>
               <PetForm1 callback={handleForm1} />
             </div>

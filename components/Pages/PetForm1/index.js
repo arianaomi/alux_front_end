@@ -3,8 +3,6 @@ import { Form, Select } from 'antd'
 import CustomInput from '../../Input'
 import BtnForm from '../../BtnForm'
 import Btn from '../../Btn'
-import CustomUpload from '../../CustomUpload'
-
 // SCSS
 import styles from './PetForm1.module.scss'
 
@@ -117,11 +115,6 @@ function PetForm1 ({ callback }) {
       onFinishFailed={onFinishFailed}
     >
       <div className={styles.wrapperForm}>
-        <div className={styles.upload}>
-          <div className='upload'>
-            <CustomUpload />
-          </div>
-        </div>
         <div className={styles.selector}>
           <Form.Item label='Nombre'>
             <CustomInput
