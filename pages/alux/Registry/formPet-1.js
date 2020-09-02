@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Router, { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 // ant-design
 import { Row, Col } from 'antd'
 // components
@@ -13,7 +13,7 @@ import { addPetService } from '../../../services'
 
 import styles from '../../../styles/alux/Registry/formPet-1/_formPet-1.module.scss'
 
-export default function FormPet1 () {
+export default function FormPet1() {
   const Router = useRouter()
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
@@ -40,14 +40,14 @@ export default function FormPet1 () {
     setOwner(owner)
   }, [])
 
-  function handleForm1 ({ name, species, breed }) {
+  function handleForm1({ name, species, breed }) {
     setName(name)
     setSpecies(species)
     setBreed(breed)
     setActiveForm(1)
   }
 
-  function handleForm2 ({ color, birthDate, size, sex }) {
+  function handleForm2({ color, birthDate, size, sex }) {
     setColor(color)
     setBirthDate(birthDate)
     setSize(size)
@@ -55,14 +55,15 @@ export default function FormPet1 () {
     setActiveForm(2)
   }
 
-  function handleForm3 ({ particularSigns, medicalInformation }) {
+  function handleForm3({ particularSigns, medicalInformation }) {
     setParticularSigns(particularSigns)
     setMedicalInformation(medicalInformation)
     setActiveForm(3)
   }
 
-  async function handleForm4 ({ address }) {
+  async function handleForm4({ address }) {
     setAddress(address)
+
     const pet = {
       owner,
       name,
@@ -74,7 +75,7 @@ export default function FormPet1 () {
       sex,
       particularSigns,
       medicalInformation,
-      address
+      address,
     }
     console.log(pet)
     try {

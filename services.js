@@ -3,7 +3,7 @@
 
 const URL_BASE = 'https://api-alux.mybluemix.net/'
 
-// Users
+//! Users
 const signUpService = async req => {
   const response = await fetch(`${URL_BASE}sign-up`, {
     method: 'POST',
@@ -29,8 +29,45 @@ const logInService = async data => {
 
   return token
 }
+const updateUsersService = async (data, sessionToken, id) => {
+  console.log('data', data, sessionToken, id)
+  const response = await fetch(`${URL_BASE}users/${id}`, {
+    method: 'PATCH',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: sessionToken
+    }
+  })
+  const res = await response.json()
+  return res
+}
+//* resetPassword
+const sendNewPassword = async data => {
+  const response = await fetch(`${URL_BASE}reset-password`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  const resp = await response.json()
+  return resp
+}
+const createNewPassword = async (data, token) => {
+  console.log(token)
+  const response = await fetch(`${URL_BASE}reset-password/${token}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  const resp = await response.json()
+  return resp
+}
 
-// Posts
+//! Posts
 const addPostService = async (data, sessionToken) => {
   const response = await fetch(`${URL_BASE}entries`, {
     method: 'POST',
@@ -69,7 +106,7 @@ const getPostService = async key => {
   return data
 }
 
-// Pets
+//! Pets
 const addPetService = async (data, sessionToken) => {
   const response = await fetch(`${URL_BASE}pets`, {
     method: 'POST',
@@ -83,8 +120,8 @@ const addPetService = async (data, sessionToken) => {
   return res
 }
 
-const updatePetService = async (data, sessionToken, key) => {
-  const response = await fetch(`${URL_BASE}pets/${key}`, {
+const updatePetService = async (data, sessionToken, id) => {
+  const response = await fetch(`${URL_BASE}pets/${id}`, {
     method: 'PATCH',
     body: JSON.stringify(data),
     headers: {
@@ -96,12 +133,30 @@ const updatePetService = async (data, sessionToken, key) => {
   return res
 }
 
-const getPetsService = async () => {
-  const response = await fetch(`${URL_BASE}pets.json`)
+const getPetsService = async sessionToken => {
+  const response = await fetch(`${URL_BASE}pets`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: sessionToken
+    }
+  })
   const data = await response.json()
+  console.log(data)
+  return data
+}
+const getPetIdService = async (sessionToken, id) => {
+  const response = await fetch(`${URL_BASE}pets/${id}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: sessionToken
+    }
+  })
+  const data = await response.json()
+  console.log(data)
   return data
 }
 
+//! codeQR
 const getPet = async key => {
   if (typeof window !== 'undefined') {
     const token = localStorage.authToken
@@ -127,30 +182,6 @@ const readQR = async (token, coords) => {
   return data
 }
 
-const sendNewPassword = async data => {
-  const response = await fetch(`${URL_BASE}reset-password`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-  const resp = await response.json()
-  return resp
-}
-const createNewPassword = async (data, token) => {
-  console.log(token)
-  const response = await fetch(`${URL_BASE}reset-password/${token}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-  const resp = await response.json()
-  return resp
-}
-
 export {
   signUpService,
   logInService,
@@ -164,5 +195,7 @@ export {
   getPet,
   readQR,
   sendNewPassword,
-  createNewPassword
+  createNewPassword,
+  updateUsersService,
+  getPetIdService
 }

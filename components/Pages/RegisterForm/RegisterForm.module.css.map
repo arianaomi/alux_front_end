@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,YAAY,CAAC;EACX,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,cAAc,EAAE,MAAM;EACtB,OAAO,EAAE,CAAC;CACX",
-    "sources": [
-        "RegisterForm.module.scss"
-    ],
-    "names": [],
-    "file": "RegisterForm.module.css"
-}
