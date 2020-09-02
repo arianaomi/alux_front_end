@@ -14,7 +14,7 @@ import Uploader from '../../../components/Uploader'
 
 import styles from '../../../styles/alux/Registry/formPet-1/_formPet-1.module.scss'
 
-export default function FormPet1() {
+export default function FormPet1 () {
   const Router = useRouter()
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
@@ -41,19 +41,19 @@ export default function FormPet1() {
     setOwner(owner)
   }, [])
 
-  function handleFile(url) {
+  function handleFile (url) {
     setImgUrl(url)
     console.log('url en el estado:', imgUrl)
   }
 
-  function handleForm1({ name, species, breed }) {
+  function handleForm1 ({ name, species, breed }) {
     setName(name)
     setSpecies(species)
     setBreed(breed)
     setActiveForm(1)
   }
 
-  function handleForm2({ color, birthDate, size, sex }) {
+  function handleForm2 ({ color, birthDate, size, sex }) {
     setColor(color)
     setBirthDate(birthDate)
     setSize(size)
@@ -61,14 +61,14 @@ export default function FormPet1() {
     setActiveForm(2)
   }
 
-  function handleForm3({ particularSigns, medicalInformation }) {
+  function handleForm3 ({ particularSigns, medicalInformation }) {
     setParticularSigns(particularSigns)
     setMedicalInformation(medicalInformation)
     setActiveForm(3)
   }
 
-  async function handleForm4(address) {
-    // setAddress(values)
+  async function handleForm4 (addressObj) {
+    setAddress(addressObj)
     console.log(address)
     const pet = { owner, name, species, breed, color, birthDate, size, sex, particularSigns, medicalInformation, address }
     console.log(pet)
@@ -92,6 +92,7 @@ export default function FormPet1() {
           <Col xs={22} md={22} lg={22}>
             <div className={activeForm === 0 ? styles.d_block : styles.d_none}>
               <div className={styles.form1}>
+                <Uploader callback={handleFile} />
                 <PetForm1 callback={handleForm1} />
               </div>
               <div className={styles.cat}>
