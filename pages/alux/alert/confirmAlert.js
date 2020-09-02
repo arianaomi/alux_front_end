@@ -6,7 +6,7 @@ import { Row, Col } from 'antd'
 // services
 import { getPetIdService } from '../../../services'
 
-export default function ConfirmAlert() {
+export default function ConfirmAlert () {
   const [token, setToken] = useState('')
   const [petId, setPetId] = useState('')
   const [pet, setPet] = useState('')
