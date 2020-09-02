@@ -74,10 +74,6 @@ function PetForm2({ callback }) {
         </Select>
       </Form.Item>
 
-      <Form.Item label='Fecha de nacimiento' className='item'>
-        <input type='date' className='item' onChange={onChangeDate} />
-      </Form.Item>
-
       <Form.Item className='item' name='size' label='Tamaño'>
         <Select
           className={styles.itemSelect}
@@ -92,13 +88,10 @@ function PetForm2({ callback }) {
           <Option value='Jumbo'>Jumbo</Option>
         </Select>
       </Form.Item>
+
       <div className={styles.wrapperCal_gender}>
         <Form.Item label='Fecha de nacimiento' className={styles.calendar}>
-          <DatePicker
-            className={styles.itemSelect3}
-            onChange={onChangeDate}
-            picker='month'
-          />
+          <input type='date' className='item' onChange={onChangeDate} />
         </Form.Item>
         <Form.Item className='item' name='sex' label='Sexo'>
           <Radio.Group
