@@ -1,8 +1,8 @@
-import CartelPetAlert from '../../../components/cartelPetAlet';
-import Layout from '../../../components/Layout';
-import { Avatar, Row, Col } from 'antd';
+import CartelPetAlert from '../../../components/cartelPetAlet'
+import Layout from '../../../components/Layout'
+import { Avatar, Row, Col } from 'antd'
 
-export default function ConfirmAlert () {
+export default function ConfirmAlert() {
   return (
     <Layout
       title='Alerta'
