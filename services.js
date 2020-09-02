@@ -3,8 +3,8 @@
 
 const URL_BASE = 'https://api-alux.mybluemix.net/'
 const URL_ClOUD = 'https://api.cloudinary.com/v1_1/dwh7vxswk/upload'
-const sessionToken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNGFmMTQ1Mjk1MGE0MTliOGZhMDczMCIsImlhdCI6MTU5ODc0NzAxNCwiZXhwIjoxNTk4ODMzNDE0fQ.awppj7bOBgWA-oB6nffbThcYbdz1ymavu2SjHnkPnEQ'
+// const sessionToken =
+//   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNGFmMTQ1Mjk1MGE0MTliOGZhMDczMCIsImlhdCI6MTU5ODc0NzAxNCwiZXhwIjoxNTk4ODMzNDE0fQ.awppj7bOBgWA-oB6nffbThcYbdz1ymavu2SjHnkPnEQ'
 
 // Upload en Cloudinary
 const uploadFileService = async file => {
@@ -50,6 +50,7 @@ const logInService = async data => {
 
   return token
 }
+
 const updateUsersService = async (data, sessionToken, id) => {
   console.log('data', data, sessionToken, id)
   const response = await fetch(`${URL_BASE}users/${id}`, {
@@ -63,6 +64,7 @@ const updateUsersService = async (data, sessionToken, id) => {
   const res = await response.json()
   return res
 }
+
 //* resetPassword
 const sendNewPassword = async data => {
   const response = await fetch(`${URL_BASE}reset-password`, {

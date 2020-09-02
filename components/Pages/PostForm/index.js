@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
-import { Form, Input } from 'antd'
+import { Form } from 'antd'
 import CustomInput from '../../Input'
 import TextArea from 'antd/lib/input/TextArea'
+<<<<<<< HEAD
 import BtnForm from '../../BtnForm'
 
+=======
+>>>>>>> develop
 import styles from './PostForm.module.scss'
+import BtnForm from '../../BtnForm'
 
-export default function PostForm ({ callback }) {
+export default function PostForm({ callback }) {
   // States
-  const [img, setImageUrl] = useState('')
   const [title, setTitle] = useState('')
   const [tags, setTags] = useState('')
   const [content, setContent] = useState('')
@@ -19,33 +22,7 @@ export default function PostForm ({ callback }) {
   }
   const onFinish = (values) => {
     console.log('Received values of form: ', values)
-    const createdAt = new Date()
-    values = { ...values, createdAt }
-    console.log('Received values of form with date: ', values)
     callback(values)
-  }
-
-  // Handlers
-  const handleInputImage = (name, value) => {
-    setImageUrl(value)
-    console.log(value)
-  }
-
-  const handleInputTitle = (name, value) => {
-    setTitle(value)
-    console.log(value)
-  }
-  // const handleInputUser = (name, value) => {
-  //   setUser(value)
-  //   console.log(value)
-  // }
-  const handleInputContent = (name, value) => {
-    setContent(value)
-    console.log(value)
-  }
-  const handleInputTags = (name, value) => {
-    setTags(value)
-    console.log(value)
   }
 
   return (
@@ -57,6 +34,7 @@ export default function PostForm ({ callback }) {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
+<<<<<<< HEAD
       <Form.Item label='Imagen'>
         <div className={styles.formatImpI}>
           <Input
@@ -79,6 +57,16 @@ export default function PostForm ({ callback }) {
             callback={handleInputTitle}
           />
         </div>
+=======
+
+      <Form.Item label='Título'>
+        <CustomInput
+          placeholder='Title'
+          name='title'
+          value={title}
+          error='Debe ingresar el título del Post'
+        />
+>>>>>>> develop
       </Form.Item>
 
       <Form.Item label='Etiquetas'>
@@ -88,7 +76,6 @@ export default function PostForm ({ callback }) {
           name='tags'
           value={tags}
           error='Debe ingresar una o varias etiquetas relacionadas al post'
-          callback={handleInputTags}
         />
       </Form.Item>
 
@@ -99,15 +86,21 @@ export default function PostForm ({ callback }) {
         name='content'
         value={content}
         error='Debe ingresar el texto del post'
-        callback={handleInputContent}
       >
         <TextArea />
       </Form.Item>
+<<<<<<< HEAD
       <div className={styles.BtnItm}>
         <Form.Item>
           <BtnForm content='Publicar' typeBtn='btn_primary' />
         </Form.Item>
       </div>
+=======
+
+      <Form.Item>
+        <BtnForm content='Publicar' typeBtn='btn_primary' />
+      </Form.Item>
+>>>>>>> develop
     </Form>
 
   )

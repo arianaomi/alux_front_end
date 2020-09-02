@@ -67,8 +67,13 @@ export default function FormPet1 () {
     setActiveForm(3)
   }
 
+<<<<<<< HEAD
   async function handleForm4 (address) {
     // setAddress(values)
+=======
+  async function handleForm4 (addressObj) {
+    setAddress(addressObj)
+>>>>>>> develop
     console.log(address)
     const pet = { owner, name, species, breed, color, birthDate, size, sex, particularSigns, medicalInformation, address }
     console.log(pet)
@@ -92,6 +97,7 @@ export default function FormPet1 () {
           <Col xs={22} md={22} lg={15}>
             <div className={activeForm === 0 ? styles.d_block : styles.d_none}>
               <div className={styles.form1}>
+                <Uploader callback={handleFile} />
                 <PetForm1 callback={handleForm1} />
               </div>
               <div className={styles.cat}>
