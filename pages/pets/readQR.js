@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react'
-import { readQR } from '../../services'
+import { useRouter } from 'next/router'
 // componets
 import Layout from '../../components/Layout'
 import CartelPetAlert from '../../components/cartelPetAlet'
 // ant-d
-import { useRouter } from 'next/router'
 import { Spin, Row, Col } from 'antd'
 // sass
 import styles from '../../styles/pets/_readQR.module.scss'
+// services
+import { readQR } from '../../services'
 
-export default function ReadQR () {
+export default function ReadQR() {
   const router = useRouter()
   const [coords, setCoords] = useState(null)
   const [wasSent, setWasSent] = useState(false)

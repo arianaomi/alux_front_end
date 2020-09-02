@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
+// ant-s
 import { Form } from 'antd'
+// components
 import CustomInput from '../../Input'
-import Btn from '../../Btn'
+import BtnForm from '../../BtnForm'
 // CSS
 import styles from './ResetPasswordForm1.module.scss'
 
-function ResetPasswordForm1({ callback }) {
+function ResetPasswordForm1 ({ callback }) {
   // States
 
   const [email, setEmail] = useState('')
@@ -19,13 +21,6 @@ function ResetPasswordForm1({ callback }) {
     callback(values)
   }
 
-  // Handlers
-
-  const handleInputEmail = (name, value) => {
-    setEmail(value)
-    console.log(value)
-  }
-
   return (
     <Form
       name='basic'
@@ -37,20 +32,18 @@ function ResetPasswordForm1({ callback }) {
         <CustomInput
           className={styles.item}
           name='email'
-          placeholder='Correo'
+          placeholder='Dato'
           value={email}
-          type='email'
+          type='text'
           error='Debe ingresar un email válido'
-          callback={handleInputEmail}
         />
       </Form.Item>
       <div className={styles.btn_wrapper}>
         <Form.Item>
-          <Btn content='Enviar' typeBtn='btn_primary' link='/' />
+          <BtnForm content='Enviar' typeBtn='btn_primary' />
         </Form.Item>
       </div>
     </Form>
-
   )
 }
 

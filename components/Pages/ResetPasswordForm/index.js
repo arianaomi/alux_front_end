@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Form, Input } from 'antd'
-import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-import Btn from '../../Btn'
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons'
+import BtnForm from '../../BtnForm'
+import CustomInput from '../../Input'
 // CSS
 import styles from './ResetPasswordForm.module.scss'
 
-function ResetPasswordForm({ callback }) {
+function ResetPasswordForm ({ callback }) {
   // States
 
   const [password, setPassword] = useState('')
@@ -19,13 +20,6 @@ function ResetPasswordForm({ callback }) {
     callback(values)
   }
 
-  // Handlers
-
-  const handleInputPassword = (name, value) => {
-    setPassword(value)
-    console.log(value)
-  }
-
   return (
     <Form
       name='basic'
@@ -33,26 +27,23 @@ function ResetPasswordForm({ callback }) {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
-      <Form.Item
-        label='Ingrese su nueva contraseña' >
-        <Input.Password
+      <Form.Item>
+        <CustomInput
           className={styles.item}
           name='password'
           value={password}
-          error='Debe ingresar su password'
-          callback={handleInputPassword}
+          type='password'
+          error='Debe ingresar su contraseña'
           placeholder='Contraseña'
-          iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
         />
       </Form.Item>
 
       <div className={styles.btn_wrapper}>
         <Form.Item>
-          <Btn content='Restablecer contraseña' typeBtn='btn_primary' link='/' />
+          <BtnForm content='Restablecer contraseña' typeBtn='btn_primary' />
         </Form.Item>
       </div>
     </Form>
-
   )
 }
 

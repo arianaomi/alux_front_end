@@ -3,25 +3,21 @@
 
 const URL_BASE = 'https://api-alux.mybluemix.net/'
 
-const sessionToken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNGFmMTQ1Mjk1MGE0MTliOGZhMDczMCIsImlhdCI6MTU5ODc0NzAxNCwiZXhwIjoxNTk4ODMzNDE0fQ.awppj7bOBgWA-oB6nffbThcYbdz1ymavu2SjHnkPnEQ'
-
 // Users
-const signUpService = async (req) => {
+const signUpService = async req => {
   const response = await fetch(`${URL_BASE}sign-up`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(req)
-
   })
   const data = await response.json()
   console.log(data)
   return data
 }
 
-const logInService = async (data) => {
+const logInService = async data => {
   const response = await fetch(`${URL_BASE}log-in`, {
     method: 'POST',
     body: JSON.stringify(data),
@@ -131,16 +127,42 @@ const readQR = async (token, coords) => {
   return data
 }
 
-const sendNewPassword = async (email, newUrl) => {
-  const response = await fetch(`${URL_BASE}/reset-password`, {
+const sendNewPassword = async data => {
+  const response = await fetch(`${URL_BASE}reset-password`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ email, ulrReset })
+    body: JSON.stringify(data)
   })
-  const data = await response.json()
-  return data
+  const resp = await response.json()
+  return resp
+}
+const createNewPassword = async (data, token) => {
+  console.log(token)
+  const response = await fetch(`${URL_BASE}reset-password/${token}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  const resp = await response.json()
+  return resp
 }
 
-export { signUpService, logInService, addPostService, updatePostService, getPostsService, getPostService, addPetService, updatePetService, getPetsService, getPet, readQR, sendNewPassword }
+export {
+  signUpService,
+  logInService,
+  addPostService,
+  updatePostService,
+  getPostsService,
+  getPostService,
+  addPetService,
+  updatePetService,
+  getPetsService,
+  getPet,
+  readQR,
+  sendNewPassword,
+  createNewPassword
+}

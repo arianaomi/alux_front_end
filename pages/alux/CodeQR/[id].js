@@ -6,16 +6,12 @@ import { useEffect, useState } from 'react'
 import absoluteUrl from 'next-absolute-url'
 import LayoutCurve from '../../../components/LayoutCurve'
 import Btn from '../../../components/Btn'
-//import DownloadCode from '../../../components/DownloadCode'
-// import Code from '../../../components/Code'
-
 // sass
 import styles from '../../../styles/alux/codeQR/_generateQR.module.scss'
-
 // ant-design
 import { Row, Col } from 'antd'
 import { getPet } from '../../../services'
-// import QRCode from '../../../components/QRCode'
+// services
 import { useRouter } from 'next/router'
 
 const DownloadCode = dynamic(() => import('../../../components/DownloadCode'), {
@@ -36,8 +32,8 @@ export default function GenerateQR({ origin }) {
           const { data } = await getPet(router.query.id)
           console.log(data)
           setPet(data)
-        } catch {
-          // TODO: handle 404
+        } catch (error) {
+          console.log(error)
         }
       })()
     }

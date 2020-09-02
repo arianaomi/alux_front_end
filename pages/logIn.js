@@ -1,19 +1,19 @@
 import Link from 'next/link'
-// ant-design
-import { Row, Col } from 'antd'
+import Router from 'next/router'
 // Components
 import LayoutCurve from '../components/LayoutCurve'
 import LoginForm from '../components/Pages/LoginForm'
 import Footer from '../components/Footer'
 import Btn from '../components/Btn'
-import { logInService } from '../services'
-import Router from 'next/router'
-
+// ant-design
+import { Row, Col } from 'antd'
 // scss
 import styles from '../styles/_logIn.module.scss'
+// services
+import { logInService } from '../services'
 
-export default function logIn() {
-  async function handleForm({ email, password }) {
+export default function logIn () {
+  async function handleForm ({ email, password }) {
     console.log(email, password)
     const user = { email, password }
     console.log(user)

@@ -6,6 +6,7 @@ import Footer from '../../../components/Footer'
 import { PayPalButton } from 'react-paypal-button-v2'
 
 export default function PayPal() {
+  //ToDo: cambiar
   return (
     <>
       <Header title='Dirección de entrega' />
@@ -24,8 +25,8 @@ export default function PayPal() {
               return fetch('/paypal-transaction-complete', {
                 method: 'post',
                 body: JSON.stringify({
-                  orderID: data.orderID
-                })
+                  orderID: data.orderID,
+                }),
               })
             }}
           />
