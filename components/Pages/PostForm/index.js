@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Form, Input } from 'antd'
 import CustomInput from '../../Input'
 import TextArea from 'antd/lib/input/TextArea'
-import Btn from '../../Btn'
+import BtnForm from '../../BtnForm'
 
 import styles from './PostForm.module.scss'
 
@@ -49,58 +49,63 @@ export default function PostForm ({ callback }) {
   }
 
   return (
-    <Form
-      name='basic'
-      initialValues={{ remember: true }}
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-    >
-      <Form.Item label='Imagen'>
-        <Input
-          type='file'
-          name='img'
-          value={img}
-          error='Debe ingresar una imagen'
-          callback={handleInputImage}
-        />
-      </Form.Item>
 
-      <Form.Item label='title'>
-        <CustomInput
-          placeholder='Title'
-          name='title'
-          value={title}
-          error='Debe ingresar el título del Post'
-          callback={handleInputTitle}
-        />
-      </Form.Item>
-
-      <Form.Item label='Etiquetas'>
-        <CustomInput
-          className={styles.item}
-          placeholder='Etiquetas'
-          name='tags'
-          value={tags}
-          error='Debe ingresar una o varias etiquetas relacionadas al post'
-          callback={handleInputTags}
-        />
-      </Form.Item>
-
-      <Form.Item
-        label='Contenido'
-        className={styles.item}
-        placeholder='Contenido del post'
-        name='content'
-        value={content}
-        error='Debe ingresar el texto del post'
-        callback={handleInputContent}
+    <div lassName={styles.ContainerFormPost}>
+      <Form
+        name='basic'
+        initialValues={{ remember: true }}
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
       >
-        <TextArea />
-      </Form.Item>
+        <Form.Item label='Imagen'>
+          <Input
+            type='file'
+            name='img'
+            value={img}
+            error='Debe ingresar una imagen'
+            callback={handleInputImage}
+          />
+        </Form.Item>
 
-      <Form.Item>
-        <Btn content='Publicar' typeBtn='btn_primary' />
-      </Form.Item>
-    </Form>
+        <Form.Item label='title'>
+          <CustomInput
+            placeholder='Title'
+            name='title'
+            value={title}
+            error='Debe ingresar el título del Post'
+            callback={handleInputTitle}
+          />
+        </Form.Item>
+
+        <Form.Item label='Etiquetas'>
+          <CustomInput
+            className={styles.item}
+            placeholder='Etiquetas'
+            name='tags'
+            value={tags}
+            error='Debe ingresar una o varias etiquetas relacionadas al post'
+            callback={handleInputTags}
+          />
+        </Form.Item>
+
+        <Form.Item
+          label='Contenido'
+          className={styles.item}
+          placeholder='Contenido del post'
+          name='content'
+          value={content}
+          error='Debe ingresar el texto del post'
+          callback={handleInputContent}
+        >
+          <TextArea />
+        </Form.Item>
+        <Form.Item>
+          <div lassName={styles.BtnItm}>
+            <BtnForm content='Publicar' typeBtn='btn_primary' />
+          </div>
+        </Form.Item>
+      </Form>
+    </div>
+
   )
 }
