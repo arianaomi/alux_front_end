@@ -11,6 +11,7 @@ export default function AlertForm({ callback }) {
   const [block, setBlock] = useState('')
   const [zipCode, setZipCode] = useState('')
   const [phoneNumber, setPhoneNumber] = useState()
+  const [date, setDate] = useState('')
 
   // Default form functions
   const onFinishFailed = errorInfo => {
@@ -20,6 +21,8 @@ export default function AlertForm({ callback }) {
     console.log('Received values of form: ', values)
     callback(values)
   }
+
+  // ToDo: cambiar input de DATE
 
   return (
     <Form
@@ -32,12 +35,21 @@ export default function AlertForm({ callback }) {
         <CustomInput
           name='phoneNumber'
           value={phoneNumber}
-          type='number'
+          type='phone'
           error='Debe ingresar un número de contacto'
           // callback={handleInputStreet}
         />
       </Form.Item>
-
+      s
+      <Form.Item label='Fecha'>
+        <CustomInput
+          name='date'
+          value={date}
+          type='text'
+          error='Debe ingresar la fecha cuando se perdio'
+          // callback={handleInputStreet}
+        />
+      </Form.Item>
       <Form.Item label='Calle'>
         <CustomInput
           name='street'
@@ -47,7 +59,6 @@ export default function AlertForm({ callback }) {
           // callback={handleInputStreet}
         />
       </Form.Item>
-
       <Form.Item label='Número' className={styles.label}>
         <CustomInput
           name='number'
@@ -57,7 +68,6 @@ export default function AlertForm({ callback }) {
           // callback={handleInputNumber}
         />
       </Form.Item>
-
       <Form.Item label='Block'>
         <CustomInput
           name='block'
@@ -67,7 +77,6 @@ export default function AlertForm({ callback }) {
           // callback={handleInputBlock}
         />
       </Form.Item>
-
       <Form.Item label='C.P.  '>
         <CustomInput
           name='zipCode'
@@ -77,7 +86,6 @@ export default function AlertForm({ callback }) {
           // callback={handleInputZipCode}
         />
       </Form.Item>
-
       <div className={styles.btn}>
         <Form.Item>
           <BtnForm content='Guardar' typeBtn='btn_alert' />

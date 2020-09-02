@@ -40,7 +40,14 @@ export default function LostPetAddress () {
       })
   }, [])
 
-  async function handleUpdate ({ street, number, block, zipCode, phoneNumber }) {
+  async function handleUpdate ({
+    street,
+    number,
+    block,
+    zipCode,
+    phoneNumber,
+    date
+  }) {
     console.log(phoneNumber)
     const address = {
       street,
@@ -48,14 +55,20 @@ export default function LostPetAddress () {
       block,
       zipCode
     }
-    console.log(address)
-    console.log('token', token)
-    console.log('owner', owner)
+
+    const data = {
+      address,
+      date
+    }
+
+    // console.log(address)
+    // console.log('token', token)
+    // console.log('owner', owner)
     // console.log(phoneNumber)
     try {
       const response = await updateUsersService({ phoneNumber }, token, owner)
       console.log(response)
-      const responsePet = await updatePetService(address, token, pet)
+      const responsePet = await updatePetService(data, token, pet)
       console.log(responsePet)
       router.push('/alux/alert/confirmAlert')
     } catch (error) {
