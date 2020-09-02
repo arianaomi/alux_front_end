@@ -18,7 +18,7 @@ export default function PestId(imagePet) {
           <div className={styles.continerpicProfilePet}>
             <div className={styles.picProfilePet}>
               <div className={styles.containerAv}>
-                <AvatarCmptn className={styles.picAvatar} src={imagePet} />
+                <AvatarCmptn src={imagePet} />
               </div>
               <div className={styles.containerNom}>
                 <p className={styles.NomPet}>Luno</p>
