@@ -1,10 +1,9 @@
-import BuMenu from '../../../components/MenuH';
+import Layout from '../../../components/Layout'
 
-export default function Home () {
+export default function Home() {
   return (
-    <div>
-      <BuMenu />
-      <h1>Todos los post</h1>
-    </div>
+    <Layout>
+      <h1>Todos los post (página principal)</h1>
+    </Layout>
   )
 }
