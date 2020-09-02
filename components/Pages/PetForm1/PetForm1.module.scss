@@ -6,33 +6,19 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: -5%;
+  margin-top: 5%;
 }
 .format {
   margin: 0;
   padding: 0;
 }
-.catCi {
-  position: absolute;
-  right: -40em;
-  top: 25em;
-}
 .btn_m {
   margin-bottom: 35px;
+  margin-top: 30px;
 }
 .selector {
   width: 70%;
   margin: 0%;
-}
-.ratonC {
-  position: absolute;
-  right: -11em;
-  top: 28.8em;
-}
-.ratonCi {
-  position: relative;
-  right: -10.4em;
-  bottom: -3em;
 }
 .btn_wrapper {
   display: flex;
@@ -62,44 +48,15 @@
 }
 
 @media only screen and (min-width: 320px) {
-  .ratonC {
-    position: absolute;
-    left: 9.9em;
-    top: 28.8em;
-    z-index: 1;
-  }
-  .ratonCi {
-    width: 87px;
-  }
 }
 @media only screen and (min-width: 375px) {
-  .ratonC {
-    position: absolute;
-    right: 0em;
-    top: 28.8em;
-  }
-  .ratonCi {
-    width: 100px;
-  }
 }
 @media only screen and (min-width: 768px) {
-  .ratonC {
-    display: none;
-  }
   .btn_ms {
     margin-bottom: 218px;
   }
-
-  .catCi {
-    position: absolute;
-    left: 5em;
-    top: 36.3em;
-  }
 }
 @media only screen and (max-width: 767px) {
-  .catCi {
-    display: none;
-  }
   .upload {
     width: 100%;
   }
@@ -108,9 +65,5 @@
   }
 }
 @media only screen and (min-width: 994px) {
-  .catCi {
-    position: absolute;
-    left: 5em;
-    top: 24.6em;
-  }
+  
 }

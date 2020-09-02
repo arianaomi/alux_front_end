@@ -1,14 +1,15 @@
 // SCSS
 import styles from './Header.module.scss'
 
-function Header({ title }) {
+function Header ({ title }) {
   const showLogo = title ? (
     <img src='/logoAluxBco.svg' className={`${styles.logo} ${styles.show}`} />
   ) : (
-      <img src='/logoAluxBco.svg' className={styles.logo} />
-    )
+    <img src='/logoAluxBco.svg' className={styles.logo} />
+  )
 
   return (
+
     <div className={styles.header}>
       <img src='/curveMobile.svg' className={styles.curveMobile} />
       <img src='/curveDesktop.svg' className={styles.curveDesktop} />

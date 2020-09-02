@@ -6,6 +6,8 @@ color: #1cb7cc;
   text-decoration: underline;
   border: none;
   background: none;
+
+
   @media only screen and (max-width: 768px) {
     font-size: 3vw;
   }
@@ -17,8 +19,31 @@ color: #1cb7cc;
 .BtnItm{
     display: flex;
 justify-content: center;
+margin-top: 60px;
+}
+.formatImpI{
+padding-left: 15px;
+}
+.formatImpT{
+padding-left: 35px;
 }
 .ContainerFormPost{
     display: flex;
     justify-content: center;
+    width: 100%;
+}
+.formatForm{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+@media only screen and (max-width: 700px) {
+
+  .formatImpI{
+padding-left: 0px;
+}
+.formatImpT{
+padding-left: 0px;
+}
 }

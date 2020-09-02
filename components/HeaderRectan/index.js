@@ -7,19 +7,21 @@ import styles from './HeaderRectan.module.scss'
 // ant-d
 import BuMenu from '../../components/MenuH'
 
-function HeaderRectan ({ title, image, typeHeader = 'general' }) {
+function HeaderRectan({ title, image, typeHeader = 'general' }) {
   //* rendering conditional
 
   return (
     <>
-      <div className={`${styles.header} ${styles[typeHeader]}`}>
-        <Link href='/alux/home'>
-          <img src='/logoAluxBco.svg' className={styles.logo} />
-        </Link>
-        <h1 className={styles.title}> {title}</h1>
-        <div className={styles.wrapper}>
-          <AvatarCmptn />
-          <BuMenu />
+      <div className={styles.posStiky}>
+        <div className={`${styles.header} ${styles[typeHeader]}`}>
+          <Link href='/alux/home'>
+            <img src='/logoAluxBco.svg' className={styles.logo} />
+          </Link>
+          <h1 className={styles.title}> {title}</h1>
+          <div className={styles.wrapper}>
+            <AvatarCmptn />
+            <BuMenu />
+          </div>
         </div>
       </div>
     </>

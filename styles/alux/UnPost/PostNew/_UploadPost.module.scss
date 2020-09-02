@@ -1,0 +1,32 @@
+.containerimg{
+display: flex;
+justify-content: center;
+}
+.containerBtn{
+    display: flex;
+justify-content: center;
+margin-bottom: 60px;
+}
+.img{
+    justify-content: center;
+}
+.forEt{
+    display: flex;
+justify-content: center;
+margin-top: 60px;
+width: 100%;
+}
+@media only screen and (max-width: 375px) {
+    .img{
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+}
+}
+@media only screen and (max-width: 768px) {
+.img{
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+}
+}
