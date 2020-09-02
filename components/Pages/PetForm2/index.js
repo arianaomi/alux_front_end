@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Select, DatePicker, Radio } from 'antd'
+import { Form, Select, Radio } from 'antd'
 import BtnForm from '../../BtnForm'
 
 // CSS
@@ -7,7 +7,7 @@ import styles from './PetForm2.module.scss'
 
 const { Option } = Select
 
-function PetForm2 ({ callback }) {
+function PetForm2({ callback }) {
   // States
   const [color, setColor] = useState('')
   const [birthDate, setBirthDate] = useState('')
@@ -29,9 +29,10 @@ function PetForm2 ({ callback }) {
     setColor(value)
     console.log(value)
   }
-  const onChangeDate = value => {
-    setBirthDate(value)
+  const onChangeDate = (value) => {
     console.log(value)
+    // setBirthDate(value)
+    // console.log(birthDate)
   }
 
   const onChangeSize = value => {
@@ -73,7 +74,7 @@ function PetForm2 ({ callback }) {
         </Select>
       </Form.Item>
 
-      <Form.Item name='size' label='Tamaño'>
+      <Form.Item className='item' name='size' label='Tamaño'>
         <Select
           className={styles.itemSelect}
           placeholder='Por favor seleccione el tamaño de su mascota'
@@ -87,13 +88,10 @@ function PetForm2 ({ callback }) {
           <Option value='Jumbo'>Jumbo</Option>
         </Select>
       </Form.Item>
+
       <div className={styles.wrapperCal_gender}>
         <Form.Item label='Fecha de nacimiento' className={styles.calendar}>
-          <DatePicker
-            className={styles.itemSelect3}
-            onChange={onChangeDate}
-            picker='month'
-          />
+          <input type='date' className='item' onChange={onChangeDate} />
         </Form.Item>
         <Form.Item className='item' name='sex' label='Sexo'>
           <Radio.Group

@@ -2,14 +2,15 @@ import React, { useState } from 'react'
 import { Form } from 'antd'
 import CustomInput from '../../Input'
 import BtnForm from '../../BtnForm'
-import styles from './AdressForm.module.scss'
+import styles from '../AddressForm/AdressForm.module.scss'
 
-export default function AddressForm({ callback }) {
+export default function AlertForm({ callback }) {
   // States
   const [street, setStreet] = useState('')
   const [number, setNumber] = useState('')
   const [block, setBlock] = useState('')
   const [zipCode, setZipCode] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState()
 
   // Default form functions
   const onFinishFailed = errorInfo => {
@@ -19,6 +20,7 @@ export default function AddressForm({ callback }) {
     console.log('Received values of form: ', values)
     callback(values)
   }
+
   return (
     <Form
       name='basic'
@@ -26,12 +28,23 @@ export default function AddressForm({ callback }) {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
+      <Form.Item label='Número de contacto'>
+        <CustomInput
+          name='phoneNumber'
+          value={phoneNumber}
+          type='number'
+          error='Debe ingresar un número de contacto'
+          // callback={handleInputStreet}
+        />
+      </Form.Item>
+
       <Form.Item label='Calle'>
         <CustomInput
           name='street'
           value={street}
           type='text'
           error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
+          // callback={handleInputStreet}
         />
       </Form.Item>
 
@@ -41,15 +54,17 @@ export default function AddressForm({ callback }) {
           value={number}
           type='text'
           error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
+          // callback={handleInputNumber}
         />
       </Form.Item>
 
-      <Form.Item label='Colonia'>
+      <Form.Item label='Block'>
         <CustomInput
           name='block'
           value={block}
           type='text'
           error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
+          // callback={handleInputBlock}
         />
       </Form.Item>
 
@@ -59,12 +74,13 @@ export default function AddressForm({ callback }) {
           value={zipCode}
           type='text'
           error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
+          // callback={handleInputZipCode}
         />
       </Form.Item>
 
       <div className={styles.btn}>
         <Form.Item>
-          <BtnForm content='Guardar' typeBtn='btn_primary' />
+          <BtnForm content='Guardar' typeBtn='btn_alert' />
         </Form.Item>
       </div>
     </Form>
