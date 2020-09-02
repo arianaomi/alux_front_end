@@ -1,66 +1,81 @@
 import React, { useEffect, useState } from 'react'
 import CartelPetAlert from '../../../components/cartelPetAlet'
 import Layout from '../../../components/Layout'
+import BtnForm from '../../../components/BtnForm'
 // ant-d
-import { Row, Col } from 'antd'
+import { Spin, Row, Col } from 'antd'
 // services
-import { getPetIdService } from '../../../services'
+import { getPetIdService, updatePetService } from '../../../services'
 
-export default function ConfirmAlert () {
-  const [token, setToken] = useState('')
-  const [petId, setPetId] = useState('')
-  const [pet, setPet] = useState('')
+export default function ConfirmAlert() {
+  const [petInfo, setPetInfo] = useState(null)
 
-  useEffect(() => {
-    const tokenn = localStorage.getItem('token')
-    setToken(tokenn)
-    // console.log(token)
-    const petID = localStorage.getItem('petId')
-    setPetId(petID)
-    // console.log(petId)
-    // console.log('hola')
+  async function getDataId() {
+    console.log('funcion')
+    const token = localStorage.getItem('token')
+    const petId = localStorage.getItem('petId')
+    if (petId && token) {
+      try {
+        const { data } = await getPetIdService(token, petId)
 
-    // getPetIdService(token, petId)
-    //   .then(data => {
-    //     //console.log(data)
-    //   })
-    //   .catch(error => {
-    //     console.log(error)
-    //   })
-  }, [])
+        setPetInfo(data)
+        console.log(data)
 
-  useEffect(() => {
-    if (petId) {
-      ;async () => {
-        try {
-          const { data } = await getPetIdService(token, petId)
-          console.log(data)
-        } catch (error) {
-          console.log(error)
-        }
+        console.log('estado', petInfo)
+      } catch (e) {
+        console.log(e)
       }
     }
+  }
+
+  useEffect(() => {
+    getDataId()
   }, [])
 
+  const handleUpdateStatus = () => {
+    console.log('hola')
+  }
   return (
-    <Layout title={` Cartel de ${pet.name} `} typeHeader='alert'>
-      <Row justify='center'>
-        <Col xs={22} md={22} lg={22}>
-          {/* <CartelPetAlert
-            image='/perritoNegro.png'
-            namePet={pet.name}
-            date='23/09/19'
-            sex={pet.sex}
-            lugar=''
-            zice={pet.size}
-            especie={pet.species}
-            señasParticulares={pet.particularSigns}
-            color={pet.color}
-            raza={pet.breed}
-            contact={pet.owner.email}
-          /> */}
-        </Col>
-      </Row>
-    </Layout>
+    <>
+      {!petInfo && (
+        <Layout title='Mascota perdida' typeHeader='alert'>
+          <Row justify='center'>
+            <Col xs={22} md={20} lg={20}>
+              <div>
+                <Spin size='large' tip='Cargando ' />
+              </div>
+            </Col>
+          </Row>
+        </Layout>
+      )}
+      {petInfo && (
+        <Layout title={` Cartel de ${petInfo.pet.name}  `} typeHeader='alert'>
+          <Row justify='center'>
+            <Col xs={22} md={22} lg={22}>
+              <CartelPetAlert
+                image='/perritoNegro.png'
+                namePet={petInfo.pet.name}
+                date='23/09/19'
+                sex={petInfo.pet.sex}
+                lugar={petInfo.pet.address.street}
+                zice={petInfo.pet.size}
+                especie={petInfo.pet.species}
+                señasParticulares={petInfo.pet.particularSigns}
+                color={petInfo.pet.color}
+                raza={petInfo.pet.breed}
+                contact={petInfo.pet.owner.phoneNumber}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <div>
+                <button onClick={handleUpdateStatus}> click</button>
+              </div>
+            </Col>
+          </Row>
+        </Layout>
+      )}
+    </>
   )
 }
