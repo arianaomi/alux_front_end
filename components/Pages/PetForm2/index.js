@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Select, DatePicker, Radio } from 'antd'
+import { Form, Select, Radio } from 'antd'
 import BtnForm from '../../BtnForm'
 
 // CSS
@@ -30,8 +30,9 @@ function PetForm2 ({ callback }) {
     console.log(value)
   }
   const onChangeDate = (value) => {
-    setBirthDate(value)
     console.log(value)
+    // setBirthDate(value)
+    // console.log(birthDate)
   }
 
   const onChangeSize = (value) => {
@@ -74,7 +75,7 @@ function PetForm2 ({ callback }) {
       </Form.Item>
 
       <Form.Item label='Fecha de nacimiento' className='item'>
-        <DatePicker className='item' onChange={onChangeDate} picker='month' />
+        <input type='date' className='item' onChange={onChangeDate} />
       </Form.Item>
 
       <Form.Item className='item' name='size' label='Tamaño'>

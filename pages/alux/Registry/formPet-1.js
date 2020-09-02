@@ -26,8 +26,8 @@ export default function FormPet1() {
   const [sex, setSex] = useState('')
   const [particularSigns, setParticularSigns] = useState('')
   const [medicalInformation, setMedicalInformation] = useState('')
-  const [address, setAddress] = useState('')
-
+  const [address, setAddress] = useState({})
+  const [imgUrl, setImgUrl] = useState('')
   const [activeForm, setActiveForm] = useState(0)
 
   const [token, setToken] = useState('')
@@ -41,6 +41,11 @@ export default function FormPet1() {
     console.log(owner)
     setOwner(owner)
   }, [])
+
+  function handleFile(url) {
+    setImgUrl(url)
+    console.log('url en el estado:', imgUrl)
+  }
 
   function handleForm1({ name, species, breed }) {
     setName(name)
@@ -63,22 +68,23 @@ export default function FormPet1() {
     setActiveForm(3)
   }
 
-  async function handleForm4({ address }) {
-    setAddress(address)
+  async function handleForm4(address) {
+    // setAddress(values)
+    console.log(address)
     const pet = { owner, name, species, breed, color, birthDate, size, sex, particularSigns, medicalInformation, address }
     console.log(pet)
-    try {
-      const response = await addPetService(pet, token)
-      console.log(response)
-      const petId = response.data.newPet._id
-      console.log(petId)
-      localStorage.setItem('petId', petId)
-      Router.push(`/alux/CodeQR/${petId}`)
-    } catch (error) {
-      console.log('error', error)
-    }
+    //   try {
+    //     const response = await addPetService(pet, token)
+    //     console.log(response)
+    //     const petId = response.data.newPet._id
+    //     console.log(petId)
+    //     localStorage.setItem('petId', petId)
+    //     Router.push(`/alux/CodeQR/${petId}`)
+    //   } catch (error) {
+    //     console.log('error', error)
+    //   }
   }
-  console.warn(activeForm)
+  // console.warn(activeForm)
   // const classNameShow = showFirstForm ? 'styles.d-block' : 'styles.d-none'
   // const classNameShowSecond = showSecondForm ? 'styles.d-block' : 'styles.d-none'
   // const classNameShowThird = showThirdForm ? 'styles.d-block' : 'styles.d-none'
@@ -90,7 +96,7 @@ export default function FormPet1() {
         <Row justify='center'>
           <Col xs={10} md={12} lg={12}>
             <div className={styles.upload}>
-              <Uploader />
+              <Uploader callback={handleFile} />
             </div>
             <div className={(activeForm === 0) ? styles.d_block : styles.d_none}>
               <PetForm1 callback={handleForm1} />

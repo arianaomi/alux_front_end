@@ -18,25 +18,6 @@ export default function AddressForm({ callback }) {
     console.log('Received values of form: ', values)
     callback(values)
   }
-  // Handlers
-  const handleInputStreet = (name, value) => {
-    setStreet(value)
-    console.log(value)
-  }
-  const handleInputNumber = (name, value) => {
-    setNumber(value)
-    console.log(value)
-  }
-  const handleInputBlock = (name, value) => {
-    setBlock(value)
-    console.log(value)
-  }
-
-  const handleInputZipCode = (name, value) => {
-    setZipCode(value)
-    console.log(value)
-  }
-
   return (
     <Form
       name='basic'
@@ -50,7 +31,6 @@ export default function AddressForm({ callback }) {
           value={street}
           type='text'
           error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
-          callback={handleInputStreet}
         />
       </Form.Item>
 
@@ -60,17 +40,15 @@ export default function AddressForm({ callback }) {
           value={number}
           type='text'
           error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
-          callback={handleInputNumber}
         />
       </Form.Item>
 
-      <Form.Item label='Block'>
+      <Form.Item label='Colonia'>
         <CustomInput
           name='block'
           value={block}
           type='text'
           error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
-          callback={handleInputBlock}
         />
       </Form.Item>
 
@@ -80,7 +58,6 @@ export default function AddressForm({ callback }) {
           value={zipCode}
           type='text'
           error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
-          callback={handleInputZipCode}
         />
       </Form.Item>
 

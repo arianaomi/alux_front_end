@@ -2,9 +2,28 @@
 // const URL_BASE = 'https://6e3cccb45d82.ngrok.io/'
 
 const URL_BASE = 'https://api-alux.mybluemix.net/'
-
+const URL_ClOUD = 'https://api.cloudinary.com/v1_1/dwh7vxswk/upload'
 const sessionToken =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNGFmMTQ1Mjk1MGE0MTliOGZhMDczMCIsImlhdCI6MTU5ODc0NzAxNCwiZXhwIjoxNTk4ODMzNDE0fQ.awppj7bOBgWA-oB6nffbThcYbdz1ymavu2SjHnkPnEQ'
+//  const url = 'https://api.cloudinary.com/v1_1/dwh7vxswk/upload'
+
+// Upload en Cloudinary
+const uploadFileService = async (file) => {
+  const formData = new FormData()
+  formData.append('upload_preset', 'alux-app')
+  formData.append('file', file)
+  try {
+    const response = await fetch(`${URL_ClOUD}`, {
+      method: 'POST',
+      body: formData
+    })
+    const data = await response.json()
+    console.log(data.secure_url)
+    return data.secure_url
+  } catch (error) {
+    throw error
+  }
+}
 
 // Users
 const signUpService = async (req) => {
@@ -143,4 +162,4 @@ const sendNewPassword = async (email, newUrl) => {
   return data
 }
 
-export { signUpService, logInService, addPostService, updatePostService, getPostsService, getPostService, addPetService, updatePetService, getPetsService, getPet, readQR, sendNewPassword }
+export { uploadFileService, signUpService, logInService, addPostService, updatePostService, getPostsService, getPostService, addPetService, updatePetService, getPetsService, getPet, readQR, sendNewPassword }
