@@ -1,96 +1,83 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import styles from './cartelPetAdop.module.scss'
 import { Avatar } from 'antd'
 
-export default function CartelPetAdop({
-  image,
-  namePet,
-  alertAdop,
-  title,
-  date,
-  sex,
-  lugar,
-  zice,
-  especie,
-  señasParticulares,
-  temperamento,
-  Convive,
-  color,
-  raza,
-  contact,
-}) {
-  const avatar = image ? (
-    <Avatar size={201} src={image} />
-  ) : (
-    <Avatar icon={<UserOutlined />} />
-  )
+function CartelPetAdop({ data }, ref) {
+  console.log('hola', data.pet.name)
+  // const avatar = image.image ? (
+  //   <Avatar size={201} src={image.image} />
+  // ) : (
+  //   <Avatar icon={<UserOutlined />} />
+  // )
   return (
-    <div className={styles.continerC}>
+    <div className={styles.continerC} ref={ref}>
       <div className={styles.circle}>
-        <div className={styles.avatatQ}>{avatar}</div>
+        <div className={styles.avatatQ}>{data.pet.avatar}</div>
       </div>
       <div>
-        <h2 className={styles.TextName}>{namePet}</h2>
-        <h3 className={styles.TextAleAdp}>{alertAdop}</h3>
-        <h4 className={styles.TextAleAdpDos}>{title}</h4>
+        <h2 className={styles.TextName}>{data.pet.name}</h2>
+        <h3 className={styles.TextAleAdp}>Adopta un amigo</h3>
+        <h4 className={styles.TextAleAdpDos}>Quiero ser tu amigo</h4>
       </div>
       <div>
         <div className={styles.containerDS}>
           <div className={styles.containerdos}>
             <img className={styles.calendarA} src='/calendarGrey.png' />
-            <p className={styles.textCartG}>{date}</p>
+            <p className={styles.textCartG}>{data.pet.date}</p>
           </div>
           <div className={styles.containerSMW}>
             <img className={styles.iconM} src='/SexMale2.png' />
             <img className={styles.iconW} src='/SexWom2.png' />
-            <p className={styles.textCartG}>{sex}</p>
+            <p className={styles.textCartG}>{data.pet.sex}</p>
           </div>
         </div>
         <div className={styles.containerUT}>
           <img className={styles.ubic} src='/IconUbgrey.png' />
-          <p className={styles.textCartL}>{lugar}</p>
+          <p className={styles.textCartL}>{data.pet.address.street}</p>
         </div>
         <div className={styles.contaTE}>
           <div className={styles.contaTE}>
             <p className={styles.texP}>Tamaño:</p>
-            <p className={styles.textCartL}>{zice}</p>
+            <p className={styles.textCartL}>{data.pet.size}</p>
           </div>
           <div className={styles.contaTE}>
             <p className={styles.texP}>Especie:</p>
-            <p className={styles.textCartL}>{especie}</p>
+            <p className={styles.textCartL}>{data.pet.species}</p>
           </div>
         </div>
         <div className={styles.contaTE}>
           <div className={styles.contaTE}>
             <p className={styles.texP}>Color:</p>
-            <p className={styles.textCartL}>{color}</p>
+            <p className={styles.textCartL}>{data.pet.color}</p>
           </div>
           <div className={styles.contaTE}>
             <p className={styles.texP}>Raza:</p>
-            <p className={styles.textCartL}>{raza}</p>
+            <p className={styles.textCartL}>{data.pet.breed}</p>
           </div>
         </div>
         <div className={styles.contaTE}>
           <div className={styles.contaTE}>
             <p className={styles.texP}>Señas particulares:</p>
-            <p className={styles.textCartL}>{señasParticulares}</p>
+            <p className={styles.textCartL}>{data.pet.particularSigns}</p>
           </div>
         </div>
         <div className={styles.contaTC}>
           <div className={styles.contaTE}>
             <p className={styles.texP}>Temperamento:</p>
-            <p className={styles.textCartL}>{temperamento}</p>
+            <p className={styles.textCartL}>{data.pet.character[0]}</p>
           </div>
           <div className={styles.contaTE}>
             <p className={styles.texP}>Convive con:</p>
-            <p className={styles.textCartL}>{Convive}</p>
+            <p className={styles.textCartL}>{data.pet.character[1]}</p>
           </div>
         </div>
         <div className={styles.containerUTtel}>
           <img className={styles.ubicT} src='/IconTel.png' />
-          <p className={styles.textCartTel}>{contact}</p>
+          <p className={styles.textCartTel}>{data.pet.owner.phoneNumber}</p>
         </div>
       </div>
     </div>
   )
 }
+
+export default forwardRef(CartelPetAdop)

@@ -3,13 +3,13 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import CartelPetAlert from '../../../components/cartelPetAlet'
 import Layout from '../../../components/Layout'
-import BtnForm from '../../../components/BtnForm'
+import Arrow from '../../../components/ArrowBack'
 // ant-d
 import { Spin, Row, Col } from 'antd'
 // services
 import { getPetIdService, updatePetService } from '../../../services'
 // scss
-import styles from '../../../styles/alert/_confirmAlert.module.scss'
+import styles from '../../../styles/alux/alert/_confirmAlert.module.scss'
 
 // ? Download
 const DownloadCartel = dynamic(
@@ -80,6 +80,9 @@ export default function ConfirmAlert() {
       {petInfo && (
         <Layout title={` Cartel de ${petInfo.pet.name}  `} typeHeader='alert'>
           <Row justify='center'>
+            <Col xs={22} lg={22}>
+              <Arrow typeArrow='alert' link='/alux/alert/lostPetAddress' />
+            </Col>
             <Col xs={22} md={22} lg={22}>
               <DownloadCartel
                 image='/perritoNegro.png'
