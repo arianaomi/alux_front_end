@@ -10,7 +10,7 @@ import styles from '../../styles/pets/_readQR.module.scss'
 // services
 import { readQR } from '../../services'
 
-export default function ReadQR() {
+export default function ReadQR () {
   const router = useRouter()
   const [coords, setCoords] = useState(null)
   const [wasSent, setWasSent] = useState(false)
@@ -35,7 +35,7 @@ export default function ReadQR() {
         try {
           const { data } = await readQR(token, coords)
           setPet(data)
-          console.log(data)
+          // console.log(data)
         } catch (e) {
           // TODO: Handle error or 404
           console.log(e)
@@ -67,17 +67,18 @@ export default function ReadQR() {
           <Row justify='center'>
             <Col xs={22} md={22} lg={22}>
               <CartelPetAlert
-                image='/perritoNegro.png'
-                namePet={pet.name}
-                date='23/09/19'
-                sex={pet.sex}
-                lugar=''
-                zice={pet.size}
-                especie={pet.species}
-                señasParticulares={pet.particularSigns}
-                color={pet.color}
-                raza={pet.breed}
-                contact={pet.owner.email}
+                data={pet}
+                // image='/perritoNegro.png'
+                // namePet={pet.name}
+                // date='23/09/19'
+                // sex={pet.sex}
+                // lugar=''
+                // zice={pet.size}
+                // especie={pet.species}
+                // señasParticulares={pet.particularSigns}
+                // color={pet.color}
+                // raza={pet.breed}
+                // contact={pet.owner.email}
               />
             </Col>
           </Row>

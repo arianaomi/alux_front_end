@@ -10,7 +10,7 @@ import dynamic from 'next/dynamic'
 const DownloadAdoption = dynamic(
   () => import('../../../components/DownLoadAdoption'),
   {
-    ssr: false
+    ssr: false,
   }
 )
 
@@ -49,7 +49,7 @@ export default function ConfirmAdoption() {
       // isMissing", "
       const response = await updatePetService(
         {
-          status: 'isAvailableForAdoption'
+          status: 'isAvailableForAdoption',
         },
         tokenId,
         id
@@ -94,7 +94,7 @@ export default function ConfirmAdoption() {
                 <div className={styles.BntSin}>
                   <button className={styles.btn} onClick={handleUpdateStatus}>
                     Confirmar adopción
-                </button>
+                  </button>
                 </div>
               </div>
             </Col>

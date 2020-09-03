@@ -16,7 +16,7 @@ import styles from '../../../styles/alux/alert/_confirmAlert.module.scss'
 const DownloadCartel = dynamic(
   () => import('../../../components/DownLoadCartel'),
   {
-    ssr: false
+    ssr: false,
   }
 )
 
@@ -55,7 +55,7 @@ export default function ConfirmAlert() {
       // isMissing", "isAvailableForAdoption
       const response = await updatePetService(
         {
-          status: 'isMissing'
+          status: 'isMissing',
         },
         tokenId,
         id
@@ -85,25 +85,17 @@ export default function ConfirmAlert() {
               <Arrow typeArrow='alert' link='/alux/alert/lostPetAddress' />
             </Col>
             <Col xs={22} md={22} lg={22}>
-              <DownloadCartel
-                image='/perritoNegro.png'
-                namePet={petInfo.pet.name}
-                date='23/09/19'
-                sex={petInfo.pet.sex}
-                lugar={petInfo.pet.address.street}
-                zice={petInfo.pet.size}
-                especie={petInfo.pet.species}
-                señasParticulares={petInfo.pet.particularSigns}
-                color={petInfo.pet.color}
-                raza={petInfo.pet.breed}
-                contact={petInfo.pet.owner.phoneNumber}
-              />
+              <DownloadCartel data={petInfo} />
             </Col>
           </Row>
 
           <div className={styles.contBnt}>
             <div className={styles.BntSin}>
-              <Btn link='/alux/alert/lostPetAddress' content='Regresar' typeBtn='btn_alert_secondary' />
+              <Btn
+                link='/alux/alert/lostPetAddress'
+                content='Regresar'
+                typeBtn='btn_alert_secondary'
+              />
             </div>
             <div className={styles.BntSin}>
               <button className={styles.btn} onClick={handleUpdateStatus}>
@@ -111,7 +103,6 @@ export default function ConfirmAlert() {
               </button>
             </div>
           </div>
-
         </Layout>
       )}
     </>
