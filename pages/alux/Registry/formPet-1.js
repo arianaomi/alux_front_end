@@ -67,13 +67,8 @@ export default function FormPet1 () {
     setActiveForm(3)
   }
 
-<<<<<<< HEAD
-  async function handleForm4 (address) {
-    // setAddress(values)
-=======
   async function handleForm4 (addressObj) {
     setAddress(addressObj)
->>>>>>> develop
     console.log(address)
     const pet = { owner, name, species, breed, color, birthDate, size, sex, particularSigns, medicalInformation, address }
     console.log(pet)
