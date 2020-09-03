@@ -44,8 +44,7 @@ export default function logIn () {
             </div>
           </Col>
         </Row>
-
-        <Row justify='center'>
+        <Row justify='center' className={styles.cotainerLogin}>
           <Col xs={0} md={10} lg={10}>
             <div className={styles.wrapperImg}>
               <img src='/PerritoLog_inMobil.png' />

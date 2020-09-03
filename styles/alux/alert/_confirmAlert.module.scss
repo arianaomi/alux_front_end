@@ -33,11 +33,13 @@
 }
   @media only screen and (max-width: 768px) {
     .contBnt{
-  display: flex;
- justify-content: space-evenly;
-  margin: 5%;
-
-}}
+  display: block;
+  }
+  .BntSin{
+    margin-bottom: 30px;
+    margin-left: 35%;
+  }
+}
 
   @media only screen and (max-width: 375px) {
   .contBnt{
@@ -45,7 +47,25 @@
   }
   .BntSin{
     margin-bottom: 30px;
-    margin-left: 60px;
+    margin-left: 50%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .contBnt{
+  display: block;
+  }
+  .BntSin{
+    margin-bottom: 30px;
+    margin-left: 10%;
+  }
+}
+@media only screen and (max-width: 414px) {
+  .contBnt{
+  display: block;
+  }
+  .BntSin{
+    margin-bottom: 30px;
+    margin-left: 15%;
   }
 }
 

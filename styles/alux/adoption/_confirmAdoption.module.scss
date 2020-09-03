@@ -27,13 +27,28 @@
     font-size: 3vw;
   }
 
-  @media only screen and (max-width: 375px) {
+  @media only screen and (min-width: 375px) {
     font-size: 5vw;
   }
+  .BntSin{
+  display: flex;
+  justify-content: center;
+  margin-left: 25%;
+}
 }
 
 .containerBtn {
   display: flex;
   justify-content: space-between;
   margin-top: 5%;
+}
+.contBnt{
+  display: flex;
+ justify-content: center;
+ margin-top: 10px;
+}
+.BntSin{
+  display: flex;
+  justify-content: center;
+  margin-left: 55%;
 }

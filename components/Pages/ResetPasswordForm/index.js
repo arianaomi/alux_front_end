@@ -6,7 +6,7 @@ import CustomInput from '../../Input'
 // CSS
 import styles from './ResetPasswordForm.module.scss'
 
-function ResetPasswordForm ({ callback }) {
+function ResetPasswordForm({ callback }) {
   // States
 
   const [password, setPassword] = useState('')

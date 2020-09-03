@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import Layout from '../../../components/Layout'
 import AlertForm from '../../../components/Pages/AlertForm'
 import Arrow from '../../../components/ArrowBack'
+import style from '../../../styles/_lostPetAdrees.module.scss'
 // ant-d
 import { Row, Col } from 'antd'
 // services
@@ -77,15 +78,17 @@ export default function LostPetAddress () {
   }
 
   return (
+
     <Layout title='¿Donde se perdio?' typeHeader='alert'>
-      <Row justify='center'>
-        <Col xs={22} lg={22}>
+      <Row justify='center' className={style.backwimg}>
+        <Col xs={22} lg={18}>
           <Arrow typeArrow='alert' link='/alux/home' />
         </Col>
-        <Col xs={22} md={22} lg={22}>
+        <Col xs={22} md={22} lg={15}>
           <AlertForm callback={handleUpdate} />
         </Col>
       </Row>
     </Layout>
+
   )
 }

@@ -50,7 +50,7 @@ export default function ResetPassword () {
         </Col>
         <Col xs={22} md={20} lg={20}>
           <div className={styles.imgDog}>
-            <img src='/perroNewPaswMobil.png' />
+            <img src='/perroNewPaswMobil.png' className={styles.imgDogTam} />
           </div>
         </Col>
         <Col xs={24} className={styles.footer}>

@@ -1,18 +1,33 @@
 .continerC {
   margin-bottom: 200px;
   background-color: white;
+  display: block;
+  flex-direction: column;
+  justify-content: space-;
+  align-items: center;
+  margin-bottom: 200px;
+  border-radius: 5px;
+  box-shadow: 6px 8px 7px #BD4089;
+  width: 99%;
+  margin-bottom: 30px;
+ 
 }
 
 .circle {
-  width: 215px;
+  width: 250px;
+  height: 23%;
   border-radius: 50%;
   border: solid #bd4089 7px;
-  display: block;
-  margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
 }
 .avatatQ {
+  width: 250px;
+  height: 100%;
+  border-radius: 50%;
+  border: solid #bd4089 7px;
+  display: flex;
+  justify-content: center;
 }
 
 .TextName {

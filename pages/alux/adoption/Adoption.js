@@ -14,11 +14,11 @@ const DownloadAdoption = dynamic(
   }
 )
 
-export default function ConfirmAdoption () {
+export default function ConfirmAdoption() {
   const [petInfo, setPetInfo] = useState(null)
   const [tokenId, setTokenID] = useState('')
 
-  async function getDataId () {
+  async function getDataId() {
     console.log('funcion')
     const token = localStorage.getItem('token')
     setTokenID(token)
@@ -90,10 +90,12 @@ export default function ConfirmAdoption () {
           </Row>
           <Row>
             <Col>
-              <div>
-                <button className={styles.btn} onClick={handleUpdateStatus}>
-                  Confirmar adopción
+              <div className={styles.contBnt}>
+                <div className={styles.BntSin}>
+                  <button className={styles.btn} onClick={handleUpdateStatus}>
+                    Confirmar adopción
                 </button>
+                </div>
               </div>
             </Col>
           </Row>
