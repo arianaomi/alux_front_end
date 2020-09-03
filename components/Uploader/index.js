@@ -24,7 +24,6 @@ function Uploader ({ callback }) {
       callback(imgUrl)
     }
   }
-
   return (
     <>
       <input

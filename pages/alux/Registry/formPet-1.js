@@ -11,7 +11,7 @@ import LayoutCurve from '../../../components/LayoutCurve'
 import Footer from '../../../components/Footer'
 import { addPetService } from '../../../services'
 import Uploader from '../../../components/Uploader'
-
+import PreviewCircle from '../../../components/PreviewCircle'
 import styles from '../../../styles/alux/Registry/formPet-1/_formPet-1.module.scss'
 
 export default function FormPet1 () {
@@ -41,19 +41,19 @@ export default function FormPet1 () {
     setOwner(owner)
   }, [])
 
-  function handleFile (url) {
-    setImgUrl(url)
-    console.log('url en el estado:', imgUrl)
-    if (!imgUrl) {
-      Modal.error({
-        title: 'Error',
-        content: 'La imagen no se guardó, por favor vuelve a intentarlo'
-      })
-    } else {
+  useEffect(() => {
+    if (imgUrl) {
       Modal.success({
         content: 'La imagen se guardó exitosamente'
       })
     }
+  }, [imgUrl])
+
+  function handleFile (url) {
+    setImgUrl(url)
+  }
+  function eraseFile () {
+    setImgUrl('')
   }
 
   function handleForm1 ({ name, species, breed }) {
@@ -101,8 +101,13 @@ export default function FormPet1 () {
         <Row justify='center' className={styles.wrapperForms}>
           <Col xs={22} md={22} lg={15}>
             <div className={activeForm === 0 ? styles.d_block : styles.d_none}>
+
               <div className={styles.form1}>
-                <Uploader callback={handleFile} />
+                {!imgUrl
+                  ? (<Uploader callback={handleFile} />)
+                  : (<> <button type='dashed' shape='circle' onClick={eraseFile} icon={<CloseOutlined />}>Borrar imagen</button>
+                    <PreviewRectangle src={imgUrl} />
+                     </>)}
                 <PetForm1 callback={handleForm1} />
               </div>
               <div className={styles.cat}>

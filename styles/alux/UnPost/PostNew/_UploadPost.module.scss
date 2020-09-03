@@ -16,6 +16,14 @@ justify-content: center;
 margin-top: 60px;
 width: 100%;
 }
+
+.imagen{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: solid 1px gray
+}
+
 @media only screen and (max-width: 375px) {
     .img{
     justify-content: center;

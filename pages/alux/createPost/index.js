@@ -7,8 +7,10 @@ import styles from '../../../styles/alux/UnPost/PostNew/_UploadPost.module.scss'
 import Uploader from '../../../components/Uploader'
 import { addPostService } from '../../../services'
 import React, { useState, useEffect } from 'react'
+import PreviewRectangle from '../../../components/PreviewRectangle'
+import { CloseOutlined } from '@ant-design/icons'
 
-export default function createPost() {
+export default function createPost () {
   // States
   const [token, setToken] = useState('')
   const [user, setUser] = useState('')
@@ -23,22 +25,23 @@ export default function createPost() {
     console.log('user en el estado', user)
   }, [])
 
-  function handleFile(url) {
-    setImageUrl(url)
-    console.log('url en el estado:', imageurl)
-    if (!imageurl) {
-      Modal.error({
-        title: 'Error',
-        content: 'La imagen no se guardó, por favor vuelve a intentarlo'
-      })
-    } else {
+  useEffect(() => {
+    if (imageurl) {
       Modal.success({
         content: 'La imagen se guardó exitosamente'
       })
     }
+  }, [imageurl])
+
+  function handleFile (url) {
+    console.log(url)
+    setImageUrl(url)
+  }
+  function eraseFile () {
+    setImageUrl('')
   }
 
-  async function handlePostForm({ title, tags, content }) {
+  async function handlePostForm ({ title, tags, content }) {
     const createdAt = new Date()
     console.log(createdAt)
     const post = { title, content, user, imageurl, tags, createdAt }
@@ -70,7 +73,14 @@ export default function createPost() {
       <HeaderRectan title='Nuevo Post' />
       <Row>
         <Col offset={4} xs={20} sm={20} md={10} lg={10}>
-          <Uploader callback={handleFile} />
+          {!imageurl
+            ? (
+              <Uploader callback={handleFile} />
+            )
+            : (<>
+              <button type='dashed' shape='circle' onClick={eraseFile} icon={<CloseOutlined />}>Borrar imagen</button>
+              <PreviewRectangle src={imageurl} />
+               </>)}
         </Col>
 
         <Col offset={2} xs={20} sm={20} md={10} lg={10}>

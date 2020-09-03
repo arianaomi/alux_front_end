@@ -12,14 +12,12 @@ import styles from '../styles/_logIn.module.scss'
 // services
 import { logInService } from '../services'
 
-export default function logIn () {
-  async function handleForm ({ email, password }) {
-    console.log(email, password)
+export default function logIn() {
+  async function handleForm({ email, password }) {
     const user = { email, password }
-    console.log(user)
     try {
       const response = await logInService(user)
-      console.log(response)
+      // console.log(response)
       const token = response.data.token
       console.log(token)
       localStorage.setItem('token', token)
