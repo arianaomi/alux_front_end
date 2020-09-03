@@ -77,10 +77,27 @@ export default function FormPet1 () {
     setActiveForm(3)
   }
 
+<<<<<<< HEAD
+  async function handleForm4 (address) {
+    // setAddress(values)
+=======
   async function handleForm4 (addressObj) {
     setAddress(addressObj)
+>>>>>>> 049d7ed6a0c791c40444ce703992be8e5395575e
     console.log(address)
-    const pet = { owner, name, species, breed, color, birthDate, size, sex, particularSigns, medicalInformation, address }
+    const pet = {
+      owner,
+      name,
+      species,
+      breed,
+      color,
+      birthDate,
+      size,
+      sex,
+      particularSigns,
+      medicalInformation,
+      address
+    }
     console.log(pet)
     try {
       const response = await addPetService(pet, token)

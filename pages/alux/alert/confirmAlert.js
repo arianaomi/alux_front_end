@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import CartelPetAlert from '../../../components/cartelPetAlet'
 import Layout from '../../../components/Layout'
 import BtnForm from '../../../components/BtnForm'
@@ -6,13 +8,25 @@ import BtnForm from '../../../components/BtnForm'
 import { Spin, Row, Col } from 'antd'
 // services
 import { getPetIdService, updatePetService } from '../../../services'
+// scss
+import styles from '../../../styles/alert/_confirmAlert.module.scss'
+
+// ? Download
+const DownloadCartel = dynamic(
+  () => import('../../../components/DownLoadCartel'),
+  {
+    ssr: false,
+  }
+)
 
 export default function ConfirmAlert() {
   const [petInfo, setPetInfo] = useState(null)
+  const [tokenId, setTokenID] = useState('')
 
   async function getDataId() {
     console.log('funcion')
     const token = localStorage.getItem('token')
+    setTokenID(token)
     const petId = localStorage.getItem('petId')
     if (petId && token) {
       try {
@@ -32,8 +46,23 @@ export default function ConfirmAlert() {
     getDataId()
   }, [])
 
-  const handleUpdateStatus = () => {
+  const handleUpdateStatus = async () => {
     console.log('hola')
+    const id = petInfo.pet._id
+    console.log(id)
+    try {
+      // isMissing", "isAvailableForAdoption
+      const response = await updatePetService(
+        {
+          status: 'isMissing',
+        },
+        tokenId,
+        id
+      )
+      console.log(response)
+    } catch (error) {
+      console.error(error)
+    }
   }
   return (
     <>
@@ -52,7 +81,7 @@ export default function ConfirmAlert() {
         <Layout title={` Cartel de ${petInfo.pet.name}  `} typeHeader='alert'>
           <Row justify='center'>
             <Col xs={22} md={22} lg={22}>
-              <CartelPetAlert
+              <DownloadCartel
                 image='/perritoNegro.png'
                 namePet={petInfo.pet.name}
                 date='23/09/19'
@@ -70,7 +99,12 @@ export default function ConfirmAlert() {
           <Row>
             <Col>
               <div>
-                <button onClick={handleUpdateStatus}> click</button>
+                <Link href='/alux/alert/lostPetAddress'>
+                  <a>Regresar</a>
+                </Link>
+                <button className={styles.btn} onClick={handleUpdateStatus}>
+                  Confirmar Alerta
+                </button>
               </div>
             </Col>
           </Row>
