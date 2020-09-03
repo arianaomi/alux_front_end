@@ -14,7 +14,7 @@ import Uploader from '../../../components/Uploader'
 
 import styles from '../../../styles/alux/Registry/formPet-1/_formPet-1.module.scss'
 
-export default function FormPet1() {
+export default function FormPet1 () {
   const Router = useRouter()
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
@@ -41,19 +41,19 @@ export default function FormPet1() {
     setOwner(owner)
   }, [])
 
-  function handleFile(url) {
+  function handleFile (url) {
     setImgUrl(url)
     console.log('url en el estado:', imgUrl)
   }
 
-  function handleForm1({ name, species, breed }) {
+  function handleForm1 ({ name, species, breed }) {
     setName(name)
     setSpecies(species)
     setBreed(breed)
     setActiveForm(1)
   }
 
-  function handleForm2({ color, birthDate, size, sex }) {
+  function handleForm2 ({ color, birthDate, size, sex }) {
     setColor(color)
     setBirthDate(birthDate)
     setSize(size)
@@ -61,16 +61,28 @@ export default function FormPet1() {
     setActiveForm(2)
   }
 
-  function handleForm3({ particularSigns, medicalInformation }) {
+  function handleForm3 ({ particularSigns, medicalInformation }) {
     setParticularSigns(particularSigns)
     setMedicalInformation(medicalInformation)
     setActiveForm(3)
   }
 
-  async function handleForm4(address) {
+  async function handleForm4 (address) {
     // setAddress(values)
     console.log(address)
-    const pet = { owner, name, species, breed, color, birthDate, size, sex, particularSigns, medicalInformation, address }
+    const pet = {
+      owner,
+      name,
+      species,
+      breed,
+      color,
+      birthDate,
+      size,
+      sex,
+      particularSigns,
+      medicalInformation,
+      address
+    }
     console.log(pet)
     try {
       const response = await addPetService(pet, token)

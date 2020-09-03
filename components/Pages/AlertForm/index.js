@@ -45,7 +45,7 @@ export default function AlertForm({ callback }) {
         <CustomInput
           name='date'
           value={date}
-          type='text'
+          type='date'
           error='Debe ingresar la fecha cuando se perdio'
           // callback={handleInputStreet}
         />
@@ -75,15 +75,6 @@ export default function AlertForm({ callback }) {
           type='text'
           error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
           // callback={handleInputBlock}
-        />
-      </Form.Item>
-      <Form.Item label='C.P.  '>
-        <CustomInput
-          name='zipCode'
-          value={zipCode}
-          type='text'
-          error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
-          // callback={handleInputZipCode}
         />
       </Form.Item>
       <div className={styles.btn}>

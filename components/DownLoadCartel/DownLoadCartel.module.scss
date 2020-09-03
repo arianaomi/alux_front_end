@@ -6,17 +6,17 @@
   text-decoration: underline;
   border: none;
   background: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .btnQrD {
+  @media only screen and (max-width: 768px) {
     font-size: 3vw;
   }
-}
 
-@media only screen and (max-width: 375px) {
-  .btnQrD {
+  @media only screen and (max-width: 375px) {
     font-size: 5vw;
   }
 }
-/*# sourceMappingURL=BtnQr.module.css.map */
+
+.containerBtn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}

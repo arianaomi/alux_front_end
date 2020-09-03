@@ -1,0 +1,57 @@
+@import '../../../styles/variables';
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .itemSelect {
+    width: 95%;
+    margin-left: 3%;
+
+    color: $color-p;
+  }
+  .itemSelect1 {
+    width: 100%;
+
+    color: $color-p;
+  }
+  .itemSelect2 {
+    width: 100%;
+  }
+  .itemSelect3 {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-left: -10%;
+    .itemSelect {
+      width: 150%;
+      margin-left: 0%;
+
+      color: $color-p;
+    }
+    .itemSelect1 {
+      width: 157%;
+
+      color: $color-p;
+    }
+    .itemSelect2 {
+      width: 200%;
+    }
+    .itemSelect3 {
+      width: 185%;
+    }
+
+    .btn {
+      display: flex;
+      justify-content: center;
+      margin-left: 15%;
+    }
+  }
+}
