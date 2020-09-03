@@ -1,3 +1,4 @@
+@import '../../variables';
 .contBnt{
  display: flex;
  justify-content: space-evenly;
@@ -5,7 +6,6 @@
  
 }
 
-@import '../variables';
 .btn {
   cursor: pointer;
   border: none;

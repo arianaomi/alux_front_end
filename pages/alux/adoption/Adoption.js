@@ -1,35 +1,104 @@
-import CartelPetAdop from '../../../components/cartelPetAdop';
-import Layout from '../../../components/Layout';
-import { Avatar, Row, Col } from 'antd';
+import React, { useEffect, useState } from 'react'
+import CartelPetAdop from '../../../components/cartelPetAdop'
+import Layout from '../../../components/Layout'
+import Arrow from '../../../components/ArrowBack'
+import { Spin, Row, Col } from 'antd'
+import { getPetIdService, updatePetService } from '../../../services'
+import styles from '../../../styles/alux/adoption/_confirmAdoption.module.scss'
+import dynamic from 'next/dynamic'
+// ? Download
+const DownloadAdoption = dynamic(
+  () => import('../../../components/DownLoadAdoption'),
+  {
+    ssr: false
+  }
+)
 
 export default function ConfirmAdoption () {
+  const [petInfo, setPetInfo] = useState(null)
+  const [tokenId, setTokenID] = useState('')
+
+  async function getDataId () {
+    console.log('funcion')
+    const token = localStorage.getItem('token')
+    setTokenID(token)
+    const petId = localStorage.getItem('petId')
+    if (petId && token) {
+      try {
+        const { data } = await getPetIdService(token, petId)
+
+        setPetInfo(data)
+        console.log(data)
+
+        console.log('estado', petInfo)
+      } catch (e) {
+        console.log(e)
+      }
+    }
+  }
+
+  useEffect(() => {
+    getDataId()
+  }, [])
+
+  const handleUpdateStatus = async () => {
+    console.log('hola')
+    const id = petInfo.pet._id
+    console.log(id)
+    try {
+      // isMissing", "
+      const response = await updatePetService(
+        {
+          status: 'isAvailableForAdoption'
+        },
+        tokenId,
+        id
+      )
+      console.log(response)
+    } catch (error) {
+      console.error(error)
+    }
+  }
   return (
-    <Layout
-      title='Adopción'
-      image='https://i.dailymail.co.uk/1s/2019/11/18/16/21162158-0-image-a-38_1574094224893.jpg'
-    >
-      <Row>
-        <Col xs={24} sm={24} md={24} lg={24}>
-          <CartelPetAdop
-            namePet='Bruno'
-            alertAdop='Adópta a un amigo'
-            title='¡Quiero ser tu amigo!'
-            date='31-08-2020'
-            sex='Macho'
-            lugar='Parque Masayoshi Ōhira Country Club Churubusco, Coyoacán, CDMX '
-            zice='Pequeño'
-            especie='perro'
-            señasParticulares='Un poco nervioso, 
-pelo corto, mancha negra en la cola.'
-            temperamento='alégre - cariñoso'
-            Convive='niños - perros'
-            color='crema'
-            raza='Schnauzer'
-            contact='5555555555'
-            image='https://i.dailymail.co.uk/1s/2019/11/18/16/21162158-0-image-a-38_1574094224893.jpg'
-          />
-        </Col>
-      </Row>
-    </Layout>
+    <>
+      {!petInfo && (
+        <Layout title='Mascota en adopción' typeHeader='adoption'>
+          <Row justify='center'>
+            <Col xs={22} md={20} lg={20}>
+              <div>
+                <Spin size='large' tip='Cargando ' />
+              </div>
+            </Col>
+          </Row>
+        </Layout>
+      )}
+      {petInfo && (
+        <Layout
+          title={` Cartel de ${petInfo.pet.name}  `}
+          typeHeader='adoption'
+        >
+          <Row justify='center'>
+            <Col xs={22} lg={22}>
+              <Arrow
+                typeArrow='adoption'
+                link='/alux/adoption/confirmAdoption'
+              />
+            </Col>
+            <Col xs={22} md={22} lg={22}>
+              <DownloadAdoption data={petInfo} />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <div>
+                <button className={styles.btn} onClick={handleUpdateStatus}>
+                  Confirmar adopción
+                </button>
+              </div>
+            </Col>
+          </Row>
+        </Layout>
+      )}
+    </>
   )
 }

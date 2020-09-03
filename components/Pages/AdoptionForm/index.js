@@ -5,24 +5,16 @@ import BtnForm from '../../BtnForm'
 
 const { Option } = Select
 
-function AdoptionForm ({ callback }) {
+function AdoptionForm({ callback }) {
   const [temperament, setTemperament] = useState('')
   const [liveWith, setLiveWith] = useState('')
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo)
   }
   const onFinish = values => {
-    console.log('Received values of form: ', values)
+    // console.log('Received values of form: ', values)
     callback(values)
   }
-  // const onTemperament = value => {
-  //   setColor(value)
-  //   console.log(value)
-  // }
-  // const onChangeSize = value => {
-  //   setSize(value)
-  //   console.log(value)
-  // }
 
   return (
     <Form
@@ -32,7 +24,7 @@ function AdoptionForm ({ callback }) {
       onFinishFailed={onFinishFailed}
       className={styles.container}
     >
-      <Form.Item className='item' name='temperament' label='Temperamentp'>
+      <Form.Item className='item' name='temperament' label='Temperamento'>
         <Select
           className={styles.itemSelect1}
           placeholder='Por favor seleccione una opción'
@@ -56,11 +48,12 @@ function AdoptionForm ({ callback }) {
           // onChange={onChangeSize}
           allowClear
         >
-          <Option value='Mini'>Mini</Option>
-          <Option value='Small'>Pequeño</Option>
-          <Option value='Medium'>Mediano</Option>
-          <Option value='Big'>Grande</Option>
-          <Option value='Jumbo'>Jumbo</Option>
+          <Option value='Niños'>Niños</Option>
+          <Option value='Gatos'>Gatos</Option>
+          <Option value='Perros'>Perros</Option>
+          <Option value='Es amigable con todos  '>Es amigable con todos</Option>
+          <Option value='Ninguno'>Ninguno</Option>
+          <Option value='Otros'>Otros animales</Option>
         </Select>
       </Form.Item>
 
