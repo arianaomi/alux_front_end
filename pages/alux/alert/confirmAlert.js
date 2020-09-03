@@ -3,6 +3,7 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import CartelPetAlert from '../../../components/cartelPetAlet'
 import Layout from '../../../components/Layout'
+import Btn from '../../../components/Btn'
 import Arrow from '../../../components/ArrowBack'
 // ant-d
 import { Spin, Row, Col } from 'antd'
@@ -15,7 +16,7 @@ import styles from '../../../styles/alux/alert/_confirmAlert.module.scss'
 const DownloadCartel = dynamic(
   () => import('../../../components/DownLoadCartel'),
   {
-    ssr: false,
+    ssr: false
   }
 )
 
@@ -54,7 +55,7 @@ export default function ConfirmAlert() {
       // isMissing", "isAvailableForAdoption
       const response = await updatePetService(
         {
-          status: 'isMissing',
+          status: 'isMissing'
         },
         tokenId,
         id
@@ -99,18 +100,18 @@ export default function ConfirmAlert() {
               />
             </Col>
           </Row>
-          <Row>
-            <Col>
-              <div>
-                <Link href='/alux/alert/lostPetAddress'>
-                  <a>Regresar</a>
-                </Link>
-                <button className={styles.btn} onClick={handleUpdateStatus}>
-                  Confirmar Alerta
-                </button>
-              </div>
-            </Col>
-          </Row>
+
+          <div className={styles.contBnt}>
+            <div className={styles.BntSin}>
+              <Btn link='/alux/alert/lostPetAddress' content='Regresar' typeBtn='btn_alert_secondary' />
+            </div>
+            <div className={styles.BntSin}>
+              <button className={styles.btn} onClick={handleUpdateStatus}>
+                Confirmar Alerta
+              </button>
+            </div>
+          </div>
+
         </Layout>
       )}
     </>

@@ -1,30 +1,62 @@
+import React from 'react'
+import { useEffect, useState } from 'react'
+import absoluteUrl from 'next-absolute-url'
 // components
 import Layout from '../../components/Layout'
 import Footer from '../../components/Footer'
-import Post from '../../components/postPag'
+import ViewPost from '../../components/ViewPost'
+import { getPostService } from '../../services'
 // ant-d
 import { Row, Col } from 'antd'
+import { useRouter } from 'next/router'
 
 export default function EntrieId() {
+  const router = useRouter()
+  const [post, setPost] = useState({})
+  const [content, setContent] = useState('')
+  const [createdAt, setCreatedAt] = useState('')
+  const [imageurl, setImageurl] = useState('')
+  const [title, setTitle] = useState('')
+  const [user, setUser] = useState('')
+  const [id, setId] = useState('')
+  const [tags, setTags] = useState('')
+
+  useEffect(() => {
+    console.log(router.query.id)
+    const postId = router.query.id
+    if (postId) {
+      ; (async () => {
+        try {
+          const response = await getPostService(postId)
+          const postObj = response.data.entry
+          setPost(postObj)
+          console.log(postObj)
+          const { content, createdAt, imageurl, tags, title, user, _id } = postObj
+          setContent(content)
+          setCreatedAt(createdAt)
+          setImageurl(imageurl)
+          setTitle(title)
+          setUser(user)
+          setId(_id)
+          setTags(tags)
+        } catch (error) {
+          console.log(error)
+        }
+      })()
+    }
+  }, [router.query.id])
+
+
+
   return (
-    <Layout title='Welcome Page'>
+    <Layout title='Publicaciones'>
       <Row>
         <Col offset={1} xs={22} sm={22} md={22} lg={17}>
-          <Post
-            title='Conquistando la cima'
-            namePet='Cheef'
-            image='https://images.pexels.com/photos/1452717/pexels-photo-1452717.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-            Text='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
-Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
-Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
-Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
-Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur'
+          <ViewPost
+            title={title}
+            namePet={user}
+            image={imageurl}
+            Text={content}
           />
         </Col>
         <Col xs={24}>

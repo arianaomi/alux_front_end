@@ -1,6 +1,6 @@
 .btnQrD {
   color: #1cb7cc;
-  font-size: 1.2vw;
+  font-size: 1.6vw;
   font-weight: 700;
   padding-bottom: 10px;
   text-decoration: underline;
@@ -11,12 +11,12 @@
   }
 
   @media only screen and (max-width: 375px) {
-    font-size: 5vw;
+    font-size: 3.8vw;
   }
 }
 
 .containerBtn {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-top: 5%;
 }

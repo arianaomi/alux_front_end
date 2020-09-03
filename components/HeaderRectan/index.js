@@ -20,6 +20,9 @@ function HeaderRectan({ title, image, typeHeader = 'general' }) {
           <h1 className={styles.title}> {title}</h1>
           <div className={styles.wrapper}>
             <AvatarCmptn />
+          </div>
+          <div className={styles.wrapper}>
+
             <BuMenu />
           </div>
         </div>

@@ -7,9 +7,11 @@ import styles from '../../../styles/alux/UnPost/PostNew/_UploadPost.module.scss'
 import Uploader from '../../../components/Uploader'
 import { addPostService } from '../../../services'
 import React, { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 export default function createPost() {
   // States
+  const router = useRouter()
   const [token, setToken] = useState('')
   const [user, setUser] = useState('')
   const [imageurl, setImageUrl] = useState('')
@@ -40,9 +42,7 @@ export default function createPost() {
 
   async function handlePostForm({ title, tags, content }) {
     const createdAt = new Date()
-    console.log(createdAt)
     const post = { title, content, user, imageurl, tags, createdAt }
-    console.log(post)
     try {
       const response = await addPostService(post, token)
       console.log(response)
@@ -59,7 +59,7 @@ export default function createPost() {
           content: 'El post se guardó exitosamente'
         })
       }
-      Router.push(`/alux/entries/${postID}`)
+      router.push(`/entries/${postID}`)
     } catch (error) {
       console.log('error', error)
     }

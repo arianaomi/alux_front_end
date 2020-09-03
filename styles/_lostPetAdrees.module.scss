@@ -1,0 +1,21 @@
+.backwimg{
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+  box-shadow: 6px 8px 7px #ff29295a;
+  margin: 5px;
+  width: 70%;
+  margin-left: 15%;
+}
+@media only screen and (max-width: 375px) {
+.backwimg{
+    margin-left: 5%;
+      width: 90%;
+}
+}
+@media only screen and (max-width: 414px) {
+.backwimg{
+    margin-left: 5%;
+      width: 90%;
+}
+}

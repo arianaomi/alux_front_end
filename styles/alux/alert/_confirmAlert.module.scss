@@ -1,4 +1,11 @@
 @import '../../variables';
+.contBnt{
+ display: flex;
+ justify-content: space-evenly;
+  margin: 5%;
+ 
+}
+
 .btn {
   cursor: pointer;
   border: none;
@@ -23,17 +30,44 @@
   text-decoration: underline;
   border: none;
   background: none;
+}
   @media only screen and (max-width: 768px) {
-    font-size: 3vw;
+    .contBnt{
+  display: block;
   }
+  .BntSin{
+    margin-bottom: 30px;
+    margin-left: 35%;
+  }
+}
 
   @media only screen and (max-width: 375px) {
-    font-size: 5vw;
+  .contBnt{
+  display: block;
+  }
+  .BntSin{
+    margin-bottom: 30px;
+    margin-left: 50%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .contBnt{
+  display: block;
+  }
+  .BntSin{
+    margin-bottom: 30px;
+    margin-left: 10%;
+  }
+}
+@media only screen and (max-width: 414px) {
+  .contBnt{
+  display: block;
+  }
+  .BntSin{
+    margin-bottom: 30px;
+    margin-left: 15%;
   }
 }
 
-.containerBtn {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 5%;
-}
+
+

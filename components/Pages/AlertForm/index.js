@@ -37,17 +37,16 @@ export default function AlertForm({ callback }) {
           value={phoneNumber}
           type='phone'
           error='Debe ingresar un número de contacto'
-          // callback={handleInputStreet}
+        // callback={handleInputStreet}
         />
       </Form.Item>
-      s
       <Form.Item label='Fecha'>
         <CustomInput
           name='date'
           value={date}
           type='date'
           error='Debe ingresar la fecha cuando se perdio'
-          // callback={handleInputStreet}
+        // callback={handleInputStreet}
         />
       </Form.Item>
       <Form.Item label='Calle'>
@@ -56,7 +55,7 @@ export default function AlertForm({ callback }) {
           value={street}
           type='text'
           error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
-          // callback={handleInputStreet}
+        // callback={handleInputStreet}
         />
       </Form.Item>
       <Form.Item label='Número' className={styles.label}>
@@ -65,7 +64,7 @@ export default function AlertForm({ callback }) {
           value={number}
           type='text'
           error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
-          // callback={handleInputNumber}
+        // callback={handleInputNumber}
         />
       </Form.Item>
       <Form.Item label='Block'>
@@ -74,7 +73,7 @@ export default function AlertForm({ callback }) {
           value={block}
           type='text'
           error='Debe ingresar la dirección donde usualmente vive la mascota, ésta será utilizada en caso de pérdida'
-          // callback={handleInputBlock}
+        // callback={handleInputBlock}
         />
       </Form.Item>
       <div className={styles.btn}>
