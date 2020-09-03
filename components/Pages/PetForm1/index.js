@@ -23,7 +23,7 @@ const objectBreedOptions = {
     'Shnauzer',
     'Yorkie',
     'Xoloescuincle',
-    'Otro',
+    'Otro'
   ],
   Cat: [
     'Mestizo/ Sin raza',
@@ -33,7 +33,7 @@ const objectBreedOptions = {
     'Egipcio',
     'Persa',
     'Siberiano',
-    'Otra/ No disponible',
+    'Otra/ No disponible'
   ],
   Mouse: [
     'Conejo',
@@ -43,7 +43,7 @@ const objectBreedOptions = {
     'Ratón',
     'Gerbo',
     'Rata',
-    'Otro/ No disponible',
+    'Otro/ No disponible'
   ],
   Bird: [
     'Canario',
@@ -58,7 +58,7 @@ const objectBreedOptions = {
     'Cotorro',
     'Ruiseñor',
     'Pollo',
-    'Otra/ No disponible',
+    'Otra/ No disponible'
   ],
   Other: [
     'Aracnido',
@@ -67,7 +67,7 @@ const objectBreedOptions = {
     'Otro reptil',
     'Rana',
     'Erizo',
-    'Otro/ No disponible',
+    'Otro/ No disponible'
   ],
   Farm: [
     'Burro',
@@ -77,11 +77,11 @@ const objectBreedOptions = {
     'Borrego',
     'Cabra/Chivo',
     'Cerdo',
-    'Otro/ No disponible',
-  ],
+    'Otro/ No disponible'
+  ]
 }
 
-function PetForm1({ callback }) {
+function PetForm1 ({ callback }) {
   // States
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
@@ -164,15 +164,14 @@ function PetForm1({ callback }) {
       </div>
 
       <div className={styles.btn_wrapper}>
-        <div className={styles.btn_m}>
-          <Btn content='regresar' typeBtn='btn_secondary' link='/signUp' />
-        </div>
-
         <div>
           <Form.Item>
             <BtnForm content='Siguiente' typeBtn='btn_primary' />
           </Form.Item>
         </div>
+      </div>
+      <div className={styles.btn_m}>
+        <Btn content='regresar' typeBtn='btn_secondary' link='/signUp' />
       </div>
     </Form>
   )
