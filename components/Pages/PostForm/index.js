@@ -5,7 +5,7 @@ import TextArea from 'antd/lib/input/TextArea'
 import styles from './PostForm.module.scss'
 import BtnForm from '../../BtnForm'
 
-export default function PostForm({ callback }) {
+export default function PostForm ({ callback }) {
   // States
   const [title, setTitle] = useState('')
   const [tags, setTags] = useState('')

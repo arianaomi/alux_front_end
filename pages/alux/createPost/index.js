@@ -1,13 +1,13 @@
 import PostForm from '../../../components/Pages/PostForm'
 import Btn from '../../../components/Btn'
-import { Row, Col } from 'antd'
+import { Row, Col, Modal } from 'antd'
 import HeaderRectan from '../../../components/HeaderRectan'
 import Footer from '../../../components/Footer'
 import Uploader from '../../../components/Uploader'
 import { addPostService } from '../../../services'
 import React, { useState, useEffect } from 'react'
 
-export default function createPost() {
+export default function createPost () {
   // States
   const [token, setToken] = useState('')
   const [user, setUser] = useState('')
@@ -22,12 +22,22 @@ export default function createPost() {
     console.log('user en el estado', user)
   }, [])
 
-  function handleFile(url) {
+  function handleFile (url) {
     setImageUrl(url)
     console.log('url en el estado:', imageurl)
+    if (!imageurl) {
+      Modal.error({
+        title: 'Error',
+        content: 'La imagen no se guardó, por favor vuelve a intentarlo'
+      })
+    } else {
+      Modal.success({
+        content: 'La imagen se guardó exitosamente'
+      })
+    }
   }
 
-  async function handlePostForm({ title, tags, content }) {
+  async function handlePostForm ({ title, tags, content }) {
     const createdAt = new Date()
     console.log(createdAt)
     const post = { title, content, user, imageurl, tags, createdAt }
@@ -35,10 +45,20 @@ export default function createPost() {
     try {
       const response = await addPostService(post, token)
       console.log(response)
-      const postID = response.data._id
+      const postID = response.data.newEntry._id
       console.log(postID)
       localStorage.setItem('postID', postID)
-      Router.push(`/alux/CodeQR/${petId}`)
+      if (!postID) {
+        Modal.error({
+          title: 'Error',
+          content: 'El post no se guardó, por favor vuelve a intentarlo'
+        })
+      } else {
+        Modal.success({
+          content: 'El post se guardó exitosamente'
+        })
+      }
+      Router.push(`/alux/entries/${postID}`)
     } catch (error) {
       console.log('error', error)
     }

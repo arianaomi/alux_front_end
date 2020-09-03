@@ -13,18 +13,13 @@ import styles from '../styles/_signUp.module.scss'
 // services
 import { signUpService, logInService } from '../services'
 
-export default function signUp() {
-  async function handleForm({ userName, email, password }) {
-    console.log(userName, email, password)
+export default function signUp () {
+  async function handleForm ({ userName, email, password }) {
     const user = { userName, email, password }
-    console.log(user)
     try {
       const response = await signUpService(user)
-      console.log(response)
       const responseLog = await logInService(user)
-      console.log(responseLog)
       const token = responseLog.data.token
-      console.log(token)
       localStorage.setItem('token', token)
       const payload = JSON.parse(atob(token.split('.')[1]))
       console.log(payload)

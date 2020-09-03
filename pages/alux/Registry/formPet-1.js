@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 // ant-design
-import { Row, Col } from 'antd'
+import { Row, Col, Modal } from 'antd'
 // components
 import PetForm1 from '../../../components/Pages/PetForm1'
 import PetForm2 from '../../../components/Pages/PetForm2'
@@ -44,6 +44,16 @@ export default function FormPet1 () {
   function handleFile (url) {
     setImgUrl(url)
     console.log('url en el estado:', imgUrl)
+    if (!imgUrl) {
+      Modal.error({
+        title: 'Error',
+        content: 'La imagen no se guardó, por favor vuelve a intentarlo'
+      })
+    } else {
+      Modal.success({
+        content: 'La imagen se guardó exitosamente'
+      })
+    }
   }
 
   function handleForm1 ({ name, species, breed }) {
