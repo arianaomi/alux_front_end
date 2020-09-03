@@ -99,7 +99,7 @@ export default function FormPet1 () {
     <>
       <LayoutCurve title='Registro de mascota'>
         <Row justify='center' className={styles.wrapperForms}>
-          <Col xs={22} md={22} lg={22}>
+          <Col xs={22} md={22} lg={15}>
             <div className={activeForm === 0 ? styles.d_block : styles.d_none}>
               <div className={styles.form1}>
                 <Uploader callback={handleFile} />

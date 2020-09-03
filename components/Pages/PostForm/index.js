@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { Form } from 'antd'
 import CustomInput from '../../Input'
 import TextArea from 'antd/lib/input/TextArea'
-import styles from './PostForm.module.scss'
 import BtnForm from '../../BtnForm'
+
+import styles from './PostForm.module.scss'
 
 export default function PostForm ({ callback }) {
   // States
@@ -21,7 +22,9 @@ export default function PostForm ({ callback }) {
   }
 
   return (
+
     <Form
+      className={styles.formatForm}
       name='basic'
       initialValues={{ remember: true }}
       onFinish={onFinish}
@@ -57,10 +60,12 @@ export default function PostForm ({ callback }) {
       >
         <TextArea />
       </Form.Item>
-
-      <Form.Item>
-        <BtnForm content='Publicar' typeBtn='btn_primary' />
-      </Form.Item>
+      <div className={styles.BtnItm}>
+        <Form.Item>
+          <BtnForm content='Publicar' typeBtn='btn_primary' />
+        </Form.Item>
+      </div>
     </Form>
+
   )
 }

@@ -19,6 +19,12 @@
   font-size: 6.5vw;
   margin: 0;
 }
+.posStiky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  
+}
 .wrapper {
   display: flex;
   justify-content: space-between;
