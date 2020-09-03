@@ -50,7 +50,7 @@ const BuMenu = () => {
               <li className={styles.iconLi}>
                 <img className={styles.iconM} src='/Adoption.png' />
                 <Link href='/alux/adoption/Adoption'>
-                  <a>Adopta</a>
+                  <a>Adopción</a>
                 </Link>
               </li>
               <li className={styles.iconLi}>
@@ -69,6 +69,12 @@ const BuMenu = () => {
                 <img className={styles.iconM} src='/AddPet.png' />
                 <Link href='/alux/Registry/formPet-1'>
                   <a>Agregar</a>
+                </Link>
+              </li>
+              <li className={styles.iconLi}>
+                <img className={styles.iconM} src='/QRMenu.png' />
+                <Link href={`/alux/CodeQR/${pet}`}>
+                  <a>Ver QR</a>
                 </Link>
               </li>
             </ul>
