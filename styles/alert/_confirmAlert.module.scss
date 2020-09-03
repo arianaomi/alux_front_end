@@ -1,3 +1,10 @@
+.contBnt{
+ display: flex;
+ justify-content: space-evenly;
+  margin: 5%;
+ 
+}
+
 @import '../variables';
 .btn {
   cursor: pointer;
@@ -23,17 +30,24 @@
   text-decoration: underline;
   border: none;
   background: none;
+}
   @media only screen and (max-width: 768px) {
-    font-size: 3vw;
-  }
+    .contBnt{
+  display: flex;
+ justify-content: space-evenly;
+  margin: 5%;
+
+}}
 
   @media only screen and (max-width: 375px) {
-    font-size: 5vw;
+  .contBnt{
+  display: block;
+  }
+  .BntSin{
+    margin-bottom: 30px;
+    margin-left: 60px;
   }
 }
 
-.containerBtn {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 5%;
-}
+
+
