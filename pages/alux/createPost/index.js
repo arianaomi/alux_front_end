@@ -7,9 +7,11 @@ import styles from '../../../styles/alux/UnPost/PostNew/_UploadPost.module.scss'
 import Uploader from '../../../components/Uploader'
 import { addPostService } from '../../../services'
 import React, { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 export default function createPost () {
   // States
+  const router = useRouter()
   const [token, setToken] = useState('')
   const [user, setUser] = useState('')
   const [imageurl, setImageUrl] = useState('')
@@ -30,16 +32,11 @@ export default function createPost () {
 
   async function handlePostForm ({ title, tags, content }) {
     const createdAt = new Date()
-    console.log(createdAt)
     const post = { title, content, user, imageurl, tags, createdAt }
-    console.log(post)
     try {
       const response = await addPostService(post, token)
-      console.log(response)
-      const postID = response.data._id
-      console.log(postID)
-      localStorage.setItem('postID', postID)
-      Router.push(`/alux/CodeQR/${petId}`)
+      const postID = response.data.newEntry._id
+      router.push(`/entries/${postID}`)
     } catch (error) {
       console.log('error', error)
     }
