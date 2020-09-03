@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 // ant-design
-import { Row, Col } from 'antd'
+import { Row, Col, Modal } from 'antd'
 // components
 import PetForm1 from '../../../components/Pages/PetForm1'
 import PetForm2 from '../../../components/Pages/PetForm2'
@@ -44,6 +44,16 @@ export default function FormPet1 () {
   function handleFile (url) {
     setImgUrl(url)
     console.log('url en el estado:', imgUrl)
+    if (!imgUrl) {
+      Modal.error({
+        title: 'Error',
+        content: 'La imagen no se guardó, por favor vuelve a intentarlo'
+      })
+    } else {
+      Modal.success({
+        content: 'La imagen se guardó exitosamente'
+      })
+    }
   }
 
   function handleForm1 ({ name, species, breed }) {
@@ -67,8 +77,13 @@ export default function FormPet1 () {
     setActiveForm(3)
   }
 
+<<<<<<< HEAD
   async function handleForm4 (address) {
     // setAddress(values)
+=======
+  async function handleForm4 (addressObj) {
+    setAddress(addressObj)
+>>>>>>> 049d7ed6a0c791c40444ce703992be8e5395575e
     console.log(address)
     const pet = {
       owner,
@@ -101,9 +116,10 @@ export default function FormPet1 () {
     <>
       <LayoutCurve title='Registro de mascota'>
         <Row justify='center' className={styles.wrapperForms}>
-          <Col xs={22} md={22} lg={22}>
+          <Col xs={22} md={22} lg={15}>
             <div className={activeForm === 0 ? styles.d_block : styles.d_none}>
               <div className={styles.form1}>
+                <Uploader callback={handleFile} />
                 <PetForm1 callback={handleForm1} />
               </div>
               <div className={styles.cat}>
