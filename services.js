@@ -118,13 +118,13 @@ const updatePostService = async (data, sessionToken, key) => {
 }
 
 const getPostsService = async () => {
-  const response = await fetch(`${URL_BASE}posts.json`)
+  const response = await fetch(`${URL_BASE}entries/.json`)
   const data = await response.json()
   return data
 }
 
 const getPostService = async key => {
-  const response = await fetch(`${URL_BASE}posts/${key}.json`)
+  const response = await fetch(`${URL_BASE}entries/${key}`)
   const data = await response.json()
   return data
 }

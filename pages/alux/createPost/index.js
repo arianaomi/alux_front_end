@@ -59,7 +59,7 @@ export default function createPost() {
           content: 'El post se guardó exitosamente'
         })
       }
-      router.push(`/alux/entries/${postID}`)
+      router.push(`/entries/${postID}`)
     } catch (error) {
       console.log('error', error)
     }
