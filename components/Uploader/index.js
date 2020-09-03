@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import style from './Uploader.module.scss'
-import { Button } from 'antd'
+import { Button, Modal } from 'antd'
 
 // cloudinary
 import { uploadFileService } from '../../services'
@@ -16,8 +16,11 @@ function Uploader ({ callback }) {
     setFile(e.target.files[0])
     console.log(file)
     if (file) {
-      const imgUrl = await uploadFileService(file)
+      const response = await uploadFileService(file)
+      console.log(response)
+      const imgUrl = response.secure_url
       console.log(imgUrl)
+      console.log(response.success)
       callback(imgUrl)
     }
   }
