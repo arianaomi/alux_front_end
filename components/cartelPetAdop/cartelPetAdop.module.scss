@@ -1,36 +1,52 @@
 .continerC {
   margin-bottom: 200px;
+  background-color: white;
+  display: block;
+  flex-direction: column;
+  justify-content: space-;
+  align-items: center;
+  margin-bottom: 200px;
+  border-radius: 5px;
+  box-shadow: 6px 8px 7px #BD4089;
+  width: 99%;
+  margin-bottom: 30px;
+ 
 }
 
 .circle {
-  width: 215px;
+  width: 250px;
+  height: 23%;
   border-radius: 50%;
   border: solid #bd4089 7px;
-  display: block;
-  margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
 }
 .avatatQ {
+  width: 250px;
+  height: 100%;
+  border-radius: 50%;
+  border: solid #bd4089 7px;
+  display: flex;
+  justify-content: center;
 }
 
 .TextName {
   font-size: 36px;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   justify-content: center;
   display: flex;
   color: #414141;
 }
 .TextAleAdp {
   color: #bd4089;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   justify-content: center;
   display: flex;
   font-size: 33px;
 }
 .TextAleAdpDos {
   font-size: 34px;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   justify-content: center;
   display: flex;
   color: #414141;
@@ -43,7 +59,7 @@
 .textCartG {
   font-weight: bold;
   font-size: 24px;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   color: #636363;
   padding-top: 20px;
   padding-left: 10px;
@@ -68,7 +84,7 @@
   margin-bottom: 0;
   font-weight: bold;
   font-size: 24px;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   color: #636363;
   padding-left: 10px;
 }
@@ -105,7 +121,7 @@
   margin-bottom: 0;
   font-weight: bold;
   font-size: 24px;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   color: #303030;
   padding-left: 10px;
 }
@@ -113,7 +129,7 @@
   margin-bottom: 0;
   font-weight: bold;
   font-size: 50px;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   color: #3f3f3f;
   padding-left: 10px;
 }

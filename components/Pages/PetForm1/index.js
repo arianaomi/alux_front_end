@@ -92,19 +92,19 @@ function PetForm1({ callback }) {
     console.log('Failed:', errorInfo)
   }
   const onFinish = values => {
-    console.log(values)
+    // console.log(values)
     callback(values)
   }
 
   // Handlers
   const onChangeSpecies = value => {
-    console.log(value)
+    // console.log(value)
     setSpecies(value)
   }
 
   const onChangeBreed = (name, value) => {
     setBreed(value)
-    console.log(value)
+    // console.log(value)
   }
 
   return (
@@ -164,15 +164,14 @@ function PetForm1({ callback }) {
       </div>
 
       <div className={styles.btn_wrapper}>
-        <div className={styles.btn_m}>
-          <Btn content='regresar' typeBtn='btn_secondary' link='/signUp' />
-        </div>
-
         <div>
           <Form.Item>
             <BtnForm content='Siguiente' typeBtn='btn_primary' />
           </Form.Item>
         </div>
+      </div>
+      <div className={styles.btn_m}>
+        <Btn content='regresar' typeBtn='btn_secondary' link='/signUp' />
       </div>
     </Form>
   )

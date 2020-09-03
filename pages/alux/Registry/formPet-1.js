@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 // ant-design
-import { Row, Col, Modal } from 'antd'
+import { Row, Col, Modal, Button } from 'antd'
 // components
 import PetForm1 from '../../../components/Pages/PetForm1'
 import PetForm2 from '../../../components/Pages/PetForm2'
@@ -13,6 +13,7 @@ import { addPetService } from '../../../services'
 import Uploader from '../../../components/Uploader'
 import PreviewCircle from '../../../components/PreviewCircle'
 import styles from '../../../styles/alux/Registry/formPet-1/_formPet-1.module.scss'
+import { CloseOutlined } from '@ant-design/icons'
 
 export default function FormPet1 () {
   const Router = useRouter()
@@ -80,7 +81,19 @@ export default function FormPet1 () {
   async function handleForm4 (addressObj) {
     setAddress(addressObj)
     console.log(address)
-    const pet = { owner, name, species, breed, color, birthDate, size, sex, particularSigns, medicalInformation, address }
+    const pet = {
+      owner,
+      name,
+      species,
+      breed,
+      color,
+      birthDate,
+      size,
+      sex,
+      particularSigns,
+      medicalInformation,
+      address
+    }
     console.log(pet)
     try {
       const response = await addPetService(pet, token)
@@ -105,8 +118,8 @@ export default function FormPet1 () {
               <div className={styles.form1}>
                 {!imgUrl
                   ? (<Uploader callback={handleFile} />)
-                  : (<> <button type='dashed' shape='circle' onClick={eraseFile} icon={<CloseOutlined />}>Borrar imagen</button>
-                    <PreviewRectangle src={imgUrl} />
+                  : (<> <Button type='dashed' shape='circle' icon={<CloseOutlined />} onClick={eraseFile} />
+                    <PreviewCircle src={imgUrl} />
                      </>)}
                 <PetForm1 callback={handleForm1} />
               </div>

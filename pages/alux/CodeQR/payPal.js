@@ -1,17 +1,20 @@
 import AddressForm from '../../../components/Pages/AddressForm'
-import Btn from '../../../components/Btn'
+import Arrow from '../../../components/ArrowBack'
 import { Row, Col } from 'antd'
-import Header from '../../../components/Header'
+import Layout from '../../../components/Layout'
 import Footer from '../../../components/Footer'
 import { PayPalButton } from 'react-paypal-button-v2'
 
 export default function PayPal() {
-  //ToDo: cambiar
+  // ToDo: cambiar
   return (
-    <>
-      <Header title='Dirección de entrega' />
-      <Row>
-        <Col offset={2} xs={20} sm={20} md={10} lg={10}>
+    <Layout title='Dirección de envío'>
+      <Row justify='center'>
+        <Col xs={22} lg={22}>
+          <Arrow typeArrow='general' link='/alux/CodeQR/badgePage' />
+        </Col>
+        <Col xs={22} md={22} lg={22}>
+          <h2> Dirección de envío</h2>
           <AddressForm />
         </Col>
         <Col offset={2} pull={2} xs={20} sm={20} md={10} lg={10}>
@@ -31,11 +34,8 @@ export default function PayPal() {
             }}
           />
         </Col>
-        <Col offset={4} xs={20} sm={20} md={10} lg={10}>
-          <Btn content='Pagar' typeBtn='btn_primary' />
-        </Col>
       </Row>
       <Footer />
-    </>
+    </Layout>
   )
 }

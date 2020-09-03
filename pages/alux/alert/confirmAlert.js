@@ -1,18 +1,33 @@
 import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import CartelPetAlert from '../../../components/cartelPetAlet'
 import Layout from '../../../components/Layout'
-import BtnForm from '../../../components/BtnForm'
+import Btn from '../../../components/Btn'
+import Arrow from '../../../components/ArrowBack'
 // ant-d
 import { Spin, Row, Col } from 'antd'
 // services
 import { getPetIdService, updatePetService } from '../../../services'
+// scss
+import styles from '../../../styles/alux/alert/_confirmAlert.module.scss'
+
+// ? Download
+const DownloadCartel = dynamic(
+  () => import('../../../components/DownLoadCartel'),
+  {
+    ssr: false,
+  }
+)
 
 export default function ConfirmAlert() {
   const [petInfo, setPetInfo] = useState(null)
+  const [tokenId, setTokenID] = useState('')
 
   async function getDataId() {
     console.log('funcion')
     const token = localStorage.getItem('token')
+    setTokenID(token)
     const petId = localStorage.getItem('petId')
     if (petId && token) {
       try {
@@ -32,8 +47,23 @@ export default function ConfirmAlert() {
     getDataId()
   }, [])
 
-  const handleUpdateStatus = () => {
+  const handleUpdateStatus = async () => {
     console.log('hola')
+    const id = petInfo.pet._id
+    console.log(id)
+    try {
+      // isMissing", "isAvailableForAdoption
+      const response = await updatePetService(
+        {
+          status: 'isMissing',
+        },
+        tokenId,
+        id
+      )
+      console.log(response)
+    } catch (error) {
+      console.error(error)
+    }
   }
   return (
     <>
@@ -51,29 +81,28 @@ export default function ConfirmAlert() {
       {petInfo && (
         <Layout title={` Cartel de ${petInfo.pet.name}  `} typeHeader='alert'>
           <Row justify='center'>
+            <Col xs={22} lg={22}>
+              <Arrow typeArrow='alert' link='/alux/alert/lostPetAddress' />
+            </Col>
             <Col xs={22} md={22} lg={22}>
-              <CartelPetAlert
-                image='/perritoNegro.png'
-                namePet={petInfo.pet.name}
-                date='23/09/19'
-                sex={petInfo.pet.sex}
-                lugar={petInfo.pet.address.street}
-                zice={petInfo.pet.size}
-                especie={petInfo.pet.species}
-                señasParticulares={petInfo.pet.particularSigns}
-                color={petInfo.pet.color}
-                raza={petInfo.pet.breed}
-                contact={petInfo.pet.owner.phoneNumber}
+              <DownloadCartel data={petInfo} />
+            </Col>
+          </Row>
+
+          <div className={styles.contBnt}>
+            <div className={styles.BntSin}>
+              <Btn
+                link='/alux/alert/lostPetAddress'
+                content='Regresar'
+                typeBtn='btn_alert_secondary'
               />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <div>
-                <button onClick={handleUpdateStatus}> click</button>
-              </div>
-            </Col>
-          </Row>
+            </div>
+            <div className={styles.BntSin}>
+              <button className={styles.btn} onClick={handleUpdateStatus}>
+                Confirmar Alerta
+              </button>
+            </div>
+          </div>
         </Layout>
       )}
     </>

@@ -1,6 +1,6 @@
 import PostForm from '../../../components/Pages/PostForm'
 import Btn from '../../../components/Btn'
-import { Row, Col, Modal } from 'antd'
+import { Row, Col, Modal, Button } from 'antd'
 import HeaderRectan from '../../../components/HeaderRectan'
 import Footer from '../../../components/Footer'
 import styles from '../../../styles/alux/UnPost/PostNew/_UploadPost.module.scss'
@@ -9,9 +9,11 @@ import { addPostService } from '../../../services'
 import React, { useState, useEffect } from 'react'
 import PreviewRectangle from '../../../components/PreviewRectangle'
 import { CloseOutlined } from '@ant-design/icons'
+import { useRouter } from 'next/router'
 
 export default function createPost () {
   // States
+  const router = useRouter()
   const [token, setToken] = useState('')
   const [user, setUser] = useState('')
   const [imageurl, setImageUrl] = useState('')
@@ -43,9 +45,7 @@ export default function createPost () {
 
   async function handlePostForm ({ title, tags, content }) {
     const createdAt = new Date()
-    console.log(createdAt)
     const post = { title, content, user, imageurl, tags, createdAt }
-    console.log(post)
     try {
       const response = await addPostService(post, token)
       console.log(response)
@@ -62,7 +62,7 @@ export default function createPost () {
           content: 'El post se guardó exitosamente'
         })
       }
-      Router.push(`/alux/entries/${postID}`)
+      router.push(`/entries/${postID}`)
     } catch (error) {
       console.log('error', error)
     }
@@ -78,7 +78,7 @@ export default function createPost () {
               <Uploader callback={handleFile} />
             )
             : (<>
-              <button type='dashed' shape='circle' onClick={eraseFile} icon={<CloseOutlined />}>Borrar imagen</button>
+              <Button type='dashed' shape='circle' onClick={eraseFile} icon={<CloseOutlined />} />
               <PreviewRectangle src={imageurl} />
                </>)}
         </Col>

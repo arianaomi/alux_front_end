@@ -6,29 +6,24 @@ import LoginForm from '../components/Pages/LoginForm'
 import Footer from '../components/Footer'
 import Btn from '../components/Btn'
 // ant-design
-import { Row, Col } from 'antd'
+import { Row, Col, message } from 'antd'
 // scss
 import styles from '../styles/_logIn.module.scss'
 // services
 import { logInService } from '../services'
 
-export default function logIn() {
-  async function handleForm({ email, password }) {
+export default function logIn () {
+  async function handleForm ({ email, password }) {
     const user = { email, password }
     try {
       const response = await logInService(user)
-      // console.log(response)
       const token = response.data.token
-      console.log(token)
       localStorage.setItem('token', token)
       const payload = JSON.parse(atob(token.split('.')[1]))
-      console.log(payload)
-      console.log('user id: ', payload.id)
       const userId = payload.id
-      localStorage.setItem('userId', userId)
       Router.push('/alux/home')
     } catch (error) {
-      console.log('error', error)
+      message.error('Datos invalidos')
     }
   }
 
@@ -42,8 +37,7 @@ export default function logIn() {
             </div>
           </Col>
         </Row>
-
-        <Row justify='center'>
+        <Row justify='center' className={styles.cotainerLogin}>
           <Col xs={0} md={10} lg={10}>
             <div className={styles.wrapperImg}>
               <img src='/PerritoLog_inMobil.png' />
