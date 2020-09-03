@@ -47,11 +47,11 @@ export default function FormPet1() {
     if (!imgUrl) {
       Modal.error({
         title: 'Error',
-        content: 'La imagen no se guardó, por favor vuelve a intentarlo',
+        content: 'La imagen no se guardó, por favor vuelve a intentarlo'
       })
     } else {
       Modal.success({
-        content: 'La imagen se guardó exitosamente',
+        content: 'La imagen se guardó exitosamente'
       })
     }
   }
@@ -91,7 +91,7 @@ export default function FormPet1() {
       sex,
       particularSigns,
       medicalInformation,
-      address,
+      address
     }
     console.log(pet)
     try {
