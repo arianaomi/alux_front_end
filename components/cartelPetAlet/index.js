@@ -1,13 +1,8 @@
 import React, { forwardRef } from 'react'
 import styles from './cartelPetAlert.module.scss'
 import Avatar from '../AvatarCmpnt'
-import { UserOutlined } from '@ant-design/icons'
+
 function CartelPetAlert({ data }, ref) {
-  // const avatar = data.pictures[0] ? (
-  //   <Avatar size={201} src={data.pictures[0]} />
-  // ) : (
-  //   <Avatar icon={<UserOutlined />} />
-  // )
   console.log('data', data)
   return (
     <div className={styles.continerC} ref={ref}>

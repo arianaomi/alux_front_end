@@ -30,10 +30,10 @@ export default function GenerateQR({ origin }) {
       ;(async () => {
         try {
           const { data } = await getPet(router.query.id)
-          console.log(data)
+          //console.log(data)
           setPet(data)
         } catch (error) {
-          console.log(error)
+          //console.log(error)
         }
       })()
     }

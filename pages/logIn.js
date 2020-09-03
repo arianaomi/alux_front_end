@@ -6,7 +6,7 @@ import LoginForm from '../components/Pages/LoginForm'
 import Footer from '../components/Footer'
 import Btn from '../components/Btn'
 // ant-design
-import { Row, Col } from 'antd'
+import { Row, Col, message } from 'antd'
 // scss
 import styles from '../styles/_logIn.module.scss'
 // services
@@ -14,23 +14,16 @@ import { logInService } from '../services'
 
 export default function logIn () {
   async function handleForm ({ email, password }) {
-    console.log(email, password)
     const user = { email, password }
-    console.log(user)
     try {
       const response = await logInService(user)
-      console.log(response)
       const token = response.data.token
-      console.log(token)
       localStorage.setItem('token', token)
       const payload = JSON.parse(atob(token.split('.')[1]))
-      console.log(payload)
-      console.log('user id: ', payload.id)
       const userId = payload.id
-      localStorage.setItem('userId', userId)
       Router.push('/alux/home')
     } catch (error) {
-      console.log('error', error)
+      message.error('Datos invalidos')
     }
   }
 
