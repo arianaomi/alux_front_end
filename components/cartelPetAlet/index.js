@@ -1,8 +1,8 @@
 import React, { forwardRef } from 'react'
 import styles from './cartelPetAlert.module.scss'
 import { Avatar } from 'antd'
-
-function CartelPetAlert({ image }, ref) {
+import { UserOutlined } from '@ant-design/icons'
+function CartelPetAlert ({ image }, ref) {
   const avatar = image.image ? (
     <Avatar size={201} src={image.image} />
   ) : (

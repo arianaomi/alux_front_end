@@ -1,10 +1,8 @@
 //! url API
 // const URL_BASE = 'https://6e3cccb45d82.ngrok.io/'
-
+// const URL_BASE = 'http://localhost:8080/'
 const URL_BASE = 'https://api-alux.mybluemix.net/'
 const URL_ClOUD = 'https://api.cloudinary.com/v1_1/dwh7vxswk/upload'
-// const sessionToken =
-//   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNGFmMTQ1Mjk1MGE0MTliOGZhMDczMCIsImlhdCI6MTU5ODc0NzAxNCwiZXhwIjoxNTk4ODMzNDE0fQ.awppj7bOBgWA-oB6nffbThcYbdz1ymavu2SjHnkPnEQ'
 
 // Upload en Cloudinary
 const uploadFileService = async file => {
