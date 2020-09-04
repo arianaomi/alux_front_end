@@ -47,21 +47,29 @@ export default function Home () {
   }, [])
 
   const UICardsAdoption = petAdoption.map(
-    ({ name, _id, address, character }) => (
+    ({ imageurl, name, _id, address, character }) => (
       <Col xs={22} md={11} lg={11} className={styles.adoption} key={_id}>
         <CardAdoption
           namePet={name}
           place={address.street}
           info={character[0]}
+          image={imageurl}
         />
       </Col>
     )
   )
-  const UICardsLost = petLost.map(({ name, _id, address, updatedAt }) => (
-    <div key={_id}>
-      <CardLost namePet={name} place={address.street} date={updatedAt} />
-    </div>
-  ))
+  const UICardsLost = petLost.map(
+    ({ imageurl, name, _id, address, updatedAt }) => (
+      <div key={_id}>
+        <CardLost
+          namePet={name}
+          place={address.street}
+          date={updatedAt}
+          image={imageurl}
+        />
+      </div>
+    )
+  )
 
   const UICardsPost = post.map(({ title, imageurl, user, content, _id }) => (
     <Col xs={22} md={10} lg={10} className={styles.post} key={_id}>

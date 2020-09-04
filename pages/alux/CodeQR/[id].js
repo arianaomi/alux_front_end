@@ -69,14 +69,11 @@ export default function GenerateQR({ origin }) {
             </div>
             <div className={styles.btn}>
               <Btn
-                content='Terminar Registro'
+                content='Ir a home'
                 typeBtn='btn_primary'
                 link='/alux/home'
               />
             </div>
-            <Link href='/alux/home'>
-              <a>Regresar</a>
-            </Link>
           </div>
         </Col>
       </Row>
