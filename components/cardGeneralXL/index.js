@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './cardGralxl.module.scss'
 import AvatarCmptn from '../../components/AvatarCmpnt'
 
-export default function CardGralxl({ title, image, namePet, text }) {
+export default function CardGralxl ({ title, image, namePet, text }) {
   return (
     <div className={styles.containerPrin}>
       <div className={styles.containerCardG}>

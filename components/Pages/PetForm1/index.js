@@ -7,7 +7,6 @@ import Btn from '../../Btn'
 // SCSS
 import styles from './PetForm1.module.scss'
 const { TextArea } = Input
-
 const { Option } = Select
 
 const objectBreedOptions = {

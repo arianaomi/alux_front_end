@@ -10,10 +10,10 @@ import styles from '../../styles/reset-password/_reset-password.module.scss'
 // services
 import { sendNewPassword } from '../../services'
 
-export default function ResetPassword () {
+export default function ResetPassword() {
   const router = useRouter()
 
-  async function handleSend (emailValue) {
+  async function handleSend(emailValue) {
     try {
       const response = await sendNewPassword(emailValue)
       // console.log(response)

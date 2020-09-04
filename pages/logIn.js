@@ -12,8 +12,8 @@ import styles from '../styles/_logIn.module.scss'
 // services
 import { logInService } from '../services'
 
-export default function logIn () {
-  async function handleForm ({ email, password }) {
+export default function logIn() {
+  async function handleForm({ email, password }) {
     const user = { email, password }
     try {
       const response = await logInService(user)
@@ -67,8 +67,8 @@ export default function logIn () {
           </Col>
         </Row>
         <Row>
-          <Col xs={24}>
-            <div>
+          <Col xs={24} lg={24}>
+            <div className={styles.footer}>
               <Footer />
             </div>
           </Col>

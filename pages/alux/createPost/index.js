@@ -9,7 +9,7 @@ import React, { useState, useEffect } from 'react'
 import InputFile2 from '../../../components/InputFile2'
 import { useRouter } from 'next/router'
 
-export default function createPost() {
+export default function createPost () {
   // States
   const router = useRouter()
   const [token, setToken] = useState('')
@@ -33,12 +33,11 @@ export default function createPost() {
     }
   }, [imageurl])
 
-  function handleFile(url) {
+  function handleFile (url) {
     setImageUrl(url)
-    console.log(imageurl)
   }
 
-  async function handlePostForm({ title, tags, content }) {
+  async function handlePostForm ({ title, tags, content }) {
     const createdAt = new Date()
     const post = { title, content, user, imageurl, tags, createdAt }
     try {
@@ -62,6 +61,7 @@ export default function createPost() {
       console.log('error', error)
     }
   }
+  console.log(imageurl)
 
   return (
     <>

@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import PreviewCircle from '../../components/PreviewCircle'
 import firebase from '../../firebase'
-import { Modal } from 'antd'
-import BtnForm from '../../components/BtnForm'
+import { Modal, Button } from 'antd'
 import styles from './InputFile.module.scss'
 
 export default function InputFile({ callback }) {
   const [preview, setPreview] = useState('')
-  const [file, setFile] = useState('')
+  const [file, setFile] = useState(null)
   const [imageurl, setImageUrl] = useState('')
 
   const changeFile = (e) => {
@@ -87,10 +86,10 @@ export default function InputFile({ callback }) {
         type='file'
         onChange={changeFile}
       />
-
-      <BtnForm
-        typeBtn='btn_secondary_centered' content='2. Subir imagen' handlerClick={saveFile}
-      />
+      {file ? <button
+        onClick={saveFile}
+      > Guardar archivo
+      </button> : null}
     </>
   )
 }

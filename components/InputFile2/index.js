@@ -7,7 +7,7 @@ import styles from './InputFile.module.scss'
 
 export default function InputFile({ callback }) {
   const [preview, setPreview] = useState('')
-  const [file, setFile] = useState('')
+  const [file, setFile] = useState(null)
   const [imageurl, setImageUrl] = useState('')
 
   const changeFile = (e) => {
@@ -78,7 +78,7 @@ export default function InputFile({ callback }) {
       <label
         className={styles.label}
         for='fileInput'
-      > 1.Seleccionar archivo
+      > Seleccionar imagen
       </label>
 
       <input
@@ -87,9 +87,10 @@ export default function InputFile({ callback }) {
         type='file'
         onChange={changeFile}
       />
-      {file ? <BtnForm
-        typeBtn='btn_secondary_centered' content='2. Subir imagen' handlerClick={saveFile}
-      /> : null}
-    </>
-  )
+      {
+        file ? <BtnForm
+          typeBtn='btn_secondary_centered' content='2. Subir imagen' handlerClick={saveFile}
+        /> : null
+      }
+    </>)
 }

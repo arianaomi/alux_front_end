@@ -15,7 +15,7 @@ import InputFile from '../../../components/InputFile'
 
 import styles from '../../../styles/alux/Registry/formPet-1/_formPet-1.module.scss'
 
-export default function FormPet1() {
+export default function FormPet1 () {
   const Router = useRouter()
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
@@ -53,11 +53,11 @@ export default function FormPet1() {
     }
   }, [imageurl])
 
-  function handleFile(url) {
+  function handleFile (url) {
     setImageurl(url)
   }
 
-  function handleForm1({ name, about, species, breed }) {
+  function handleForm1 ({ name, about, species, breed }) {
     setName(name)
     setSpecies(species)
     setBreed(breed)
@@ -65,7 +65,7 @@ export default function FormPet1() {
     setActiveForm(1)
   }
 
-  function handleForm2({ color, birthDate, size, sex }) {
+  function handleForm2 ({ color, birthDate, size, sex }) {
     setColor(color)
     setBirthDate(birthDate)
     setSize(size)
@@ -73,13 +73,13 @@ export default function FormPet1() {
     setActiveForm(2)
   }
 
-  function handleForm3({ particularSigns, medicalInformation }) {
+  function handleForm3 ({ particularSigns, medicalInformation }) {
     setParticularSigns(particularSigns)
     setMedicalInformation(medicalInformation)
     setActiveForm(3)
   }
 
-  async function handleForm4(addressObj) {
+  async function handleForm4 (addressObj) {
     setAddress(addressObj)
     console.log(address)
     const pet = {
@@ -100,13 +100,13 @@ export default function FormPet1() {
     console.log(pet)
     try {
       const response = await addPetService(pet, token)
-      console.log(response)
+      // console.log(response)
       const petId = response.data.newPet._id
-      console.log(petId)
+      // console.log(petId)
       localStorage.setItem('petId', petId)
       Router.push(`/alux/CodeQR/${petId}`)
     } catch (error) {
-      console.log('error', error)
+      // console.log('error', error)
     }
   }
 

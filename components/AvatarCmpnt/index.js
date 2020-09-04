@@ -14,7 +14,8 @@ function AvatarCmpnt({ size }) {
     if (petId && token) {
       try {
         const { data } = await getPetIdService(token, petId)
-        setPetImage(data.pictures[0])
+        console.log(data)
+        setPetImage(data.imageurl)
       } catch (e) {
         console.log(e)
       }
@@ -29,13 +30,15 @@ function AvatarCmpnt({ size }) {
     number = 40
   } else if (size === 'md') {
     number = 60
+  } else if (size === 'mdd') {
+    number = 150
   } else {
     number = 280
   }
   const avatar = petImage ? (
     <Avatar size={number} src={petImage} />
   ) : (
-    <Avatar size={number} src='/hamster.png' className={styles.avatar} />
+    <Avatar size={number} src='/Huron.png' className={styles.avatar} />
   )
 
   return <>{avatar}</>

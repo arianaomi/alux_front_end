@@ -11,13 +11,13 @@ import { Row, Col } from 'antd'
 import {
   getPetIdService,
   updateUsersService,
-  updatePetService,
+  updatePetService
 } from '../../../services'
 
 import moment from 'moment'
 
 // ToDo: style
-export default function LostPetAddress() {
+export default function LostPetAddress () {
   const router = useRouter()
   const [token, setToken] = useState('')
   const [owner, setOwner] = useState('')
@@ -43,27 +43,27 @@ export default function LostPetAddress() {
       })
   }, [])
 
-  async function handleUpdate({
+  async function handleUpdate ({
     street,
     number,
     block,
     zipCode,
     phoneNumber,
-    dateForm,
+    dateForm
   }) {
     console.log(phoneNumber)
     const address = {
       street,
       number,
       block,
-      zipCode,
+      zipCode
     }
 
     const updatedAt = moment().format()
     console.log(updatedAt)
     const data = {
       address,
-      updatedAt,
+      updatedAt
     }
 
     try {
@@ -79,10 +79,12 @@ export default function LostPetAddress() {
 
   return (
     <Layout title='¿Donde se perdio?' typeHeader='alert'>
-      <Row justify='center' className={style.backwimg}>
-        <Col xs={22} lg={18}>
+      <Row justify='center'>
+        <Col xs={22} lg={22}>
           <Arrow typeArrow='alert' link='/alux/home' />
         </Col>
+      </Row>
+      <Row justify='center' className={style.backwimg}>
         <Col xs={22} md={22} lg={15}>
           <AlertForm callback={handleUpdate} />
         </Col>

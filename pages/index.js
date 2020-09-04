@@ -23,8 +23,8 @@ export default function WelcomePage() {
             <p>
               Alux es un sitio donde amamos a los pequeños amigos animales,
               tenemos el compromiso de ayudarlos a volver a casa en el caso de
-              estar perdidos, o poder encontrarle una familia que los ame como se
-              merecen .
+              estar perdidos, o poder encontrarle una familia que los ame como
+              se merecen .
             </p>
             <p>
               Alux : Criatura mitológica maya que cuida la selva, seres
