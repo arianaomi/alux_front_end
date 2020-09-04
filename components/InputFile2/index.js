@@ -5,7 +5,7 @@ import { Modal } from 'antd'
 import BtnForm from '../BtnForm'
 import styles from './InputFile.module.scss'
 
-export default function InputFile ({ callback }) {
+export default function InputFile({ callback }) {
   const [preview, setPreview] = useState('')
   const [file, setFile] = useState('')
 
@@ -72,22 +72,28 @@ export default function InputFile ({ callback }) {
   return (
     <>
       {preview ? <PreviewRectangle src={preview} /> : null}
-      <label
-        className={styles.label}
-        for='fileInput'
-      > Seleccionar archivo
-      </label>
+      <div className={styles.containerBtns}>
+        <div>
+          <label
+            className={styles.label}
+            for='fileInput'
+          > Seleccionar archivo
+          </label>
 
-      <input
-        className={styles.d_none}
-        id='fileInput'
-        type='file'
-        onChange={changeFile}
-      />
+          <input
+            className={styles.d_none}
+            id='fileInput'
+            type='file'
+            onChange={changeFile}
+          />
+        </div>
 
-      <BtnForm
-        typeBtn='btn_secondary_centered' content='Subir imagen' onClick={saveFile}
-      />
+        <BtnForm
+          className={styles.Btd}
+          typeBtn='btn_secondary_centered' content='Subir imagen' onClick={saveFile}
+        />
+
+      </div>
     </>
   )
 }

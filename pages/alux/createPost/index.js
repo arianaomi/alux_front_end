@@ -70,9 +70,8 @@ export default function createPost() {
     <>
       <HeaderRectan title='Nuevo Post' />
       <Row justify='center'>
-        <Col xs={20} sm={20} md={10} lg={10} />
-        <InputFile2 />
         <Col xs={20} sm={20} md={10} lg={10}>
+          <InputFile2 />
           <PostForm callback={handlePostForm} />
           <div className={styles.containerBtn}>
             <Btn content='regresar' typeBtn='btn_secondary' />
