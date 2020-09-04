@@ -6,7 +6,7 @@ import * as componentExportImage from 'react-component-export-image'
 
 export default function DownloadAdoption({ data }) {
   const componentRef = useRef()
-  console.log('hola2', data)
+
   return (
     <>
       <CartelPetAdop data={data} ref={componentRef} />

@@ -1,24 +1,22 @@
 import React, { forwardRef } from 'react'
 import styles from './cartelPetAdop.module.scss'
-import { Avatar } from 'antd'
+import Avatar from '../AvatarCmpnt'
 
 function CartelPetAdop({ data }, ref) {
   console.log('hola', data.pet.name)
-  // const avatar = image.image ? (
-  //   <Avatar size={201} src={image.image} />
-  // ) : (
-  //   <Avatar icon={<UserOutlined />} />
-  // )
+  const address = `${data.pet.address.street}  ${data.pet.address.number} ${data.pet.address.block}`
+  console.log(address)
   return (
     <>
-      <div className={styles.circle}>
-        <div className={styles.avatatQ}>{data.pet.avatar}</div>
-      </div>
       <div className={styles.continerC} ref={ref}>
+        <div className={styles.circle}>
+          <div className={styles.avatatQ}>
+            <Avatar size='lg' />
+          </div>
+        </div>
         <div>
           <h2 className={styles.TextName}>{data.pet.name}</h2>
-          <h3 className={styles.TextAleAdp}>Adopta un amigo</h3>
-          <h4 className={styles.TextAleAdpDos}>Quiero ser tu amigo</h4>
+          <h3 className={styles.TextAleAdp}>Quiero ser tu amigo</h3>
         </div>
         <div>
           <div className={styles.containerDS}>
@@ -34,7 +32,7 @@ function CartelPetAdop({ data }, ref) {
           </div>
           <div className={styles.containerUT}>
             <img className={styles.ubic} src='/IconUbgrey.png' />
-            <p className={styles.textCartL}>{data.pet.address.street}</p>
+            <p className={styles.textCartL}>{address}</p>
           </div>
           <div className={styles.contaTE}>
             <div className={styles.contaTE}>
