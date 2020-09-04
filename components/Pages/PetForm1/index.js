@@ -7,10 +7,6 @@ import Btn from '../../Btn'
 // SCSS
 import styles from './PetForm1.module.scss'
 const { TextArea } = Input
-<<<<<<< HEAD
-=======
-
->>>>>>> b5302fc5a8072cf793fad828dc8bc97becea9fa5
 const { Option } = Select
 
 const objectBreedOptions = {
@@ -28,7 +24,7 @@ const objectBreedOptions = {
     'Shnauzer',
     'Yorkie',
     'Xoloescuincle',
-    'Otro'
+    'Otro',
   ],
   Cat: [
     'Mestizo/ Sin raza',
@@ -38,7 +34,7 @@ const objectBreedOptions = {
     'Egipcio',
     'Persa',
     'Siberiano',
-    'Otra/ No disponible'
+    'Otra/ No disponible',
   ],
   Mouse: [
     'Conejo',
@@ -48,7 +44,7 @@ const objectBreedOptions = {
     'Ratón',
     'Gerbo',
     'Rata',
-    'Otro/ No disponible'
+    'Otro/ No disponible',
   ],
   Bird: [
     'Canario',
@@ -63,7 +59,7 @@ const objectBreedOptions = {
     'Cotorro',
     'Ruiseñor',
     'Pollo',
-    'Otra/ No disponible'
+    'Otra/ No disponible',
   ],
   Other: [
     'Aracnido',
@@ -72,7 +68,7 @@ const objectBreedOptions = {
     'Otro reptil',
     'Rana',
     'Erizo',
-    'Otro/ No disponible'
+    'Otro/ No disponible',
   ],
   Farm: [
     'Burro',
@@ -82,11 +78,11 @@ const objectBreedOptions = {
     'Borrego',
     'Cabra/Chivo',
     'Cerdo',
-    'Otro/ No disponible'
-  ]
+    'Otro/ No disponible',
+  ],
 }
 
-function PetForm1 ({ callback }) {
+function PetForm1({ callback }) {
   // States
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')

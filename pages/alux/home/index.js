@@ -9,13 +9,13 @@ import CardPost from '../../../components/cardGeneralXL'
 
 import styles from '../../../styles/alux/home/_home.module.scss'
 
-export default function Home () {
+export default function Home() {
   const [pet, setPets] = useState(null)
   const [petLost, setPetLost] = useState([])
   const [petAdoption, setPetAdoption] = useState([])
   const [post, setPost] = useState([])
 
-  async function getDataId () {
+  async function getDataId() {
     console.log('funcion')
     const token = localStorage.getItem('token')
 
@@ -47,19 +47,20 @@ export default function Home () {
   }, [])
 
   const UICardsAdoption = petAdoption.map(
-    ({ name, _id, address, character }) => (
+    ({ name, _id, address, character, imageurl }) => (
       <Col xs={22} md={11} lg={11} className={styles.adoption} key={_id}>
         <CardAdoption
           namePet={name}
           place={address.street}
           info={character[0]}
+          image={imageurl}
         />
       </Col>
     )
   )
-  const UICardsLost = petLost.map(({ name, _id, address, updatedAt }) => (
+  const UICardsLost = petLost.map(({ name, _id, address, updatedAt, imageurl }) => (
     <div key={_id}>
-      <CardLost namePet={name} place={address.street} date={updatedAt} />
+      <CardLost namePet={name} place={address.street} date={updatedAt} image={imageurl} />
     </div>
   ))
 
@@ -83,12 +84,14 @@ export default function Home () {
         </Col>
       </Row>
       <Row justify='center'>
+
+        <h2 className={styles.TitleAdopt}>Adopta un amigo</h2>
         <Col xs={22} md={22} lg={20}>
-          <h2 className={styles.TitleAdopt}>Adopta un amigo</h2>
-          <div className={styles.containerAdopt}>
+          <div containerAdopt>
             {UICardsAdoption}
           </div>
         </Col>
+
       </Row>
       <Row justify='center'>
         {UICardsPost}
