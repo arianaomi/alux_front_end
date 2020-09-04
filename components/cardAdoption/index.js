@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from './cardAdoption.module.scss';
+import React from 'react'
+import styles from './cardAdoption.module.scss'
 
-export default function CardAdoption({ image, namePet, place, info }) {
+export default function CardAdoption ({ image, namePet, place, info }) {
   return (
     <div className={styles.containerPrinA}>
       <div>
@@ -11,7 +11,7 @@ export default function CardAdoption({ image, namePet, place, info }) {
         <p className={styles.TextN}>{`Hola soy ${namePet}`}</p>
       </div>
       <div className={styles.containerU}>
-        <img className={styles.IconUA} src='/iconPatitaGrey.svg' />
+        <img className={styles.IconUA} src='/iconPatitaGrey.png' />
         <p className={styles.TextIN}>{info}</p>
       </div>
       <div className={styles.containerU}>

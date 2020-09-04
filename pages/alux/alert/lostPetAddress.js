@@ -11,8 +11,10 @@ import { Row, Col } from 'antd'
 import {
   getPetIdService,
   updateUsersService,
-  updatePetService
+  updatePetService,
 } from '../../../services'
+
+import moment from 'moment'
 
 // ToDo: style
 export default function LostPetAddress() {
@@ -47,19 +49,21 @@ export default function LostPetAddress() {
     block,
     zipCode,
     phoneNumber,
-    date
+    dateForm,
   }) {
     console.log(phoneNumber)
     const address = {
       street,
       number,
       block,
-      zipCode
+      zipCode,
     }
 
+    const updatedAt = moment().format()
+    console.log(updatedAt)
     const data = {
       address,
-      date
+      updatedAt,
     }
 
     try {

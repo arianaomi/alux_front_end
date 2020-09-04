@@ -1,7 +1,8 @@
 import React, { forwardRef } from 'react'
 import styles from './cartelPetAlert.module.scss'
 import Avatar from '../AvatarCmpnt'
-
+import moment from 'moment'
+import Moment from 'react-moment'
 function CartelPetAlert ({ data }, ref) {
   const address = data.address
     ? `${data.address.street}  ${data.address.number} ${data.address.block}`
@@ -22,7 +23,9 @@ function CartelPetAlert ({ data }, ref) {
         <div className={styles.containerDS}>
           <div className={styles.containerdos}>
             <img className={styles.calendarA} src='/calendarGrey.png' />
-            <p className={styles.textCartG}>{data.date}</p>
+            <p className={styles.textCartG}>
+              <Moment format='YYYY/MM/DD'>{data.updatedAt}</Moment>
+            </p>
           </div>
           <div className={styles.containerSMW}>
             <img className={styles.iconM} src='/SexMale2.png' />

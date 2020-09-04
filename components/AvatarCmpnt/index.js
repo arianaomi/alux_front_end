@@ -4,12 +4,10 @@ import { UserOutlined } from '@ant-design/icons'
 import styles from './AvatarCmpnt.module.scss'
 import { getPetIdService } from '../../services'
 
-function AvatarCmpnt ({ size }) {
-  console.log(size)
+function AvatarCmpnt({ size }) {
   const [petImage, setPetImage] = useState()
 
-  async function getDataId () {
-    console.log('funcion')
+  async function getDataId() {
     const token = localStorage.getItem('token')
 
     const petId = localStorage.getItem('petId')
@@ -17,8 +15,6 @@ function AvatarCmpnt ({ size }) {
       try {
         const { data } = await getPetIdService(token, petId)
         setPetImage(data.pictures[0])
-        console.log(data)
-        console.log('estadoAvatar', petImage)
       } catch (e) {
         console.log(e)
       }
