@@ -5,14 +5,14 @@ import { Button, Modal } from 'antd'
 // cloudinary
 import { uploadFileService } from '../../services'
 
-function Uploader ({ callback }) {
+function Uploader({ callback }) {
   const [file, setFile] = useState(null)
 
   const handlePictureClick = () => {
     document.querySelector('#fileSelector').click()
   }
 
-  async function handleFileChange (e) {
+  async function handleFileChange(e) {
     setFile(e.target.files[0])
     console.log(file)
     if (file) {
@@ -26,17 +26,20 @@ function Uploader ({ callback }) {
   }
   return (
     <>
-      <input
-        className={style.d_none}
-        id='fileSelector'
-        type='file'
-        onChange={handleFileChange}
-      />
-      <Button
-        className={style.upload_button}
-        onClick={handlePictureClick}
-      >Agregar imagen
-      </Button>
+      <div className={style.contAgI}>
+        <input
+          className={style.d_none}
+          id='fileSelector'
+          type='file'
+          onChange={handleFileChange}
+        />
+        <Button
+          className={style.upload_button}
+          onClick={handlePictureClick}
+        >Agregar imagen
+        </Button>
+        <img className={style.IconC} src='/CamF1.png' />
+      </div>
     </>
   )
 }

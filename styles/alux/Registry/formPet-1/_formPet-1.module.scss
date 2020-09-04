@@ -2,7 +2,10 @@
 .d_none {
   display: none;
 }
-
+.form1{
+  display: block;
+  justify-content: center;
+}
 .d_block {
   display: block;
 }
@@ -11,6 +14,23 @@
   .form1 {
     height: 83.3vh;
   }
+  .form4{
+    margin-top: -5%;
+  }
+  @media only screen and (max-width: 768px) {
+   .form4{
+     margin-top: 15%;
+     margin-bottom: 35%;
+   } 
+  }
+.imgPre{
+  display: flex;
+  justify-content: center;
+}
+.imgPreBtm{
+  
+  margin-left: 20%;
+}
   .cat {
     width: 50%;
     margin-top: -10%;
@@ -56,16 +76,43 @@
   }
 }
 
+@media only screen and (max-width: 320px) {
+ .cat{
+width: 38%;
+    }
+    .catCi {
+      margin-left: 7%;
+      margin-top: 55%;
+      margin-bottom: 2%;
+      img {
+        width: 10%;
+      }
+    }
+}
+.cat{
+width: 38%;
+    }
+    .catCi {
+      margin-left: 37%;
+      margin-top: 55%;
+      margin-bottom: 0%;
+      img {
+        width: 100%;
+      }
+    }
 @media only screen and (min-width: 1024px) {
   .wrapperForms {
     height: 71vh;
     .form1 {
       height: 69vh;
     }
-    .cat {
-      width: 20%;
-      margin-left: 10%;
-      margin-top: -15%;
+    .cat{
+width: 38%;
+    }
+    .catCi {
+      margin-left: 37%;
+      margin-top: 25%;
+      margin-bottom: 23%;
       img {
         width: 100%;
       }
