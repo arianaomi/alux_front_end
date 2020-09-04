@@ -29,7 +29,7 @@ function CartelPetAlert({ data }, ref) {
           </div>
         </div>
         <div className={styles.containerUT}>
-          <img className={styles.street} src='/IconUbgrey.png' />
+          <img className={styles.street} src='/iconUbgrey.png' />
           <p className={styles.textCartL}>{data.address.street}</p>
         </div>
         <div className={styles.contaTE}>
