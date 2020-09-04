@@ -4,7 +4,7 @@ import CustomInput from '../../Input'
 import BtnForm from '../../BtnForm'
 import styles from './AdressForm.module.scss'
 
-export default function AddressForm({ callback }) {
+export default function AddressForm ({ callback }) {
   // States
   const [street, setStreet] = useState('')
   const [number, setNumber] = useState('')
@@ -44,7 +44,7 @@ export default function AddressForm({ callback }) {
         />
       </Form.Item>
 
-      <Form.Item label='Colonia'>
+      <Form.Item label='Colonia' className={styles.label}>
         <CustomInput
           name='block'
           value={block}

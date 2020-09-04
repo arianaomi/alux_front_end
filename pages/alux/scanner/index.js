@@ -14,7 +14,7 @@ export default function ScannerView () {
         <Col xs={22} lg={22}>
           <Arrow typeArrow='general' link='/alux/home' />
         </Col>
-        <Col xs={22} md={11} lg={11}>
+        <Col xs={22} md={16} lg={11}>
           <div className={styles.indications}>
             <h1>¿Encontraste una mascota con QR?</h1>
             <h3>Ayudalo a volver a casa</h3>

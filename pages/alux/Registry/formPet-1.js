@@ -14,7 +14,7 @@ import Uploader from '../../../components/Uploader'
 
 import styles from '../../../styles/alux/Registry/formPet-1/_formPet-1.module.scss'
 
-export default function FormPet1() {
+export default function FormPet1 () {
   const Router = useRouter()
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
@@ -41,7 +41,7 @@ export default function FormPet1() {
     setOwner(owner)
   }, [])
 
-  function handleFile(url) {
+  function handleFile (url) {
     setImgUrl(url)
     console.log('url en el estado:', imgUrl)
     if (!imgUrl) {
@@ -56,14 +56,14 @@ export default function FormPet1() {
     }
   }
 
-  function handleForm1({ name, species, breed }) {
+  function handleForm1 ({ name, species, breed }) {
     setName(name)
     setSpecies(species)
     setBreed(breed)
     setActiveForm(1)
   }
 
-  function handleForm2({ color, birthDate, size, sex }) {
+  function handleForm2 ({ color, birthDate, size, sex }) {
     setColor(color)
     setBirthDate(birthDate)
     setSize(size)
@@ -71,13 +71,13 @@ export default function FormPet1() {
     setActiveForm(2)
   }
 
-  function handleForm3({ particularSigns, medicalInformation }) {
+  function handleForm3 ({ particularSigns, medicalInformation }) {
     setParticularSigns(particularSigns)
     setMedicalInformation(medicalInformation)
     setActiveForm(3)
   }
 
-  async function handleForm4(addressObj) {
+  async function handleForm4 (addressObj) {
     setAddress(addressObj)
     console.log(address)
     const pet = {
@@ -114,7 +114,9 @@ export default function FormPet1() {
           <Col xs={22} md={22} lg={15}>
             <div className={activeForm === 0 ? styles.d_block : styles.d_none}>
               <div className={styles.form1}>
-                <Uploader callback={handleFile} />
+                <div className={styles.AgrGImg}>
+                  <Uploader callback={handleFile} />
+                </div>
                 <PetForm1 callback={handleForm1} />
               </div>
               <div className={styles.cat}>
