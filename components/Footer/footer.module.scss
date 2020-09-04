@@ -6,13 +6,13 @@
 }
 
 .FooterScss {
-  align-self: flex-end;
   background-color: #3587a0;
-  line-height: 3;
-  text-align: center;
-  width: 100%;
   display: flex;
-  justify-content: space-around;
+ justify-content: space-evenly;
+  
+  width: 100%;
+
+ 
 }
 .imageFooter {
   width: 60px;

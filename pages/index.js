@@ -8,7 +8,7 @@ import styles from '../styles/_index.module.scss'
 // antd
 import { Row, Col } from 'antd'
 
-export default function WelcomePage () {
+export default function WelcomePage() {
   return (
     <LayoutCurve>
       <Row>
@@ -18,21 +18,21 @@ export default function WelcomePage () {
           </div>
         </Col>
         <Col xs={24} md={12}>
-          <div className={styles.btn}>
-            <Button content='Comenzar' link='/logIn' />
-          </div>
           <div className={styles.container}>
             <img src='/people-icon.png' />
             <p>
-              Alux es un sitio dónde amamos a los pequeños amigos animales,
-              tenemos el compromiso de ayudarlos a volver a casa, en el caso de
-              estar perdidos o poder encontrarle una familia que los ame como se
+              Alux es un sitio donde amamos a los pequeños amigos animales,
+              tenemos el compromiso de ayudarlos a volver a casa en el caso de
+              estar perdidos, o poder encontrarle una familia que los ame como se
               merecen .
             </p>
             <p>
               Alux : Criatura mitológica maya que cuida la selva, seres
               pequeños, inquietos y traviesos.
             </p>
+            <div className={styles.btn}>
+              <Button content='Regítrate' link='/logIn' />
+            </div>
           </div>
         </Col>
         <Col className={styles.imageCol} xs={0} lg={24}>

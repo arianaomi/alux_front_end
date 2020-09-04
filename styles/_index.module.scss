@@ -85,7 +85,7 @@
   }
   .btn {
     display: block;
-    margin-left: 10%;
+    margin-left: 0;
   }
   .container {
     margin: 10% 10% 0 0;
@@ -117,7 +117,7 @@
       color: $footer-home;
       text-align: justify;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1rem;
       width: 30%;
       padding-right: 3%;
     }
@@ -133,7 +133,7 @@
         height: 100%;
       }
       h2 {
-        font-size: 3vw;
+        font-size: 1.7vw;
         color: $color-p;
       }
     }
@@ -149,7 +149,7 @@
         }
         h2 {
           color: $color-p;
-          font-size: 2vw;
+          font-size: 1.7vw;
           width: 80%;
           text-align: center;
         }
@@ -180,7 +180,7 @@
     color: $footer-home;
     text-align: justify;
     font-weight: 700;
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
 }
 
