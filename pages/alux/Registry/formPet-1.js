@@ -119,8 +119,13 @@ export default function FormPet1() {
                 <div className={styles.AgrGImg}>
                   {!imgUrl
                     ? (<Uploader callback={handleFile} />)
-                    : (<> <Button type='dashed' shape='circle' icon={<CloseOutlined />} onClick={eraseFile} />
-                      <PreviewCircle src={imgUrl} />
+                    : (<>
+                      <div className={styles.imgPreBtm}>
+                        <Button type='dashed' shape='circle' icon={<CloseOutlined />} onClick={eraseFile} />
+                      </div>
+                      <div className={styles.imgPre}>
+                        <PreviewCircle src={imgUrl} />
+                      </div>
                     </>)}
                 </div>
                 <PetForm1 callback={handleForm1} />
