@@ -23,7 +23,7 @@ const objectBreedOptions = {
     'Shnauzer',
     'Yorkie',
     'Xoloescuincle',
-    'Otro',
+    'Otro'
   ],
   Cat: [
     'Mestizo/ Sin raza',
@@ -33,7 +33,7 @@ const objectBreedOptions = {
     'Egipcio',
     'Persa',
     'Siberiano',
-    'Otra/ No disponible',
+    'Otra/ No disponible'
   ],
   Mouse: [
     'Conejo',
@@ -43,7 +43,7 @@ const objectBreedOptions = {
     'Ratón',
     'Gerbo',
     'Rata',
-    'Otro/ No disponible',
+    'Otro/ No disponible'
   ],
   Bird: [
     'Canario',
@@ -58,7 +58,7 @@ const objectBreedOptions = {
     'Cotorro',
     'Ruiseñor',
     'Pollo',
-    'Otra/ No disponible',
+    'Otra/ No disponible'
   ],
   Other: [
     'Aracnido',
@@ -67,7 +67,7 @@ const objectBreedOptions = {
     'Otro reptil',
     'Rana',
     'Erizo',
-    'Otro/ No disponible',
+    'Otro/ No disponible'
   ],
   Farm: [
     'Burro',
@@ -77,8 +77,8 @@ const objectBreedOptions = {
     'Borrego',
     'Cabra/Chivo',
     'Cerdo',
-    'Otro/ No disponible',
-  ],
+    'Otro/ No disponible'
+  ]
 }
 
 function PetForm1({ callback }) {
@@ -86,6 +86,7 @@ function PetForm1({ callback }) {
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
   const [breed, setBreed] = useState('')
+  const [about, setAbout] = useState('')
 
   // Default form functions
   const onFinishFailed = errorInfo => {
@@ -124,6 +125,16 @@ function PetForm1({ callback }) {
               type='text'
               error='Debe ingresar un nombre'
             />
+          </Form.Item>
+
+          <Form.Item
+            label='Acerca de mí'
+            name='about'
+            value={about}
+            type='text'
+            error='Ingresa información sobre tu mascota para mostrarla en el perfil público'
+          >
+            <TextArea />
           </Form.Item>
 
           <Form.Item name='species' label='Especie'>

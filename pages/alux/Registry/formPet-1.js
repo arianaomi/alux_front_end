@@ -15,9 +15,10 @@ import PreviewCircle from '../../../components/PreviewCircle'
 import styles from '../../../styles/alux/Registry/formPet-1/_formPet-1.module.scss'
 import { CloseOutlined } from '@ant-design/icons'
 
-export default function FormPet1 () {
+export default function FormPet1() {
   const Router = useRouter()
   const [name, setName] = useState('')
+  const [about, setAbout] = useState('')
   const [species, setSpecies] = useState('')
   const [breed, setBreed] = useState('')
   const [color, setColor] = useState('')
@@ -50,21 +51,22 @@ export default function FormPet1 () {
     }
   }, [imgUrl])
 
-  function handleFile (url) {
+  function handleFile(url) {
     setImgUrl(url)
   }
-  function eraseFile () {
+  function eraseFile() {
     setImgUrl('')
   }
 
-  function handleForm1 ({ name, species, breed }) {
+  function handleForm1({ name, about species, breed }) {
     setName(name)
+    setAbout(about)
     setSpecies(species)
     setBreed(breed)
     setActiveForm(1)
   }
 
-  function handleForm2 ({ color, birthDate, size, sex }) {
+  function handleForm2({ color, birthDate, size, sex }) {
     setColor(color)
     setBirthDate(birthDate)
     setSize(size)
@@ -72,13 +74,13 @@ export default function FormPet1 () {
     setActiveForm(2)
   }
 
-  function handleForm3 ({ particularSigns, medicalInformation }) {
+  function handleForm3({ particularSigns, medicalInformation }) {
     setParticularSigns(particularSigns)
     setMedicalInformation(medicalInformation)
     setActiveForm(3)
   }
 
-  async function handleForm4 (addressObj) {
+  async function handleForm4(addressObj) {
     setAddress(addressObj)
     console.log(address)
     const pet = {
@@ -125,7 +127,7 @@ export default function FormPet1 () {
                       <div className={styles.imgPre}>
                         <PreviewCircle src={imgUrl} />
                       </div>
-                       </>)}
+                    </>)}
                 </div>
                 <PetForm1 callback={handleForm1} />
               </div>

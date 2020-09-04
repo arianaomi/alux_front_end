@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '../../../components/Layout'
 import { getPostsService } from '../../../services'
-
-export default function Home () {
+import { Button } from 'antd'
+export default function Home() {
   // async function getAllPosts() {
   //   try {
   //     const response = await getPostsService()
@@ -23,20 +23,19 @@ export default function Home () {
   //   }
   // }
 
-  useEffect(() => {
-    async function getAllPosts () {
-      try {
-        const response = await getPostsService()
-        console.log(response)
-      } catch (error) {
-        console.log('error', error)
-      }
+  async function getAllPosts() {
+    try {
+      const response = await getPostsService()
+      console.log(response)
+    } catch (error) {
+      console.log('error', error)
     }
-  }, [])
+  }
 
   return (
     <Layout>
       <h1>Todos los post (página principal)</h1>
+      <Button onClick={getAllPosts}> Traer datos</Button>
     </Layout>
   )
 }
