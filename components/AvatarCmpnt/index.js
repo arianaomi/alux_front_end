@@ -38,7 +38,7 @@ function AvatarCmpnt ({ size }) {
   const avatar = petImage ? (
     <Avatar size={number} src={petImage} />
   ) : (
-    <Avatar size={number} src='/hamster.png' className={styles.avatar} />
+    <Avatar size={number} src='/Huron.png' className={styles.avatar} />
   )
 
   return <>{avatar}</>
