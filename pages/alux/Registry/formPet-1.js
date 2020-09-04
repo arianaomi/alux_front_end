@@ -102,13 +102,13 @@ export default function FormPet1() {
     console.log(pet)
     try {
       const response = await addPetService(pet, token)
-      console.log(response)
+      //console.log(response)
       const petId = response.data.newPet._id
-      console.log(petId)
+      // console.log(petId)
       localStorage.setItem('petId', petId)
       Router.push(`/alux/CodeQR/${petId}`)
     } catch (error) {
-      console.log('error', error)
+      //console.log('error', error)
     }
   }
   // console.warn(activeForm)

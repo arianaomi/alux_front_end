@@ -66,8 +66,8 @@ export default function logIn() {
           </Col>
         </Row>
         <Row>
-          <Col xs={24}>
-            <div>
+          <Col xs={24} lg={24}>
+            <div className={styles.footer}>
               <Footer />
             </div>
           </Col>

@@ -2,6 +2,9 @@
 .container_logo {
   display: flex;
   justify-content: center;
+  .logo {
+    width: 50%;
+  }
 }
 .wrapperImg {
   display: flex;
@@ -17,10 +20,11 @@
     font-size: 2vw;
     padding: 2%;
     text-align: center;
-    color: #3587A0;
+    color: #3587a0;
   }
 }
 .wrapperForm {
+  margin-top: -20%;
   .containerBbtnA {
     display: flex;
     flex-direction: column;
@@ -41,6 +45,9 @@
     }
   }
 }
+.footer {
+  width: 100%;
+}
 
 @media only screen and (min-width: 1024px) {
   .logo {
@@ -56,26 +63,31 @@
       }
     }
   }
+  .footer {
+    position: fixed;
+    bottom: 0;
+  }
 }
 @media only screen and (min-width: 375px) {
-.logo{
-width: 60%;
-margin-bottom: 30px;
-}
-.containerBbtnA{
-  margin-top: 600px;
+  .logo {
+    width: 60%;
+    margin-bottom: 30px;
+  }
+  .containerBbtnA {
+    margin-top: 600px;
+  }
+  .forgetPass {
+    a {
+      font-size: 1.2vw;
+      margin-bottom: 60px;
+    }
+  }
 }
 .forgetPass {
-        a {
-          font-size: 1.2vw;
-          margin-bottom: 60px;
-        }
-}}
-.forgetPass{
   margin-bottom: 60px;
 }
 @media only screen and (max-width: 768px) {
-.cotainerLogin{
-margin-top: 30%;
-}
+  .cotainerLogin {
+    margin-top: 30%;
+  }
 }

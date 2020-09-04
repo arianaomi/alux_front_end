@@ -7,7 +7,7 @@ import LayoutCurve from '../components/LayoutCurve'
 import Footer from '../components/Footer'
 
 // ant -design
-import { Row, Col, Radio } from 'antd'
+import { Row, Col, Radio, message } from 'antd'
 // scss
 import styles from '../styles/_signUp.module.scss'
 // services
@@ -22,13 +22,13 @@ export default function signUp() {
       const token = responseLog.data.token
       localStorage.setItem('token', token)
       const payload = JSON.parse(atob(token.split('.')[1]))
-      console.log(payload)
-      console.log('user id: ', payload.id)
+      // console.log(payload)
+      // console.log('user id: ', payload.id)
       const userId = payload.id
       localStorage.setItem('userId', userId)
       Router.push('/alux/Registry/formPet-1')
     } catch (error) {
-      console.log('error', error)
+      message.error('Datos incorrectos  o correo ya utilizado')
     }
   }
 
