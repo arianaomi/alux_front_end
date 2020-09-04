@@ -4,6 +4,7 @@ import Avatar from '../AvatarCmpnt'
 
 function CartelPetAlert({ data }, ref) {
   console.log('data', data)
+  const address = data.address ? data.address.street : ''
   return (
     <div className={styles.continerC} ref={ref}>
       <div className={styles.circle}>
@@ -30,7 +31,7 @@ function CartelPetAlert({ data }, ref) {
         </div>
         <div className={styles.containerUT}>
           <img className={styles.street} src='/IconUbgrey.png' />
-          <p className={styles.textCartL}>{data.address.street}</p>
+          <p className={styles.textCartL}>{address}</p>
         </div>
         <div className={styles.contaTE}>
           <div className={styles.contaTE}>
