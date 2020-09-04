@@ -9,13 +9,13 @@ import CardPost from '../../../components/cardGeneralXL'
 
 import styles from '../../../styles/alux/home/_home.module.scss'
 
-export default function Home () {
+export default function Home() {
   const [pet, setPets] = useState(null)
   const [petLost, setPetLost] = useState([])
   const [petAdoption, setPetAdoption] = useState([])
   const [post, setPost] = useState([])
 
-  async function getDataId () {
+  async function getDataId() {
     console.log('funcion')
     const token = localStorage.getItem('token')
 
@@ -26,7 +26,7 @@ export default function Home () {
         const petsLost = response.data.filter(pet => pet.status === 'isMissing')
         const petsAdoption = response.data
           .filter(pet => pet.status === 'isAvailableForAdoption')
-          .slice(0, 1)
+          .slice(0, 2)
         setPetLost(petsLost)
         setPetAdoption(petsAdoption)
 
@@ -84,13 +84,14 @@ export default function Home () {
         </Col>
       </Row>
       <Row justify='center'>
-        <Col xs={11} md={22} lg={20}>
-          <h2 className={styles.TitleAdopt}>Adopta un amigo</h2>
-          <div className={styles.containerAdopt}>
-            {UICardsAdoption}
+
+        <h2 className={styles.TitleAdopt}>Adopta un amigo</h2>
+        <Col xs={22} md={22} lg={20}>
+          <div containerAdopt>
             {UICardsAdoption}
           </div>
         </Col>
+
       </Row>
       <Row justify='center'>
         {UICardsPost}

@@ -4,6 +4,7 @@
   border-radius: 5px;
   //border: solid #bd4089 4px;
   box-shadow: 6px 8px 7px #bd4089;
+ 
 }
 .imageCardAdop {
   border-radius: 5px;
@@ -37,4 +38,9 @@
   font-family: Poppins;
   margin-bottom: 5px;
   padding-top: 10px;
+}
+@media only screen and (min-width: 440px) {
+.cardAdopt{
+  display: none;
+}
 }

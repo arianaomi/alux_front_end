@@ -2,7 +2,6 @@
 // const URL_BASE = 'https://6e3cccb45d82.ngrok.io/'
 // const URL_BASE = 'http://localhost:8080/'
 const URL_BASE = 'https://api-alux.mybluemix.net/'
-const URL_ClOUD = 'https://api.cloudinary.com/v1_1/dwh7vxswk/upload'
 
 //! Users
 const signUpService = async req => {
