@@ -15,7 +15,7 @@ import PreviewCircle from '../../../components/PreviewCircle'
 import styles from '../../../styles/alux/Registry/formPet-1/_formPet-1.module.scss'
 import { CloseOutlined } from '@ant-design/icons'
 
-export default function FormPet1() {
+export default function FormPet1 () {
   const Router = useRouter()
   const [name, setName] = useState('')
   const [about, setAbout] = useState('')
@@ -51,14 +51,14 @@ export default function FormPet1() {
     }
   }, [imgUrl])
 
-  function handleFile(url) {
+  function handleFile (url) {
     setImgUrl(url)
   }
-  function eraseFile() {
+  function eraseFile () {
     setImgUrl('')
   }
 
-  function handleForm1({ name, about species, breed }) {
+  function handleForm1 ({ name, about, species, breed }) {
     setName(name)
     setAbout(about)
     setSpecies(species)
@@ -66,7 +66,7 @@ export default function FormPet1() {
     setActiveForm(1)
   }
 
-  function handleForm2({ color, birthDate, size, sex }) {
+  function handleForm2 ({ color, birthDate, size, sex }) {
     setColor(color)
     setBirthDate(birthDate)
     setSize(size)
@@ -74,13 +74,13 @@ export default function FormPet1() {
     setActiveForm(2)
   }
 
-  function handleForm3({ particularSigns, medicalInformation }) {
+  function handleForm3 ({ particularSigns, medicalInformation }) {
     setParticularSigns(particularSigns)
     setMedicalInformation(medicalInformation)
     setActiveForm(3)
   }
 
-  async function handleForm4(addressObj) {
+  async function handleForm4 (addressObj) {
     setAddress(addressObj)
     console.log(address)
     const pet = {
@@ -118,16 +118,23 @@ export default function FormPet1() {
             <div className={activeForm === 0 ? styles.d_block : styles.d_none}>
               <div className={styles.form1}>
                 <div className={styles.AgrGImg}>
-                  {!imgUrl
-                    ? (<Uploader callback={handleFile} />)
-                    : (<>
+                  {!imgUrl ? (
+                    <Uploader callback={handleFile} />
+                  ) : (
+                    <>
                       <div className={styles.imgPreBtm}>
-                        <Button type='dashed' shape='circle' icon={<CloseOutlined />} onClick={eraseFile} />
+                        <Button
+                          type='dashed'
+                          shape='circle'
+                          icon={<CloseOutlined />}
+                          onClick={eraseFile}
+                        />
                       </div>
                       <div className={styles.imgPre}>
                         <PreviewCircle src={imgUrl} />
                       </div>
-                    </>)}
+                    </>
+                  )}
                 </div>
                 <PetForm1 callback={handleForm1} />
               </div>

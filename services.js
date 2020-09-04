@@ -163,7 +163,7 @@ const getPetsService = async sessionToken => {
     }
   })
   const data = await response.json()
-  console.log(data)
+  // console.log(data)
   return data
 }
 const getPetIdService = async (sessionToken, id) => {

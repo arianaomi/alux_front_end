@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from './cardAdoption.module.scss';
+import React from 'react'
+import styles from './cardAdoption.module.scss'
 
-export default function CardAdoption({ image, namePet, place, info }) {
+export default function CardAdoption ({ image, namePet, place, info }) {
   return (
     <div className={styles.containerPrinA}>
       <div>
