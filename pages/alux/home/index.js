@@ -53,7 +53,7 @@ export default function Home() {
           namePet={name}
           place={address.street}
           info={character[0]}
-          image={imageurl}
+          image={imageurl || '/perdido.jpeg'}
         />
       </Col>
     )
@@ -65,7 +65,7 @@ export default function Home() {
           namePet={name}
           place={address.street}
           date={updatedAt}
-          image={imageurl}
+          image={imageurl || '/perdido.jpeg'}
         />
       </div>
     )
@@ -75,7 +75,7 @@ export default function Home() {
     <Col xs={22} md={10} lg={10} className={styles.post} key={_id}>
       <CardPost
         title={title}
-        image={imageurl}
+        image={imageurl || '/Huron.png'}
         namePet={user.name}
         text={content.slice(0, 100)}
       />
