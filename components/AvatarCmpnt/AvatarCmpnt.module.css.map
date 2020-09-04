@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,OAAO,CAAC;EACN,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,KAAK;EAChB,KAAK,EAAE,KAAK;CACb;;AAED,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,MAAM;EACvC,AAAA,OAAO,CAAC;IACN,KAAK,EAAE,GAAG;IACV,MAAM,EAAE,IAAI;IACZ,SAAS,EAAE,GAAG;GACf",
-    "sources": [
-        "AvatarCmpnt.module.scss"
-    ],
-    "names": [],
-    "file": "AvatarCmpnt.module.css"
-}

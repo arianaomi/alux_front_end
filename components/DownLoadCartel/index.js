@@ -5,12 +5,11 @@ import styles from './DownLoadCartel.module.scss'
 import * as componentExportImage from 'react-component-export-image'
 
 export default function DownloadCartel ({ data: { pet } }) {
-  console.log('dataDownload', pet)
   const componentRef = useRef()
 
   return (
     <>
-      <CartelPetAlert data={pet} />
+      <CartelPetAlert data={pet} ref={componentRef} />
       <div className={styles.containerBtn}>
         <button
           className={styles.btnQrD}

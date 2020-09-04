@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import CartelPetAdop from '../../../components/cartelPetAdop'
+// components
 import Layout from '../../../components/Layout'
 import Arrow from '../../../components/ArrowBack'
+// ant-d
 import { Spin, Row, Col } from 'antd'
 import { getPetIdService, updatePetService } from '../../../services'
+// scss
 import styles from '../../../styles/alux/adoption/_confirmAdoption.module.scss'
-import dynamic from 'next/dynamic'
+
 // ? Download
+import dynamic from 'next/dynamic'
 const DownloadAdoption = dynamic(
   () => import('../../../components/DownLoadAdoption'),
   {
@@ -62,7 +65,7 @@ export default function ConfirmAdoption() {
   return (
     <>
       {!petInfo && (
-        <Layout title='Mascota en adopción' typeHeader='adoption'>
+        <Layout title='Adopta a un amigo' typeHeader='adoption'>
           <Row justify='center'>
             <Col xs={22} md={20} lg={20}>
               <div>
@@ -73,10 +76,7 @@ export default function ConfirmAdoption() {
         </Layout>
       )}
       {petInfo && (
-        <Layout
-          title={` Cartel de ${petInfo.pet.name}  `}
-          typeHeader='adoption'
-        >
+        <Layout title={` Adopta a ${petInfo.pet.name}  `} typeHeader='adoption'>
           <Row justify='center'>
             <Col xs={22} lg={22}>
               <Arrow
@@ -88,14 +88,12 @@ export default function ConfirmAdoption() {
               <DownloadAdoption data={petInfo} />
             </Col>
           </Row>
-          <Row>
-            <Col>
+          <Row justify='center'>
+            <Col xs={22} md={22} lg={22}>
               <div className={styles.contBnt}>
-                <div className={styles.BntSin}>
-                  <button className={styles.btn} onClick={handleUpdateStatus}>
-                    Confirmar adopción
-                  </button>
-                </div>
+                <button className={styles.btn} onClick={handleUpdateStatus}>
+                  Confirmar adopción
+                </button>
               </div>
             </Col>
           </Row>
