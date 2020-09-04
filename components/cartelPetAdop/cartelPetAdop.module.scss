@@ -7,27 +7,27 @@
   align-items: center;
   margin-bottom: 200px;
   border-radius: 5px;
-  box-shadow: 6px 8px 7px #BD4089;
+  box-shadow: 6px 8px 7px #bd4089;
   width: 99%;
+  margin-top: 5%;
   margin-bottom: 30px;
- 
+  padding-bottom: 3%;
 }
 
 .circle {
   width: 250px;
   height: 23%;
   border-radius: 50%;
-  border: solid #bd4089 7px;
   display: flex;
   justify-content: center;
-}
-.avatatQ {
-  width: 250px;
-  height: 100%;
-  border-radius: 50%;
-  border: solid #bd4089 7px;
-  display: flex;
-  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  .avatatQ {
+    border-radius: 50%;
+    border: 8px solid #bd4089;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .TextName {

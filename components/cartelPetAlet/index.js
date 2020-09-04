@@ -3,7 +3,9 @@ import styles from './cartelPetAlert.module.scss'
 import Avatar from '../AvatarCmpnt'
 
 function CartelPetAlert({ data }, ref) {
-  console.log('data', data)
+  const address = data.address
+    ? `${data.address.street}  ${data.address.number} ${data.address.block}`
+    : ''
   return (
     <div className={styles.continerC} ref={ref}>
       <div className={styles.circle}>
@@ -16,7 +18,7 @@ function CartelPetAlert({ data }, ref) {
         <h3 className={styles.TextAleAdp}>¡ Me perdí!</h3>
         <h4 className={styles.TextAleAdpDos}>Ayudame a regresar a casa!</h4>
       </div>
-      <div>
+      <div className={styles.wrapperInfo}>
         <div className={styles.containerDS}>
           <div className={styles.containerdos}>
             <img className={styles.calendarA} src='/calendarGrey.png' />
@@ -29,8 +31,8 @@ function CartelPetAlert({ data }, ref) {
           </div>
         </div>
         <div className={styles.containerUT}>
-          <img className={styles.street} src='/iconUbgrey.png' />
-          <p className={styles.textCartL}>{data.address.street}</p>
+          <img className={styles.street} src='/IconUbgrey.png' />
+          <p className={styles.textCartL}>{address}</p>
         </div>
         <div className={styles.contaTE}>
           <div className={styles.contaTE}>

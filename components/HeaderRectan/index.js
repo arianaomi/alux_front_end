@@ -7,7 +7,7 @@ import styles from './HeaderRectan.module.scss'
 // ant-d
 import BuMenu from '../../components/MenuH'
 
-function HeaderRectan({ title, image, typeHeader = 'general' }) {
+function HeaderRectan ({ title, image, typeHeader = 'general' }) {
   //* rendering conditional
 
   return (
@@ -19,10 +19,7 @@ function HeaderRectan({ title, image, typeHeader = 'general' }) {
           </Link>
           <h1 className={styles.title}> {title}</h1>
           <div className={styles.wrapper}>
-            <AvatarCmptn />
-          </div>
-          <div className={styles.wrapper}>
-
+            <AvatarCmptn size='s' />
             <BuMenu />
           </div>
         </div>

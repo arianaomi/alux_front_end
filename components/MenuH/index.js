@@ -49,7 +49,7 @@ const BuMenu = () => {
               </li>
               <li className={styles.iconLi}>
                 <img className={styles.iconM} src='/Adoption.png' />
-                <Link href='/alux/adoption/Adoption'>
+                <Link href='/alux/adoption/confirmAdoption'>
                   <a>Adopción</a>
                 </Link>
               </li>

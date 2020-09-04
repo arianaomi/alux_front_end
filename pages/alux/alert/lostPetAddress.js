@@ -62,10 +62,6 @@ export default function LostPetAddress() {
       date
     }
 
-    // console.log(address)
-    // console.log('token', token)
-    // console.log('owner', owner)
-    // console.log(phoneNumber)
     try {
       const response = await updateUsersService({ phoneNumber }, token, owner)
       console.log(response)
@@ -88,6 +84,5 @@ export default function LostPetAddress() {
         </Col>
       </Row>
     </Layout>
-
   )
 }
