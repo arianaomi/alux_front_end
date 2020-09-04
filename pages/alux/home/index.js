@@ -32,6 +32,7 @@ export default function Home() {
 
         const { data } = await getPostsService()
         const entries = data.entries
+        // console.log(entries)
         setPost(entries)
 
         console.log(post)
@@ -45,20 +46,11 @@ export default function Home() {
     getDataId()
   }, [])
 
-  // async function getAllPosts () {
-  //   try {
-  //     const response = await getPostsService()
-  //     console.log(response)
-  //   } catch (error) {
-  //     console.log('error', error)
-  //   }
-
   const UICardsAdoption = petAdoption.map(
     ({ name, _id, address, character }) => (
-      <Col xs={22} md={11} lg={11} className={styles.adoption}>
+      <Col xs={22} md={11} lg={11} className={styles.adoption} key={_id}>
         <CardAdoption
           namePet={name}
-          key={_id}
           place={address.street}
           info={character[0]}
         />
@@ -66,20 +58,14 @@ export default function Home() {
     )
   )
   const UICardsLost = petLost.map(({ name, _id, address, updatedAt }) => (
-    <div>
-      <CardLost
-        namePet={name}
-        key={_id}
-        place={address.street}
-        date={updatedAt}
-      />
+    <div key={_id}>
+      <CardLost namePet={name} place={address.street} date={updatedAt} />
     </div>
   ))
 
   const UICardsPost = post.map(({ title, imageurl, user, content, _id }) => (
-    <Col xs={22} md={10} lg={10} className={styles.post}>
+    <Col xs={22} md={10} lg={10} className={styles.post} key={_id}>
       <CardPost
-        key={_id}
         title={title}
         image={imageurl}
         namePet={user.name}
