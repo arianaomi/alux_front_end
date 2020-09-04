@@ -1,9 +1,38 @@
+import React, { useEffect, useState } from 'react'
 import Layout from '../../../components/Layout'
+import { getPostsService } from '../../../services'
 
 export default function Home () {
-  // useEffect(() => {
+  // async function getAllPosts() {
+  //   try {
+  //     const response = await getPostsService()
+  //     console.log(response)
+  //     //  if (!postID) {
+  //     //   Modal.error({
+  //     //     title: 'Error',
+  //     //     content: 'El post no se guardó, por favor vuelve a intentarlo'
+  //     //   })
+  //     // } else {
+  //     //   Modal.success({
+  //     //     content: 'El post se guardó exitosamente'
+  //     //   })
+  //     // }
+  //     // router.push(`/entries/${postID}`)
+  //   } catch (error) {
+  //     console.log('error', error)
+  //   }
+  // }
 
-  // }, [input])
+  useEffect(() => {
+    async function getAllPosts () {
+      try {
+        const response = await getPostsService()
+        console.log(response)
+      } catch (error) {
+        console.log('error', error)
+      }
+    }
+  }, [])
 
   return (
     <Layout>
