@@ -5,6 +5,7 @@ import { Row, Col, Carousel } from 'antd'
 
 import CardAdoption from '../../../components/cardAdoption'
 import CardLost from '../../../components/cardLost'
+import CardPost from '../../../components/cardGeneralXL'
 
 import styles from '../../../styles/alux/home/_home.module.scss'
 
@@ -12,6 +13,7 @@ export default function Home () {
   const [pet, setPets] = useState(null)
   const [petLost, setPetLost] = useState([])
   const [petAdoption, setPetAdoption] = useState([])
+  const [post, setPost] = useState([])
 
   async function getDataId () {
     console.log('funcion')
@@ -27,8 +29,12 @@ export default function Home () {
           .slice(0, 2)
         setPetLost(petsLost)
         setPetAdoption(petsAdoption)
-        console.log(petAdoption)
-        console.log(petLost)
+
+        const { data } = await getPostsService()
+        const entries = data.entries
+        setPost(entries)
+
+        console.log(post)
       } catch (e) {
         console.log(e)
       }
@@ -48,8 +54,8 @@ export default function Home () {
   //   }
 
   const UICardsAdoption = petAdoption.map(
-    ({ name, size, _id, address, character }) => (
-      <Col xs={22} md={10} lg={10} className={styles.adoption}>
+    ({ name, _id, address, character }) => (
+      <Col xs={22} md={11} lg={11} className={styles.adoption}>
         <CardAdoption
           namePet={name}
           key={_id}
@@ -59,13 +65,25 @@ export default function Home () {
       </Col>
     )
   )
-  const UICardsLost = petLost.map(({ name, size, _id, address, updatedAt }) => (
-    <Col xs={22} md={10} lg={10} className={styles.adoption}>
+  const UICardsLost = petLost.map(({ name, _id, address, updatedAt }) => (
+    <div>
       <CardLost
         namePet={name}
         key={_id}
         place={address.street}
         date={updatedAt}
+      />
+    </div>
+  ))
+
+  const UICardsPost = post.map(({ title, imageurl, user, content, _id }) => (
+    <Col xs={22} md={10} lg={10} className={styles.post}>
+      <CardPost
+        key={_id}
+        title={title}
+        image={imageurl}
+        namePet={user.name}
+        text={content}
       />
     </Col>
   ))
@@ -78,33 +96,7 @@ export default function Home () {
         </Col>
       </Row>
       <Row justify='center'>{UICardsAdoption}</Row>
+      <Row justify='center'>{UICardsPost}</Row>
     </Layout>
   )
 }
-
-// let UICardsPopular = popularArr.map(
-//   ({ title, subtitle, author, hour, content, popular, img, key }) => (
-//     <Link className='anchor' to={`/${key}`}>
-//       <CardGeneral
-//         screen='popular'
-//         key={key}
-//         title={title}
-//         subtitle={subtitle}
-//         author={author}
-//         content={content}
-//         img={img}
-//       />
-//     </Link>
-//   )
-// )
-
-// return (
-//   <>
-//     <div onScroll={() => console.log('hi')}>
-//       <div className='menuSub'>
-//         <MenuSub />
-//       </div>
-//       <div>{UICardsPopular}</div>
-//     </div>
-//   </>
-// )

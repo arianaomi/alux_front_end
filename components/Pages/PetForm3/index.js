@@ -6,7 +6,7 @@ import styles from './PetForn3.module.scss'
 const { TextArea } = Input
 // CSS
 
-function PetForm3({ callback }) {
+function PetForm3 ({ callback }) {
   // States
   const [particularSigns, setParticularSigns] = useState('')
   const [medicalInformation, setMedicalInformation] = useState('')

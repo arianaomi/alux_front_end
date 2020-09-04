@@ -11,7 +11,7 @@ export default function CardAdoption ({ image, namePet, place, info }) {
         <p className={styles.TextN}>{`Hola soy ${namePet}`}</p>
       </div>
       <div className={styles.containerU}>
-        <img className={styles.IconUA} src='/iconPatitaGrey.svg' />
+        <img className={styles.IconUA} src='/iconPatitaGrey.png' />
         <p className={styles.TextIN}>{info}</p>
       </div>
       <div className={styles.containerU}>

@@ -6,7 +6,7 @@ export default function CardGralxl({ title, image, namePet, text }) {
   return (
     <div className={styles.containerPrin}>
       <div className={styles.containerCardG}>
-        <AvatarCmptn />
+        <AvatarCmptn size='s' />
         <div className={styles.textcontainer}>
           <h3 className={styles.TextTitle}>{title}</h3>
           <h4 className={styles.TextName}>{namePet}</h4>

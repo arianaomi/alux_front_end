@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { Form, Select } from 'antd'
+import { Form, Select, Input } from 'antd'
 import CustomInput from '../../Input'
 import BtnForm from '../../BtnForm'
 import Btn from '../../Btn'
 // SCSS
 import styles from './PetForm1.module.scss'
+const { TextArea } = Input
 
 const { Option } = Select
 
@@ -81,7 +82,7 @@ const objectBreedOptions = {
   ]
 }
 
-function PetForm1({ callback }) {
+function PetForm1 ({ callback }) {
   // States
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
