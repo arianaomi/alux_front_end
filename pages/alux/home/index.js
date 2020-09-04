@@ -9,13 +9,13 @@ import CardPost from '../../../components/cardGeneralXL'
 
 import styles from '../../../styles/alux/home/_home.module.scss'
 
-export default function Home () {
+export default function Home() {
   const [pet, setPets] = useState(null)
   const [petLost, setPetLost] = useState([])
   const [petAdoption, setPetAdoption] = useState([])
   const [post, setPost] = useState([])
 
-  async function getDataId () {
+  async function getDataId() {
     console.log('funcion')
     const token = localStorage.getItem('token')
 

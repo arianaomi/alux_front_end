@@ -143,17 +143,19 @@ export default function FormPet1() {
                 <img className={styles.catCi} src='/catWF.png' />
               </div>
             </div>
-
-            <div className={activeForm === 1 ? styles.d_block : styles.d_none}>
-              <div className={styles.img}>
-                <img src='/pajaritoForPetDos.png' />
-              </div>
-              <PetForm2 callback={handleForm2} />
-              <div className={styles.imgEr}>
-                <img src='/ErizoAni.png' className={styles.erizo} />
+            <div className={styles.formDos}>
+              <div
+                className={activeForm === 1 ? styles.d_block : styles.d_none}
+              >
+                <div className={styles.img}>
+                  <img src='/pajaritoForPetDos.png' />
+                  <PetForm2 callback={handleForm2} />
+                  <div className={styles.imgEr}>
+                    <img src='/ErizoAni.png' className={styles.erizo} />
+                  </div>
+                </div>
               </div>
             </div>
-
             <div className={activeForm === 2 ? styles.d_block : styles.d_none}>
               <div className={styles.form3}>
                 {' '}
@@ -167,12 +169,16 @@ export default function FormPet1() {
                 <div className={styles.wrapperImg}>
                   <h2>Dirección</h2> <img src='/PezFormPetTres.png' />
                 </div>
-                <AddressForm callback={handleForm4} />
+                <div className={styles.formCuat}>
+                  <AddressForm callback={handleForm4} />
+                </div>
               </div>
             </div>
           </Col>
-          <Col xs={24} md={24} lg={24} className={styles.footer}>
-            <Footer />
+          <Col xs={24} md={24} lg={24}>
+            <div className={styles.footerR}>
+              <Footer />
+            </div>
           </Col>
         </Row>
       </LayoutCurve>
