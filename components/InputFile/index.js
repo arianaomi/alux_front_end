@@ -8,6 +8,7 @@ import styles from './InputFile.module.scss'
 export default function InputFile({ callback }) {
   const [preview, setPreview] = useState('')
   const [file, setFile] = useState('')
+  const [imageurl, setImageUrl] = useState('')
 
   const changeFile = (e) => {
     const fileData = e.target.files[0]
@@ -23,10 +24,11 @@ export default function InputFile({ callback }) {
   }
 
   const saveFile = () => {
+    console.warn('prueba del boton')
     const storage = firebase.storage()
     const storageRef = storage.ref()
     const galleryRef = storageRef.child('gallery')
-    const uploadTask = galleryRef.child('file.name').put(file)
+    const uploadTask = galleryRef.child(`${file.name}`).put(file)
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, function (snapshot) {
       // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
       var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
@@ -59,12 +61,13 @@ export default function InputFile({ callback }) {
         console.log('File available at', downloadURL)
         const imgUrl = downloadURL
         console.log(imgUrl)
-        if (imgUrl) {
+        setImageUrl(imgUrl)
+        if (imageurl) {
           Modal.success({
             content: 'La imagen se guardó exitosamente'
           })
         }
-        callback(imgUrl)
+        callback(imageurl)
       })
     })
   }
@@ -75,7 +78,7 @@ export default function InputFile({ callback }) {
       <label
         className={styles.label}
         for='fileInput'
-      > Seleccionar archivo
+      > 1.Seleccionar archivo
       </label>
 
       <input
@@ -86,7 +89,7 @@ export default function InputFile({ callback }) {
       />
 
       <BtnForm
-        typeBtn='btn_secondary_centered' content='Subir imagen' onClick={saveFile}
+        typeBtn='btn_secondary_centered' content='2. Subir imagen' handlerClick={saveFile}
       />
     </>
   )

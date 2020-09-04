@@ -13,11 +13,9 @@ import { addPetService } from '../../../services'
 
 import InputFile from '../../../components/InputFile'
 
-// import PreviewCircle from '../../../components/PreviewCircle'
 import styles from '../../../styles/alux/Registry/formPet-1/_formPet-1.module.scss'
-// import { CloseOutlined } from '@ant-design/icons'
 
-export default function FormPet1 () {
+export default function FormPet1() {
   const Router = useRouter()
   const [name, setName] = useState('')
   const [species, setSpecies] = useState('')
@@ -37,13 +35,15 @@ export default function FormPet1 () {
   const [owner, setOwner] = useState('')
 
   useEffect(() => {
-    const token = localStorage.getItem('token')
+    const tokenn = localStorage.getItem('token')
+    console.log(tokenn)
+    setToken(tokenn)
     console.log(token)
-    setToken(token)
-    const owner = localStorage.getItem('userId')
+    const userId = localStorage.getItem('userId')
+    console.log(userId)
+    setOwner(userId)
     console.log(owner)
-    setOwner(owner)
-  }, [])
+  }, [token, owner])
 
   useEffect(() => {
     if (imageurl) {
@@ -53,11 +53,11 @@ export default function FormPet1 () {
     }
   }, [imageurl])
 
-  function handleFile (url) {
+  function handleFile(url) {
     setImageurl(url)
   }
 
-  function handleForm1 ({ name, about, species, breed }) {
+  function handleForm1({ name, about, species, breed }) {
     setName(name)
     setSpecies(species)
     setBreed(breed)
@@ -65,7 +65,7 @@ export default function FormPet1 () {
     setActiveForm(1)
   }
 
-  function handleForm2 ({ color, birthDate, size, sex }) {
+  function handleForm2({ color, birthDate, size, sex }) {
     setColor(color)
     setBirthDate(birthDate)
     setSize(size)
@@ -73,13 +73,13 @@ export default function FormPet1 () {
     setActiveForm(2)
   }
 
-  function handleForm3 ({ particularSigns, medicalInformation }) {
+  function handleForm3({ particularSigns, medicalInformation }) {
     setParticularSigns(particularSigns)
     setMedicalInformation(medicalInformation)
     setActiveForm(3)
   }
 
-  async function handleForm4 (addressObj) {
+  async function handleForm4(addressObj) {
     setAddress(addressObj)
     console.log(address)
     const pet = {
@@ -109,7 +109,8 @@ export default function FormPet1 () {
       console.log('error', error)
     }
   }
-  // console.warn(activeForm)
+
+  console.warn(imageurl)
 
   return (
     <>

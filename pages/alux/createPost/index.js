@@ -9,7 +9,7 @@ import React, { useState, useEffect } from 'react'
 import InputFile2 from '../../../components/InputFile2'
 import { useRouter } from 'next/router'
 
-export default function createPost () {
+export default function createPost() {
   // States
   const router = useRouter()
   const [token, setToken] = useState('')
@@ -33,15 +33,12 @@ export default function createPost () {
     }
   }, [imageurl])
 
-  function handleFile (url) {
-    console.log(url)
+  function handleFile(url) {
     setImageUrl(url)
-  }
-  function eraseFile () {
-    setImageUrl('')
+    console.log(imageurl)
   }
 
-  async function handlePostForm ({ title, tags, content }) {
+  async function handlePostForm({ title, tags, content }) {
     const createdAt = new Date()
     const post = { title, content, user, imageurl, tags, createdAt }
     try {
@@ -71,7 +68,7 @@ export default function createPost () {
       <HeaderRectan title='Nuevo Post' />
       <Row>
         <Col offset={4} xs={20} sm={20} md={10} lg={10} />
-        <InputFile2 />
+        <InputFile2 callback={handleFile} />
         <Col offset={2} xs={20} sm={20} md={10} lg={10}>
           <PostForm callback={handlePostForm} />
           <div className={styles.containerBtn}>

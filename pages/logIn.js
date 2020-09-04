@@ -12,8 +12,8 @@ import styles from '../styles/_logIn.module.scss'
 // services
 import { logInService } from '../services'
 
-export default function logIn() {
-  async function handleForm({ email, password }) {
+export default function logIn () {
+  async function handleForm ({ email, password }) {
     const user = { email, password }
     try {
       const response = await logInService(user)
@@ -21,6 +21,7 @@ export default function logIn() {
       localStorage.setItem('token', token)
       const payload = JSON.parse(atob(token.split('.')[1]))
       const userId = payload.id
+      localStorage.setItem('userId', userId)
       Router.push('/alux/home')
     } catch (error) {
       message.error('Datos invalidos')

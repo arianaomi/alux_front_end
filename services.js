@@ -2,40 +2,17 @@
 // const URL_BASE = 'https://6e3cccb45d82.ngrok.io/'
 // const URL_BASE = 'http://localhost:8080/'
 const URL_BASE = 'https://api-alux.mybluemix.net/'
-<<<<<<< HEAD
-=======
-const URL_ClOUD = 'https://api.cloudinary.com/v1_1/dwh7vxswk/upload'
-
-// Upload en Cloudinary
-const uploadFileService = async file => {
-  const formData = new FormData()
-  formData.append('upload_preset', 'alux-app')
-  formData.append('file', file)
-  try {
-    const response = await fetch(`${URL_ClOUD}`, {
-      method: 'POST',
-      body: formData,
-    })
-    const data = await response.json()
-    console.log(data)
-    return data
-  } catch (error) {
-    throw error
-  }
-}
->>>>>>> b5302fc5a8072cf793fad828dc8bc97becea9fa5
 
 //! Users
 const signUpService = async req => {
   const response = await fetch(`${URL_BASE}sign-up`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify(req),
+    body: JSON.stringify(req)
   })
   const data = await response.json()
-  console.log(data)
   return data
 }
 
@@ -44,11 +21,10 @@ const logInService = async data => {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
-      'Content-Type': 'application/json',
-    },
+      'Content-Type': 'application/json'
+    }
   })
   const token = await response.json()
-
   return token
 }
 
@@ -59,8 +35,8 @@ const updateUsersService = async (data, sessionToken, id) => {
     body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json',
-      Authorization: sessionToken,
-    },
+      Authorization: sessionToken
+    }
   })
   const res = await response.json()
   return res
@@ -71,9 +47,9 @@ const sendNewPassword = async data => {
   const response = await fetch(`${URL_BASE}reset-password`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(data)
   })
   const resp = await response.json()
   return resp
@@ -83,9 +59,9 @@ const createNewPassword = async (data, token) => {
   const response = await fetch(`${URL_BASE}reset-password/${token}`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(data)
   })
   const resp = await response.json()
   return resp
@@ -98,8 +74,8 @@ const addPostService = async (data, sessionToken) => {
     body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json',
-      Authorization: sessionToken,
-    },
+      Authorization: sessionToken
+    }
   })
   const res = await response.json()
   return res
@@ -111,8 +87,8 @@ const updatePostService = async (data, sessionToken, key) => {
     body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json',
-      Authorization: sessionToken,
-    },
+      Authorization: sessionToken
+    }
   })
   const res = await response.json()
   return res
@@ -137,8 +113,8 @@ const addPetService = async (data, sessionToken) => {
     body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json',
-      Authorization: sessionToken,
-    },
+      Authorization: sessionToken
+    }
   })
   const res = await response.json()
   return res
@@ -151,8 +127,8 @@ const updatePetService = async (data, sessionToken, id) => {
     body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json',
-      Authorization: sessionToken,
-    },
+      Authorization: sessionToken
+    }
   })
   const res = await response.json()
   return res
@@ -162,8 +138,8 @@ const getPetsService = async sessionToken => {
   const response = await fetch(`${URL_BASE}pets`, {
     headers: {
       'Content-Type': 'application/json',
-      Authorization: sessionToken,
-    },
+      Authorization: sessionToken
+    }
   })
   const data = await response.json()
   // console.log(data)
@@ -173,8 +149,8 @@ const getPetIdService = async (sessionToken, id) => {
   const response = await fetch(`${URL_BASE}pets/${id}`, {
     headers: {
       'Content-Type': 'application/json',
-      Authorization: sessionToken,
-    },
+      Authorization: sessionToken
+    }
   })
   const data = await response.json()
   // console.log(data)
@@ -187,8 +163,8 @@ const getPet = async key => {
     const token = localStorage.authToken
     const response = await fetch(`${URL_BASE}pets/${key}`, {
       headers: {
-        authorization: token,
-      },
+        authorization: token
+      }
     })
     const data = await response.json()
     return data
@@ -199,9 +175,9 @@ const readQR = async (token, coords) => {
   const response = await fetch(`${URL_BASE}pets/readQR?token=${token}`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ coords }),
+    body: JSON.stringify({ coords })
   })
   const data = await response.json()
   return data
@@ -222,5 +198,5 @@ export {
   sendNewPassword,
   createNewPassword,
   updateUsersService,
-  getPetIdService,
+  getPetIdService
 }
