@@ -15,7 +15,7 @@ import {
 } from '../../../services'
 
 // ToDo: style
-export default function LostPetAddress () {
+export default function LostPetAddress() {
   const router = useRouter()
   const [token, setToken] = useState('')
   const [owner, setOwner] = useState('')
@@ -41,7 +41,7 @@ export default function LostPetAddress () {
       })
   }, [])
 
-  async function handleUpdate ({
+  async function handleUpdate({
     street,
     number,
     block,
@@ -78,7 +78,6 @@ export default function LostPetAddress () {
   }
 
   return (
-
     <Layout title='¿Donde se perdio?' typeHeader='alert'>
       <Row justify='center' className={style.backwimg}>
         <Col xs={22} lg={18}>

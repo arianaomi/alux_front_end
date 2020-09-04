@@ -2,6 +2,14 @@
 .container_logo {
   display: flex;
   justify-content: center;
+  margin-bottom: 40px;
+}
+.logo{
+  width: 50%;
+}
+.wrapperBtn{
+  justify-content: center;
+  margin-bottom: 30px;
 }
 .wrapperImg {
   display: flex;
@@ -19,9 +27,13 @@
     text-align: center;
   }
 }
-
+.wrapperBtnd{
+  display: flex;
+  justify-content: center;
+  margin-bottom:15px;
+}
 .footer {
-  position: fixed;
+  margin-top: 3%;
   bottom: 0;
   width: 100%;
 }
