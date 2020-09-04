@@ -48,7 +48,7 @@ export default function Home() {
 
   const UICardsAdoption = petAdoption.map(
     ({ name, _id, address, character, imageurl }) => (
-      <Col xs={22} md={11} lg={11} className={styles.adoption} key={_id}>
+      <Col xs={22} md={10} lg={10} className={styles.adoption} key={_id}>
         <CardAdoption
           namePet={name}
           place={address.street}
@@ -58,11 +58,18 @@ export default function Home() {
       </Col>
     )
   )
-  const UICardsLost = petLost.map(({ name, _id, address, updatedAt, imageurl }) => (
-    <div key={_id}>
-      <CardLost namePet={name} place={address.street} date={updatedAt} image={imageurl} />
-    </div>
-  ))
+  const UICardsLost = petLost.map(
+    ({ name, _id, address, updatedAt, imageurl }) => (
+      <div key={_id}>
+        <CardLost
+          namePet={name}
+          place={address.street}
+          date={updatedAt}
+          image={imageurl}
+        />
+      </div>
+    )
+  )
 
   const UICardsPost = post.map(({ title, imageurl, user, content, _id }) => (
     <Col xs={22} md={10} lg={10} className={styles.post} key={_id}>
@@ -84,18 +91,12 @@ export default function Home() {
         </Col>
       </Row>
       <Row justify='center'>
-
-        <h2 className={styles.TitleAdopt}>Adopta un amigo</h2>
         <Col xs={22} md={22} lg={20}>
-          <div containerAdopt>
-            {UICardsAdoption}
-          </div>
+          <h2 className={styles.TitleAdopt}>Adopta un amigo</h2>
         </Col>
-
+        {UICardsAdoption}
       </Row>
-      <Row justify='center'>
-        {UICardsPost}
-      </Row>
+      <Row justify='center'>{UICardsPost}</Row>
     </Layout>
   )
 }
