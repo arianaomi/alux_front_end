@@ -2,10 +2,9 @@ import React, { useState } from 'react'
 import PreviewRectangle from '../../components/PreviewRectangle'
 import firebase from '../../firebase'
 import { Modal } from 'antd'
-import BtnForm from '../../components/BtnForm'
 import styles from './InputFile.module.scss'
 
-export default function InputFile({ callback }) {
+export default function InputFile ({ callback }) {
   const [preview, setPreview] = useState('')
   const [file, setFile] = useState(null)
   const [imageurl, setImageUrl] = useState('')
@@ -59,15 +58,13 @@ export default function InputFile({ callback }) {
       // Upload completed successfully, now we can get the download URL
       uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
         console.log('File available at', downloadURL)
-        const imgUrl = downloadURL
-        console.log(imgUrl)
-        setImageUrl(imgUrl)
-        if (imageurl) {
+        setImageUrl(downloadURL)
+        if (downloadURL) {
           Modal.success({
             content: 'La imagen se guardó exitosamente'
           })
         }
-        callback(imageurl)
+        callback(downloadURL)
       })
     })
   }
@@ -78,7 +75,7 @@ export default function InputFile({ callback }) {
       <label
         className={styles.label}
         for='fileInput'
-      > Seleccionar imagen
+      > 1.Seleccionar archivo
       </label>
 
       <input
@@ -87,10 +84,10 @@ export default function InputFile({ callback }) {
         type='file'
         onChange={changeFile}
       />
-      {
-        file ? <BtnForm
-          typeBtn='btn_secondary_centered' content='2. Subir imagen' handlerClick={saveFile}
-        /> : null
-      }
-    </>)
+      {file ? <button
+        onClick={saveFile}
+              > Guardar archivo
+              </button> : null}
+    </>
+  )
 }

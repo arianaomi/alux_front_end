@@ -58,15 +58,13 @@ export default function InputFile({ callback }) {
       // Upload completed successfully, now we can get the download URL
       uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
         console.log('File available at', downloadURL)
-        const imgUrl = downloadURL
-        console.log(imgUrl)
-        setImageUrl(imgUrl)
-        if (imageurl) {
+        setImageUrl(downloadURL)
+        if (downloadURL) {
           Modal.success({
             content: 'La imagen se guardó exitosamente'
           })
         }
-        callback(imageurl)
+        callback(downloadURL)
       })
     })
   }
@@ -89,7 +87,7 @@ export default function InputFile({ callback }) {
       {file ? <button
         onClick={saveFile}
       > Guardar archivo
-      </button> : null}
+              </button> : null}
     </>
   )
 }
