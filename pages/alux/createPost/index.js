@@ -11,7 +11,7 @@ import PreviewRectangle from '../../../components/PreviewRectangle'
 import { CloseOutlined } from '@ant-design/icons'
 import { useRouter } from 'next/router'
 
-export default function createPost () {
+export default function createPost() {
   // States
   const router = useRouter()
   const [token, setToken] = useState('')
@@ -35,15 +35,15 @@ export default function createPost () {
     }
   }, [imageurl])
 
-  function handleFile (url) {
+  function handleFile(url) {
     console.log(url)
     setImageUrl(url)
   }
-  function eraseFile () {
+  function eraseFile() {
     setImageUrl('')
   }
 
-  async function handlePostForm ({ title, tags, content }) {
+  async function handlePostForm({ title, tags, content }) {
     const createdAt = new Date()
     const post = { title, content, user, imageurl, tags, createdAt }
     try {
@@ -71,8 +71,8 @@ export default function createPost () {
   return (
     <>
       <HeaderRectan title='Nuevo Post' />
-      <Row>
-        <Col offset={4} xs={20} sm={20} md={10} lg={10}>
+      <Row justify='center'>
+        <Col xs={20} sm={20} md={10} lg={10}>
           {!imageurl
             ? (
               <Uploader callback={handleFile} />
@@ -80,13 +80,8 @@ export default function createPost () {
             : (<>
               <Button type='dashed' shape='circle' onClick={eraseFile} icon={<CloseOutlined />} />
               <PreviewRectangle src={imageurl} />
-               </>)}
-        </Col>
-
-        <Col offset={2} xs={20} sm={20} md={10} lg={10}>
+            </>)}
           <PostForm callback={handlePostForm} />
-        </Col>
-        <Col xs={20} sm={20} md={10} lg={24}>
           <div className={styles.containerBtn}>
             <Btn content='regresar' typeBtn='btn_secondary' />
           </div>
