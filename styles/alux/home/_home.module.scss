@@ -4,3 +4,21 @@
 .post {
   margin: 6px;
 }
+.containerAdopt{
+  display: flex;
+  justify-content: space-between;
+}
+.TitleAlert{
+  margin: 20px;
+  font-size: 28px;
+  color:#a53c3c;
+  font-family: "Poppins", sans-serif;
+}
+.TitleAdopt{
+  display: flex;
+  justify-content: center;
+  font-size: 26px;
+  margin: 20px;
+  color:#833663;
+  font-family: "Poppins", sans-serif;
+}
