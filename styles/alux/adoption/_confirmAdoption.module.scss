@@ -4,12 +4,13 @@
   border: none;
   border-radius: $br-btn-inputs;
   color: $color-btn-primary;
+
   font-size: $fs-btn;
   font-weight: 600;
   height: 40px;
   width: 220px;
   background-color: $bg-btn-adoption;
-  &:active s {
+  &:active {
     background-color: $bg-btn-secondary;
     color: $bg-btn-adoption;
     border: 1px solid $bg-btn-adoption;
@@ -30,24 +31,19 @@
   @media only screen and (min-width: 375px) {
     font-size: 5vw;
   }
-  .BntSin{
-  display: flex;
-  justify-content: center;
-  margin-left: 25%;
-}
+  .BntSin {
+    display: flex;
+    justify-content: center;
+    margin-left: 25%;
+  }
 }
 
-.containerBtn {
+.contBnt {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 5%;
 }
-.contBnt{
-  display: flex;
- justify-content: center;
- margin-top: 10px;
-}
-.BntSin{
+.BntSin {
   display: flex;
   justify-content: center;
   margin-left: 55%;

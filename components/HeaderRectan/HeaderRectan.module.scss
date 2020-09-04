@@ -3,7 +3,7 @@
 .header {
   background: linear-gradient(#5ec9d4, #dafcff);
   display: flex;
-justify-content: space-between;
+  justify-content: space-between;
   align-items: center;
   height: 15vw;
   padding: 0px 5%;
@@ -16,19 +16,18 @@ justify-content: space-between;
 // }
 .title {
   color: $color-titles;
-  font-size: 6.5vw;
+  font-size: 5.5vw;
   margin: 0;
 }
 .posStiky {
   position: sticky;
   top: 0;
   z-index: 1;
-  
 }
 .wrapper {
   display: flex;
   justify-content: space-between;
-  width: 15%;
+
   p {
     margin-left: 5%;
   }
@@ -40,7 +39,6 @@ justify-content: space-between;
   background: linear-gradient(#bd4089, #de82b8);
 }
 @media only screen and (min-width: 1024px) {
-  
   .header {
     height: 6vw;
   }
@@ -55,8 +53,8 @@ justify-content: space-between;
     //   top: 0px;
   }
   .wrapper {
-    width: 15%;
-    height: 70%;
+    width: 12%;
+    height: 60%;
     p {
       margin-left: 0%;
     }

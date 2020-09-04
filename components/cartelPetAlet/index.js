@@ -1,9 +1,12 @@
 import React, { forwardRef } from 'react'
 import styles from './cartelPetAlert.module.scss'
 import Avatar from '../AvatarCmpnt'
-
+import moment from 'moment'
+import Moment from 'react-moment'
 function CartelPetAlert({ data }, ref) {
-  console.log('data', data)
+  const address = data.address
+    ? `${data.address.street}  ${data.address.number} ${data.address.block}`
+    : ''
   return (
     <div className={styles.continerC} ref={ref}>
       <div className={styles.circle}>
@@ -16,11 +19,13 @@ function CartelPetAlert({ data }, ref) {
         <h3 className={styles.TextAleAdp}>¡ Me perdí!</h3>
         <h4 className={styles.TextAleAdpDos}>Ayudame a regresar a casa!</h4>
       </div>
-      <div>
+      <div className={styles.wrapperInfo}>
         <div className={styles.containerDS}>
           <div className={styles.containerdos}>
             <img className={styles.calendarA} src='/calendarGrey.png' />
-            <p className={styles.textCartG}>{data.date}</p>
+            <p className={styles.textCartG}>
+              <Moment format='YYYY/MM/DD'>{data.updatedAt}</Moment>
+            </p>
           </div>
           <div className={styles.containerSMW}>
             <img className={styles.iconM} src='/SexMale2.png' />
@@ -30,7 +35,7 @@ function CartelPetAlert({ data }, ref) {
         </div>
         <div className={styles.containerUT}>
           <img className={styles.street} src='/IconUbgrey.png' />
-          <p className={styles.textCartL}>{data.address.street}</p>
+          <p className={styles.textCartL}>{address}</p>
         </div>
         <div className={styles.contaTE}>
           <div className={styles.contaTE}>

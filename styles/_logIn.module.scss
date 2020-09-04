@@ -17,6 +17,7 @@
     font-size: 2vw;
     padding: 2%;
     text-align: center;
+    color: #3587A0;
   }
 }
 .wrapperForm {
@@ -40,11 +41,7 @@
     }
   }
 }
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
+
 @media only screen and (min-width: 1024px) {
   .logo {
     display: none;

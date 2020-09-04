@@ -11,11 +11,13 @@ import { Row, Col } from 'antd'
 import {
   getPetIdService,
   updateUsersService,
-  updatePetService
+  updatePetService,
 } from '../../../services'
 
+import moment from 'moment'
+
 // ToDo: style
-export default function LostPetAddress () {
+export default function LostPetAddress() {
   const router = useRouter()
   const [token, setToken] = useState('')
   const [owner, setOwner] = useState('')
@@ -41,31 +43,29 @@ export default function LostPetAddress () {
       })
   }, [])
 
-  async function handleUpdate ({
+  async function handleUpdate({
     street,
     number,
     block,
     zipCode,
     phoneNumber,
-    date
+    dateForm,
   }) {
     console.log(phoneNumber)
     const address = {
       street,
       number,
       block,
-      zipCode
+      zipCode,
     }
 
+    const updatedAt = moment().format()
+    console.log(updatedAt)
     const data = {
       address,
-      date
+      updatedAt,
     }
 
-    // console.log(address)
-    // console.log('token', token)
-    // console.log('owner', owner)
-    // console.log(phoneNumber)
     try {
       const response = await updateUsersService({ phoneNumber }, token, owner)
       console.log(response)
@@ -78,7 +78,6 @@ export default function LostPetAddress () {
   }
 
   return (
-
     <Layout title='¿Donde se perdio?' typeHeader='alert'>
       <Row justify='center' className={style.backwimg}>
         <Col xs={22} lg={18}>
@@ -89,6 +88,5 @@ export default function LostPetAddress () {
         </Col>
       </Row>
     </Layout>
-
   )
 }

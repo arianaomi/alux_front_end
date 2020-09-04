@@ -34,7 +34,7 @@ export default function signUp() {
 
   return (
     <>
-      <LayoutCurve title='Registro'>
+      <LayoutCurve title='Registro dueño'>
         <Row>
           <Col xs={24} md={0}>
             <div className={styles.container_logo}>
@@ -54,10 +54,16 @@ export default function signUp() {
           </Col>
           <Col xs={22} md={13} lg={8} className={styles.wrapperForm}>
             <RegisterForm callback={handleForm} />
-            <Link href='/logIn'>
-              <a>Ya tengo cuenta. Inicia sesión</a>
-            </Link>
-            <Radio>Aceptar términos y condiciones</Radio>
+            <div className={styles.wrapperBtn}>
+              <div className={styles.wrapperBtnd}>
+                <Link href='/logIn'>
+                  <a>Ya tengo cuenta. Inicia sesión</a>
+                </Link>
+              </div>
+              <div className={styles.wrapperBtnd}>
+                <Radio>Aceptar términos y condiciones</Radio>
+              </div>
+            </div>
           </Col>
         </Row>
         <Row>

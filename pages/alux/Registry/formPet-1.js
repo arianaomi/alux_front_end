@@ -20,7 +20,6 @@ import styles from '../../../styles/alux/Registry/formPet-1/_formPet-1.module.sc
 export default function FormPet1 () {
   const Router = useRouter()
   const [name, setName] = useState('')
-  const [about, setAbout] = useState('')
   const [species, setSpecies] = useState('')
   const [breed, setBreed] = useState('')
   const [color, setColor] = useState('')
@@ -32,6 +31,7 @@ export default function FormPet1 () {
   const [address, setAddress] = useState({})
   const [imgUrl, setImgUrl] = useState('')
   const [activeForm, setActiveForm] = useState(0)
+  const [about, setAbout] = useState('')
 
   const [token, setToken] = useState('')
   const [owner, setOwner] = useState('')
@@ -48,7 +48,7 @@ export default function FormPet1 () {
   useEffect(() => {
     if (imgUrl) {
       Modal.success({
-        content: 'La imagen se guardó exitosamente'
+        content: 'La imagen se guardó exitosamente',
       })
     }
   }, [imgUrl])
@@ -60,11 +60,15 @@ export default function FormPet1 () {
     setImgUrl('')
   }
 
+<<<<<<< HEAD
   function handleForm1 ({ name, about, species, breed }) {
+=======
+  function handleForm1({ name, species, breed, about }) {
+>>>>>>> b5302fc5a8072cf793fad828dc8bc97becea9fa5
     setName(name)
-    setAbout(about)
     setSpecies(species)
     setBreed(breed)
+    setAbout(about)
     setActiveForm(1)
   }
 
@@ -96,7 +100,8 @@ export default function FormPet1 () {
       sex,
       particularSigns,
       medicalInformation,
-      address
+      address,
+      about,
     }
     console.log(pet)
     try {
@@ -120,7 +125,27 @@ export default function FormPet1 () {
             <div className={activeForm === 0 ? styles.d_block : styles.d_none}>
               <div className={styles.form1}>
                 <div className={styles.AgrGImg}>
+<<<<<<< HEAD
                   <InputFile callback={handleFile} />
+=======
+                  {!imgUrl ? (
+                    <Uploader callback={handleFile} />
+                  ) : (
+                    <>
+                      <div className={styles.imgPreBtm}>
+                        <Button
+                          type='dashed'
+                          shape='circle'
+                          icon={<CloseOutlined />}
+                          onClick={eraseFile}
+                        />
+                      </div>
+                      <div className={styles.imgPre}>
+                        <PreviewCircle src={imgUrl} />
+                      </div>
+                    </>
+                  )}
+>>>>>>> b5302fc5a8072cf793fad828dc8bc97becea9fa5
                 </div>
                 <PetForm1 callback={handleForm1} />
               </div>
@@ -128,17 +153,19 @@ export default function FormPet1 () {
                 <img className={styles.catCi} src='/catWF.png' />
               </div>
             </div>
-
-            <div className={activeForm === 1 ? styles.d_block : styles.d_none}>
-              <div className={styles.img}>
-                <img src='/pajaritoForPetDos.png' />
-              </div>
-              <PetForm2 callback={handleForm2} />
-              <div className={styles.imgEr}>
-                <img src='/ErizoAni.png' className={styles.erizo} />
+            <div className={styles.formDos}>
+              <div
+                className={activeForm === 1 ? styles.d_block : styles.d_none}
+              >
+                <div className={styles.img}>
+                  <img src='/pajaritoForPetDos.png' />
+                  <PetForm2 callback={handleForm2} />
+                  <div className={styles.imgEr}>
+                    <img src='/ErizoAni.png' className={styles.erizo} />
+                  </div>
+                </div>
               </div>
             </div>
-
             <div className={activeForm === 2 ? styles.d_block : styles.d_none}>
               <div className={styles.form3}>
                 {' '}
@@ -152,12 +179,16 @@ export default function FormPet1 () {
                 <div className={styles.wrapperImg}>
                   <h2>Dirección</h2> <img src='/PezFormPetTres.png' />
                 </div>
-                <AddressForm callback={handleForm4} />
+                <div className={styles.formCuat}>
+                  <AddressForm callback={handleForm4} />
+                </div>
               </div>
             </div>
           </Col>
-          <Col xs={24} md={24} lg={24} className={styles.footer}>
-            <Footer />
+          <Col xs={24} md={24} lg={24}>
+            <div className={styles.footerR}>
+              <Footer />
+            </div>
           </Col>
         </Row>
       </LayoutCurve>

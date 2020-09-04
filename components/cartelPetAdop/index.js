@@ -1,30 +1,32 @@
 import React, { forwardRef } from 'react'
 import styles from './cartelPetAdop.module.scss'
-import { Avatar } from 'antd'
+import Avatar from '../AvatarCmpnt'
+import moment from 'moment'
+import Moment from 'react-moment'
 
-function CartelPetAdop({ data }, ref) {
+function CartelPetAdop ({ data }, ref) {
   console.log('hola', data.pet.name)
-  // const avatar = image.image ? (
-  //   <Avatar size={201} src={image.image} />
-  // ) : (
-  //   <Avatar icon={<UserOutlined />} />
-  // )
+  const address = `${data.pet.address.street}  ${data.pet.address.number} ${data.pet.address.block}`
+  console.log(address)
   return (
     <>
-      <div className={styles.circle}>
-        <div className={styles.avatatQ}>{data.pet.avatar}</div>
-      </div>
       <div className={styles.continerC} ref={ref}>
+        <div className={styles.circle}>
+          <div className={styles.avatatQ}>
+            <Avatar size='lg' />
+          </div>
+        </div>
         <div>
           <h2 className={styles.TextName}>{data.pet.name}</h2>
-          <h3 className={styles.TextAleAdp}>Adopta un amigo</h3>
-          <h4 className={styles.TextAleAdpDos}>Quiero ser tu amigo</h4>
+          <h3 className={styles.TextAleAdp}>Quiero ser tu amigo</h3>
         </div>
         <div>
           <div className={styles.containerDS}>
             <div className={styles.containerdos}>
               <img className={styles.calendarA} src='/calendarGrey.png' />
-              <p className={styles.textCartG}>{data.pet.date}</p>
+              <p className={styles.textCartG}>
+                <Moment format='YYYY/MM/DD'>{data.pet.supdatedAt}</Moment>
+              </p>
             </div>
             <div className={styles.containerSMW}>
               <img className={styles.iconM} src='/SexMale2.png' />
@@ -34,7 +36,7 @@ function CartelPetAdop({ data }, ref) {
           </div>
           <div className={styles.containerUT}>
             <img className={styles.ubic} src='/IconUbgrey.png' />
-            <p className={styles.textCartL}>{data.pet.address.street}</p>
+            <p className={styles.textCartL}>{address}</p>
           </div>
           <div className={styles.contaTE}>
             <div className={styles.contaTE}>
