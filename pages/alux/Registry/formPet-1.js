@@ -29,7 +29,7 @@ export default function FormPet1 () {
   const [particularSigns, setParticularSigns] = useState('')
   const [medicalInformation, setMedicalInformation] = useState('')
   const [address, setAddress] = useState({})
-  const [imgUrl, setImgUrl] = useState('')
+  const [imageurl, setImageurl] = useState('')
   const [activeForm, setActiveForm] = useState(0)
   const [about, setAbout] = useState('')
 
@@ -46,25 +46,18 @@ export default function FormPet1 () {
   }, [])
 
   useEffect(() => {
-    if (imgUrl) {
+    if (imageurl) {
       Modal.success({
-        content: 'La imagen se guardó exitosamente',
+        content: 'La imagen se guardó exitosamente'
       })
     }
-  }, [imgUrl])
+  }, [imageurl])
 
   function handleFile (url) {
-    setImgUrl(url)
-  }
-  function eraseFile () {
-    setImgUrl('')
+    setImageurl(url)
   }
 
-<<<<<<< HEAD
   function handleForm1 ({ name, about, species, breed }) {
-=======
-  function handleForm1({ name, species, breed, about }) {
->>>>>>> b5302fc5a8072cf793fad828dc8bc97becea9fa5
     setName(name)
     setSpecies(species)
     setBreed(breed)
@@ -91,6 +84,7 @@ export default function FormPet1 () {
     console.log(address)
     const pet = {
       owner,
+      imageurl,
       name,
       species,
       breed,
@@ -101,7 +95,7 @@ export default function FormPet1 () {
       particularSigns,
       medicalInformation,
       address,
-      about,
+      about
     }
     console.log(pet)
     try {
@@ -125,27 +119,7 @@ export default function FormPet1 () {
             <div className={activeForm === 0 ? styles.d_block : styles.d_none}>
               <div className={styles.form1}>
                 <div className={styles.AgrGImg}>
-<<<<<<< HEAD
                   <InputFile callback={handleFile} />
-=======
-                  {!imgUrl ? (
-                    <Uploader callback={handleFile} />
-                  ) : (
-                    <>
-                      <div className={styles.imgPreBtm}>
-                        <Button
-                          type='dashed'
-                          shape='circle'
-                          icon={<CloseOutlined />}
-                          onClick={eraseFile}
-                        />
-                      </div>
-                      <div className={styles.imgPre}>
-                        <PreviewCircle src={imgUrl} />
-                      </div>
-                    </>
-                  )}
->>>>>>> b5302fc5a8072cf793fad828dc8bc97becea9fa5
                 </div>
                 <PetForm1 callback={handleForm1} />
               </div>

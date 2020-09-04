@@ -31,7 +31,7 @@ export default function WelcomePage() {
               pequeños, inquietos y traviesos.
             </p>
             <div className={styles.btn}>
-              <Button content='Regítrate' link='/logIn' />
+              <Button content='Regístrate' link='/logIn' />
             </div>
           </div>
         </Col>
@@ -43,9 +43,9 @@ export default function WelcomePage() {
         <Col lg={24}>
           <div className={styles.infoAlux}>
             <p>
-              En Alux encontraras una comunidad que ama a estos pequeñitos dónde
-              podran compartir sus aventuras, tips, su día a día, conocerlos un
-              poco más con nuestro blog.
+              En Alux encontrarás una comunidad que ama a estos pequeñitos y un lugar dónde
+              podrán compartir sus aventuras, consejos, su día a día, conocerlos un
+              poco más en nuestro blog.
             </p>
           </div>
         </Col>
