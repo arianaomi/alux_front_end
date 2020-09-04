@@ -24,7 +24,7 @@ const objectBreedOptions = {
     'Shnauzer',
     'Yorkie',
     'Xoloescuincle',
-    'Otro'
+    'Otro',
   ],
   Cat: [
     'Mestizo/ Sin raza',
@@ -34,7 +34,7 @@ const objectBreedOptions = {
     'Egipcio',
     'Persa',
     'Siberiano',
-    'Otra/ No disponible'
+    'Otra/ No disponible',
   ],
   Mouse: [
     'Conejo',
@@ -44,7 +44,7 @@ const objectBreedOptions = {
     'Ratón',
     'Gerbo',
     'Rata',
-    'Otro/ No disponible'
+    'Otro/ No disponible',
   ],
   Bird: [
     'Canario',
@@ -59,7 +59,7 @@ const objectBreedOptions = {
     'Cotorro',
     'Ruiseñor',
     'Pollo',
-    'Otra/ No disponible'
+    'Otra/ No disponible',
   ],
   Other: [
     'Aracnido',
@@ -68,7 +68,7 @@ const objectBreedOptions = {
     'Otro reptil',
     'Rana',
     'Erizo',
-    'Otro/ No disponible'
+    'Otro/ No disponible',
   ],
   Farm: [
     'Burro',
@@ -78,8 +78,8 @@ const objectBreedOptions = {
     'Borrego',
     'Cabra/Chivo',
     'Cerdo',
-    'Otro/ No disponible'
-  ]
+    'Otro/ No disponible',
+  ],
 }
 
 function PetForm1({ callback }) {
