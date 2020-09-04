@@ -3,10 +3,14 @@ import { Form, Select, Input } from 'antd'
 import CustomInput from '../../Input'
 import BtnForm from '../../BtnForm'
 import Btn from '../../Btn'
+
 // SCSS
 import styles from './PetForm1.module.scss'
 const { TextArea } = Input
+<<<<<<< HEAD
+=======
 
+>>>>>>> b5302fc5a8072cf793fad828dc8bc97becea9fa5
 const { Option } = Select
 
 const objectBreedOptions = {
