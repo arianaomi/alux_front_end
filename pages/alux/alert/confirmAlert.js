@@ -15,15 +15,15 @@ import dynamic from 'next/dynamic'
 const DownloadCartel = dynamic(
   () => import('../../../components/DownLoadCartel'),
   {
-    ssr: false
+    ssr: false,
   }
 )
 
-export default function ConfirmAlert () {
+export default function ConfirmAlert() {
   const [petInfo, setPetInfo] = useState(null)
   const [tokenId, setTokenID] = useState('')
 
-  async function getDataId () {
+  async function getDataId() {
     console.log('funcion')
     const token = localStorage.getItem('token')
     setTokenID(token)
@@ -54,7 +54,7 @@ export default function ConfirmAlert () {
       // isMissing", "isAvailableForAdoption
       const response = await updatePetService(
         {
-          status: 'isMissing'
+          status: 'isMissing',
         },
         tokenId,
         id
@@ -79,10 +79,12 @@ export default function ConfirmAlert () {
       )}
       {petInfo && (
         <Layout title={` Cartel de ${petInfo.pet.name}  `} typeHeader='alert'>
-          <Row justify='center'>
+          <Row>
             <Col xs={22} lg={22}>
               <Arrow typeArrow='alert' link='/alux/alert/lostPetAddress' />
             </Col>
+          </Row>
+          <Row justify='center'>
             <Col xs={22} md={22} lg={22}>
               <DownloadCartel data={petInfo} />
             </Col>

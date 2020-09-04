@@ -1,0 +1,25 @@
+@import '../../styles/variables';
+
+.label {
+    font-size: 1rem;
+    width: 220px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin: 1rem auto;
+    border-radius: 5px;
+    background-color: $bg-btn-secondary;
+    border: 1px solid $color-btn-secondary;
+    color: $color-btn-secondary;
+    &:active {
+      background-color: $bg-btn-primary;
+      color: $color-btn-primary;
+      border: none;
+    }
+  }
+
+.d_none{
+    display: none;
+}

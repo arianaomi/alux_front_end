@@ -4,14 +4,12 @@ import { Row, Col, Modal, Button } from 'antd'
 import HeaderRectan from '../../../components/HeaderRectan'
 import Footer from '../../../components/Footer'
 import styles from '../../../styles/alux/UnPost/PostNew/_UploadPost.module.scss'
-import Uploader from '../../../components/Uploader'
 import { addPostService } from '../../../services'
 import React, { useState, useEffect } from 'react'
-import PreviewRectangle from '../../../components/PreviewRectangle'
-import { CloseOutlined } from '@ant-design/icons'
+import InputFile2 from '../../../components/InputFile2'
 import { useRouter } from 'next/router'
 
-export default function createPost() {
+export default function createPost () {
   // States
   const router = useRouter()
   const [token, setToken] = useState('')
@@ -35,15 +33,15 @@ export default function createPost() {
     }
   }, [imageurl])
 
-  function handleFile(url) {
+  function handleFile (url) {
     console.log(url)
     setImageUrl(url)
   }
-  function eraseFile() {
+  function eraseFile () {
     setImageUrl('')
   }
 
-  async function handlePostForm({ title, tags, content }) {
+  async function handlePostForm ({ title, tags, content }) {
     const createdAt = new Date()
     const post = { title, content, user, imageurl, tags, createdAt }
     try {
@@ -71,16 +69,10 @@ export default function createPost() {
   return (
     <>
       <HeaderRectan title='Nuevo Post' />
-      <Row justify='center'>
-        <Col xs={20} sm={20} md={10} lg={10}>
-          {!imageurl
-            ? (
-              <Uploader callback={handleFile} />
-            )
-            : (<>
-              <Button type='dashed' shape='circle' onClick={eraseFile} icon={<CloseOutlined />} />
-              <PreviewRectangle src={imageurl} />
-            </>)}
+      <Row>
+        <Col offset={4} xs={20} sm={20} md={10} lg={10} />
+        <InputFile2 />
+        <Col offset={2} xs={20} sm={20} md={10} lg={10}>
           <PostForm callback={handlePostForm} />
           <div className={styles.containerBtn}>
             <Btn content='regresar' typeBtn='btn_secondary' />
