@@ -29,6 +29,20 @@
     border: none;
   }
 }
+.btn_secondary_centered {
+  background-color: $bg-btn-secondary;
+  border: 1px solid $color-btn-secondary;
+  color: $color-btn-secondary;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  &:active {
+    background-color: $bg-btn-primary;
+    color: $color-btn-primary;
+    border: none;
+  }
+}
+
 .btn_alert {
   background-color: $bg-btn-alert;
   &:active {

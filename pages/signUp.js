@@ -13,8 +13,8 @@ import styles from '../styles/_signUp.module.scss'
 // services
 import { signUpService, logInService } from '../services'
 
-export default function signUp () {
-  async function handleForm ({ userName, email, password }) {
+export default function signUp() {
+  async function handleForm({ userName, email, password }) {
     const user = { userName, email, password }
     try {
       const response = await signUpService(user)
