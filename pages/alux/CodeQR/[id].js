@@ -74,7 +74,7 @@ export default function GenerateQR({ origin }) {
                 link='/alux/home'
               />
             </div>
-            <Link href='/alux/Registry/formPet-4'>
+            <Link href='/alux/home'>
               <a>Regresar</a>
             </Link>
           </div>
