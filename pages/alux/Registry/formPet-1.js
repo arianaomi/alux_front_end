@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 // ant-design
-import { Row, Col, Modal } from 'antd'
+import { Row, Col, Modal, Button } from 'antd'
 // components
 import PetForm1 from '../../../components/Pages/PetForm1'
 import PetForm2 from '../../../components/Pages/PetForm2'
@@ -11,8 +11,9 @@ import LayoutCurve from '../../../components/LayoutCurve'
 import Footer from '../../../components/Footer'
 import { addPetService } from '../../../services'
 import Uploader from '../../../components/Uploader'
-
+import PreviewCircle from '../../../components/PreviewCircle'
 import styles from '../../../styles/alux/Registry/formPet-1/_formPet-1.module.scss'
+import { CloseOutlined } from '@ant-design/icons'
 
 export default function FormPet1() {
   const Router = useRouter()
@@ -41,19 +42,19 @@ export default function FormPet1() {
     setOwner(owner)
   }, [])
 
-  function handleFile(url) {
-    setImgUrl(url)
-    console.log('url en el estado:', imgUrl)
-    if (!imgUrl) {
-      Modal.error({
-        title: 'Error',
-        content: 'La imagen no se guardó, por favor vuelve a intentarlo',
-      })
-    } else {
+  useEffect(() => {
+    if (imgUrl) {
       Modal.success({
-        content: 'La imagen se guardó exitosamente',
+        content: 'La imagen se guardó exitosamente'
       })
     }
+  }, [imgUrl])
+
+  function handleFile(url) {
+    setImgUrl(url)
+  }
+  function eraseFile() {
+    setImgUrl('')
   }
 
   function handleForm1({ name, species, breed }) {
@@ -91,7 +92,7 @@ export default function FormPet1() {
       sex,
       particularSigns,
       medicalInformation,
-      address,
+      address
     }
     console.log(pet)
     try {
@@ -113,8 +114,20 @@ export default function FormPet1() {
         <Row justify='center' className={styles.wrapperForms}>
           <Col xs={22} md={22} lg={15}>
             <div className={activeForm === 0 ? styles.d_block : styles.d_none}>
+
               <div className={styles.form1}>
-                <Uploader callback={handleFile} />
+                <div className={styles.AgrGImg}>
+                  {!imgUrl
+                    ? (<Uploader callback={handleFile} />)
+                    : (<>
+                      <div className={styles.imgPreBtm}>
+                        <Button type='dashed' shape='circle' icon={<CloseOutlined />} onClick={eraseFile} />
+                      </div>
+                      <div className={styles.imgPre}>
+                        <PreviewCircle src={imgUrl} />
+                      </div>
+                    </>)}
+                </div>
                 <PetForm1 callback={handleForm1} />
               </div>
               <div className={styles.cat}>

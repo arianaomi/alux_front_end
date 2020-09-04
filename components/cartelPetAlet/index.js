@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import styles from './cartelPetAlert.module.scss'
 import Avatar from '../AvatarCmpnt'
 
-function CartelPetAlert({ data }, ref) {
+function CartelPetAlert ({ data }, ref) {
   console.log('data', data)
   const address = data.address ? data.address.street : ''
   return (

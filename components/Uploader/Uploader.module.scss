@@ -2,8 +2,60 @@
     display: none;
 }
 .upload_button{
-    height: 200px;
-    width: 200px;
+    justify-content: center;
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
     border: solid 1px gray;
+}
+.contAgI{
+    display: flex;
+    justify-content: center;
+    
+}
+.IconC{
+    position: absolute;
+    width: 10%;
+    top: 30px;
+    left: 155px;
+}
+@media only screen and (min-width: 320px) {
+.IconC{
+    position: absolute;
+    width: 10%;
+    top: 35px;
+    left: 133px;
+}
+}
+@media only screen and (min-width: 375px) {
+    .IconC{
+    position: absolute;
+    width: 10%;
+    top: 35px;
+    left: 156px;
+}
+}
+@media only screen and (min-width: 414px) {
+    .IconC{
+    position: absolute;
+    width: 10%;
+    top: 35px;
+    left: 170px;
+}
+}
+@media only screen and (min-width: 768px) {
+    .IconC{
+    position: absolute;
+    width: 5%;
+    top: 35px;
+    left: 335px;
+}
+}
+@media only screen and (min-width: 1000px) {
+    .IconC{
+    position: absolute;
+    width: 4%;
+    top: 30px;
+    left: 433px;
+}
 }
