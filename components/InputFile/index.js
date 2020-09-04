@@ -1,32 +1,28 @@
 import React, { useState } from 'react'
-import style from './Uploader.module.scss'
-import { Button } from 'antd'
-
-import PreviewCircle from '../PreviewCircle'
-
-// Firebase
+import PreviewCircle from '../../components/PreviewCircle'
 import firebase from '../../firebase'
+import { Modal } from 'antd'
+import BtnForm from '../../components/BtnForm'
+import styles from './InputFile.module.scss'
 
-export default function Uploader({ callback }) {
-  const [file, setFile] = useState('')
+export default function InputFile({ callback }) {
   const [preview, setPreview] = useState('')
+  const [file, setFile] = useState('')
 
-  // const handlePictureClick = () => {
-  //   document.querySelector('#fileSelector').click()
-  // }
-
-  function handleFileChange(e) {
-    setFile(e.target.files[0])
-    console.log(file)
+  const changeFile = (e) => {
+    const fileData = e.target.files[0]
+    setFile(fileData)
     const reader = new FileReader()
     reader.onload = event => {
-      console.log(event.target.result)
+      console.log(event.target)
+      // console.log(event.target.result)
       setPreview(event.target.result)
     }
-    reader.readAsDataURL(file)
+    reader.readAsDataURL(fileData)
+    console.log(preview)
   }
 
-  function saveFile(file) {
+  const saveFile = () => {
     const storage = firebase.storage()
     const storageRef = storage.ref()
     const galleryRef = storageRef.child('gallery')
@@ -63,6 +59,11 @@ export default function Uploader({ callback }) {
         console.log('File available at', downloadURL)
         const imgUrl = downloadURL
         console.log(imgUrl)
+        if (imgUrl) {
+          Modal.success({
+            content: 'La imagen se guardó exitosamente'
+          })
+        }
         callback(imgUrl)
       })
     })
@@ -70,22 +71,23 @@ export default function Uploader({ callback }) {
 
   return (
     <>
-      <PreviewCircle src={preview} />
-      <div className={style.contAgI}>
-        <input
-          // className={style.d_none}
-          id='fileSelector'
-          type='file'
-          onChange={handleFileChange}
-        />
-        {/* <Button
-            className={style.upload_button}
-            onClick={handlePictureClick}
-          >Agregar imagen
-        </Button> */}
-        <Button onClick={saveFile}>Guardar imagen</Button>
-        <img className={style.IconC} src='/CamF1.png' />
-      </div>
+      {preview ? <PreviewCircle src={preview} /> : null}
+      <label
+        className={styles.label}
+        for='fileInput'
+      > Seleccionar archivo
+      </label>
+
+      <input
+        className={styles.d_none}
+        id='fileInput'
+        type='file'
+        onChange={changeFile}
+      />
+
+      <BtnForm
+        typeBtn='btn_secondary_centered' content='Subir imagen' onClick={saveFile}
+      />
     </>
   )
 }
