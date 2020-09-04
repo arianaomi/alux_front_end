@@ -38,7 +38,6 @@ function Uploader({ callback }) {
           onClick={handlePictureClick}
         >Agregar imagen
         </Button>
-        <img className={style.IconC} src='/CamF1.png' />
       </div>
     </>
   )

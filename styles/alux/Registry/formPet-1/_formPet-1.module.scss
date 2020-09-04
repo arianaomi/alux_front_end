@@ -48,17 +48,16 @@
     height: 100%;
   }
   .catCi{
-    width: 45%;
+    width: 48%;
     margin-top: -9%;
     margin-left: 10%;
-
+position: absolute;
   }
   .imgEr {
-    display: flex;
-    justify-content: flex-end;
+  
     .erizo {
-      width: 20%;
-      width: 30%;
+    
+      width: 60%;
     }
   }
   .form4 {
@@ -73,7 +72,7 @@
   }
 }
 .formCuat{
-margin-bottom: 55px;
+margin-bottom: 5px;
 }
 .formDos{
   margin-top: 5%;
@@ -88,14 +87,7 @@ margin-bottom: 55px;
       margin-right: auto;
       padding: 3% 0%;
     }
-    .imgEr {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: -10%;
-      .erizo {
-        width: 20%;
-      }
-    }
+    
     .form3 {
       margin-left: auto;
       margin-right: auto;
@@ -123,6 +115,6 @@ margin-bottom: 55px;
 }
 .footerR{
 
-  bottom: 0;
+  margin-top: 13.4%;
   width: 100%;
 }

@@ -3,7 +3,7 @@ import styles from './cartelPetAlert.module.scss'
 import Avatar from '../AvatarCmpnt'
 import moment from 'moment'
 import Moment from 'react-moment'
-function CartelPetAlert({ data }, ref) {
+function CartelPetAlert ({ data }, ref) {
   const address = data.address
     ? `${data.address.street}  ${data.address.number} ${data.address.block}`
     : ''

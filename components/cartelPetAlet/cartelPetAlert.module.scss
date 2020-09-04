@@ -9,7 +9,7 @@
   width: 99%;
   margin-bottom: 30px;
   font-size: 4.4vw;
-  background-color: white;
+  background-color: #fe626231;
   .circle {
     border-radius: 50%;
     border: solid #ff4a4a 7px;
@@ -66,10 +66,11 @@
     align-items: center;
   }
   .containerUTtel {
-    margin-top: 60px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
   }
   .textCartL {
     margin-bottom: 0;
@@ -115,7 +116,7 @@
     padding-left: 10px;
   }
   .textCartTel {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     font-weight: bold;
     font-family: 'Poppins';
     color: #3f3f3f;
