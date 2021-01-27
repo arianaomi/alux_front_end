@@ -1,0 +1,171 @@
+@import './variables';
+.container_logo {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  margin: 10%;
+  margin-bottom: 15%;
+  width: 80%;
+  p {
+    color: $footer-home;
+    text-align: justify;
+    font-weight: 700;
+    font-size: 3.5vw;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+.image {
+  display: none;
+}
+.infoAlux {
+  display: none;
+}
+
+.wrapper_icons {
+  margin: 10% 5%;
+
+  .icons_title {
+    display: flex;
+    justify-content: space-around;
+    height: 6vw;
+    img {
+      height: 100%;
+    }
+    h2 {
+      font-size: 4vw;
+      color: $color-p;
+    }
+  }
+  .wrapperPhrase {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7%;
+    align-self: center;
+    div {
+      img {
+        height: 5vw;
+        margin-left: 25%;
+      }
+      h2 {
+        color: $color-p;
+        font-size: 3vw;
+        width: 80%;
+        text-align: center;
+      }
+    }
+    .ticket {
+      margin-top: 15%;
+      img {
+        margin: 0;
+      }
+      h2 {
+        text-align: left;
+      }
+    }
+  }
+}
+.phraseDog {
+  display: flex;
+  justify-content: space-around;
+  margin: 5% 0;
+  img {
+    width: 50vw;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .logo {
+    margin: 0 10% 20% 24%;
+    width: 50%;
+  }
+  .btn {
+    display: block;
+    margin-left: 10%;
+  }
+  .container {
+    margin: 10% 10% 0 0;
+    padding-right: 10%;
+    p {
+      font-size: 1.2vw;
+    }
+  }
+  .imageCol {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    .image {
+      display: block;
+      margin-top: -5%;
+    }
+  }
+  .infoAlux {
+    height: 53.2vw;
+    width: 100%;
+    background-image: url('../public/bg-welcomeY 2.png');
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 5%;
+    p {
+      color: $footer-home;
+      text-align: justify;
+      font-weight: 700;
+      font-size: 1.1rem;
+      width: 30%;
+      padding-right: 3%;
+    }
+  }
+  .wrapper_icons {
+    margin: 5%;
+
+    .icons_title {
+      display: flex;
+      justify-content: space-around;
+      height: 4vw;
+      img {
+        height: 100%;
+      }
+      h2 {
+        font-size: 3vw;
+        color: $color-p;
+      }
+    }
+    .wrapperPhrase {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 7%;
+      align-self: center;
+      div {
+        img {
+          height: 4vw;
+          margin-left: 25%;
+        }
+        h2 {
+          color: $color-p;
+          font-size: 2vw;
+          width: 80%;
+          text-align: center;
+        }
+      }
+      .ticket {
+        margin-top: 15%;
+        img {
+          margin: 0;
+        }
+        h2 {
+          text-align: left;
+        }
+      }
+    }
+  }
+  .phraseDog {
+    img {
+      width: 30vw;
+    }
+  }
+}

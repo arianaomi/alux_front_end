@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+
+.item {
+  width: 100%;
+  border: 1.5px solid $border;
+  border-radius: 5px;
+  height: 40px;
+  display: block;
+  color: $color-p;
+}
